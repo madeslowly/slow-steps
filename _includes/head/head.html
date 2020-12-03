@@ -15,7 +15,7 @@
     {% endif %}
   </title>
 
-  {% include head/descriptors/structured-data.html %}
+  {% include /head/descriptors/structured-data.html %}
 
   <!-- use local page descriptions if it exist -->
   <meta name="description" content="
@@ -33,23 +33,23 @@
 
   <meta name="robots" content="follow" />
 
-  {% include head/descriptors/twitter-meta.html %}
+  {% include /head/descriptors/twitter-meta.html %}
 
-  {% include head/descriptors/og-meta.html %}
+  {% include /head/descriptors/og-meta.html %}
 
   <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}" />
 
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  {% include head/styles/global.html %}
+  {% include /head/styles/global.html %}
 
   {% if page.env %}
-  {% include head/styles/conditional.html %}
+  {% include /head/styles/conditional.html %}
   {% endif %}
 
   {% if page.layout == "landing" %}
-  {% include head/styles/landing.html %}
+  {% include /head/styles/landing.html %}
   {% endif %}
 
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/fonts/fontawesome-free-5.11.2-web/css/all.min.css" media="none" onload="if(media!='all')media='all'" / >
@@ -59,7 +59,7 @@
   <link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}/{{ site.favicon }}">
 
   {% if jekyll.environment == "production" %}
-  {% include tracking-header.html %}
+  {% include /tracking-header.html %}
   {% endif %}
 
 </head>
