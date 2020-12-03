@@ -1,0 +1,82 @@
+.ft-wrapper
+  background-color: $opd-blue-confidence
+  background-image: url('/assets/img/content/footer-bg.svg')
+  background-position: center
+  background-size: cover
+  color: $white
+  display: flex
+  flex-wrap: wrap
+  margin-top: 10vh
+  padding: 0
+
+.ft__head
+  display: flex
+  height: 10vh
+  min-height: 10vh
+  min-width: 100%
+  width: 100%
+
+.ft__body
+  display: flex
+  flex-wrap: wrap
+  margin: 0 2rem
+  width: 100%
+
+.ft__sitemap, .ft__contact
+  min-width: 100%
+  width: 100%
+
+.ft__base
+  min-width: 100%
+  width: 100%
+  display: flex
+  flex-wrap: nowrap
+  justify-content: space-between
+  align-items: center
+  border-top: solid 1px $opd-grey-neutral
+
+  a, p
+    padding-top: 0
+    margin: 0
+    font-size: 1.2rem
+    text-decoration: none
+    color: inherit
+
+  div
+    a
+      &::after
+        content: " |"
+
+      &:last-child
+        &::after
+          content: ""
+
+.ft__sitemap--menu
+  position: relative
+  float: left
+  background: transparent
+  margin: 0 1% 0 1%
+
+.ft__sitemap--header
+  border-bottom: 1px solid $opd-grey-neutral
+  color: $pure-white
+
+  &:not(:first-child)
+    &::before
+      content: 'GaitQ '
+
+.ft__sitemap--menu, .ft__sitemap--submenu
+  padding: 0
+  width: 100%
+
+.ft__sitemap--submenu
+  padding-bottom: 2rem
+  li
+    display: block
+    list-style: none
+    padding: .8rem 1.2rem
+    text-decoration: none
+
+.ft__sitemap--submenu li a
+  color: $white
+  text-decoration: none

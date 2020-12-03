@@ -1,0 +1,43 @@
+<!-- footer -->
+<footer class="ft-wrapper">
+
+  <div class="ft__head">
+    <a href="{{ site.baseurl }}/">
+      {% include branding/site-logo.svg %}</a>
+  </div>
+  <div class="ft__body">
+
+    <section class="ft__sitemap">
+      <div class="ft__sitemap--menu">
+        {% for item in site.data.menu.navigation %}
+        <h2 class="ft__sitemap--header">{{ item.name }}</h2>
+        <ul class="ft__sitemap--submenu">
+          {% for sub in item.submenu %}
+          <li><a href="{{ sub.url }}">{{ sub.name }}</a></li>
+          {% endfor %}
+        </ul>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- quick contact form -->
+
+    <section class="ft__contact">
+      {% include forms/mc-routine.html %}
+    </section>
+  </div>
+  <!-- footer base and copyright -->
+
+  <div class="ft__base">
+    <a href="{{ site.author.url }}" class="slogan">made slowly</a>
+    <div class="legal-links">
+      {% for item in site.data.menu.legals %}
+      <a href="{{ item.url }}">{{ item.name }}</a>
+      {% endfor %}
+    </div>
+    <p class="copyright">&copy; <script>
+        document.write(new Date().getFullYear())
+      </script> {{ site.title }} Limited</p>
+  </div>
+
+</footer>

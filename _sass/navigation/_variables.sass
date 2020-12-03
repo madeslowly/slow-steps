@@ -1,0 +1,28 @@
+// This is where we setup the apperance of the navigation. Note, the contents is picked up from _data/menu.yml and written into _inludes/navbar.html
+
+// We have two key sass files, _sass/navbar/mobile.sass and .../desktop.sass
+
+// The mobile.sass is loaded first whilst a breakpoint controls the desktop.sass
+
+
+// ************* Dimesions *************
+
+// Applies to ALL displays
+$navbar-height: 10vh
+
+// change .nav-list.height manually in _sass/navbar/mobile.sass, can't figure out how to use calc --vh whith sass var
+$nav-list-height: 100vh - $navbar-height
+
+// ************* Colours *************
+
+// see _sass/colors/_variables.sass
+
+// ************* Animations *************
+
+$nav-slider-transition: transform .4s ease-in
+
+$nav-ani-bg-hover: background-color .2s ease-in
+
+$nav-ani-color-hover: color .2s ease-in
+
+$clinician-navbar: $navbar-color

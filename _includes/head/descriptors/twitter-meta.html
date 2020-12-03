@@ -1,0 +1,19 @@
+
+<!-- *** TWITTER:CARD *** https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <meta name="twitter:site" content="@{{ site.data.socials.twitter.username }}" />
+  <meta name="twitter:creator" content="@{{ site.author.twitter }}">
+  <meta name="twitter:title" content="{% if page.url == "/" %} {{ site.title }} | {{ site.subtitle }} {% else %} {{ page.title }} | {{ site.title }}{% endif %}" />
+
+  <meta name="twitter:description" content="{% if page.description == null %} {{ site.description }}
+  {% else %} {{ page.description }} {% endif %}" />
+
+  <meta name="twitter:image" content="
+  {% if page.thumbnail == null %} {{ site.url }}{{ site.baseurl }}/assets/img/page-thumbs/{{ site.thumbnail }}
+  {% else %}
+  {{ site.url }}{{ site.baseurl }}/assets/img/page-thumbs/{{ page.thumbnail }} {% endif %}" />
+  <!-- to implement this we need some kind of db recording the descriptors of our thumbs -->
+  <meta name="twitter:image:alt" content="" />
+<!-- *** END TWITTER:CARD *** -->
+  

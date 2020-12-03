@@ -1,0 +1,40 @@
+---
+---
+     __  __   __    __       __
+|\/||__||  \ |__   [__  |   |  | | | | |  \___/
+|  ||  ||__/ |__   ___] |__ |__| |_|_| |__  |
+
+Hello human
+
+/* TEAM */
+
+ Developer - Made Slowly
+
+ Author:  {{ site.author.name }}
+ Contact: {{ site.author.email }}
+ URL:     {{ site.author.url }}
+ Twitter: @{{ site.author.twitter }}
+
+ Design - Oxford Product Design
+
+ Author:  Oxford Product Design
+ URL:     http://oxfordproductdesign.com/
+ Contact: info@opd.uk.com
+
+ Site: {{ site.url }}
+ Twitter: @
+ Location: {{ site.postal_add.city }}, {{ site.postal_add.country }}
+
+ Looking to collaborate? Get in touch.
+
+
+/* SITE */
+ 
+ Last update: {{ 'now' | date: "%Y/%m/%d" }}
+
+ Standards: HTML5, CSS3
+
+ Software: Jekyll, Atom, Graphic, Affinity Photo
+
+ Jekyll Plugins: {% for items in site.plugins %}
+  - {{ items }}{% endfor %}

@@ -1,0 +1,80 @@
+# Menu structure for GaitQ.com
+
+# `navigation` is treated as primary and as such is coded into every page, via _includes/navigation/global.html, whilst _sass/navigation/ handles what is seen and where.
+
+# `legals` are included in our sitemaps and displayed selectively, typically in the footer.
+
+navigation:
+
+  - name:   About GaitQ
+    url:    /
+    env: gaitq
+    submenu:
+      - name: Our Story
+        url:  /our_story/
+      - name: Team
+        url:  /team/
+      - name: Advisors
+        url:  /advisors/
+      - name: Partners
+        url:  /partners/
+
+  - name:   People with Parkinson's
+    url:    /patients/
+    env: patients
+    submenu:
+      - name:   Gait freezing
+        url:    /patients/
+
+      - name:   Our solution
+        url:    /patients/
+
+      - name:   Contact
+        url:    /patients/
+
+      - name:   Register for trials
+        url:    /patients/
+
+  - name:   Clinicians & Healthcare
+    url:    /clinicians/
+    env: clinicians
+    submenu:
+      - name:   Our technology
+        url:    /clinicians/
+
+      - name:   The science
+        url:    /clinicians/
+
+      - name:   Get involved
+        url:    /clinicians/
+
+      - name:   Contact
+        url:    /clinicians/
+
+socials:
+
+  - name:   LinkedIn
+    icon:   linkedin
+    username: gaitq
+    url:    https://www.linkedin.com/company/gaitq/
+
+  - name:   Twitter
+    icon:   twitter
+    username: gait_q
+    url:    https://twitter.com/gait_q
+
+  - name:   Facebook
+    icon:   facebook
+    username: GaitQLimited
+    url:    https://www.facebook.com/GaitQLimited
+
+legals:
+
+  - name:   Privacy Policy
+    url:    /privacy-policy/
+
+  - name:   Terms of Use
+    url:    /terms-of-use/
+
+  - name:   Cookie Policy
+    url:    /cookie-policy/
