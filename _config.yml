@@ -18,7 +18,7 @@ keywords:            >-
 
 url:                 "http://gaitq.madeslowly.xyz"
 
-baseurl:             "/navbar"
+baseurl:             ""
 
 # Site author, additional content authors are added in _data/authors.yml
 author:
