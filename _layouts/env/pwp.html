@@ -1,0 +1,61 @@
+---
+layout: default
+---
+
+
+<div class="pwp__mast">
+  <div class="pwp__bg">
+    <div class="pwp__overlay"></div>
+  </div>
+
+
+  <div class="pwp--strap"><h2>
+
+    <span class="pwp--strap-start">
+    {% assign strap = site.data.menu.navigation[0].alt | split: " " %}
+    {% for word in (1..strap.size) %}
+
+      {{ strap[forloop.index0] }}
+      {% if forloop.index == 2 %}
+
+        </span>
+      {% endif %}
+    {% endfor %}
+  </h2></div>
+
+  <div class="pwp__follow"></div>
+
+</div>
+
+<div class="pwp__device--img pwp__device--docked">
+</div>
+
+<div class="pwp__straps pwp__device--strap">
+  <h2>{{ site.data.copy.pwp.title }}</h2>
+  <p>{{ site.data.copy.pwp.description }}</p>
+</div>
+
+<div class=" pwp__grid-wrap">
+
+  <div class="pwp__grid__text pwp__straps">
+
+    {% include /branding/site-logo.svg %}
+
+    <p class=" pwp--guarantee">
+      {{ site.description }}</p>
+
+  </div>
+
+  <div class="pwp__straps pwp__grid_keywords">
+    {% assign keyword = site.data.copy.pwp.keywords | split: " " %}
+    {% for word in (1..keyword.size) %}
+      <p>{{ keyword[forloop.index0] }}</p>
+    {% endfor %}
+  </div>
+
+  <div class="pwp__straps pwp__grid_img"></div>
+
+</div>
+
+<div class="pwp__device--img pwp__device--group">
+</div>

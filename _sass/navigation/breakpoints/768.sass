@@ -1,0 +1,74 @@
+// Navigation styling for breakpoint 768
+
+// Avoid declaring any styling like color etc.
+// These will be decalred in _sass/naviagtion/env/
+
+// Everything here will be included in EVERY .html
+
+@media screen and ( min-width: 768px )
+
+  .navbar
+    height: 5vh
+    background-color: $opd-orange-confidence
+    align-items: center
+
+  .nav-brand
+    display: flex
+    position: absolute
+    max-width: 160px
+    height: 10vh
+    z-index: 999
+    top: 5vh
+    .site-logo
+      position: absolute
+      top: 30%
+      height: 40%
+
+  .nav-list
+    display: flex
+    justify-content: flex-end
+    align-items: center
+    height: inherit
+    top: 0
+    transform: none
+    border-top: none
+    height: 5vh
+    padding: 0
+    background-color: inherit
+
+  .nav-group
+    padding: 0 2rem
+
+  .nav-link
+    align-items: center
+    padding: 0
+    height: auto
+    opacity: 1
+    margin: 0
+
+  .nav-group-link
+    transition: .1s ease-in
+
+  .nav-group-link:hover
+    color: $opd-grey-neutral
+    transition: .2s ease-in
+
+  .nav-group-content
+    //display: flex
+    align-items: center
+    justify-content: flex-end
+    position: absolute
+    top: 5vh
+    left: 0
+    width: 100vw
+    padding: 0
+    height: 10vh
+
+  .nav-group-content .nav-link
+    color: $pure-black
+    margin: 0
+    font-size: $font-size * .9
+    height: $font-size * .9
+
+  .burger
+    display: none

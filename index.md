@@ -1,5 +1,4 @@
 ---
-layout:   landing
-title:
-env:      gaitq
+layout:   env/landing
+env:      landing
 ---

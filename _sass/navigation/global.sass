@@ -1,0 +1,81 @@
+
+// Navigation
+
+$navbar-color: $opd-blue-confidence
+
+$nav-link-color: $white
+
+$nav-link-bg-color: $opd-orange-confidence
+
+$nav-sublink-bg-color: $white
+
+$burger-color: $white
+
+// Global navigation Sass
+
+// Avoid declaring any styling like color etc.
+// These will be decalred in _sass/naviagtion/env/
+
+// Everything here will be included in EVERY .html
+
+.navbar
+  align-items: center
+  display: flex
+  height: $navbar-height
+  justify-content: space-between
+  position: fixed
+  top: 0
+  white-space: nowrap
+  width: 100%
+  z-index: 999
+
+.nav-brand
+  width: 30vw
+  padding-left: 3vw
+  z-index: 2
+  transition: 9s ease-in
+
+  .site-logo *
+    transition: .2s ease-in
+
+.nav-list
+  border-bottom-left-radius: 80px
+  //border-top: solid 1px $white
+  font-size: 1.3rem
+  height: $nav-list-height
+  height: calc( var(--vh, 1vh) * 85 )
+  list-style: none
+  margin: 0
+  margin-block-start: 0
+  padding: 0
+  padding-top: 15vh
+  position: absolute
+  right: 0
+  top: 0
+  transform: translateX(100%)
+  transition: $nav-slider-transition
+  width: 100vw
+
+.nav-link
+  margin: 6vh 15vw
+  opacity: 0
+  text-decoration: none
+  display: flex
+
+.nav-active
+  // we toggle this class in mobile-nav-slider.js on burger click
+  transform: translateX(0%)
+
+.site-logo-active
+  .site__logo
+    .site-logo--curve,
+    .site-logo--legvert,
+    .site-logo--leg45,
+    .site-logo--g,
+    .site-logo--a,
+    .site-logo__i *,
+
+    .site-logo--t,
+    .site-logo--Q
+      fill: $white
+      transition: .9s ease-in

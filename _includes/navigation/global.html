@@ -2,7 +2,7 @@
 
   <div class="nav-brand">
     <a href="{{ site.baseurl }}/">
-    {% include /branding/site-logo-2.svg %}
+    {% include /branding/site-logo.svg %}
     </a>
     <!--
     {% for social in site.data.menu.socials %}
@@ -12,30 +12,34 @@
     {% endfor %}
     -->
   </div>
-  <ul class="nav-list">
 
-    {% for item in site.data.menu.navigation %}
+  {% if page.env == "landing" %}
+  {% else %}
+    <ul class="nav-list">
 
-    <li class="nav-group">
-      <a href="{{ item.url | relative_url }}" class="nav-group-link nav-link {{ item.env }}-group-link">
-        <span>{{ item.name }}</span></a>
+      {% for item in site.data.menu.navigation %}
 
-      <div class="nav-group-content {{ item.env }}-group">
-        {% for sub in item.submenu %}
-        <a class="nav-link sub-link" href="{{ sub.url | relative_url }}">
-          <span>{{ sub.name }}</span></a>
+      <li class="nav-group">
+        <a href="{{ item.url | relative_url }}" class="nav-group-link nav-link {{ item.env }}-group-link">
+          <span>{{ item.name }}</span></a>
 
-        {% endfor %}
-      </div>
+        <div class="nav-group-content {{ item.env }}-group">
+          {% for sub in item.submenu %}
+          <a class="nav-link sub-link" href="{{ sub.url | relative_url }}">
+            <span>{{ sub.name }}</span></a>
 
-    </li>
-    {% endfor %}
+          {% endfor %}
+        </div>
 
-  </ul>
+      </li>
+      {% endfor %}
 
-  <div class="burger">
-    <div class="burger-line-1"></div>
-    <div class="burger-line-2"></div>
-    <div class="burger-line-3"></div>
-  </div>
+    </ul>
+
+    <div class="burger">
+      <div class="burger-line-1"></div>
+      <div class="burger-line-2"></div>
+      <div class="burger-line-3"></div>
+    </div>
+  {% endif %}
 </nav>

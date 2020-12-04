@@ -1,0 +1,119 @@
+
+
+.pwp__mast
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 90vh
+  height: calc( var(--vh, 1vh) * 90 )
+
+.pwp__bg
+  position: relative
+  height: 100%
+  width: 100%
+  background-image: url($baseurl + 'assets/img/landing__pwp-mobile.jpg')
+  background-size: cover
+  opacity: .8
+
+.pwp__overlay
+  position: relative
+  height: 100%
+  width: 100%
+  opacity: .3
+  background-color: $opd-orange-confidence
+
+.pwp--strap
+  position: absolute
+  color: $opd-blue-confidence
+  text-align: center
+
+.pwp--strap-start
+  color: $opd-orange-confidence
+
+.pwp__follow
+  display: flex
+  position: absolute
+  bottom: 3vh
+  width: 30px
+  height: 14vh
+  background-color: $opd-orange-confidence
+  z-index: 2
+  border-radius: 40px
+  color: $white
+  align-items: center
+  justify-content: center
+  &::after
+    content: "\2193"
+    font-size: 20px
+    transform: scaleY(2)
+
+.pwp__device--img
+  background-size: contain
+  background-repeat: no-repeat
+  width: 100%
+  height: 0
+  padding-top: 62.5%
+
+.pwp__device--docked
+  background-image: url($baseurl + 'assets/img/pwp_device_group_docked.png')
+
+.pwp__device--group
+  background-image: url($baseurl + 'assets/img/pwp_device_group.png')
+
+.pwp__straps
+  text-align: center
+  padding: 5rem 2rem
+  background-position: center
+  p
+    padding: 2rem 0
+
+.pwp__device--strap
+  background-color: $opd-blue-trust
+  color: $white
+
+.pwp__grid-wrap
+  display: flex
+  flex-direction: column-reverse
+  width: 100vw
+
+.pwp__grid__text
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
+  width: 100%
+  //min-width: 100vw
+  background-color: $opd-orange-confidence
+  color: $white
+  padding: 4rem 0
+  .site-logo
+    width: 60%
+  .site-logo--curve,
+  .site-logo--legvert,
+  .site-logo--leg45,
+  .site-logo--g,
+  .site-logo--a,
+  .site-logo__i,
+  .site-logo--t,
+  .site-logo--Q
+
+    fill: $white
+
+.pwp__grid_img
+  background-image: url($baseurl + 'assets/img/pwp__grid_img.png')
+  background-size: cover
+  background-repeat: no-repeat
+  padding-top: 66.66666667%
+
+.pwp--guarantee
+  border-top: solid 1px $soft-white
+  width: 80%
+  margin: 3rem 0
+
+.pwp__grid_keywords
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  background-color: $opd-blue-trust
+  p
+    width: 50%

@@ -1,5 +1,6 @@
 const navSlide = ()=>{
   const burger = document.querySelector('.burger');
+  const brand = document.querySelector('.nav-brand');
   const navSlider = document.querySelector('.nav-list');
   const navLinks = document.querySelectorAll('.nav-link');
   const navBar = document.querySelector('.navbar');
@@ -8,6 +9,7 @@ const navSlide = ()=>{
   navBar.addEventListener('click', () => {
     // animate accordinaly
     navSlider.classList.toggle('nav-active');
+    brand.classList.toggle('site-logo-active');
     burger.classList.toggle('burger-active');
     navLinks.forEach((link, index) => {
       if ( link.style.animation ) {

@@ -1,0 +1,55 @@
+
+// Navbar site logo
+// make sure we don't style any other instance so nest with .nav-brand
+.nav-brand
+  .site__logo
+
+    .site-logo--curve
+      fill: $opd-orange-confidence
+    .site-logo--legvert
+      fill: $opd-blue-confidence
+    .site-logo--leg45
+      fill: $opd-blue-trust
+    .site-logo--g,
+    .site-logo--a,
+    .site-logo__i,
+    .site-logo--t
+      fill: $opd-blue-confidence
+    .site-logo--Q
+      fill: $opd-orange-confidence
+
+.nav-list
+  background-color: $nav-list-bg-color
+  a
+    color: $white
+
+// on mobile and within the clinicians env we hide the other submenus and show the gaitq env .nav-group-link
+.clinicians-group, .clinicians-group-link, .patients-group-link, .gaitq-group
+  display: none
+
+
+@media screen and ( min-width: 768px )
+  .clinicians-group-link, .patients-group-link, .pwp-group
+    display: flex
+
+  .nav-group-content
+    background-color: rgba(255,255,255,.4)
+
+  .patients-group
+    display: flex
+    align-items: center
+    width: 100vw
+    height: 15vh
+    left: 0
+    flex-direction: row
+
+  .nav-group-content
+    padding: 0 4vw
+    justify-content: flex-start
+    .nav-link
+      font-weight: 400
+      color: rgb(244, 244, 244)
+      text-transform: uppercase
+      padding: 0 3rem
+      &:hover
+        text-decoration: underline

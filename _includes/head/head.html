@@ -18,18 +18,21 @@
   {% include /head/descriptors/structured-data.html %}
 
   <!-- use local page descriptions if it exist -->
-  <meta name="description" content="
-  {% if page.description %}
-    {{ page.description }}
-  {% else %}
-    {{ site.description }}
-  {% endif %}" />
+  <meta name="description"
+    content="
+      {% if page.description %}
+        {{ page.description }}
+      {% else %}
+        {{ site.description }}
+      {% endif %}" />
 
   <meta name="keywords" content="{{ site.keywords }}" />
 
   <meta name="author" content="{{ site.author.name }}" />
 
-  <meta name="copyright" content="Copyright {{ site.title }} {{ 'now' | date: "%Y" }}" />
+  <meta name="copyright"
+    content="
+      Copyright {{ site.title }} {{ 'now' | date: "%Y" }}" />
 
   <meta name="robots" content="follow" />
 
@@ -40,21 +43,18 @@
   <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}" />
 
   <link rel="preconnect" href="https://fonts.gstatic.com">
+
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  {% include /head/styles/global.html %}
-
   {% if page.env %}
-  {% include /head/styles/conditional.html %}
+  {% include /head/env/conditional.html %}
   {% endif %}
 
-  {% if page.layout == "landing" %}
-  {% include /head/styles/landing.html %}
+  <link rel="stylesheet" type="text/css" title="made slowly has all the style" href="{{ site.baseurl }}/assets/css/gaitq_global.css" media="screen" />
+
+  {% if page.layout == 'register' %}
+  <link rel="stylesheet" type="text/css" title="made slowly has all the style" href="{{ site.baseurl }}/assets/css/gaitq_MailChimp.css" media="screen" />
   {% endif %}
-
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/fonts/fontawesome-free-5.11.2-web/css/all.min.css" media="none" onload="if(media!='all')media='all'" / >
-
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/fonts/fontawesome-free-5.11.2-web/css/all.min.css" media="none" onload="if(media!='all')media='all'" / >
 
   <link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}/{{ site.favicon }}">
 

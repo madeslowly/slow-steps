@@ -8,6 +8,12 @@ layout: compress
 
 {{ content }}
 
-{% include /footer/footer.html %}
+{% if page.env == "landing" %}
+
+{% else %}
+
+  {% include /footer/footer.html %}
+
+{% endif %}
 
 {% include /scripts.html %}
