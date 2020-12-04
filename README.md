@@ -2,9 +2,13 @@
 ---
 # Jekyll project for GaitQ
 
-This repo only deals with the website navigation and structure. We have three distinctive environments, general GaitQ pages, content that is specific to a customer of GaitQ and content for professionals and the technically curious.
+This repo is a copy of GaitQ Navigation which is now depreciated.
 
-## Scaffolding
+## Website Scaffolding
+
+We have three distinctive environments, our landing page, pwp and clinicians.
+
+## Jekyll Scaffolding
 
 How this repo is organised and what the various files are. All posts, layouts, includes, stylesheets, assets, and whatever else is grouped nicely under the root folder. The compiled Jekyll site outputs to `_site/`, which is never pushed to this repo, see https://www.gaitq.madeslowly.xyz/navbar.
 
@@ -47,7 +51,7 @@ https://github.com/madeslowly/GaitQ-Navigation/
 |  |  |
 |  |  ├─ clinicians.html          # Professionals and press
 |  |  ├─ patients.html            # Patients and carers
-|  |  ├─ gaitq.html               # Generic GaitQ, applies to all GaitQ submenu pages
+|  |  ├─ landing.html             # Landing
 |  |
 |  ├─ landing.html                # Landing page. Passed onto default.html after processing
 |  |
