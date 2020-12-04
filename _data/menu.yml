@@ -6,50 +6,33 @@
 
 navigation:
 
-  - name:   About GaitQ
-    url:    /
-    env: gaitq
-    submenu:
-      - name: Our Story
-        url:  /our_story/
-      - name: Team
-        url:  /team/
-      - name: Advisors
-        url:  /advisors/
-      - name: Partners
-        url:  /partners/
-
   - name:   People with Parkinson's
-    url:    /patients/
-    env: patients
+    url:    /pwp/
+    env:    pwp
+    alt:    Living well with Parkinson's
     submenu:
-      - name:   Gait freezing
-        url:    /patients/
+      - name:   GaitOne
+        url:    /pwp/
 
-      - name:   Our solution
-        url:    /patients/
+      - name:   about
+        url:    /pwp/
 
-      - name:   Contact
-        url:    /patients/
+      - name:   Register Interest
+        url:    /pwp-register/
 
-      - name:   Register for trials
-        url:    /patients/
 
   - name:   Clinicians & Healthcare
     url:    /clinicians/
-    env: clinicians
+    env:    clinicians
     submenu:
-      - name:   Our technology
-        url:    /clinicians/
+      - name:   GaitOne
+        url:    /pwp/
 
-      - name:   The science
-        url:    /clinicians/
+      - name:   about
+        url:    /pwp/
 
-      - name:   Get involved
-        url:    /clinicians/
-
-      - name:   Contact
-        url:    /clinicians/
+      - name:   Register Interest
+        url:    /pwp-register/
 
 socials:
 
@@ -75,6 +58,3 @@ legals:
 
   - name:   Terms of Use
     url:    /terms-of-use/
-
-  - name:   Cookie Policy
-    url:    /cookie-policy/
