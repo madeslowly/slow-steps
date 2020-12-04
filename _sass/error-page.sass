@@ -1,0 +1,109 @@
+.error-page
+  background: #5A657A
+  min-height: 85vh
+  padding: 10vh 5vw 5vh
+
+  p,
+  h1
+    color: $white
+
+.robo
+  display: block
+  height: 50vh
+  margin: 0 auto
+  overflow: visible !important
+
+  #robot_1_,
+  #light_1_,
+  #leftEye_1_,
+  #rightEye_1_,
+  #leftArm_1_,
+  #rightArm_1_,
+  #shadow_1_
+    animation-direction: alternate
+    animation-iteration-count: infinite
+
+  #robot_1_,
+  #leftArm_1_,
+  #rightArm_1_,
+  #shadow_1_
+    animation-duration: 1s
+    animation-timing-function: ease-in-out
+
+  #robot_1_
+    animation-name: verticalAnimation
+
+  #light_1_
+    animation-duration: .5s
+    animation-name: blinkLight
+    animation-timing-function: steps(2)
+
+  #leftEye_1_,
+  #rightEye_1_
+    animation-duration: 1.8s
+    animation-name: blinkEye
+    animation-timing-function: linear
+    transform-origin: 50% 50%
+
+  #leftArm_1_
+    animation-name: moveLeftArm
+    transform-origin: 50% 10%
+
+  #rightArm_1_
+    animation-name: moveRightArm
+    transform-origin: 50% 10%
+
+  #shadow_1_
+    animation-name: shadowAnimation
+    transform-origin: 50%
+
+@keyframes wave
+  0%
+    transform: rotate(120deg)
+
+  100%
+    transform: rotate(170deg)
+
+@keyframes moveLeftArm
+  0%
+    transform: rotate(0)
+
+  100%
+    transform: rotate(4deg)
+
+@keyframes moveRightArm
+  0%
+    transform: rotate(0)
+
+  100%
+    transform: rotate(-4deg)
+
+@keyframes shadowAnimation
+  0%
+    opacity: .4
+    transform: scale(1)
+
+  100%
+    opacity: .6
+    transform: scale(1.15)
+
+@keyframes verticalAnimation
+  0%
+    transform: translateY(-10px)
+
+  100%
+    transform: translateY(10px)
+
+@keyframes blinkLight
+  0%
+    opacity: 0
+
+  100%
+    opacity: 1
+
+@keyframes blinkEye
+  0%
+    transform: scaleY(0)
+
+  4%
+    transform: scaleY(1)

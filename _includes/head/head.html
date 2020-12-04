@@ -56,6 +56,10 @@
   <link rel="stylesheet" type="text/css" title="made slowly has all the style" href="{{ site.baseurl }}/assets/css/gaitq_MailChimp.css" media="screen" />
   {% endif %}
 
+  {% if page.layout == 'error-page' %}
+  <link rel="stylesheet" type="text/css" title="made slowly has all the style" href="{{ site.baseurl }}/assets/css/gaitq_errors.css" media="screen" />
+  {% endif %}
+
   <link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}/{{ site.favicon }}">
 
   {% if jekyll.environment == "production" %}
