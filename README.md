@@ -10,7 +10,7 @@ We have three distinctive environments, our landing page, pwp and clinicians.
 
 ## Jekyll Scaffolding
 
-How this repo is organised and what the various files are. All posts, layouts, includes, stylesheets, assets, and whatever else is grouped nicely under the root folder. The compiled Jekyll site outputs to `_site/`, which is never pushed to this repo, see https://www.gaitq.madeslowly.xyz/navbar.
+How this repo is organised and what the various files are. All posts, layouts, includes, stylesheets, assets, and whatever else is grouped nicely under the root folder. The compiled Jekyll site outputs to `_site/`, which is never pushed to this repo, see https://www.gaitq.madeslowly.xyz/.
 
 ```
 https://github.com/madeslowly/GaitQ-Navigation/

@@ -15,7 +15,7 @@ navigation:
         url:    /pwp/
 
       - name:   about
-        url:    /pwp/
+        url:    /pwp-about/
 
       - name:   Register Interest
         url:    /pwp-register/
@@ -26,13 +26,13 @@ navigation:
     env:    clinicians
     submenu:
       - name:   GaitOne
-        url:    /pwp/
+        url:    /clinicians/
 
       - name:   about
-        url:    /pwp/
+        url:    /about-clinicians/
 
       - name:   Register Interest
-        url:    /pwp-register/
+        url:    /clinician-register/
 
 socials:
 
