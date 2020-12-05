@@ -4,19 +4,38 @@
   img:
   position: CEO
   alt:      Background in commercial strategy & early-stage tech start-ups.
+  social:
+    - name: LinkedIn
+      icon: fab fa-linkedin
+      url:  https://www.linkedin.com/in/wtristancollins/
+    - name: Email
+      icon: fas fa-envelope
+      url:  mailto:tristan@gaitq.com
+
 
 - name:     Dr Dongli Li
   img:
   position: VP Technology - Electronics & Patient Interface
   alt:      PhD in Healthcare Innovation. Electronics & patient interface.
-
+  social:
+    - name: LinkedIn
+      icon: fab fa-linkedin
+      url:
 
 - name:     Dr André Hallack
   img:
   position: VP Technology - Software & Analytics
   alt:      PhD in Healthcare Innovation. Machine Learning & Signal Processing.
+  social:
+    - name: LinkedIn
+      icon: fab fa-linkedin
+      url:
 
 - name:     Dr James Cantley
   img:
   position: Advisor
   alt:      Experienced scientist / physiologist.
+  social:
+    - name: LinkedIn
+      icon: fab fa-linkedin
+      url:
