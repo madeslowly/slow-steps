@@ -21,7 +21,7 @@ navigation:
         url:    /pwp-register/
 
 
-  - name:   clinician & Healthcare
+  - name:   Clinicians & Healthcare
     url:    /clinician/
     env:    clinician
     submenu:
