@@ -7,9 +7,9 @@ layout: default
   <h1>{{ strap[0].alt }}</h1>
 </div>
 
-<div class="about__copy">
+<div data-aos="fade-in" class="about__copy">
   {% for items in site.data.copy.about %}
-  <p>{{ items.para }}</p>
+  <p data-aos="fade-in">{{ items.para }}</p>
   {% endfor %}
 </div>
 
@@ -19,10 +19,20 @@ layout: default
   </div>
   <div class="team__members">
     {% for members in site.data.team %}
-    <div class="single--member">
+    <div data-aos="fade-up" class="single--member">
     <h2>{{ members.name }}</h2>
     <h2 class="team--position">{{ members.position }}</h2>
     <p>{{ members.alt }}</p>
+
+    <ul class="team--contacts">
+      {% for socials in members.social %}
+      <li>
+        <a href="{{ socials.url }}">
+          <i class="{{ socials.icon }}"></i>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
   </div>
     {% endfor %}
   </div>
