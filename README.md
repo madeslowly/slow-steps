@@ -13,53 +13,76 @@ We have three distinctive environments, our landing page, pwp and clinicians.
 How this repo is organised and what the various files are. All posts, layouts, includes, stylesheets, assets, and whatever else is grouped nicely under the root folder. The compiled Jekyll site outputs to `_site/`, which is never pushed to this repo, see https://www.gaitq.madeslowly.xyz/.
 
 ```
-https://github.com/madeslowly/GaitQ-Navigation/
+https://github.com/madeslowly/GaitQ/
 |
 ├─ _config.yml/                   # Jekyll build settings, site. ...
 |
 ├─ _data/                         # Site wide data, site.data. ...
+|  |  |
+|  |  ├─ forms/                   # inputs for MailChimp forms, picked up by _includes/forms/mc-register.html
+|  |
+|  ├─ copy.yml                    # Website copy picked up with {{ site.data.copy.ENV.NAME }}
 |  |
 |  ├─ menu.yml                    # Menu structure for GaitQ.com
 |
 ├─ _includes/                     # HTML and Liquid templating
 |  |
+|  ├─ branding/                   # Site branding SVGs
+|  |  |
+|  |  ├─ site__logo.svg           # Site wide logo with CSS classes
+|  |
+|  ├─ errors/                     # Error page SVGs
+|  |  |
+|  |  ├─ robot-403.svg            # 403 - Forbidden
+|  |  |
+|  |  ├─ robot-404.svg            # 404 - Not Found
+|  |  |
+|  |  ├─ robot-405.svg            # 405 - Method Not Allowed
+|  |
+|  ├─ footer/                     # Site wide footers
+|  |  |
+|  |  ├─ footer_full.html         # Multi div footer with sitemaps and contact etc
+|  |  |
+|  |  ├─ footer.html              # Simple single div footer with legal links and copyright
+|  |
+|  ├─ forms/                      # MailChimp scaffolding, pulls data from _data/forms/
+|  |  |
+|  |  ├─ mc-register.html         # Registration form, data from _data/forms/register
+|  |
 |  ├─ head/                       # Header partials
 |  |  |
-|  |  ├─ descriptor/              # Site wide descriptions
+|  |  ├─ descriptor/              # Site wide descriptors
 |  |  |  |
 |  |  |  ├─ og-meta.html
 |  |  |  ├─ structured-data.html
 |  |  |  ├─ twitter-meta.html
 |  |  |    
-|  |  ├─ styles/                  # Global & local stylesheets, loaded in this order.
+|  |  ├─ env/                     # Env <link rel="stylesheet"
 |  |  |  |
-|  |  |  ├─ global.html           # We include gaitq_global.css site wide
 |  |  |  ├─ conditional.html      # Page env: condition --> gaitq_env.css
-|  |  |  ├─ landing.html          # Landing page only --> gaitq_landing.css
 |  |  |
-|  |  ├─ head.html                # Routine to collect header partials, page.env and page.layout dependencies
+|  |  ├─ head.html                # Routine to collect header partials, page.env and page.layout dependencies. We also open <body> here.
 |  |
 |  ├─ navigation/                 # HTML and Liquid templating
 |  |  |
-|  |  ├─ global.html              # <nav> html. Pulls from site.data.menu
+|  |  ├─ global.html              # <nav> html. Pulls from site.data.menu.  Not included in error pages or landing page. Otherwise we currently we pull everything out of menu.navigation and use css to display environmental navigation. This might not be the best (overheads and accessibility).
 |  |
 |  ├─ scripts.html                # JS scripts & closing body & html tags
 |
 ├─ _layouts/                      # HTML and Liquid templating
 |  |
-|  ├─ enviroments/                # Environmental specific layouts, passed onto default.html after processing
+|  ├─ env/                        # Environmental specific layouts, passed onto default.html after processing
 |  |  |
 |  |  ├─ clinicians.html          # Professionals and press
-|  |  ├─ patients.html            # Patients and carers
-|  |  ├─ landing.html             # Landing
-|  |
-|  ├─ landing.html                # Landing page. Passed onto default.html after processing
-|  |
-|  ├─ default.html                # Wraps page content with header, nav and scripts. For all pages, also this is where Jekyll looks if no Front Matter def. passed onto compress.html after processing.
+|  |  ├─ pwp.html                 # Patients and carers
+|  |  ├─ landing.html             # Landing page only
 |  |
 |  ├─ compress.html               # Final step for all pages. Strips html comments, carriage returns and white space.
-|
-├─ _posts/                        # Blog entries, undeveloped
+|  |
+|  ├─ default.html                # Wraps page content with header, nav and scripts. For all pages, also this is where Jekyll looks if no front matter defined. Passed onto compress.html after processing.
+|  |
+|  ├─ error-page.html             # Landing page. Passed onto default.html after processing
+
 |
 ├─ _sass/                         # Sass partials
 |  |

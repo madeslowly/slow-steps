@@ -13,22 +13,24 @@
   width: 100%
   background-image: url($baseurl + 'assets/img/landing__pwp-mobile.jpg')
   background-size: cover
-  opacity: .8
+  opacity: .7
+  filter: grayscale(1) contrast(.2) brightness(1.6)
 
 .pwp__overlay
   position: relative
   height: 100%
   width: 100%
-  opacity: .3
-  background-color: $opd-orange-confidence
+  background-color: $env-primary
 
 .pwp--strap
   position: absolute
-  color: $opd-blue-confidence
+  color: $env-secondary
   text-align: center
+  padding-top: $navbar-height
+
 
 .pwp--strap-start
-  color: $opd-orange-confidence
+  color: $env-primary
 
 .pwp__follow
   display: flex
@@ -36,7 +38,7 @@
   bottom: 3vh
   width: 30px
   height: 14vh
-  background-color: $opd-orange-confidence
+  background-color: $env-primary
   z-index: 2
   border-radius: 40px
   color: $white
@@ -53,6 +55,7 @@
   width: 100%
   height: 0
   padding-top: 62.5%
+  z-index: 99999
 
 .pwp__device--docked
   background-image: url($baseurl + 'assets/img/pwp_device_group_docked.png')
@@ -64,12 +67,12 @@
   text-align: center
   padding: 5rem 2rem
   background-position: center
-  p
+  & > h2
     padding: 2rem 0
 
 .pwp__device--strap
   background-color: $opd-blue-trust
-  color: $white
+  color: $soft-black
 
 .pwp__grid-wrap
   display: flex
@@ -83,19 +86,19 @@
   flex-direction: column
   width: 100%
   //min-width: 100vw
-  background-color: $opd-orange-confidence
+  background-color: $env-primary
   color: $white
   padding: 4rem 0
-  .site-logo
+  .site__logo
     width: 60%
-  .site-logo--curve,
-  .site-logo--legvert,
-  .site-logo--leg45,
-  .site-logo--g,
-  .site-logo--a,
-  .site-logo__i,
-  .site-logo--t,
-  .site-logo--Q
+  .site__logo--curve,
+  .site__logo--legvert,
+  .site__logo--leg45,
+  .site__logo--g,
+  .site__logo--a,
+  .site__logo__i,
+  .site__logo--t,
+  .site__logo--Q
 
     fill: $white
 
@@ -115,5 +118,6 @@
   flex-direction: row
   flex-wrap: wrap
   background-color: $opd-blue-trust
-  p
+  & > *
+    padding: 3rem 0
     width: 50%

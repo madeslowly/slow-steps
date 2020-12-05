@@ -9,7 +9,7 @@ const navSlide = ()=>{
   navBar.addEventListener('click', () => {
     // animate accordinaly
     navSlider.classList.toggle('nav-active');
-    brand.classList.toggle('site-logo-active');
+    brand.classList.toggle('site__logo-active');
     burger.classList.toggle('burger-active');
     navLinks.forEach((link, index) => {
       if ( link.style.animation ) {

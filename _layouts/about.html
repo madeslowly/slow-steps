@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+{% assign strap = site.data.menu.navigation | where: "env" , page.env  %}
+<div class="about__mast">
+  <h1>{{ strap[0].alt }}</h1>
+</div>
+
+<div class="about__copy">
+  {% for items in site.data.copy.about %}
+  <p>{{ items.para }}</p>
+  {% endfor %}
+</div>
+
+<div class="about__team">
+  <div class="team__title">
+    <h1>Team</h1>
+  </div>
+  <div class="team__members">
+    {% for members in site.data.team %}
+    <div class="single--member">
+    <h2>{{ members.name }}</h2>
+    <h2 class="team--position">{{ members.position }}</h2>
+    <p>{{ members.alt }}</p>
+  </div>
+    {% endfor %}
+  </div>
+</div>

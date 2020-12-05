@@ -1,5 +1,4 @@
 ---
-layout:   register
+layout:   about
 env:      pwp
-
 ---

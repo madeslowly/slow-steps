@@ -8,8 +8,7 @@
 @media screen and ( min-width: 768px )
 
   .navbar
-    height: 5vh
-    background-color: $opd-orange-confidence
+    height: $navbar-height
     align-items: center
 
   .nav-brand
@@ -19,7 +18,8 @@
     height: 10vh
     z-index: 999
     top: 5vh
-    .site-logo
+
+    .site__logo
       position: absolute
       top: 30%
       height: 40%
@@ -45,16 +45,28 @@
     height: auto
     opacity: 1
     margin: 0
+    overflow: hidden
 
-  .nav-group-link
-    transition: .1s ease-in
+  // Surround current link with lines
 
-  .nav-group-link:hover
-    color: $opd-grey-neutral
-    transition: .2s ease-in
+  .current-url
+    &:before, &:after
+      content: ""
+      display: inline-block
+      height: 2px
+      position: relative
+      vertical-align: middle
+      width: 6%
+
+    &:before
+      right: 0.5em
+      margin-left: -10%
+
+    &:after
+      left: 0.5em
+      margin-right: -10%
 
   .nav-group-content
-    //display: flex
     align-items: center
     justify-content: flex-end
     position: absolute
@@ -62,13 +74,11 @@
     left: 0
     width: 100vw
     padding: 0
-    height: 10vh
+    height: $secondary-navbar-height
 
   .nav-group-content .nav-link
-    color: $pure-black
     margin: 0
-    font-size: $font-size * .9
-    height: $font-size * .9
+    font-size: 2rem
 
   .burger
     display: none

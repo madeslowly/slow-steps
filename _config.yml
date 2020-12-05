@@ -20,16 +20,6 @@ url:                 "http://gaitq.madeslowly.xyz"
 
 baseurl:             ""
 
-# Site author, additional content authors are added in _data/authors.yml
-author:
-  name:              Made Slowly
-  email:             arran@madeslowly.co.uk
-  url:               https://www.madeslowly.co.uk/
-  twitter:           made_slowly
-  description:       >-
-
-      Made Slowly is the creation of Arran Curran, a freelance developer based in Oxford. I have been developing digital solutions in a variety of enviroments for over 20 years. With my wide range of experience I can deliver an all-in-one solution, so your new website will be smarter and faster all whilst looking awesome (the website, not me). Get in touch and find out how I can help you.
-
 postal_add:
   street:            46 Woodstock Road
   city:              Oxford
@@ -37,13 +27,17 @@ postal_add:
   country:           United Kingdom
   postcode:          OX2 6HT
 
+email:               info@gaitq.com
+
 phone:
 
 opening_hours:       Mo,Tu,We,Th,Fr 09:00-18:00
 
-thumbnail:           default-thumb.jpg
-logo:                "assets/img/page-thumbs/default-thumb.jpg"
+thumbnail:           default-thumb.png
+logo:                "assets/img/page-thumbs/default-thumb.png"
 favicon:             "assets/img/favicon.png"
+
+blog_name:          news
 
 aos-duration:        1200
 aos-easing:          ease-out-sine
@@ -52,6 +46,16 @@ google:
   verification:
   analytics:
   map_api_key:
+
+# Site author, additional content authors can be added in _data/authors.yml
+author:
+  name:              Made Slowly
+  email:             arran@madeslowly.co.uk
+  url:               https://www.madeslowly.co.uk/
+  twitter:           made_slowly
+  description:       >-
+
+      Made Slowly is the creation of Arran Curran, a freelance developer based in Oxford. I have been developing digital solutions in a variety of enviroments for over 20 years. With my wide range of experience I can deliver an all-in-one solution, so your new website will be smarter and faster all whilst looking awesome (the website, not me). Get in touch and find out how I can help you.
 
 # Build settings
 
@@ -73,7 +77,7 @@ kramdown:
     default_lang: html
 
 paginate:            8
-paginate_path:       /news/page-:num/
+paginate_path:       /{{ site.blog_name }}/page-:num/
 permalink:           /news/:title/
 
 plugins:

@@ -1,0 +1,20 @@
+
+// Color breakpoint function, unlikely to involve more than navbar stuff.
+
+// in assets/css/gaitq_env.sass we import this AFTER
+//  @import 'colors/env/env.sass'
+
+@media screen and ( min-width: 768px )
+
+  .navbar
+    background-color: $env-primary
+
+  .nav-group-content
+    background-color: $secondary_navbar_color
+
+    > *
+      color: $env_primary
+
+  .current-url
+    &:before, &:after
+      background-color: $env_primary

@@ -1,0 +1,44 @@
+
+.about__mast
+  display: flex
+  justify-content: center
+  align-items: center
+  text-align: center
+  height: $mobile-navbar-height * 3
+  padding-top: $mobile-navbar-height
+  color: $white
+  background-color: rgba($env-primary, .8)
+
+.about__copy
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  text-align: center
+  color: $white
+  padding: 5rem 2rem
+  background-color: $env-primary
+  & > *
+    padding: 4rem 0
+
+.about__team
+  display: flex
+
+.team__title
+  //width: 10vw
+  text-align: right
+  padding: 10rem 0
+  background-color: rgba($env-primary, .8)
+  & > *
+    transform: rotate(-90deg)
+    color: $white
+
+.team__members
+  padding: 10rem 2rem
+  color: $env-secondary
+
+.single--member
+  padding-bottom: 8rem
+
+.team--position
+  color: $light-grey

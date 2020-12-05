@@ -28,9 +28,9 @@
     "@id":"{{ site.url }}{{ site.baseurl }}/#website",
     "url": "{{ site.url }}{{ site.baseurl }}/",
     "sameAs":[
-      "mailto:{{ site.author.email }}",
-      "{{ site.data.socials.twitter.url }}{{ site.data.socials.twitter.username }}/",
-      "{{ site.data.socials.facebook.url }}{{ site.data.socials.facebook.username }}/" ],
+      "mailto:{{ site.email }}",
+      "{{ site.data.menu.socials.twitter.url }}/",
+      "{{ site.data.menu.socials.facebook.url }}/" ],
     "name": "{{ site.title }} | {{ site.subtitle }}",
     "description": "{{ site.description }}",
     "image": "{{ site.url }}{{ site.baseurl }}/assets/img/page-thumbs/{{ site.thumbnail }}",
@@ -40,7 +40,7 @@
       "@context": "http://schema.org",
       "name": "{{ site.author.name }}",
       "description": "{{ site.author.description }}",
-      "image": "{{ site.url }}{{ site.baseurl }}/assets/img/page-thumbs/{{ site.thumbnail }}"} ]
+      "image": "{{ site.author. url }}/assets/img/page-thumbs/default-thumb.jpg"} ]
      } , {
     /* WePage */
     /* var */
@@ -60,8 +60,8 @@
 { "@context": "http://schema.org",
   "@type": "Organization",
   "url": "{{ site.url }}{{ site.baseurl }}/",
-  /*only applies to registered business
-  "legalName": "{{ site.title }}", */
+  /*only applies to registered business */
+  "legalName": "{{ site.title }} Limited",
   "description": "{{ site.description }}",
   "image": "{{ site.url }}{{ site.baseurl }}/assets/img/page-thumbs/{{ site.thumbnail }}",
   "logo": "{{ site.url }}{{ site.baseurl }}/{{ site.logo }}",
@@ -75,5 +75,5 @@
   "telephone": "{{ site.phone }}",
   "sameAs":[
     "mailto:{{ site.author.email }}",
-    "{{ site.data.socials.twitter.url }}{{ site.data.socials.twitter.username }}/",
-    "{{ site.data.socials.facebook.url }}{{ site.data.socials.facebook.username }}/" ] } </script>
+    "{{ site.data.menu.socials.twitter.url }}/",
+    "{{ site.data.socials.menu.facebook.url }}/" ] } </script>

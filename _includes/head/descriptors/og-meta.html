@@ -4,27 +4,27 @@
 
 <!-- Adds article properties for blog posts -->
 <meta property="og:type" content="
-  {% if page.url contains '/slow-blog/' %}
-  article" />
-  <meta
-  property=article:publisher
-  content="{{ site.data.socials.facebook.url }}{{ site.data.socials.facebook.username }}/">
-  <meta
-  property=article:author
-  content="{{ site.url }}">
-  <meta
-  property=article:section
-  content="News from {{ site.title }}" >
-  <meta
-  property=article:published_time
-  content="{{ page.date | date_to_xmlschema }}">
-  <meta
-  property=article:modified_time
-  content="{{ 'now' | date_to_xmlschema }}">
-  <!-- this just pulls the first cat -->
-  <meta
-  property=article:tag
-  content="{{ page.categories }}">
+  {% if page.url contains '/{{ site.blog_name }}/' %}
+    article" />
+    <meta
+    property=article:publisher
+    content="{{ site.data.menu.socials.facebook.url }}{{ site.data.menu.socials.facebook.username }}/">
+    <meta
+    property=article:author
+    content="{{ site.url }}">
+    <meta
+    property=article:section
+    content="News from {{ site.title }}" >
+    <meta
+    property=article:published_time
+    content="{{ page.date | date_to_xmlschema }}">
+    <meta
+    property=article:modified_time
+    content="{{ 'now' | date_to_xmlschema }}">
+    <!-- this just pulls the first cat -->
+    <meta
+    property=article:tag
+    content="{{ page.categories }}">
   {% else %}
   website" />
 {% endif %}

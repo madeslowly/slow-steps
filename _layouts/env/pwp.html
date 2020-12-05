@@ -4,24 +4,27 @@ layout: default
 
 
 <div class="pwp__mast">
-  <div class="pwp__bg">
-    <div class="pwp__overlay"></div>
+  <div class="pwp__overlay">
+    <div class="pwp__bg">
+    </div>
   </div>
 
 
-  <div class="pwp--strap"><h2>
+  <div class="pwp--strap">
+    <h1>
 
-    <span class="pwp--strap-start">
-    {% assign strap = site.data.menu.navigation[0].alt | split: " " %}
-    {% for word in (1..strap.size) %}
+      <span class="pwp--strap-start">
+        {% assign strap = site.data.menu.navigation[0].alt | split: " " %}
+        {% for word in (1..strap.size) %}
 
-      {{ strap[forloop.index0] }}
-      {% if forloop.index == 2 %}
+        {{ strap[forloop.index0] }}
+        {% if forloop.index == 2 %}
 
-        </span>
+      </span>
       {% endif %}
-    {% endfor %}
-  </h2></div>
+      {% endfor %}
+    </h1>
+  </div>
 
   <div class="pwp__follow"></div>
 
@@ -31,8 +34,8 @@ layout: default
 </div>
 
 <div class="pwp__straps pwp__device--strap">
-  <h2>{{ site.data.copy.pwp.title }}</h2>
-  <p>{{ site.data.copy.pwp.description }}</p>
+  <h1>{{ site.data.copy.pwp.title }}</h1>
+  <h2>{{ site.data.copy.pwp.description }}</h2>
 </div>
 
 <div class=" pwp__grid-wrap">
@@ -41,15 +44,15 @@ layout: default
 
     {% include /branding/site-logo.svg %}
 
-    <p class=" pwp--guarantee">
-      {{ site.description }}</p>
+    <h2 class=" pwp--guarantee">
+      {{ site.description }}</h2>
 
   </div>
 
   <div class="pwp__straps pwp__grid_keywords">
     {% assign keyword = site.data.copy.pwp.keywords | split: " " %}
     {% for word in (1..keyword.size) %}
-      <p>{{ keyword[forloop.index0] }}</p>
+    <h2>{{ keyword[forloop.index0] }}</h2>
     {% endfor %}
   </div>
 

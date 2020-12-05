@@ -21,15 +21,15 @@ navigation:
         url:    /pwp-register/
 
 
-  - name:   Clinicians & Healthcare
-    url:    /clinicians/
-    env:    clinicians
+  - name:   clinician & Healthcare
+    url:    /clinician/
+    env:    clinician
     submenu:
       - name:   GaitOne
-        url:    /clinicians/
+        url:    /clinician/
 
       - name:   about
-        url:    /about-clinicians/
+        url:    /clinician-about/
 
       - name:   Register Interest
         url:    /clinician-register/

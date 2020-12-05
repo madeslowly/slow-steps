@@ -1,20 +1,15 @@
+{% if page.layout == "env/landing" or page.layout == "error-page" %}
+  {% else %}
 <nav class="navbar">
 
   <div class="nav-brand">
     <a href="{{ site.baseurl }}/">
     {% include /branding/site-logo.svg %}
     </a>
-    <!--
-    {% for social in site.data.menu.socials %}
-    <a class="nav-socials nav-{{ social.icon }}" href="{{ social.url }}{{ social[1].username }}/">
-    <i class="fab fa-{{ social.icon }}" title="{{ site.title }} {{ social.icon | capitalize }} account"></i>
-    </a>
-    {% endfor %}
-    -->
   </div>
 
-  {% if page.env == "landing" %}
-  {% else %}
+  <!-- No navigation on landing, we split the diplay with <a's pointing to pwp or clinician. This is done in the landing.html layout. -->
+
     <ul class="nav-list">
 
       {% for item in site.data.menu.navigation %}
@@ -25,7 +20,13 @@
 
         <div class="nav-group-content {{ item.env }}-group">
           {% for sub in item.submenu %}
-          <a class="nav-link sub-link" href="{{ sub.url | relative_url }}">
+          <a
+            class="
+              nav-link
+              sub-link
+              {% if page.url == sub.url %}
+              current-url
+              {% endif %}" href="{{ sub.url | relative_url }}">
             <span>{{ sub.name }}</span></a>
 
           {% endfor %}
