@@ -86,6 +86,7 @@ plugins:
   - jekyll-autoprefixer
   - jekyll-sitemap
   - jekyll-target-blank
+  - jekyll-image-size
 
 defaults:
   -
