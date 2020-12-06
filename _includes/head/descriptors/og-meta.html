@@ -32,20 +32,25 @@
 <meta property=og:updated_time content="{{ 'now' | date_to_xmlschema }}">
 
 <!-- use local page thumbnail if it exist -->
-<meta property="og:image" content="
-{% if page.thumbnail == null %}{{ site.url }}{{ site.baseurl }}/assets/img/page-thumbs/{{ site.thumbnail }}
-{% else %}{{ site.url }}{{ site.baseurl }}/assets/img/page-thumbs/{{ page.thumbnail }} {% endif %}" />
 
-<!-- look into https://github.com/envygeeks/jekyll-assets -->
-<!--
-<meta property="og:image:type" content="image/jpeg" />
-<meta property="og:image:width" content="" />
-<meta property="og:image:height" content="" />
--->
-<!-- to implement this we need some kind of db recording the descriptors of our thumbs -->
-<!--
-<meta property="og:image:alt" content="" />
--->
+{% if page.thumbnail == null %}
+{% assign image = 'default-thumb.png' %}
+{% else %}
+{% assign image = page.thumbnail %}
+{% endif %}
+
+{% assign image_url = site.url | append: '/' | append: site.baseurl | append: image_path %}
+
+<meta property="og:image" content="{{ image_url }}" />
+
+<meta property="og:image:type" content="image/{{ image | split: '.' | last }}" />
+
+{% imagesize image_url:opengraph %}
+
+<!-- to implement this properly we need some kind of db recording the descriptors of our thumbs -->
+
+<meta property="og:image:alt" content="{{ site.subtitle }}" />
+
 <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}" />
 
 <meta property="og:description" content="
