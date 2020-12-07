@@ -1,24 +1,52 @@
-# pwp enviroment copy/
+##############################################
+# pwp enviroment -              gaitq.com/pwp/
+##############################################
 pwp:
 
-# Title at the top of pwp home page
+  # Title at the top of pwp home page
   title:        >-
 
     Fit & Forget
 
 
-# Strapline, sitting directly below the title.
+  # Strapline, sitting directly below the title.
   description:  >-
 
     No more worries about gait freezing. Where you want to go, when you want to go.
 
 
-# Four keywords to describe GaitQ. Keep this list small and seprated by space. We for loop through the list and diaplay all.
+  # Keep to an even number of words and seprated by ', '.
   keywords:     >-
 
-    Saftey Freedom Discretion Control
+    Saftey, Freedom, Discretion, Control
 
-# Description of GaitQ, used at the top of /env/about, imediatley below the site wide strapline, site.subtile
+
+##############################################
+# clinician enviroment -  gaitq.com/clinician/
+##############################################
+clinician:
+
+  # Title at the top of clinician home page
+  title:        >-
+
+    Optimizing Parkinsons's treatment by keeping clinicians in the loop
+
+
+  # Strapline, sitting directly below the title.
+  description:  >-
+
+    More data, better treaetment
+
+  # Straplines to sell GaitQ to clinicians. Keep this list small and seprated by ', '. We for loop through the list and diaplay all.
+  keywords:     >-
+
+    See activity levels, Track FoG events, Adjust cueing options
+
+
+##############################################
+# Generic enviroments
+##############################################
+# Description of GaitQ, used at the top of gaitq.com/env/contact, imediatley below the site wide strapline, site.subtile.
 about:
 
   - para:      >-
