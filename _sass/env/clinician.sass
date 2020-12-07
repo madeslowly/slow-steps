@@ -1,0 +1,152 @@
+
+
+.clinician__mast
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  height: 65vh
+  height: calc( var(--vh, 1vh) * 65 )
+
+.clinician__bg
+  position: relative
+  height: 100%
+  width: 100%
+  background-image: url($baseurl + 'assets/img/landing__clinician-mobile.jpg')
+  background-size: cover
+  opacity: .7
+  filter: grayscale(1) contrast(.2) brightness(1.6)
+
+.clinician__overlay
+  position: relative
+  height: 70%
+  width: 100%
+  background-color: $env-primary
+
+.clinician--strap
+  display: flex
+  justify-content: space-around
+  flex-direction: column
+  //position: absolute
+  height: 30%
+  width: 100%
+  color: $white
+  text-align: center
+  padding-bottom: 3vh
+  background-color: $env-primary
+
+
+.clinician--strap-start
+  color: $env-primary
+
+.clinician__follow
+  display: flex
+  position: absolute
+  top: 59.5vh
+  width: 30px
+  height: 11vh
+  background-color: $env-primary
+  z-index: 2
+  border-radius: 30px
+  color: $white
+  align-items: center
+  justify-content: center
+  &::after
+    content: "\2193"
+    font-size: 20px
+    transform: scaleY(2)
+
+.clinician__device--img
+  background-size: cover
+  background-repeat: no-repeat
+  width: 100%
+  height: 0
+  padding-top: 62.5%
+  z-index: 99999
+
+.clinician__device--docked
+  background-image: url($baseurl + 'assets/img/pwp_device_group_docked.png')
+
+.clinician__device--group
+  background-image: url($baseurl + 'assets/img/pwp_device_group.png')
+  svg
+    position: absolute
+    transform: translateY(-100%)
+    //-height: 100vh
+
+.clinician__straps
+  text-align: center
+  //padding: 5rem 2rem
+  background-position: center
+  color: $env-secondary
+  & > h2
+    //padding: 2rem 0
+
+.clinician__device--strap
+  background-color: $opd-blue-trust
+  padding: 5rem 2rem
+  & > h2
+    padding: 2rem 0
+
+.clinician__grid-wrap
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+
+  width: 100vw
+
+.clinician__grid-col-l, .clinician__grid-col-r
+  height: 100%
+  width: 50%
+
+.clinician__grid__text
+  display: flex
+  align-items: center
+  justify-content: space-between
+  flex-direction: column
+  width: 100%
+  background-color: $env-primary
+  color: $white
+  //height: 10rem
+  padding: 5rem 0
+
+.clinician__grid--keywords
+  padding: 1rem 0
+
+.action__call
+  width: 140px
+  height: 40px
+  background-color: $opd-blue-trust
+  margin: 4rem 0 0
+  border-radius: 20px
+  font-size: 12px
+  font-weight: 500
+  display: flex
+  align-items: center
+  justify-content: center
+  color: $black
+  &::after
+    content: "Get Involved"
+
+
+
+.clinician__grid_img
+  background-image: url($baseurl + 'assets/img/pwp__grid_img.png')
+  background-size: cover
+  background-repeat: no-repeat
+  padding-top: 150%
+  filter: grayscale(1) contrast(.8) brightness(.9) sepia(.4) hue-rotate(180deg)
+
+.clinician--guarantee
+  border-top: solid 1px $soft-white
+  width: 80%
+  margin: 3rem 0
+
+.clinician__grid_keywords
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  background-color: $opd-blue-trust
+  & > *
+    padding: 3rem 0
+    width: 50%

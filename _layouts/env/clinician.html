@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<div class="clinician__mast">
+
+  <div class="clinician__overlay">
+    <div class="clinician__bg">
+    </div>
+  </div>
+
+  <div class="clinician--strap">
+    <p>{{ site.data.copy.clinician.title }}</p>
+    <p data-aos="fade-up">{{ site.data.copy.clinician.description }}</p>
+  </div>
+
+  <div class="clinician__follow"></div>
+
+</div>
+
+<div data-aos="fade-in" data-aos-anchor-placement="top-center" class="clinician__device--img clinician__device--docked">
+</div>
+
+
+<div class="clinician__grid-wrap">
+
+  <div class="clinician__grid-col-l">
+    <div class="clinician__straps clinician__grid_img"></div>
+  </div>
+  <div class="clinician__grid-col-r">
+    <div class="clinician__straps "></div>
+  </div>
+
+  <div class="clinician__grid__text">
+
+      {% assign keyword = site.data.copy.clinician.keywords | split: ", " %}
+      {% for word in (1..keyword.size) %}
+      <p class="clinician__grid--keywords" data-aos="fade-in" data-aos-anchor-placement="top-bottom">{{ keyword[forloop.index0] }}</p>
+      {% endfor %}
+
+      <div class="action__call"></div>
+  </div>
+
+</div>
