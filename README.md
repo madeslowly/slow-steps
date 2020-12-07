@@ -10,18 +10,20 @@ We have three distinctive environments, our landing page, pwp and clinician.
 
 ## Jekyll Scaffolding
 
-How this repo is organised and what the various files are. All posts, layouts, includes, stylesheets, assets, and whatever else is grouped nicely under the root folder. The compiled Jekyll site outputs to `_site/`, which is never pushed to this repo, see https://www.gaitq.madeslowly.xyz/.
+How this repo is organised and what the various files are. All posts, layouts, includes, stylesheets, assets, and whatever else is grouped nicely under the root folder. The compiled Jekyll site outputs to `_site/`, which is never pushed to this repo, see https://www.gaitq.madeslowly.xyz/. General flow starts with a `.md` file in our root. With Front Matter, we declare our layout which points to a structural `.html` file in `_layouts`. From here, the layout file can call in data from our `_config.yml` with `{{ site.*variable* }}` and from any of our `YAML` files in `_data/file.yml` with `{{ site.data.*file*.*variable* }}`. The layout can also pull in other structural html snippets from `_includes` with `{% include *relative/path*/file.html %}`.
+
+It is worth noting that _include files can also perform the tasks just described. So, for example, when the `deafult.html` layout is executed (the penultimate step for *all* `.md` files), the `head.html` snippet is called, which in turn calls `og-meta.html`. Based on our sites settings and any relevant Front Matter belonging to the calling file, `og-meta.html` compiles all our `og:meta` tags and passes them to `head.html` which after adding further code, passes on to our default layout where it is placed at the top of our webpages `html`.
 
 ```
 https://github.com/madeslowly/GaitQ/
 |
-├─ _config.yml/                   # Jekyll build settings, site. ...
+├─ _config.yml/                   # Jekyll build settings and data, site.variable
 |
-├─ _data/                         # Site wide data, site.data. ...
+├─ _data/                         # Site wide data, site.data.variable
 |  |  |
-|  |  ├─ forms/                   # inputs for MailChimp forms, picked up by _includes/forms/mc-register.html
+|  |  ├─ forms/                   # inputs for MailChimp forms, picked up by _includes/forms/
 |  |
-|  ├─ copy.yml                    # Website copy picked up with {{ site.data.copy.ENV.NAME }}
+|  ├─ copy.yml                    # Website copy picked up with {{ site.data.copy.variable }}
 |  |
 |  ├─ menu.yml                    # Menu structure for GaitQ.com
 |
@@ -29,7 +31,7 @@ https://github.com/madeslowly/GaitQ/
 |  |
 |  ├─ branding/                   # Site branding SVGs
 |  |  |
-|  |  ├─ site__logo.svg           # Site wide logo with CSS classes
+|  |  ├─ site__logo.svg           # Site wide logo with CSS classes, see front matter comments for class details.
 |  |
 |  ├─ errors/                     # Error page SVGs
 |  |  |
@@ -49,9 +51,9 @@ https://github.com/madeslowly/GaitQ/
 |  |  |
 |  |  ├─ mc-register.html         # Registration form, data from _data/forms/register
 |  |
-|  ├─ head/                       # Header partials
+|  ├─ head/                       # Header partials, everything inside our <html> tags comes from here.
 |  |  |
-|  |  ├─ descriptor/              # Site wide descriptors
+|  |  ├─ descriptor/              # Site wide descriptors, basically this is where much of our SEO occurs.
 |  |  |  |
 |  |  |  ├─ og-meta.html
 |  |  |  ├─ structured-data.html
@@ -65,7 +67,7 @@ https://github.com/madeslowly/GaitQ/
 |  |
 |  ├─ navigation/                 # HTML and Liquid templating
 |  |  |
-|  |  ├─ global.html              # <nav> html. Pulls from site.data.menu.  Not included in error pages or landing page. Otherwise we currently we pull everything out of menu.navigation and use css to display environmental navigation. This might not be the best (overheads and accessibility).
+|  |  ├─ global.html              # <nav> html. Pulls from site.data.menu.  Not included in error pages or landing page. Otherwise we pull everything out of menu.navigation and use css to display environmental navigation. This might not be the best (overheads and accessibility).
 |  |
 |  ├─ scripts.html                # JS scripts & closing body & html tags
 |
@@ -73,7 +75,7 @@ https://github.com/madeslowly/GaitQ/
 |  |
 |  ├─ env/                        # Environmental specific layouts, passed onto default.html after processing
 |  |  |
-|  |  ├─ clinician.html          # Professionals and press
+|  |  ├─ clinician.html           # Professionals and press
 |  |  ├─ pwp.html                 # Patients and carers
 |  |  ├─ landing.html             # Landing page only
 |  |
@@ -104,7 +106,7 @@ https://github.com/madeslowly/GaitQ/
 |  |  ├─ burger.sass              # Mobile burger
 |  |  ├─ mobile.sass              # Default nav CSS
 |  |  ├─ desktop.sass             # Breakpoint 768 CSS
-|  |  ├─ clinician.sass          # clinician nav CSS & Breakpoint 768
+|  |  ├─ clinician.sass           # clinician nav CSS & Breakpoint 768
 |  |  ├─ patients.sass            # Patients nav CSS & Breakpoint 768
 |  |  ├─ gaitq.sass               # GaitQ nav CSS & Breakpoint 768
 |  |
@@ -129,7 +131,7 @@ https://github.com/madeslowly/GaitQ/
 |  |
 |  ├─ JS/                         # All our JavaScript
 |  |
-|  ├─ vendor/                     # Third party CSS and JS code, never edit these, bad things WILL happen! If we need to overwrite something we add our own CSS or JS to do so.
+|  ├─ vendor/                     # Third party CSS and JS code, never edit these, bad things WILL happen! If we need to overwrite something we have to add our own CSS or JS to do so.
 ```
 ---
 
