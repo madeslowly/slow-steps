@@ -33,7 +33,7 @@ layout: default
 
 <div class="pwp__straps pwp__device--strap">
   <h1>{{ site.data.copy.pwp.title }}</h1>
-  <h2 data-aos="fade-up">{{ site.data.copy.pwp.description }}</h2>
+  <h2 data-aos="fade-in">{{ site.data.copy.pwp.description }}</h2>
 </div>
 
 <div class="pwp__grid-wrap">
@@ -42,13 +42,13 @@ layout: default
   <div class="pwp__grid__text pwp__straps">
     <div data-aos="fade-right">
       {% include branding/site-logo.svg %}</div>
-    <h2 data-aos="fade-in" data-aos-anchor-placement="top-center" class="pwp--guarantee">
+    <h2 data-aos="fade-in" class="pwp--guarantee">
       {{ site.description }}</h2></div>
 
   <div class="pwp__straps pwp__grid_keywords">
-    {% assign keyword = site.data.copy.pwp.keywords | split: " " %}
+    {% assign keyword = site.data.copy.pwp.keywords | split: ", " %}
     {% for word in (1..keyword.size) %}
-    <h2 data-aos="fade-up">{{ keyword[forloop.index0] }}</h2>
+    <h2 data-aos="fade-in">{{ keyword[forloop.index0] }}</h2>
     {% endfor %}</div>
   </div>
 
