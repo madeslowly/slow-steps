@@ -39,7 +39,7 @@ favicon:             "assets/img/favicon.png"
 
 blog_name:          news
 
-aos-duration:        1200
+aos-duration:        1000
 aos-easing:          ease-out-sine
 
 google:

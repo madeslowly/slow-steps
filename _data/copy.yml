@@ -1,16 +1,24 @@
+# pwp enviroment copy/
 pwp:
+
+# Title at the top of pwp home page
   title:        >-
 
     Fit & Forget
 
+
+# Strapline, sitting directly below the title.
   description:  >-
 
     No more worries about gait freezing. Where you want to go, when you want to go.
 
+
+# Four keywords to describe GaitQ. Keep this list small and seprated by space. We for loop through the list and diaplay all.
   keywords:     >-
 
     Saftey Freedom Discretion Control
 
+# Description of GaitQ, used at the top of /env/about, imediatley below the site wide strapline, site.subtile
 about:
 
   - para:      >-

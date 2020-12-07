@@ -6,7 +6,7 @@ This repo is a copy of GaitQ Navigation which is now depreciated.
 
 ## Website Scaffolding
 
-We have three distinctive environments, our landing page, pwp and clinicians.
+We have three distinctive environments, our landing page, pwp and clinician.
 
 ## Jekyll Scaffolding
 
@@ -73,7 +73,7 @@ https://github.com/madeslowly/GaitQ/
 |  |
 |  ├─ env/                        # Environmental specific layouts, passed onto default.html after processing
 |  |  |
-|  |  ├─ clinicians.html          # Professionals and press
+|  |  ├─ clinician.html          # Professionals and press
 |  |  ├─ pwp.html                 # Patients and carers
 |  |  ├─ landing.html             # Landing page only
 |  |
@@ -81,10 +81,22 @@ https://github.com/madeslowly/GaitQ/
 |  |
 |  ├─ default.html                # Wraps page content with header, nav and scripts. For all pages, also this is where Jekyll looks if no front matter defined. Passed onto compress.html after processing.
 |  |
-|  ├─ error-page.html             # Landing page. Passed onto default.html after processing
-
+|  ├─ error-page.html             # Landing page. Passed onto default.html after processing.
+|
+├─ _plugins/                      # Custom Ruby plugins
+|  |
+|  ├─ ImageSizeFilter.rb/         # IN DEVELOPMENT - get image size on jekyll build so we can precisely control img positions and any svg overlays. We can also use the data in og:image:
 |
 ├─ _sass/                         # Sass partials
+|  |
+|  ├─ colors/                     # Site color settings
+|  |  |
+|  |  ├─ env/                     # Environmental specific colors
+|  |  |  |
+|  |  |  ├─ pwp.sass              # pwp environmental colors
+|  |  |
+|  |  ├─ _variable.sass           # <nav> settings
+|  |  ├─ burger.sass              # Mobile burger
 |  |
 |  ├─ navigation/                 # navbar partials
 |  |  |
@@ -92,7 +104,7 @@ https://github.com/madeslowly/GaitQ/
 |  |  ├─ burger.sass              # Mobile burger
 |  |  ├─ mobile.sass              # Default nav CSS
 |  |  ├─ desktop.sass             # Breakpoint 768 CSS
-|  |  ├─ clinicians.sass          # Clinicians nav CSS & Breakpoint 768
+|  |  ├─ clinician.sass          # clinician nav CSS & Breakpoint 768
 |  |  ├─ patients.sass            # Patients nav CSS & Breakpoint 768
 |  |  ├─ gaitq.sass               # GaitQ nav CSS & Breakpoint 768
 |  |
@@ -200,6 +212,6 @@ group_name:
         url:  /pageURL.html
 ```
 
-We for loop  `group_name` = `navigation`. The `env:` controls where and how we see the navigation link and it's submenu contents. Currently we have three allowable `envs:`, `gaitq`, `clinicians` and `patients`.
+We for loop  `group_name` = `navigation`. The `env:` controls where and how we see the navigation link and it's submenu contents. Currently we have three allowable `envs:`, `gaitq`, `clinician` and `patients`.
 
 ---

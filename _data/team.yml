@@ -1,4 +1,14 @@
-# Team names, icons and social links
+# GaitQ team members, used to generate /about
+
+# - name:     duh?
+#   img:      local path to image, assets/...
+#   position: Position held
+#   alt:      Short (!) description of member's role
+#   social:
+#     - name: Branded name of social, ie LinkedIn
+#       icon: Awesome Font nomenclecture of icon, ie fab fa-linkedin, see https://fontawesome.com.
+#       url:  URL of users social account, ie https://www.linkedin.com/in/USERNAME
+
 
 - name:     Dr Tristan Collins
   img:
@@ -11,7 +21,6 @@
     - name: Email
       icon: fas fa-envelope
       url:  mailto:tristan@gaitq.com
-
 
 - name:     Dr Dongli Li
   img:
