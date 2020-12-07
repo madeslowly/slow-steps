@@ -39,13 +39,15 @@
 {% assign image = page.thumbnail %}
 {% endif %}
 
-{% assign image_url = site.url | append: '/' | append: site.baseurl | append: image_path %}
+{% assign image_url = site.url | append: '/' | append: site.baseurl | append: 'assets/img/page-thumbs/' | append: image %}
+
+{% assign image_path = 'assets/img/page-thumbs/' | append: image %}
 
 <meta property="og:image" content="{{ image_url }}" />
 
 <meta property="og:image:type" content="image/{{ image | split: '.' | last }}" />
 
-{% imagesize image_url:opengraph %}
+{% imagesize image_path:opengraph %}
 
 <!-- to implement this properly we need some kind of db recording the descriptors of our thumbs -->
 
