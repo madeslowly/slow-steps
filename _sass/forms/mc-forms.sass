@@ -1,13 +1,19 @@
 .form__wrap
-  border: solid 1px $soft-black
   padding: 5rem
-  background-color: $soft-white
-  border-radius: 40px
+  background-color: $pure-white
+  border-radius: 20px
+
 
 .form__block
   display: flex
   flex-flow: wrap
   justify-content: space-between
+
+.form--title
+  padding-bottom: 2rem
+
+.form--strap
+  padding-bottom: 5rem
 
 .form__elem
   display: flex
@@ -24,7 +30,7 @@
   text-indent: 1rem
 
   &:focus
-    background-color: $opd-blue-trust
+    background-color: rgba($env-primary , .1)
 
 .form--textarea
   padding-left: 1rem
@@ -42,7 +48,6 @@
   flex-wrap: nowrap
   flex-direction: row
   justify-content: space-between
-  width: 100%
   p
     padding: 0
     margin: 0
@@ -94,7 +99,7 @@ input.switch
   width: 40px
   height: 24px
   border-radius: 12px
-  background-color: $opd-orange-confidence
+  background-color: $env-primary
   box-shadow: inset 0px 0px 4px -2px rgba(0, 0, 0, 0.1)
   cursor: pointer
   outline: none
@@ -120,7 +125,7 @@ input.switch
       background: blue
       top: calc(50% - 4px)
       left: calc(50% - 1px)
-      background: $opd-orange-confidence
+      background: $env-primary
 
 .styled-checkbox:checked
   background: $opd-orange-confidence
@@ -131,8 +136,44 @@ input.switch
     &:before
       background: $opd-blue-trust
 
+.content__gdpr
+  display: flex
+  flex-wrap: wrap
 
+.content__gdprBlock
+  border-top: solid 2px $env-primary
 
+  fieldset
+    border: none
+    padding: 0
+    width: 100%
+
+.gdpr--title
+  padding: 4rem 0 2rem
+
+.content__gdprLegal
+  font-size: 1.8rem
+  padding: 2rem 0
+  a
+    text-decoration: none
+    color: $env-primary
+#mc-embedded-subscribe
+  border-radius: 6px
+  background-color: $pure-white
+  border: solid 1px $env-primary
+  color: $env-primary
+  padding: 1.6rem 5rem
+  text-align: center
+  text-decoration: none
+  cursor: pointer
+  //display: inline-block
+  font-size: 1.6rem
+  margin: 5rem 0 0
+  transition: .2s ease-in-out
+  &:hover
+    transform: scale(.99)
+    color: $pure-white
+    background-color: $env-primary
 
 .mc--full
   width: 100%
@@ -141,4 +182,4 @@ input.switch
   width: 45%
 
 .mc-asterisk
-  color: $opd-orange-confidence
+  color: $env-primary
