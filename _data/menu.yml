@@ -17,7 +17,7 @@ navigation:
       - name:   about
         url:    /pwp-about/
 
-      - name:   Register Interest
+      - name:   Trials
         url:    /pwp-register/
 
 
@@ -31,7 +31,7 @@ navigation:
       - name:   about
         url:    /clinician-about/
 
-      - name:   Register Interest
+      - name:   Get Involved
         url:    /clinician-register/
 
 socials:

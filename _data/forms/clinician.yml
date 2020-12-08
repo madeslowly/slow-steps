@@ -1,11 +1,13 @@
-inputs:
 
-  - label:    Email Address
-    name:     EMAIL
-    type:     email
-    mce-id:   mce-EMAIL
-    required: required
-    width:    full
+header:       Help people with Parkinson's
+
+strapline:    Sign up with GaitQ and we will keep you in the loop.
+
+botspot-name: b_effa3de3d2684818c6610d82f_2aa4a91785
+
+action:       https://madeslowly.us3.list-manage.com/subscribe/post?u=effa3de3d2684818c6610d82f&amp;id=2aa4a91785
+
+inputs:
 
   - label:    First Name
     name:     FNAME
@@ -13,6 +15,7 @@ inputs:
     mce-id:   mce-FNAME
     required: required
     width:    half
+    #autofocus: autofocus # We auto focus the first field
 
   - label:    Last Name
     name:     LNAME
@@ -21,25 +24,29 @@ inputs:
     required: required
     width:    half
 
+  - label:    Email Address
+    name:     EMAIL
+    type:     email
+    mce-id:   mce-EMAIL
+    required: required
+    width:    full
+
   - label:    Phone Number
     name:     MMERGE4
     type:     tel
     mce-id:   mce-MMERGE4
-    required:
-    width:    half
+    required: required
+    width:    full
 
-  - label:    Interest
+  - label:    Which best describes you?
     name:     WHO
     type:     select
     mce-id:   mce-WHO
     required: required
-    width:    half
+    width:    full
     opts:
       - name:   Prefer not to say
         value:  Prefer not to say
-        mce-id: 0
-      - name:   PwP
-        value:  PwP
         mce-id: 0
       - name:   Family / Carer
         value:  Family / Carer
@@ -54,24 +61,17 @@ inputs:
         value:  Other
         mce-id: 4
 
-  - label:    Tell us a bit about you...
+  - label:    Tell us about your involvement with Parkinson's.
     name:     MMERGE5
     type:     textarea
     mce-id:   mce-MMERGE5
     required:
     width:    full
 
-  - label:    Would you be interested in helping GaitQ develop its service?
+  - label:    Would you be interested in helping GaitQ develop our service?
     name:     group[70048][1]
     type:     checkbox
     mce-id:   mce-group[70048]-70048-0
-    required:
-    width:    full
-
-  - label:    Do you have experience of freezing and / or shuffling?
-    name:     group[70048][2]
-    type:     checkbox
-    mce-id:   mce-group[70048]-70048-1
     required:
     width:    full
 
@@ -82,15 +82,11 @@ gdpr:
     type:     checkbox
     mce-id:   38279
     required: gdprRequired
-    width:    full
+    width:    half
 
   - label:    Phone
     name:     gdpr[46352]
     type:     checkbox
     mce-id:   46352
     required: gdprRequired
-    width:    full
-
-botspot-name: b_effa3de3d2684818c6610d82f_2aa4a91785
-
-action:   https://madeslowly.us3.list-manage.com/subscribe/post?u=effa3de3d2684818c6610d82f&amp;id=2aa4a91785
+    width:    half

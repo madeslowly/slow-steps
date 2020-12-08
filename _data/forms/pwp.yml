@@ -1,0 +1,89 @@
+
+header:       Register for GaitQ trials
+
+strapline:    Fill in the form below to enroll in our GaitThaw trials. We will contact you with more details via your prefered choice of communication.
+
+botspot-name: b_effa3de3d2684818c6610d82f_2aa4a91785
+
+action:       https://madeslowly.us3.list-manage.com/subscribe/post?u=effa3de3d2684818c6610d82f&amp;id=2aa4a91785
+
+inputs:
+
+  - label:    First Name
+    name:     FNAME
+    type:     text
+    mce-id:   mce-FNAME
+    required: required
+    width:    half
+    autofocus: autofocus # We auto focus the first field
+
+  - label:    Last Name
+    name:     LNAME
+    type:     text
+    mce-id:   mce-LNAME
+    required: required
+    width:    half
+
+  - label:    Email Address
+    name:     EMAIL
+    type:     email
+    mce-id:   mce-EMAIL
+    required: required
+    width:    full
+
+  - label:    Phone Number
+    name:     MMERGE4
+    type:     tel
+    mce-id:   mce-MMERGE4
+    required: required
+    width:    full
+
+  - label:    Select which best decribes you.
+    name:     WHO
+    type:     select
+    mce-id:   mce-WHO
+    required: required
+    width:    full
+    opts:
+      - name:   Prefer not to say
+        value:  Prefer not to say
+        mce-id: 0
+      - name:   PwP
+        value:  PwP
+        mce-id: 0
+      - name:   Family / Carer
+        value:  Family / Carer
+        mce-id: 1
+      - name:   Other
+        value:  Other
+        mce-id: 4
+
+  - label:    Tell us anyhting you think is relevant.
+    name:     MMERGE5
+    type:     textarea
+    mce-id:   mce-MMERGE5
+    required:
+    width:    full
+
+  - label:    Do you experience gait freezing or shuffling?
+    name:     group[70048][2]
+    type:     checkbox
+    mce-id:   mce-group[70048]-70048-1
+    required:
+    width:    full
+
+gdpr:
+
+  - label:    Email
+    name:     gdpr[38279]
+    type:     checkbox
+    mce-id:   38279
+    required: gdprRequired
+    width:    full
+
+  - label:    Phone
+    name:     gdpr[46352]
+    type:     checkbox
+    mce-id:   46352
+    required: gdprRequired
+    width:    full
