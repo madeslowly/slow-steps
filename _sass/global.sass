@@ -10,13 +10,20 @@
 .fullwidth__wrap
   width: 100vw
 
-.narrow__wrap
-  width: 80vw
-  max-width: 600px
-  margin: 0 auto
+
 
 .bg--dark
   background-color: $opd-grey-neutral
 
+.bg--light
+  background-color: $white
+
 .no-touch__wrap
   padding: 18vh 0 10vh 0
+
+
+@media screen and ( min-width: 768px )
+  .narrow__wrap
+    width: 80vw
+    max-width: 600px
+    margin: 0 auto

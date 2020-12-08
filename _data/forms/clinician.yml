@@ -15,7 +15,7 @@ inputs:
     mce-id:   mce-FNAME
     required: required
     width:    half
-    #autofocus: autofocus # We auto focus the first field
+    autofocus: autofocus # We auto focus the first field
 
   - label:    Last Name
     name:     LNAME

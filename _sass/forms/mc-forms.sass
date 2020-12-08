@@ -1,8 +1,6 @@
 .form__wrap
-  padding: 5rem
+  padding: 5rem 2rem
   background-color: $pure-white
-  border-radius: 20px
-
 
 .form__block
   display: flex
@@ -179,7 +177,17 @@ input.switch
   width: 100%
 
 .mc--half
-  width: 45%
+  width: 100%
 
 .mc-asterisk
   color: $env-primary
+
+
+@media screen and ( min-width: 768px )
+  .mc--half
+    width: 45%
+
+  .form__wrap
+    padding: 5rem
+    background-color: $pure-white
+    border-radius: 20px
