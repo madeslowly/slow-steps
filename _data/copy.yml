@@ -29,13 +29,13 @@ clinician:
   # Title at the top of clinician home page
   title:        >-
 
-    Optimizing Parkinsons's treatment by keeping clinicians in the loop
+    More data, better treatment
 
 
   # Strapline, sitting directly below the title.
   description:  >-
 
-    More data, better treaetment
+    Optimizing Parkinsons's treatment by keeping clinicians in the loop
 
   # Straplines to sell GaitQ to clinicians. Keep this list small and seprated by ', '. We for loop through the list and diaplay all.
   keywords:     >-
