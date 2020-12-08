@@ -59,6 +59,9 @@
 
 .pwp__device--docked
   background-image: url($baseurl + 'assets/img/pwp_device_group_docked.png')
+  svg
+    position: absolute
+    transform: translateY(-100%)
 
 .pwp__device--group
   background-image: url($baseurl + 'assets/img/pwp_device_group.png')
@@ -72,8 +75,6 @@
   //padding: 5rem 2rem
   background-position: center
   color: $env-secondary
-  & > h2
-    //padding: 2rem 0
 
 .pwp__device--strap
   background-color: $opd-blue-trust
@@ -116,7 +117,7 @@
   background-image: url($baseurl + 'assets/img/pwp__grid_img.png')
   background-size: cover
   background-repeat: no-repeat
-  padding-top: 66.66666667%
+  padding-top: 150%
   filter: grayscale(1) contrast(.8) brightness(.9) sepia(.4) hue-rotate(180deg)
 
 .pwp--guarantee
@@ -132,3 +133,49 @@
   & > *
     padding: 3rem 0
     width: 50%
+
+
+.pulsating-circle
+  position: absolute
+  left: 75.5%
+  top: 52.5%
+  transform: translateX(-50%) translateY(-50%)
+  width: 8px
+  height: 8px
+
+  &::before
+    content: ''
+    position: relative
+    display: block
+    width: 300%
+    height: 300%
+    box-sizing: border-box
+    margin-left: -100%
+    margin-top: -100%
+    border-radius: 100px
+    background-color: rgb(252, 133, 133)
+    animation: pulse-ring 2s cubic-bezier(.01,.56,.2,.2) infinite
+
+  &::after
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    display: block
+    width: 100%
+    height: 100%
+    background: radial-gradient(rgb(255, 176, 176), rgb(255, 107, 107))
+    border-radius: 100px
+
+
+@keyframes pulse-ring
+  0%
+    opacity: 1
+    transform: scale(.3)
+
+  80%
+    opacity: 0
+
+  100%
+    opacity: 0
+    transform: scale(1)
