@@ -1,8 +1,22 @@
-<form action="{{ site.data.forms.register.action }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+
+{% assign page_env = page.env %}
+<!-- assign page.env to a liquid obj, page_env -->
+{% for item in site.data.forms %}
+<!-- loop through all the .yml files in our data/forms/ -->
+  {% assign file_env = item | split: '{' | first | remove: '"' | remove: '[' | remove: ',' | remove: ' ' %}
+  <!-- Capture the name of current file, without any ext. -->
+  {% if file_env == page_env %}
+    {% assign form = item %}
+  {% endif %}
+{% endfor %}
+
+<form action="{{ form[1].action }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 
   <div class="form__block">
+    <h2 class="form--title">{{ form[1].header }}</h2>
 
-    {% for item in site.data.forms.register.inputs %}
+    <p class="form--strap">{{ form[1].strapline }}</p>
+    {% for item in form[1].inputs %}
 
       <div class="
         form__elem
@@ -25,7 +39,7 @@
                   type="{{ item.type }}"
                   value="{{ option.value }}"
                   name="{{ item.name }}"
-                  id="{{ item.mce-id }}-{{ option.mce-id }}">
+                  id="{{ item.mce-id }}-{{ option.mce-id }}" {{ item.autofocus }}>
                 <label
                   for="{{ item.mce-id }}-{{ option.mce-id }}">
                   {{ option.name }}
@@ -36,7 +50,7 @@
         {% endif %}
 
         {% if item.type == 'select' %}
-          <select name="{{ item.name }}" class="form--select form--elem {% if item.required %}required {% endif %}" id="{{ item.mce-id }}">
+          <select name="{{ item.name }}" class="form--select form--elem {% if item.required %}required {% endif %}" id="{{ item.mce-id }}" {{ item.autofocus }}>
             {% for option in item.opts %}
               <option
                 type="{{ item.type }}"
@@ -54,14 +68,14 @@
             rows="4"
             name="{{ item.name }}"
             id="item.mce-id"
-            class="form--textarea form--elem"></textarea>
+            class="form--textarea form--elem" {{ item.autofocus }}></textarea>
         {% endif %}
 
         {% if item.type == 'checkbox' %}
           <label class="form--label {{ item.type }}-label--mod" for="{{ item.mce-id }}">
             <p>{{ item.label }}</p>
             <span class="styled-checkbox__block">
-      	      <input type="checkbox" class="styled-checkbox switch" id="{{ item.mce-id }}">
+      	      <input type="checkbox" class="styled-checkbox switch" id="{{ item.mce-id }}" {{ item.autofocus }}>
             	<span class="icon"><span class="icon--elem"></span></span>
               <span class="no">NO</span>
             	<span class="yes">YES</span>
@@ -73,9 +87,14 @@
           <input
             type="{{ item.type }}"
             value=""
+            {% if item.type == 'tel' %}
+            placeholder="Landline or mobile"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"
+            {% endif %}
             name="{{ item.name }}"
             class="{% if item.required %}required {% endif %} form--input form--elem"
-            id="{{ item.mce-id }}">
+            id="{{ item.mce-id }}"
+            {{ item.autofocus }}>
         {% endif %}
       </div>
 
@@ -83,12 +102,12 @@
 
     <div id="mergeRow-gdpr" class="mergeRow gdpr-mergeRow content__gdprBlock mc-field-group">
       <div class="content__gdpr">
+        <label for="interestgroup_field" class="form--label gdpr--title">What is your prefered method of communication?</label>
+        <fieldset class="mc_fieldset gdprRequired mc-field-group" name="interestgroup_field">
 
-          <fieldset class="mc_fieldset gdprRequired mc-field-group" name="interestgroup_field">
+        {% for item in form[1].gdpr %}
 
-          {% for item in site.data.forms.register.gdpr %}
-
-          <label class="form--label {{ item.type }}-label--mod checkbox subfield" for="gdpr_{{ item.mce-id }}">
+          <label class="mc--{{ item.width }} form--label {{ item.type }}-label--mod checkbox subfield" for="gdpr_{{ item.mce-id }}">
             <p>{{ item.label }}</p>
             <span class="styled-checkbox__block">
               <input type="checkbox" class="styled-checkbox switch av-checkbox gdpr" id="gdpr_{{ item.mce-id }}" value="Y" name="{{ item.name }}">
@@ -100,16 +119,19 @@
           {% endfor %}
         </fieldset>
 
-        <p>You can unsubscribe at any time by clicking the link in the footer of our emails. For information about our privacy practices, please visit our website.</p>
+        <p class="content__gdprLegal">You can unsubscribe at any time by clicking the link at the bottom of our emails. For information about our privacy practices, click <a href="/privacy-policy/">here</a>.</p>
+
       </div>
       <div class="content__gdprLegal">
-        <p>We use Mailchimp as our marketing platform. By clicking below to subscribe, you acknowledge that your information will be transferred to Mailchimp for processing. <a href="https://mailchimp.com/legal/" target="_blank">Learn more about
-            Mailchimp's privacy practices here.</a></p>
+        <p>We use Mailchimp as our marketing platform. By clicking below, you acknowledge that your information will be transferred to Mailchimp for processing. Learn more about
+            Mailchimp's privacy practices <a href="https://mailchimp.com/legal/" target="_blank">here.</a></p>
       </div>
     </div>
 
 
-
+    <div class="clear">
+      <input type="submit" value="Submit" name="subscribe" id="mc-embedded-subscribe" class="button">
+    </div>
 
 
     <div id="mce-responses" class="clear">
@@ -121,12 +143,10 @@
 
     <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
     <div style="position: absolute; left: -5000px;" aria-hidden="true">
-      <input type="text" name="{{ site.data.forms.register.botspot-name }}" tabindex="-1" value="">
+      <input type="text" name="{{ site.data.forms.pwp.botspot-name }}" tabindex="-1" value="">
     </div>
 
-    <div class="clear">
-      <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-    </div>
+
 
   </div>
 
@@ -139,7 +159,7 @@
 	(function($) {
 		window.fnames = new Array();
 		window.ftypes = new Array();
-    {% for item in site.data.forms.register.inputs %}
+    {% for item in form[1].inputs %}
       fnames[{{ forloop.index0 }}] = '{{ item.name }}';
       ftypes[{{ forloop.index0 }}] = '{{ item.type }}';
     {% endfor %}
