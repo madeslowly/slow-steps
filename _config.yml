@@ -6,6 +6,7 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 # Build for production `JEKYLL_ENV=production jekyll b`
 
+
 title:               GaitQ
 subtitle:            Living well with Parkinson’s
 description:         >-
