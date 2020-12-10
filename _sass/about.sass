@@ -27,7 +27,7 @@
 .team__title
   //width: 10vw
   text-align: right
-  padding: 10rem 0
+  //padding: 10rem 0
   background-color: rgba($env-primary, .8)
   & > *
     transform: rotate(-90deg)
@@ -35,10 +35,57 @@
 
 .team__members
   padding: 10rem 2rem
-  color: $env-secondary
+  color: $opd-blue-confidence
+  background-color: $white
 
 .single--member
-  padding-bottom: 8rem
+  opacity: 0
+  display: none
+  //padding-bottom: 8rem
 
 .team--position
   color: $light-grey
+
+.member--info
+  max-height: $font-size * 4
+  overflow: hidden
+
+.more--info
+  display: flex
+  align-items: flex-end
+  height: $font-size * 3
+  width: 100%
+  cursor: pointer
+  transform: translateY(-100%)
+  background-image: linear-gradient(rgba(0,0,0,0), $white, $white)
+  transition: .2s ease-in-out
+  &::after
+    content: 'more \2193'
+    font-size: $font-size * .8
+    color: $black
+
+.reveal-member--info
+  max-height: 1000px
+
+.reveal-more--info
+  height: $font-size * 1
+  padding-bottom: $font-size * 2
+  transform: translateY(0)
+  background-image: none
+  &::after
+    content: 'less \2191'
+
+.current
+  transition: .2s ease-in-out
+  padding-right: 1rem !important
+  color: $black !important
+  background-color: $white
+
+.active
+  transition: 2s ease-in-out
+  display: block
+  opacity: 1
+
+.deactive
+  opacity: 0
+  transition: 2s ease-in-out

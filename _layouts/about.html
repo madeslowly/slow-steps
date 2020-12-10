@@ -15,15 +15,27 @@ layout: default
 
 <div class="about__team">
   <div class="team__title">
-    <h1>Team</h1>
+    {% for menu in site.data.team.menu %}
+    <h3 class="team--title title--{{ menu.script }}" id="team{{ menu.script }}" onclick="team{{ menu.script }}()">{{ menu.name }}</h3>
+    {% endfor %}
   </div>
-  <div class="team__members">
-    {% for members in site.data.team %}
-    <div data-aos="fade-up" class="single--member">
+  <div class="team__members" onload="display_core()">
+
+    {% for members in site.data.team.members %}
+    <div class="
+      single--member
+      {% assign ships = members.membership | split: ', ' %}
+      {% for item in ships %}
+      team--{{ item }}
+      {% endfor %}
+      active">
+
     <h2>{{ members.name }}</h2>
     <h2 class="team--position">{{ members.position }}</h2>
-    <p>{{ members.alt }}</p>
 
+    <p class="member--info">{{ members.alt }}</p>
+    <div class="more--info" id="moreInfo"></div>
+    <!--
     <ul class="team--contacts">
       {% for socials in members.social %}
       <li>
@@ -33,7 +45,65 @@ layout: default
       </li>
       {% endfor %}
     </ul>
+  -->
   </div>
     {% endfor %}
   </div>
 </div>
+<!-- switch off all but the core members onload -->
+<!-- by default, we display ALL members, such that in the event of a device with JS disabled we still see evryone -->
+<script>
+  /* get all core title and style */
+  const title = document.querySelectorAll(".team--title.title--core");
+  for(var i = 0; i < title.length; i++)
+    title[i].classList.toggle('current');
+
+  /* get all members NOT core and hide */
+  const members = document.querySelectorAll(".single--member:not(.team--core)");
+  for(var i = 0; i < members.length; i++)
+    members[i].classList.toggle('active');
+
+</script>
+
+{% for menu in site.data.team.menu %}
+
+<script>
+  function team{{ menu.script }}() {
+
+    /* get all members NOT requested and hide */
+    const requestedMembers = document.querySelectorAll(".single--member:not(.team--{{ menu.script }})");
+    for(var i = 0; i < requestedMembers.length; i++)
+      requestedMembers[i].classList.remove('active');
+
+    /* get all the requested members and display */
+    const hideMembers = document.querySelectorAll(".single--member.team--{{ menu.script }}");
+    for(var i = 0; i < hideMembers.length; i++)
+      hideMembers[i].classList.add('active');
+
+    /* get all the requested title and style */
+    const requestedTitle = document.querySelectorAll(".team--title:not(.title--{{ menu.script }})");
+    for(var i = 0; i < requestedTitle.length; i++)
+      requestedTitle[i].classList.remove('current');
+
+    /* get all NOT requested and unstyle */
+    const hideTitle = document.querySelectorAll(".team--title.title--{{ menu.script }}");
+    for(var i = 0; i < hideTitle.length; i++)
+      hideTitle[i].classList.add('current');
+
+}
+</script>
+{% endfor %}
+
+
+<script>
+
+document.querySelectorAll('.more--info').forEach(function(el){
+  el.addEventListener('click', function() {
+    this.classList.toggle('reveal-more--info');
+    var n = this.previousElementSibling;
+    n.classList.toggle('reveal-member--info');
+    console.log(n)
+  });
+});
+
+</script>
