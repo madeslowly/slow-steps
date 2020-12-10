@@ -37,7 +37,22 @@ thumbnail:           default-thumb.png
 logo:                "assets/img/page-thumbs/default-thumb.png"
 favicon:             "assets/img/favicon.png"
 
-blog_name:          news
+socials:
+
+  - name:   LinkedIn
+    icon:   linkedin
+    username: gaitq
+    url:    https://www.linkedin.com/company/gaitq/
+
+  - name:   Twitter
+    icon:   twitter
+    username: gait_q
+    url:    https://twitter.com/gait_q
+
+  - name:   Facebook
+    icon:   facebook
+    username: GaitQLimited
+    url:    https://www.facebook.com/GaitQLimited
 
 aos-duration:        1000
 aos-easing:          ease-out-sine
@@ -76,9 +91,11 @@ kramdown:
   syntax_highlighter_opts:
     default_lang: html
 
+blog_name:          posts
+
 paginate:            8
-paginate_path:       /{{ site.blog_name }}/page-:num/
-permalink:           /news/:title/
+paginate_path:       /posts/page-:num/
+permalink:           /posts/:title/
 
 plugins:
   - jekyll-feed
@@ -87,6 +104,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-target-blank
   - jekyll-image-size     # https://github.com/generalui/jekyll-image-size
+
 
 defaults:
   -
@@ -102,6 +120,7 @@ sass:
     - node_modules
 
 compress_html:
+  only_production:   true
   comments:          all
 
 autoprefixer:

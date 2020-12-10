@@ -9,42 +9,127 @@
 #       icon: Awesome Font nomenclecture of icon, ie fab fa-linkedin, see https://fontawesome.com.
 #       url:  URL of users social account, ie https://www.linkedin.com/in/USERNAME
 
+menu:
 
-- name:     Dr Tristan Collins
-  img:
-  position: CEO
-  alt:      Background in commercial strategy & early-stage tech start-ups.
-  social:
-    - name: LinkedIn
-      icon: fab fa-linkedin
-      url:  https://www.linkedin.com/in/wtristancollins/
-    - name: Email
-      icon: fas fa-envelope
-      url:  mailto:tristan@gaitq.com
+  - name:   GaitQ
+    script: core
+  - name:   The Board
+    script: board
+  - name:   Our Advisors
+    script: advisor
+  - name:   Our Investors
+    script: investor
 
-- name:     Dr Dongli Li
-  img:
-  position: VP Technology - Electronics & Patient Interface
-  alt:      PhD in Healthcare Innovation. Electronics & patient interface.
-  social:
-    - name: LinkedIn
-      icon: fab fa-linkedin
-      url:
 
-- name:     Dr André Hallack
-  img:
-  position: VP Technology - Software & Analytics
-  alt:      PhD in Healthcare Innovation. Machine Learning & Signal Processing.
-  social:
-    - name: LinkedIn
-      icon: fab fa-linkedin
-      url:
+members:
 
-- name:     Dr James Cantley
-  img:
-  position: Advisor
-  alt:      Experienced scientist / physiologist.
-  social:
-    - name: LinkedIn
-      icon: fab fa-linkedin
-      url:
+  - name:       Simon Godwin
+    img:
+    position:   Chair
+    membership: board, investor
+    alt:        >-
+
+      Simon is CFO of Fundsmith, a London-based equity fund with £26bn under management, which he helped found in 2010.  He is passionate about science, is a Trustee of The Royal Institution and Patron of the Science Museum.
+
+    social:
+      - name:
+        icon:
+        url:
+###############################################################################
+  - name:       Dr Tristan Collins
+    img:
+    position:   CEO
+    membership: core, board
+    alt:        >-
+
+      Tristan joined GaitQ as CEO in 2019. He is an experienced executive and entrepreneur with a background in business, early-stage technologies and engineering. Prior to joining GaitQ, Tristan was Founder and Director at Metaboards which he spun-out from the University of Oxford in 2016. Tristan also has six years of experience working as a Strategy Consultant. He holds a PhD in Engineering from the University of Cambridge and a MEng in Mechanical Engineering with Financial Management from the University of Strathclyde.
+
+    social:
+      - name: LinkedIn
+        icon: fab fa-linkedin
+        url:  https://www.linkedin.com/in/wtristancollins/
+      - name: Email
+        icon: fas fa-envelope
+        url:  mailto:tristan@gaitq.com
+###############################################################################
+  - name:       Dr Dongli Li
+    img:
+    position:   VP Technology - Electronics & Patient Interface
+    membership: core, board
+    alt:        >-
+
+      Dongli Li is a Biomedical engineer with a PhD in Healthcare innovation (University of Oxford) and two BEngs in Electronics Engineering (University of Birmingham) and Communication System Engineering (Huazhong University of Science and Technology). She has over four years of postdoctoral experience in computational neuron biomechanics and gait initiation for people with Parkinson’s disease.  Her strong technical skills have won her multiple prizes including the Microsoft Cognitive Services APIs Prize for a motion control software and the best robot prize at the University of Birmingham.
+
+      Dongli has done extensive market research in the Parkinson’s disease field by interviewing over 200 stakeholders in the field. Her first-hand experience of interacting with people with Parkinson’s has motivated her to develop a solution to improve the living of people with Parkinson’s.
+
+
+    social:
+      - name: LinkedIn
+        icon: fab fa-linkedin
+        url:
+###############################################################################
+  - name:       Dr André Hallack
+    img:
+    position:   VP Technology - Software & Analytics
+    membership: core, board
+    alt:        >-
+
+      Andre is an Electrical engineer with expertise in machine learning and software development. He has developed the core algorithms for the GaitThaw system, including state of the art machine learning software, gait analytics methods, as well as the lightweight firmware employed in the onboard processor. He is author of more than 10 papers and 2 international patent applications.
+
+      Andre has a PhD degree in Healthcare innovation at the University of Oxford, supported by Brazil’s National Council for Scientific and Technological Development, and over a decade of work experience spanning both academic (gait analysis for people with Parkinson’s and automatic medical image analysis) and industrial appointment (artificial intelligence for medical image processing). His strong research and development skills have made him the winner of multiple international competitions featured in artificial intelligence and signal processing, including CLUST (Challenge on Liver Ultrasound Tracking), ANODE (Automatic Nodule Detection) and Microsoft Cognitive Services APIs Prize.
+
+
+    social:
+      - name: LinkedIn
+        icon: fab fa-linkedin
+        url:
+###############################################################################
+  - name:       Dr James Cantley
+    img:
+    position:   Advisor
+    membership: advisor
+    alt:        >-
+
+      James is currently a Senior Lecturer at the University of Dundee School of Medicine. Prior to this James was an RD Lawrence Fellow, funded by Diabetes UK, a Research Fellow at Wolfson College and a Lecturer in Medicine at Christ Church, all at the University of Oxford. His current research interests revolve around diabetes.
+
+      James has over 18 years of research experience. He is an experienced scientist / physiologist who has developed innovative / commercial angles in several projects.  He was the principal investigator in the clinical investigation conducted at the University of Oxford to test the efficacy of our technology.  He is also a co-founder of OxStem Beta, an innovative drug discovery spin-out.
+
+    social:
+      - name: LinkedIn
+        icon: fab fa-linkedin
+        url:
+###############################################################################
+  - name:     University of Oxford
+    img:
+    position: Investor
+    membership: investor
+    alt:        >-
+
+      Innovation Fund (V) managed by Parkwalk Advisors
+
+    social:
+      - name: LinkedIn
+        icon: fab fa-linkedin
+        url:
+###############################################################################
+  - name:     British Growth Fund
+    img:
+    position: Investor
+    membership: investor
+    alt:
+
+    social:
+      - name: LinkedIn
+        icon: fab fa-linkedin
+        url:
+###############################################################################
+  - name:     Simon Godwin
+    img:
+    position: Investor
+    membership: investor
+    alt:
+
+    social:
+      - name: LinkedIn
+        icon: fab fa-linkedin
+        url:

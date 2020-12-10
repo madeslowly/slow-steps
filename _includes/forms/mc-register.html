@@ -1,22 +1,11 @@
 
-{% assign page_env = page.env %}
-<!-- assign page.env to a liquid obj, page_env -->
-{% for item in site.data.forms %}
-<!-- loop through all the .yml files in our data/forms/ -->
-  {% assign file_env = item | split: '{' | first | remove: '"' | remove: '[' | remove: ',' | remove: ' ' %}
-  <!-- Capture the name of current file, without any ext. -->
-  {% if file_env == page_env %}
-    {% assign form = item %}
-  {% endif %}
-{% endfor %}
-
-<form action="{{ form[1].action }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<form action="{{ site.data.forms[page.env].action }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 
   <div class="form__block">
-    <h2 class="form--title">{{ form[1].header }}</h2>
+    <h2 class="form--title">{{ site.data.forms[page.env].header }}</h2>
 
-    <p class="form--strap">{{ form[1].strapline }}</p>
-    {% for item in form[1].inputs %}
+    <p class="form--strap">{{ site.data.forms[page.env].strapline }}</p>
+    {% for item in site.data.forms[page.env].inputs %}
 
       <div class="
         form__elem
@@ -105,7 +94,7 @@
         <label for="interestgroup_field" class="form--label gdpr--title">What is your prefered method of communication?</label>
         <fieldset class="mc_fieldset gdprRequired mc-field-group" name="interestgroup_field">
 
-        {% for item in form[1].gdpr %}
+        {% for item in site.data.forms[page.env].gdpr %}
 
           <label class="mc--{{ item.width }} form--label {{ item.type }}-label--mod checkbox subfield" for="gdpr_{{ item.mce-id }}">
             <p>{{ item.label }}</p>
@@ -159,7 +148,7 @@
 	(function($) {
 		window.fnames = new Array();
 		window.ftypes = new Array();
-    {% for item in form[1].inputs %}
+    {% for item in site.data.forms[page.env].inputs %}
       fnames[{{ forloop.index0 }}] = '{{ item.name }}';
       ftypes[{{ forloop.index0 }}] = '{{ item.type }}';
     {% endfor %}

@@ -9,12 +9,19 @@
     //font-size: 3rem
 
   .team__title
-    width: 33vw
+    width: 50vw
     text-align: right
-    padding: 0
+    padding: 8rem 0 0 5rem
     background-color: rgba($env-primary, .8)
-    & > *
-      transform: none
-      color: $white
-      padding: 10rem
-      margin: 0
+
+  .team--title
+    transform: none
+    color: $white
+    padding: 2rem 2rem 1.6rem 2rem
+    margin: 1rem 0
+    border-radius: 6px 0 0 6px
+    &:hover
+      transition: .2s ease-in-out
+      cursor: pointer
+      background-color: $soft-white
+      color: $black

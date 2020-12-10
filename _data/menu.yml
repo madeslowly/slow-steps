@@ -15,10 +15,10 @@ navigation:
         url:    /pwp/
 
       - name:   about
-        url:    /pwp-about/
+        url:    /pwp/about/
 
       - name:   Trials
-        url:    /pwp-register/
+        url:    /pwp/register/
 
 
   - name:   Clinicians & Healthcare
@@ -29,27 +29,11 @@ navigation:
         url:    /clinician/
 
       - name:   about
-        url:    /clinician-about/
+        url:    /clinician/about/
 
       - name:   Get Involved
-        url:    /clinician-register/
+        url:    /clinician/register/
 
-socials:
-
-  - name:   LinkedIn
-    icon:   linkedin
-    username: gaitq
-    url:    https://www.linkedin.com/company/gaitq/
-
-  - name:   Twitter
-    icon:   twitter
-    username: gait_q
-    url:    https://twitter.com/gait_q
-
-  - name:   Facebook
-    icon:   facebook
-    username: GaitQLimited
-    url:    https://www.facebook.com/GaitQLimited
 
 legals:
 
