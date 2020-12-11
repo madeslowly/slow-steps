@@ -4,27 +4,33 @@ layout: default
 
 <section class="landing__wraper">
 
-<div class="landing__div">
-  <a href="{{ site.data.menu.navigation[0].url | relative_url }}" class="landing__pwp">
-    <div class="landing__overlay"></div>
+  <div class="landing__half--pwp">
 
-    <div class="landing--strap">
+    <a href="{{ site.data.menu.navigation[0].url | relative_url }}" class="landing--strap env--pwp">
       <h2>
         {{ site.data.menu.navigation[0].name }}
       </h2>
-    </div>
-  </a>
-</div>
-<div class="landing__div">
-  <a href="{{ site.data.menu.navigation[1].url | relative_url }}" class="landing__clinician">
-    <div class="landing__overlay"></div>
+    </a>
 
-    <div class="landing--strap">
+    <div class="landing__overlay env--pwp">
+      <div class="landing__pwp"></div>
+    </div>
+
+
+  </div>
+
+  <div class="landing__half--clinician">
+
+    <a href="{{ site.data.menu.navigation[1].url | relative_url }}" class="landing--strap env--clinician">
       <h2>
         {{ site.data.menu.navigation[1].name }}
       </h2>
+    </a>
+
+    <div class="landing__overlay env--clinician">
+      <div class="landing__clinician"></div>
     </div>
 
-  </a>
-</div>
+
+  </div>
 </section>
