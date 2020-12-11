@@ -16,7 +16,9 @@ layout: default
 <div class="about__team">
   <div class="team__title">
     {% for menu in site.data.team.menu %}
-    <h3 class="team--title title--{{ menu.script }}" id="team{{ menu.script }}" onclick="team{{ menu.script }}()">{{ menu.name }}</h3>
+    <h3 class="team--title title--{{ menu.script }}" id="team{{ menu.script }}" onclick="team{{ menu.script }}()">
+      <i class="{{ menu.icon }}"></i>
+      <span class="title--text">{{ menu.name }}</span></h3>
     {% endfor %}
   </div>
   <div class="team__members" onload="display_core()">

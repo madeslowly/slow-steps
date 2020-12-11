@@ -13,12 +13,16 @@ menu:
 
   - name:   GaitQ
     script: core
+    icon:   fas fa-user-md
   - name:   The Board
     script: board
+    icon:   fas fa-user-tie
   - name:   Our Advisors
     script: advisor
+    icon:   fas fa-comments
   - name:   Our Investors
     script: investor
+    icon:   fas fa-wallet
 
 
 members:
