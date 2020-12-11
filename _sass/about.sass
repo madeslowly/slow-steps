@@ -23,20 +23,51 @@
 
 .about__team
   display: flex
+  flex-direction: column
 
 .team__title
-  //width: 10vw
-  text-align: right
-  //padding: 10rem 0
-  background-color: rgba($env-primary, .8)
-  & > *
-    transform: rotate(-90deg)
-    color: $white
+  display: flex
+  justify-content: space-around
+  width: 100vw
+  height: 10rem
+  //text-align: right
+  //padding: 4rem 0
+  background-color: rgba($env-primary, .5)
+  border-bottom: solid 1px $opd-blue-confidence
+
+.title--text
+  display: none
+
+.team--title
+  //border-radius: 6px 0 0 6px
+  padding: 2rem
+  //transform: rotate(-90deg)
+  //white-space: nowrap
+  color: $opd-blue-confidence
+  //margin: 2rem 0
+
+.team--title.current
+  transition: .4s ease-out
 
 .team__members
   padding: 10rem 2rem
   color: $opd-blue-confidence
   background-color: $white
+
+
+.current
+  //transition: 2s ease-in-out
+  //padding-right: 1rem !important
+  //color: $black !important
+  //background-color: $white
+  //border: solid 1px $opd-blue-confidence
+  //border-right: solid 1px $white
+
+  //transform: rotate(-90deg) translateX(1px)
+  font-size: 4rem
+  padding-bottom: 0
+  color: $env-primary
+
 
 .single--member
   opacity: 0
@@ -44,7 +75,7 @@
   //padding-bottom: 8rem
 
 .team--position
-  color: $light-grey
+  color: $grey
 
 .member--info
   max-height: $font-size * 4
@@ -74,12 +105,6 @@
   background-image: none
   &::after
     content: 'less \2191'
-
-.current
-  transition: .2s ease-in-out
-  padding-right: 1rem !important
-  color: $black !important
-  background-color: $white
 
 .active
   transition: 2s ease-in-out
