@@ -14,13 +14,13 @@ menu:
   - name:   GaitQ
     script: core
     icon:   fas fa-user-md
-  - name:   The Board
+  - name:   Board
     script: board
     icon:   fas fa-user-tie
-  - name:   Our Advisors
+  - name:   Advisors
     script: advisor
     icon:   fas fa-comments
-  - name:   Our Investors
+  - name:   Investors
     script: investor
     icon:   fas fa-wallet
 
@@ -127,13 +127,3 @@ members:
         icon: fab fa-linkedin
         url:
 ###############################################################################
-  - name:     Simon Godwin
-    img:
-    position: Investor
-    membership: investor
-    alt:
-
-    social:
-      - name: LinkedIn
-        icon: fab fa-linkedin
-        url:
