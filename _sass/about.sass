@@ -1,13 +1,39 @@
 
 .about__head
   align-items: center
-  background-color: rgba($env-primary, .8)
+  backdrop-filter: blur(8px)
+  background-color: rgba($env-primary, .5)
   color: $white
   display: flex
-  height: $mobile-navbar-height * 3
+  height: $mobile-navbar-height * 4
   justify-content: center
   padding-top: $mobile-navbar-height
   text-align: center
+  span
+    animation-duration: .1s
+    animation-fill-mode: forwards
+    animation-iteration-count: 1
+    animation-name: fadeInOpacity
+    opacity: 0
+
+@keyframes fadeInOpacity
+  0%
+    opacity: 0
+
+  100%
+    opacity: 1
+
+
+.about__head__bg
+  background-image: url($baseurl + 'assets/img/pwp_device_group.png')
+  filter: contrast(3) brightness(.6)
+  background-position: center
+  background-repeat: no-repeat
+  background-size: cover
+  height: $mobile-navbar-height * 5
+  position: fixed
+  width: 100vw
+  z-index: -1
 
 .about__copy
   align-items: center
@@ -25,6 +51,7 @@
 .about__team
   display: flex
   flex-direction: column
+  background-color: $pure-white
 
 .team__head
   align-items: flex-end

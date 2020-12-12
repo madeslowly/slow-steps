@@ -3,8 +3,19 @@ layout: default
 ---
 
 {% assign strap = site.data.menu.navigation | where: "env" , page.env  %}
+
+<div class="about__head__bg"></div>
 <div class="about__head">
-  <h1>{{ strap[0].alt }}</h1>
+
+    <h1>
+      {% assign n = strap[0].alt.size | minus: 1 %}
+      {%- for char in (0..n ) -%}
+
+      <span style="animation-delay: {{ char | times: 60 | plus: 800 }}ms;">{{ strap[0].alt | slice: char }}</span>
+      {%- endfor -%}
+
+    </h1>
+
 </div>
 
 <div class="about__copy" data-aos="fade-in">
@@ -15,6 +26,7 @@ layout: default
 </div>
 
 <div class="about__team">
+
   <div class="team__head">
     {% for menu in site.data.team.menu %}
     <h3 class="team__title team--js-script-{{ menu.script }}" id="team{{ menu.script }}" onclick="team{{ menu.script }}()">
