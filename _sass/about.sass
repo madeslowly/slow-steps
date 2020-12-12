@@ -1,116 +1,122 @@
 
-.about__mast
-  display: flex
-  justify-content: center
+.about__head
   align-items: center
-  text-align: center
-  height: $mobile-navbar-height * 3
-  padding-top: $mobile-navbar-height
-  color: $white
   background-color: rgba($env-primary, .8)
+  color: $white
+  display: flex
+  height: $mobile-navbar-height * 3
+  justify-content: center
+  padding-top: $mobile-navbar-height
+  text-align: center
 
 .about__copy
+  align-items: center
+  background-color: $env-primary
+  color: $white
   display: flex
   flex-direction: column
   justify-content: center
-  align-items: center
-  text-align: center
-  color: $white
   padding: 5rem 2rem
-  background-color: $env-primary
-  & > *
-    padding: 4rem 0
+  text-align: center
+
+.about--copy
+  padding: 3rem 0
 
 .about__team
   display: flex
   flex-direction: column
 
-.team__title
-  display: flex
-  justify-content: space-around
-  width: 100vw
-  height: 10rem
-  //text-align: right
-  //padding: 4rem 0
+.team__head
+  align-items: flex-end
   background-color: rgba($env-primary, .5)
   border-bottom: solid 1px $opd-blue-confidence
+  display: flex
+  height: 10rem
+  justify-content: space-around
+  width: 100vw
 
-.title--text
-  display: none
-
-.team--title
-  //border-radius: 6px 0 0 6px
-  padding: 2rem
-  //transform: rotate(-90deg)
-  //white-space: nowrap
+.team__title
   color: $opd-blue-confidence
-  //margin: 2rem 0
-
-.team--title.current
+  padding-bottom: 2rem
   transition: .4s ease-out
 
-.team__members
-  padding: 10rem 2rem
-  color: $opd-blue-confidence
-  background-color: $white
-
-
-.current
-  //transition: 2s ease-in-out
-  //padding-right: 1rem !important
-  //color: $black !important
-  //background-color: $white
-  //border: solid 1px $opd-blue-confidence
-  //border-right: solid 1px $white
-
-  //transform: rotate(-90deg) translateX(1px)
-  font-size: 4rem
-  padding-bottom: 0
+.team__title--active
   color: $env-primary
+  padding-bottom: 3rem
 
+.team__title.team__title--active
+  transition: .4s ease-out
 
-.single--member
-  opacity: 0
+.title__title--text
   display: none
-  //padding-bottom: 8rem
 
-.team--position
+.team__members
+  background-color: $white
+  color: $opd-blue-confidence
+  padding: 10rem 2rem
+
+.single__member
+  display: none
+
+.single__member--active
+  display: block
+
+.member__position
+  display: flex
+  align-items: center
   color: $grey
 
-.member--info
+.member__socials
+  align-items: center
+  list-style: none
+  margin: 0
+  padding: 0
+  li
+    display: inline
+    a
+      font-size: $font-size
+      text-decoration: none
+      color: $env-primary
+      &:hover
+        color: $env-secondary
+
+.member__info
+  height: $font-size * 4
   max-height: $font-size * 4
   overflow: hidden
+  transition: .8s cubic-bezier(0,.98,.48,.92)
 
-.more--info
-  display: flex
-  align-items: flex-end
-  height: $font-size * 3
-  width: 100%
-  cursor: pointer
-  transform: translateY(-100%)
-  background-image: linear-gradient(rgba(0,0,0,0), $white, $white)
-  transition: .2s ease-in-out
-  &::after
-    content: 'more \2193'
-    font-size: $font-size * .8
-    color: $black
-
-.reveal-member--info
+.member__info--reveal
+  height: 100%
   max-height: 1000px
+  transition: .6s cubic-bezier(.51,.38,1,.42)
 
-.reveal-more--info
+.info__conceal
+  align-items: flex-end
+  background-image: linear-gradient(rgba(0,0,0,0), $white, $white)
+  color: $black
+  cursor: pointer
+  display: flex
+  font-size: $font-size * .8
+  height: $font-size * 3
+  transform: translateY(-100%)
+  transition: .4s ease-in-out
+  width: 100%
+
+  &::before
+    content: 'more \00a0 '
+
+  i
+    font-size: $font-size * .6
+
+.info__reveal
   height: $font-size * 1
   padding-bottom: $font-size * 2
   transform: translateY(0)
-  background-image: none
-  &::after
-    content: 'less \2191'
+  transition: .4s ease-in-out
 
-.active
-  transition: 2s ease-in-out
-  display: block
-  opacity: 1
+  &::before
+    content: 'less \00a0 '
 
-.deactive
-  opacity: 0
-  transition: 2s ease-in-out
+  i
+    transform: rotate(180deg)
