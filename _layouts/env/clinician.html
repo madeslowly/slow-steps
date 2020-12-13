@@ -18,8 +18,12 @@ layout: default
 
 </div>
 
-<div data-aos="fade-in" data-aos-anchor-placement="top-center" class="clinician__device--img clinician__device--docked">
-</div>
+
+{% picture
+  {{ page.image | prepend: 'content/' }}
+  --img class="clinician__hero__2"
+  --alt {{ page.image_alt }} %}
+
 
 
 <div class="clinician__grid-wrap">
