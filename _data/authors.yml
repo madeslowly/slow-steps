@@ -1,0 +1,12 @@
+# GaitQ authors
+
+# Add details of content authors here and use on a post to generate author meta
+
+# In post Front Matter, author: Joe-Blog
+
+# If no author is declared we default to site data in your _config.yml
+
+Joe-Blog:
+  name:     Joe Blog
+  email:    joeblog@gaitq.com
+  twitter:  joeblog
