@@ -2,13 +2,17 @@
 <!-- *** OG *** https://ogp.me/ -->
 <meta property="og:title" content="{% if page.url == "/" %} {{ site.title }} {% else %} {{ page.title }} | {{ site.title }} {% endif %}" />
 
-<!-- Adds article properties for blog posts -->
+<!-- Adds article properties for posts -->
+
 <meta property="og:type" content="
-  {% if page.url contains '/{{ site.blog_name }}/' %}
+  {% if page.id %}
+  {%- assign facebook = site.socials | where: 'name', 'Facebook' -%}
+
+
     article" />
     <meta
     property=article:publisher
-    content="{{ site.data.menu.socials.facebook.url }}{{ site.data.menu.socials.facebook.username }}/">
+    content="{{ facebook[0].url }}/">
     <meta
     property=article:author
     content="{{ site.url }}">
@@ -31,23 +35,21 @@
 
 <meta property=og:updated_time content="{{ 'now' | date_to_xmlschema }}">
 
-<!-- use local page thumbnail if it exist -->
+<!-- use local image if it exist but only for posts -->
 
-{% if page.thumbnail == null %}
-{% assign image = 'default-thumb.png' %}
+{% if page.id %}
+{% assign image = '/posts/' | append: page.image %}
 {% else %}
-{% assign image = page.thumbnail %}
+{% assign image = site.fallback_path | append: site.brand %}
 {% endif %}
 
-{% assign image_url = site.url | append: '/' | append: site.baseurl | append: 'assets/img/page-thumbs/' | append: image %}
-
-{% assign image_path = 'assets/img/page-thumbs/' | append: image %}
+{% assign image_url = site.url | append: site.baseurl | append: image %}
 
 <meta property="og:image" content="{{ image_url }}" />
 
 <meta property="og:image:type" content="image/{{ image | split: '.' | last }}" />
 
-{% imagesize image_path:opengraph %}
+{% imagesize image:opengraph %}
 
 <!-- to implement this properly we need some kind of db recording the descriptors of our thumbs -->
 
@@ -62,7 +64,7 @@
   {{ site.description }}
 {% endif %}" />
 
-<meta property="og:locale" content="{{ site.lang }}" />
+<meta property="og:locale" content="en" />
 
 <meta property="og:site_name" content="{{ site.title }} | {{ site.subtitle }}" />
 

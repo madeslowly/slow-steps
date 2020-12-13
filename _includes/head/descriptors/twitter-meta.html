@@ -10,10 +10,8 @@
   {% else %} {{ page.description }} {% endif %}" />
 
   <meta name="twitter:image" content="
-  {% if page.thumbnail == null %} {{ site.url }}{{ site.baseurl }}/assets/img/page-thumbs/{{ site.thumbnail }}
-  {% else %}
-  {{ site.url }}{{ site.baseurl }}/assets/img/page-thumbs/{{ page.thumbnail }} {% endif %}" />
+  {%- if page.image -%}{{ site.url }}{{ site.baseurl }}{{ site.default_path }}
+  {%- if page.id -%}{{ page.image | prepend: 'posts/' }}{%- else -%}{{ page.image }}{%- endif -%}{%- else -%}{{ site.url }}{{ site.baseurl }}{{ site.fallback_path }}{{ site.brand }}{%- endif -%}" />
   <!-- to implement this we need some kind of db recording the descriptors of our thumbs -->
   <meta name="twitter:image:alt" content="" />
 <!-- *** END TWITTER:CARD *** -->
-  

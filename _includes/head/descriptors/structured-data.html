@@ -1,3 +1,8 @@
+
+{%- assign facebook = site.socials | where: 'name', 'Facebook' -%}
+
+{%- assign twitter = site.socials | where: 'name', 'Twitter' -%}
+
 <!-- *** STRUCTURED DATA *** -->
 <!-- LocalBusiness -->
 <script type="application/ld+json">
@@ -16,7 +21,7 @@
     "description": "{{ site.description }}",
     "telephone": "{{ site.phone }}",
     "openingHours": "{{ site.opening_hours }}",
-    "image": "{{ site.url }}{{ site.baseurl }}/assets/img/page-thumbs/{{ site.thumbnail }}"
+    "image": "{{ site.url }}{{ site.baseurl }}{{ site.fallback_path }}{{ site.brand }}"
   } </script>
 
 <!-- WebSite -->
@@ -29,18 +34,18 @@
     "url": "{{ site.url }}{{ site.baseurl }}/",
     "sameAs":[
       "mailto:{{ site.email }}",
-      "{{ site.data.menu.socials.twitter.url }}/",
-      "{{ site.data.menu.socials.facebook.url }}/" ],
+      "{{ twitter[0].url }}/",
+      "{{ facebook[0].url }}/" ],
     "name": "{{ site.title }} | {{ site.subtitle }}",
     "description": "{{ site.description }}",
-    "image": "{{ site.url }}{{ site.baseurl }}/assets/img/page-thumbs/{{ site.thumbnail }}",
+    "image": "{{ site.url }}{{ site.baseurl }}{{ site.fallback_path }}{{ site.brand }}",
     "author":[ {
       /* Person */
       "@type": "Person",
       "@context": "http://schema.org",
-      "name": "{{ site.author.name }}",
-      "description": "{{ site.author.description }}",
-      "image": "{{ site.author. url }}/assets/img/page-thumbs/default-thumb.jpg"} ]
+      "name": "{{ site.title }}",
+      "description": "{{ site.description }}",
+      "image": "{{ site.url }}{{ site.baseurl }}{{ site.fallback_path }}{{ site.brand }}"} ]
      } , {
     /* WePage */
     /* var */
@@ -48,8 +53,8 @@
     "@id":"{{ site.url }}{{ site.baseurl }}{{ page.url }}#webpage",
     "url":"{{ site.url }}{{ site.baseurl }}{{ page.url }}",
     "inLanguage":"en-GB",
-    "name":"{% if page.title %} {{ page.title }} | {{ site.title }} {% else %} {{ site.title }} | {{ site.subtitle }} {% endif %}",
-    "description": "{% if page.description %} {{ page.descrition }}{% else %}{{ site.description }}{% endif %}",
+    "name":"{%- if page.title -%} {{ page.title }} | {{ site.title }} {%- else -%} {{ site.title }} | {{ site.subtitle }} {% endif %}",
+    "description": "{%- if page.description -%} {{ page.descrition }}{%- else -%}{{ site.description }}{% endif %}",
     "datePublished":"{{ page.date }}",
     "dateModified":"{{ 'now' | date_to_xmlschema }}",
     "isPartOf":[{
@@ -60,11 +65,11 @@
 { "@context": "http://schema.org",
   "@type": "Organization",
   "url": "{{ site.url }}{{ site.baseurl }}/",
-  /*only applies to registered business */
+  /* only applies to registered business */
   "legalName": "{{ site.title }} Limited",
   "description": "{{ site.description }}",
-  "image": "{{ site.url }}{{ site.baseurl }}/assets/img/page-thumbs/{{ site.thumbnail }}",
-  "logo": "{{ site.url }}{{ site.baseurl }}/{{ site.logo }}",
+  "image": "{{ site.url }}{{ site.baseurl }}{{ site.fallback_path }}{{ site.brand }}",
+  "logo": "{{ site.url }}{{ site.baseurl }}{{ site.fallback_path }}{{ site.logo }}",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "{{ site.postal_add.street }}",
@@ -74,6 +79,46 @@
     "postalCode": "{{ site.postal_add.postcode }}" },
   "telephone": "{{ site.phone }}",
   "sameAs":[
-    "mailto:{{ site.author.email }}",
-    "{{ site.data.menu.socials.twitter.url }}/",
-    "{{ site.data.socials.menu.facebook.url }}/" ] } </script>
+    "mailto:{{ site.email }}",
+    "{{ twitter[0].url }}/",
+    "{{ facebook[0].url }}/" ] } </script>
+
+<!-- Article -->
+{% if page.id %}<!-- this is a post -->
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "author": {
+      "@type": "Person",
+      "name":
+      "{%- if page.author -%}{{ site.data.authors[page.author].name }}{%- else -%}{{ site.title }}{% endif %}"
+    },
+    "creator": {
+      "@type": "Person",
+      "name":
+      "{%- if page.author -%}{{ site.data.authors[page.author].name }}{%- else -%}{{ site.title }}{% endif %}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ site.title }}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ site.url }}{{ site.baseurl }}{{ site.fallback_path }}{{ site.logo }}"
+      }
+    },
+    "headline": "{{ page.title }} | {{ site.title }}",
+    "datePublished": "{{ page.date | date_to_xmlschema }}",
+    "dateModified": "{{ 'now' | date_to_xmlschema }}",
+    "description": "{{ page.description }}",
+    "inLanguage": "en",
+    "url": "{{ page.url }}",
+    "name": "{{ page.title }} | {{ site.title }}",
+    "image": {
+      "@type": "ImageObject",
+      "url": "{%- if page.image -%}{{ site.url }}{{ site.baseurl }}{{ site.default_path }}{{ page.image | prepend: 'posts/' }}{%- else -%}{{ site.url }}{{ site.baseurl }}{{ site.fallback_path }}{{ site.brand }}{%- endif -%}"
+    },
+    "mainEntityOfPage": "{{ site.url }}{{ site.baseurl }}{{ page.url }}"
+  }
+</script>
+{% endif %}
