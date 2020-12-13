@@ -1,62 +1,51 @@
+# Jekyll theme, Slow Gait, for GaitQ
+# _config.yml
 #
-#
-# This config file is meant for settings that affect your entire site, values
+# This config file contains settings that affect your entire site, values
 # which you are expected to set up once and rarely need to edit after that.
 # For technical reasons, this file is *NOT* reloaded automatically when you use
-# `jekyll serve`. If you change this file, please restart the server process.
-# Build for production `JEKYLL_ENV=production jekyll b`
+# `jekyll serve`. If you change this file, restart the server process.
+# Building for production use `JEKYLL_ENV=production jekyll b`
 
 
-title:               GaitQ
-subtitle:            Living well with Parkinson’s
-description:         >-
+# Website title
+title:                     GaitQ
+
+# Website subtitle
+subtitle:                  Living well with Parkinson’s
+
+# Website descritpion
+description:               >-
 
     Guarantee improved quality of life for people affected by Parkinson's disease through better management of gait freezing.
 
-keywords:            >-
+# Website keywords
+keywords:                  >-
 
     Parkinson’s disease, gate freezing, health,
 
-url:                 "https://gaitq.madeslowly.xyz"
+# Deploy url, if deploying to https://www.domain.com/foo just enter https://www.domain.com here
+url:                       "https://gaitq.madeslowly.xyz"
 
-baseurl:             ""
-
-postal_add:
-  street:            46 Woodstock Road
-  city:              Oxford
-  region:            Oxfordshire
-  country:           United Kingdom
-  postcode:          OX2 6HT
-
-email:               info@gaitq.com
-
-phone:
-
-opening_hours:       Mo,Tu,We,Th,Fr 09:00-18:00
-
-thumbnail:           default-thumb.png
-logo:                "assets/img/page-thumbs/default-thumb.png"
-favicon:             "assets/img/favicon.png"
+# Deploy baseurl, if deploying to https://www.domain.com/foo just enter /foo here, otherwise leave empty quotes
+baseurl:                   ""
 
 socials:
 
-  - name:   LinkedIn
-    icon:   linkedin
-    username: gaitq
-    url:    https://www.linkedin.com/company/gaitq/
+  - name:                  LinkedIn
+    icon:                  linkedin
+    username:              gaitq
+    url:                   https://www.linkedin.com/company/gaitq/
 
-  - name:   Twitter
-    icon:   twitter
-    username: gait_q
-    url:    https://twitter.com/gait_q
+  - name:                  Twitter
+    icon:                  twitter
+    username:              gait_q
+    url:                   https://twitter.com/gait_q
 
-  - name:   Facebook
-    icon:   facebook
-    username: GaitQLimited
-    url:    https://www.facebook.com/GaitQLimited
-
-aos-duration:        1000
-aos-easing:          ease-out-sine
+  - name:                  Facebook
+    icon:                  facebook
+    username:              GaitQLimited
+    url:                   https://www.facebook.com/GaitQLimited
 
 google:
   verification:
@@ -65,38 +54,73 @@ google:
 
 # Site author, additional content authors can be added in _data/authors.yml
 author:
-  name:              Made Slowly
-  email:             arran@madeslowly.co.uk
-  url:               https://www.madeslowly.co.uk/
-  twitter:           made_slowly
-  description:       >-
+  name:                    Made Slowly
+  email:                   arran@madeslowly.co.uk
+  url:                     https://www.madeslowly.co.uk/
+  twitter:                 made_slowly
+  description:             >-
 
       Made Slowly is the creation of Arran Curran, a freelance developer based in Oxford. I have been developing digital solutions in a variety of enviroments for over 20 years. With my wide range of experience I can deliver an all-in-one solution, so your new website will be smarter and faster all whilst looking awesome (the website, not me). Get in touch and find out how I can help you.
 
-# Build settings
 
-exclude:
-  - notes.md
+
+#
+# ### SEO Variables ###
+#
+
+default_path:              /assets/images/
+fallback_path:             /assets/images/defaults/
+
+# Default images for SEO, place images in fallback_path
+logo:                      logo.png
+brand:                     brand.png # Used on social media cards, so keep it sexy!
+favicon:                   favicon.png
+
+# Telling google where we are and when we are there.
+postal_add:
+  street:                  46 Woodstock Road
+  city:                    Oxford
+  region:                  Oxfordshire
+  country:                 United Kingdom
+  postcode:                OX2 6HT
+
+opening_hours:             Mo,Tu,We,Th,Fr 09:00-18:00
+
+email:                     info@gaitq.com
+
+phone:                     1234567890
+
+
+
+
+############################################################
+#### DANGER ZONE - Changes here may break your website! ####
+############################################################
+
+#
+# ### Blog Settings ###
+#
+
+blog_name:                 posts
+
+paginate:                  8
+paginate_path:             /posts/page-:num/
+permalink:                 /posts/:title/
+
+#
+# ### Build Settings ###
+#
+
+exclude: # Anyhting in our project root that we dont want copied into /_site/
   - README.md
   - Gemfile
-  - assets/dev
-  - node_modules
-  - package-lock.json
-  - deploy-key
-  - deploy-key.pub
 
-markdown: kramdown
-highlighter: rouge
+markdown:                  kramdown
+highlighter:               rouge
 kramdown:
-  input: GFM
+  input:                   GFM
   syntax_highlighter_opts:
-    default_lang: html
-
-blog_name:          posts
-
-paginate:            8
-paginate_path:       /posts/page-:num/
-permalink:           /posts/:title/
+    default_lang:          html
 
 plugins:
   - jekyll-feed
@@ -106,25 +130,32 @@ plugins:
   - jekyll-target-blank
   - jekyll-image-size     # https://github.com/generalui/jekyll-image-size
 
-
 defaults:
   -
     scope:
-      path:          "error-pages/*"
+      path:                "error-pages/*"
     values:
-      sitemap:       false
+      sitemap:             false
 
 sass:
-  style:             compressed
+  style:                   compressed
   load_paths:
     - _sass
-    - node_modules
 
 compress_html:
-  only_production:   true
-  comments:          all
+  ignore:
+    envs: [local]
+  comments:                all
 
 autoprefixer:
-  only_production:   true
+  only_production:         true
   browsers:
     - cover 99.5%
+
+picture:
+  source:                  "assets/images"
+  output:                  "assets/images"
+
+
+aos-duration:              1000
+aos-easing:                ease-out-sine
