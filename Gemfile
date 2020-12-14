@@ -9,19 +9,24 @@ source 'https://rubygems.org'
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
 
-gem 'jekyll'
+gem 'jekyll', '~> 4.1'
 
 group :jekyll_plugins do
-  gem 'jekyll-feed'
-  gem 'jekyll-paginate'
-  gem 'jekyll-autoprefixer'
-  gem 'jekyll-sitemap'
-  gem 'jekyll-target-blank'
 
+  gem 'jekyll-feed'
+
+  gem 'jekyll-paginate'
+
+  gem 'jekyll-autoprefixer'
+
+  gem 'jekyll-sitemap'
+
+  gem 'jekyll-target-blank'
   # {% imagesize image_path:opengraph %}
   gem 'jekyll-image-size', '~> 1.2'
 
   gem 'kramdown-parser-gfm', '~> 1.1'
 
   gem 'jekyll_picture_tag'
+
 end
