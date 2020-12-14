@@ -1,12 +1,12 @@
 ---
 layout:       post
 categories:   [ news ] # Array of categories [ news, press, etc ]
-title:        "GaitQ Has Some News"
-subtitle:     "Have you heard the bird is the word."
-date:         2020-12-13 # YYYY - MM - DD First publish date, modified dates are automatically generated.
-author:       Joe-Blog
+title:        "More News From GaitQ"
+subtitle:     "Bird Bird Bird is the Word."
+date:         2020-12-14 # YYYY - MM - DD First publish date, modified dates are automatically generated.
+author:       A-Nother
 description:  Lorem ipsum dolor sit amet # Short description of this post
-image:        OCW_Groupshot_Devices_1.png
+image:        OCW_Groupshot_with_LEDs.png
 image_alt:    The description of this image
 env:          clinician
 ---

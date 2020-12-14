@@ -1,34 +1,6 @@
 ---
-layout: default
-title: Posts
+layout: feed
+title: News from GaitQ
 description:
-# date of blog start, used in article:published_time
-date: 2018-01-20
-thumbnail:
+env: pwp
 ---
-
-<!-- this page shows all our posts ordered by date -->
-<!-- we link to this with /posts/ -->
-
-<section class="blog-masthead global-masthead">
-
-<h1>
-  {{ page.title }}
-</h1>
-
-
-</section>
-
-<div class="blog-wrapper">
-
-
-  {% for post in site.posts %}
-  <a href="{{ site.baseurl }}{{ post.url }}">
-  <h2>{{ post.title }}</h2></a>
-
-  <h3>{{ post.subtitle }}</h3>
-
-  {% endfor %}
-
-
-</div>

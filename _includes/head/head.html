@@ -56,6 +56,10 @@
   <link rel="stylesheet" type="text/css" title="made slowly has all the style" href="{{ site.baseurl }}/assets/css/gaitq_errors.css" media="screen" />
   {% endif %}
 
+  {% if page.layout == 'feed' %}
+  <link rel="stylesheet" type="text/css" title="made slowly has all the style" href="{{ site.baseurl }}/assets/css/gaitq_feed.css" media="screen" />
+  {% endif %}
+
   {% if page.id %} <!-- it's a post -->
   <link rel="stylesheet" type="text/css" title="made slowly has all the style" href="{{ site.baseurl }}/assets/css/gaitq_post.css" media="screen" />
   {% endif %}

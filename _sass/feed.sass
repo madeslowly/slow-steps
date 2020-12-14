@@ -1,0 +1,58 @@
+.feed__head
+  margin-top: ($navbar-height + $secondary-navbar-height)*1.5
+  width: 100vw
+
+.feed__title
+  margin: auto
+  text-align: center
+
+.post__feed
+  display: flex
+  justify-content: space-between
+  width: 80vw
+  max-width: 1200px
+  margin: 10vh auto
+
+.feed__card
+  display: flex
+  flex-direction: column
+  width: 30vw
+  max-width: 360px
+  height: 220px
+  margin-bottom: 10vh
+  overflow: hidden
+  border-radius: 12px
+  box-shadow: 0 0 6px rgba($env-primary,.8)
+  transition: .8s ease-in-out
+
+  &:hover
+    box-shadow: 2px 2px 10px rgba($env-primary,1)
+    .feed__card--image
+      transform: scale(1.1)
+    .feed__card--title
+      font-weight: 400
+      color: $pure-white
+
+.feed__card--image
+  display: block
+  object-fit: cover
+  object-position: top
+  width: 100%
+  height: 100%
+  overflow: hidden
+  transition: .8s ease-in-out
+
+.feed__card--text
+  background-color: $env-primary
+  padding: 2rem 1rem
+  color: $white
+  z-index: 1
+  font-size: $font-size * .7
+
+.feed__card--link
+  text-decoration: none
+  color: inherit
+  text-transform: uppercase
+
+.feed__card--meta
+  font-size: $font-size * .7
