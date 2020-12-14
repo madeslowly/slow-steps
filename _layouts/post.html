@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<section class="post_head">
+
+{% picture {{ page.image | prepend: 'posts/' }} --alt {{ page.image_alt }} --img class="post__hero" %}
+
+<div class="post__title">
+<h1 >{{ page.title }}</h1>
+<p class="post__meta">{{ site.data.authors[page.author].name }} | {{ site.data.authors[page.author].email }} | {{ page.date | date: "%d-%m-%y" }}</p>
+</div>
+</section>
+
+
+<section class="post__content">
+
+<h2 class="post__subtitle">{{ page.subtitle }}</h2>
+
+{{ content }}
+
+</section>
+
+<section class="post__footer">
+
+</section>

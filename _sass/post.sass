@@ -1,0 +1,68 @@
+.post_head
+  display: flex
+  flex-direction: column
+  align-items: baseline
+  justify-content: flex-end
+
+
+.post__hero
+  display: block
+  object-fit: cover
+  margin-top: $navbar-height + $secondary-navbar-height
+  width: 100vw
+  height: 50vh
+  margin-bottom: 6vh
+
+
+.post__title
+  position: absolute
+  display: flex
+  flex-direction: column
+  padding: 3rem 6rem 6rem 3rem
+  background-color: $env-primary
+  color: $white
+  left: 5vw
+  max-width: 50vw
+  text-transform: uppercase
+  //bottom: -10px
+  border: solid 1px $white
+  box-shadow: 1px 2px 20px -10px $white
+  //text-align: left
+
+.post__meta
+  font-size: $font-size * .6
+  padding-top: 3rem
+
+.post__content
+  margin: 5vh auto
+  width: 90vw
+  max-width: 800px
+  & > p
+    padding: 3rem 0
+
+.post__subtitle
+  padding: 5rem 0
+
+.post__image
+  width: 60vw
+  max-width: 800px
+  margin: auto
+  overflow: hidden
+
+.post__content--image
+  display: block
+  object-fit: cover
+  object-position: top
+  width: 100%
+  height: 50vh
+
+.post__image--caption
+  font-size: $font-size * .7
+  color: $grey
+  padding: 1rem 0
+  text-align: center
+.post__link
+  color: $opd-blue-confidence
+  text-decoration: none
+  &:hover
+    color: $black
