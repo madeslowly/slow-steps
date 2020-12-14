@@ -47,13 +47,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   {% if page.env %}
-  {% include /head/env/conditional.html %}
+    {% include /head/env/conditional.html %}
   {% endif %}
 
   <link rel="stylesheet" type="text/css" title="made slowly has all the style" href="{{ site.baseurl }}/assets/css/gaitq_global.css" media="screen" />
 
   {% if page.layout == 'error-page' %}
   <link rel="stylesheet" type="text/css" title="made slowly has all the style" href="{{ site.baseurl }}/assets/css/gaitq_errors.css" media="screen" />
+  {% endif %}
+
+  {% if page.id %} <!-- it's a post -->
+  <link rel="stylesheet" type="text/css" title="made slowly has all the style" href="{{ site.baseurl }}/assets/css/gaitq_post.css" media="screen" />
   {% endif %}
 
 
