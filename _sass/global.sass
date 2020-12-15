@@ -25,6 +25,10 @@
 .no-touch__wrap
   padding: 18vh 0 10vh 0
 
+// Social icons wraped in <a's
+.social
+  color: $grey
+  text-decoration: none
 
 @media screen and ( min-width: 768px )
 
@@ -32,3 +36,20 @@
     width: 80vw
     max-width: 600px
     margin: 0 auto
+
+  .social--Twitter
+    &:hover
+      color: $twitter-primary
+
+  .social--LinkedIn
+    &:hover
+      color: $linkedin-primary
+
+  .social--Instagram
+    &:hover
+      color: $instagram-primary
+
+  .social--Website,
+  .social--Email
+    &:hover
+      color: $opd-blue-trust
