@@ -1,42 +1,44 @@
 
 
-.clinician__mast
-  display: flex
-  justify-content: center
+.clinician__hero
   align-items: center
+  display: flex
   flex-direction: column
   height: 65vh
-  height: calc( var(--vh, 1vh) * 65 )
+  height: calc(var(--vh, 1vh) * 65)
+  justify-content: center
 
 .clinician__bg
-  position: relative
-  height: 100%
-  width: 100%
   background-image: url($baseurl + 'assets/img/landing__clinician-mobile.jpg')
   background-size: cover
-  opacity: .7
   filter: grayscale(1) contrast(.2) brightness(1.6)
+  height: 100%
+  opacity: .7
+  position: relative
+  width: 100%
 
 .clinician__overlay
-  position: relative
+  background-color: $env-primary
   height: 70%
+  position: relative
   width: 100%
-  background-color: $env-primary
 
-.clinician--strap
-  display: flex
-  justify-content: space-around
-  flex-direction: column
-  //position: absolute
-  height: 30%
-  width: 100%
+.clinician__strap
+  background-color: $env-primary
   color: $white
-  text-align: center
+  display: flex
+  flex-direction: column
+  height: 30%
+  justify-content: space-around
   padding-bottom: 3vh
-  background-color: $env-primary
+  text-align: center
+  width: 100%
 
+  h1
+    // Hide on mobile
+    display: none
 
-.clinician--strap-start
+.clinician__strap-start
   color: $env-primary
 
 .clinician__follow
