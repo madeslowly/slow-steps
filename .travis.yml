@@ -4,6 +4,7 @@ before_install:
 
 addons:
   ssh_known_hosts: ydn.wpm.mybluehost.me
+
 install:
   - echo $deploy_rsa.pub >> $HOME/.ssh/known_hosts
 
@@ -27,7 +28,7 @@ notifications:
     on_failure: always
 
 script:
-- bundle exec jekyll build --config _config.yml
+- bundle exec jekyll build
 
 deploy:
   provider: script
