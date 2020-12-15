@@ -1,9 +1,11 @@
-addons:
-  ssh_known_hosts: ydn.wpm.mybluehost.me
 
 before_install:
 - openssl aes-256-cbc -K $encrypted_db2095f63ba3_key -iv $encrypted_db2095f63ba3_iv -in deploy_rsa.enc -out deploy_rsa -d
 
+addons:
+  ssh_known_hosts: ydn.wpm.mybluehost.me
+install:
+  - echo $deploy_rsa.pub >> $HOME/.ssh/known_hosts
 
 language: ruby
 cache: bundler
@@ -16,6 +18,7 @@ rvm:
 env:
   global:
   - JEKYLL_ENV=production
+
 notifications:
   email:
     recipients:
@@ -24,9 +27,7 @@ notifications:
     on_failure: always
 
 script:
-- ssh-add $HOME/.ssh/deploy_rsa
-- chmod +x _scripts/build.sh
-- _scripts/build.sh
+- bundle exec jekyll build --config _config.yml
 
 deploy:
   provider: script
