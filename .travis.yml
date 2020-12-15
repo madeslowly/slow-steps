@@ -4,7 +4,7 @@ before_install:
 
 
 addons:
-  ssh_known_hosts: ftp.ydn.wpm.mybluehost.me
+  ssh_known_hosts: ydn.wpm.mybluehost.me
 
 language: ruby
 cache: bundler
@@ -17,6 +17,7 @@ rvm:
 env:
   global:
   - JEKYLL_ENV=production
+  - RSYNC_PASSWORD=$PASSWORD
 
 notifications:
   email:
@@ -33,6 +34,6 @@ deploy:
   skip_cleanup: true
   script:
     - ssh-add ${TRAVIS_HOME}/.ssh/deploy_rsa
-    - rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/_site ydnwpmmy@ydn.wpm.mybluehost.me:public_html/madeslowly.xyz/gaitq/test
+    - rsync -r $TRAVIS_BUILD_DIR/_site ydnwpmmy@ydn.wpm.mybluehost.me:public_html/madeslowly.xyz/gaitq/test
   on:
     branch: master
