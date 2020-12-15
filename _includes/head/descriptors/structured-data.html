@@ -4,26 +4,6 @@
 {%- assign twitter = site.socials | where: 'name', 'Twitter' -%}
 
 <!-- *** STRUCTURED DATA *** -->
-<!-- LocalBusiness -->
-<script type="application/ld+json">
-  { "@context": "http://schema.org",
-    "@type": "LocalBusiness",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "{{ site.postal_add.street }}",
-      "addressLocality": "{{ site.postal_add.city }}",
-      "addressRegion": "{{ site.postal_add.region }}",
-      "addressCountry": "{{ site.postal_add.country }}",
-      "postalCode": "{{ site.postal_add.postcode }}"
-    },
-    "name": "{{ site.title }} | {{ site.subtitle }}",
-    "alternateName": "{{ site.title }}",
-    "description": "{{ site.description }}",
-    "telephone": "{{ site.phone }}",
-    "openingHours": "{{ site.opening_hours }}",
-    "image": "{{ site.url }}{{ site.baseurl }}{{ site.fallback_path }}{{ site.brand }}"
-  } </script>
-
 <!-- WebSite -->
 <!-- const -->
 <script type="application/ld+json">
@@ -121,4 +101,24 @@
     "mainEntityOfPage": "{{ site.url }}{{ site.baseurl }}{{ page.url }}"
   }
 </script>
+{% else %}
+<!-- LocalBusiness -->
+<script type="application/ld+json">
+  { "@context": "http://schema.org",
+    "@type": "LocalBusiness",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ site.postal_add.street }}",
+      "addressLocality": "{{ site.postal_add.city }}",
+      "addressRegion": "{{ site.postal_add.region }}",
+      "addressCountry": "{{ site.postal_add.country }}",
+      "postalCode": "{{ site.postal_add.postcode }}"
+    },
+    "name": "{{ site.title }} | {{ site.subtitle }}",
+    "alternateName": "{{ site.title }}",
+    "description": "{{ site.description }}",
+    "telephone": "{{ site.phone }}",
+    "openingHours": "{{ site.opening_hours }}",
+    "image": "{{ site.url }}{{ site.baseurl }}{{ site.fallback_path }}{{ site.brand }}"
+  } </script>
 {% endif %}
