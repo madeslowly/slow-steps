@@ -1,8 +1,6 @@
 language: ruby
 cache: bundler
 gemfile: Gemfile
-script:
-- bundle exec jekyll build
 branches:
   only:
   - master
