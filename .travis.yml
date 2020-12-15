@@ -24,6 +24,7 @@ notifications:
     on_failure: always
 
 script:
+- ssh-add $HOME/.ssh/deploy_rsa
 - chmod +x _scripts/build.sh
 - _scripts/build.sh
 
@@ -31,7 +32,6 @@ deploy:
   provider: script
   skip_cleanup: true
   script:
-    - ssh-add $HOME/.ssh/deploy_rsa
     - rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/_site ydnwpmmy@ydn.wpm.mybluehost.me:public_html/madeslowly.xyz/gaitq/test
   on:
     branch: master
