@@ -116,6 +116,9 @@ exclude: # Anyhting in our project root that we dont want copied into /_site/
   - Gemfile
   - Rakefile
   - assets/images/original/
+  - deploy_rsa
+  - deploy_rsa.enc
+  - deploy_rsa.pub
 
 markdown:                  kramdown
 highlighter:               rouge
