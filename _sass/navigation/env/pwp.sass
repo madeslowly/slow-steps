@@ -18,15 +18,15 @@
       fill: $opd-orange-confidence
 
 // on mobile and within the clinician env we hide the other submenus and show the gaitq env .nav-group-link
-.clinician-group, .clinician-group-link, .patients-group-link, .gaitq-group
+.clinician-group, .gaitq-group
   display: none
 
 
 @media screen and ( min-width: 768px )
-  .clinician-group-link, .patients-group-link, .pwp-group
+  .clinician-group-link, .pwp-group-link
     display: flex
 
-  .patients-group
+  .pwp-group
     display: flex
     align-items: center
     width: 100vw
@@ -35,8 +35,7 @@
     flex-direction: row
 
   .nav-group-content
-    padding: 0 4vw
-    justify-content: flex-start
+
 
     .nav-link
       font-weight: 400
