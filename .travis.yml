@@ -4,6 +4,7 @@ addons:
 before_install:
 - openssl aes-256-cbc -K $encrypted_db2095f63ba3_key -iv $encrypted_db2095f63ba3_iv -in deploy_rsa.enc -out deploy_rsa -d
 
+
 language: ruby
 cache: bundler
 gemfile: Gemfile
@@ -29,6 +30,8 @@ script:
 deploy:
   provider: script
   skip_cleanup: true
-  script: rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/_site ydnwpmmy@ydn.wpm.mybluehost.me:public_html/madeslowly.xyz/gaitq/test
+  script:
+    - ssh-add $HOME/.ssh/deploy_rsa
+    - rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/_site ydnwpmmy@ydn.wpm.mybluehost.me:public_html/madeslowly.xyz/gaitq/test
   on:
     branch: master
