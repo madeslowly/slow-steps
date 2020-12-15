@@ -115,6 +115,7 @@ exclude: # Anyhting in our project root that we dont want copied into /_site/
   - README.md
   - Gemfile
   - Rakefile
+  - assets/images/original/
 
 markdown:                  kramdown
 highlighter:               rouge
