@@ -114,6 +114,7 @@ permalink:                 /posts/:title/
 exclude: # Anyhting in our project root that we dont want copied into /_site/
   - README.md
   - Gemfile
+  - Rakefile
 
 markdown:                  kramdown
 highlighter:               rouge
