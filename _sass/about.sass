@@ -80,13 +80,38 @@
 .team__members
   background-color: $white
   color: $opd-blue-confidence
-  padding: 10rem 2rem
+  padding-top: 10rem
 
 .single__member
   display: none
+  flex-direction: column
+  width: 90%
+  margin: auto
 
 .single__member--active
-  display: block
+  display: flex
+
+.single__member__image
+  display: flex
+  justify-content: center
+  width: 100%
+  padding-bottom: 3rem
+
+.member--image
+  width: 200px
+  height: 200px
+  object-fit: cover
+  border-radius: 12px
+  padding: 3px
+  border: solid 1px $light-grey
+  transition: .3s ease-in-out
+  &:hover
+    border: solid 1px $white
+    box-shadow: 1px 1px 5px $light-grey
+
+.single__member__text
+  width: 90%
+  margin: auto
 
 .member__position
   display: flex
@@ -100,12 +125,10 @@
   padding: 0
   li
     display: inline
-    a
-      font-size: $font-size
-      text-decoration: none
-      color: $env-primary
-      &:hover
-        color: $env-secondary
+
+.social
+  color: $env-primary
+  font-size: $font-size * .7
 
 .member__info
   height: $font-size * 4

@@ -1,7 +1,7 @@
 # GaitQ team members, used to generate /about
 
 # - name:     duh?
-#   img:      local path to image, assets/...
+#   image:      local path to image, assets/...
 #   position: Position held
 #   alt:      Short (!) description of member's role
 #   social:
@@ -28,7 +28,7 @@ menu:
 members:
 
   - name:       Simon Godwin
-    img:
+    image:      Simon_Godwin.jpg
     position:   Chair
     membership: board, investor
     alt:        >-
@@ -36,12 +36,12 @@ members:
       Simon is CFO of Fundsmith, a London-based equity fund with £26bn under management, which he helped found in 2010.  He is passionate about science, is a Trustee of The Royal Institution and Patron of the Science Museum.
 
     social:
-      - name:
-        icon:
-        url:
+      - name: Website
+        icon: fas fa-link
+        url:  https://www.fundsmith.co.uk/
 ###############################################################################
   - name:       Dr Tristan Collins
-    img:
+    image:      Tristan_Collins.jpg
     position:   CEO
     membership: core, board
     alt:        >-
@@ -57,7 +57,7 @@ members:
         url:  mailto:tristan@gaitq.com
 ###############################################################################
   - name:       Dr Dongli Li
-    img:
+    image:      Dongli_Li.jpg
     position:   VP Technology - Electronics & Patient Interface
     membership: core, board
     alt:        >-
@@ -70,10 +70,10 @@ members:
     social:
       - name: LinkedIn
         icon: fab fa-linkedin
-        url:
+        url:  https://www.linkedin.com/in/dongli-li-a7726063/
 ###############################################################################
   - name:       Dr André Hallack
-    img:
+    image:      André_Hallack.jpg
     position:   VP Technology - Software & Analytics
     membership: core, board
     alt:        >-
@@ -86,10 +86,10 @@ members:
     social:
       - name: LinkedIn
         icon: fab fa-linkedin
-        url:
+        url:  https://www.linkedin.com/in/andre-hallack-b489b442/
 ###############################################################################
   - name:       Dr James Cantley
-    img:
+    image:      James_Cantley.jpg
     position:   Advisor
     membership: advisor
     alt:        >-
@@ -101,10 +101,10 @@ members:
     social:
       - name: LinkedIn
         icon: fab fa-linkedin
-        url:
+        url:  https://www.linkedin.com/in/james-cantley-b9a053a4/
 ###############################################################################
   - name:     University of Oxford
-    img:
+    image:    Oxford_University.png
     position: Investor
     membership: investor
     alt:        >-
@@ -112,18 +112,34 @@ members:
       Innovation Fund (V) managed by Parkwalk Advisors
 
     social:
+      - name: Website
+        icon: fas fa-link
+        url:  https://www.ox.ac.uk/
       - name: LinkedIn
         icon: fab fa-linkedin
-        url:
+        url:  https://www.linkedin.com/school/oxforduni/mycompany/
+      - name: Twitter
+        icon: fab fa-twitter
+        url:  https://twitter.com/uniofoxford/
 ###############################################################################
   - name:     British Growth Fund
-    img:
+    image:    British_Growth_Fund.png
     position: Investor
     membership: investor
     alt:
 
     social:
+      - name: Website
+        icon: fas fa-link
+        url:  https://www.bgf.co.uk/
       - name: LinkedIn
         icon: fab fa-linkedin
-        url:
+        url:  https://www.linkedin.com/company/bgfinvestments/
+      - name: Twitter
+        icon: fab fa-twitter
+        url:  https://twitter.com/BGFinvestments/
+      - name: Instagram
+        icon: fab fa-instagram
+        url:  https://www.instagram.com/bgfinvestments/
+
 ###############################################################################

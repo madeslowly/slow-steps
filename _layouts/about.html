@@ -45,31 +45,39 @@ layout: default
         team--{{ item }}
       {% endfor %} ">
 
-      <h2>{{ member.name }}</h2>
+        <div class="single__member__image">
+          <img class="member--image"src="{{ member.image | prepend: '/assets/images/content/people/' }}" alt="{{ member.name }} is the {{ member.position }}" />
+        </div>
 
-      <h2 class="member__position">{{ member.position }}</h2>
+        <div class="single__member__text">
+        <h2>{{ member.name }}</h2>
 
-      {% if member.scoial %}
-      <ul class="member__socials">
-        {% for socials in member.social %}
-        <li>
-          <a href="{{ socials.url }}">
-            <i class="{{ socials.icon }}"></i>
-          </a>
-        </li>
-        {% endfor %}
-      </ul>
-      {% endif %}
+        <h2 class="member__position">{{ member.position }}</h2>
 
-      <p class="member__info">{{ member.alt }}</p>
+        {% if member.social %}
+        <ul class="member__socials">
+          {% for socials in member.social %}
+          <li>
+            <a class="social--{{ socials.name }} social"href="{{ socials.url }}">
+              <i class="{{ socials.icon }}"></i>
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+        {% endif %}
 
-      <!-- Only hide long member.alt, 100 char ~ 2 lines -->
-      {% if member.alt.size > 100 %}
-      <div class="info__conceal" ><p><i class="fas fa-angle-double-down"> </i></p></div>
-      {% endif %}
+        <p class="member__info">{{ member.alt }}</p>
 
-  </div>
+        <!-- Only hide long member.alt, 100 char ~ 2 lines -->
+        {% if member.alt.size > 100 %}
+        <div class="info__conceal" ><p><i class="fas fa-angle-double-down"> </i></p></div>
+        {% endif %}
+      </div>
+
+    </div>
+
     {% endfor %}
+
   </div>
 </div>
 
