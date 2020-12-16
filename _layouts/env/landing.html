@@ -4,16 +4,25 @@ layout: default
 
 
 <div class="landing__page">
+  {% assign env = site.data.menu.navigation | where: 'env', 'pwp' %}{% assign env = env[0] %}
+
+  {% assign cta = env.submenu | where: 'id', 'cta' %}{% assign cta = cta[0] %}
 
   <div class="landing__halfed">
 
     <div class="env__text env--pwp">
-      <a class="landing__link" href="{{ site.data.menu.navigation[0].url | relative_url }}">
 
-        <h3 class="landing__title">{{ site.data.menu.navigation[0].name | upcase }}</h3></a>
+      <a class="landing__link" href="{{ env.url | relative_url }}">
 
-      <p class="landing__strap">
-        {{ site.data.copy.landing.pwp }}</p>
+        <h3 class="landing__title">{{ env.name | upcase }}</h3></a>
+
+      <div class="landing__strap">
+        <p>{{ site.data.copy.landing.pwp }}</p>
+        <div class="landing__cta">
+        <a class="primary__cta" href="{{ cta.url }}">Sign up</a>
+        <a class="secondary__cta" href="{{ cta.url }}">More Info</a>
+        </div>
+      </div>
 
     </div>
 

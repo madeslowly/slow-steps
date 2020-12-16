@@ -17,6 +17,8 @@ $landing-height: 100vh
   width: 50vw
 
 .env__text
+  display: flex
+  flex-direction: column
   color: $white
   position: absolute
   top: 50vh
@@ -28,10 +30,44 @@ $landing-height: 100vh
     width: 40vw
 
 .landing__strap
+  display: flex
+  flex-direction: column
+  justify-content: space-around
   height: 0
   overflow: hidden
   transition: .2s ease-in-out
   width: 40vw
+
+.landing__cta
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+
+  > a
+    transition: .3s ease-in-out
+    width: 40%
+    padding: 1rem 0
+    border-radius: 6px
+    text-decoration: none
+    text-align: center
+    align-self: center
+
+
+.primary__cta
+  background-color: $opd-blue-trust
+  border: solid 1px $opd-blue-trust
+  color: $opd-blue-confidence
+  &:hover
+    color: $opd-blue-trust
+    background-color: transparent
+
+.secondary__cta
+  background-color: none
+  border: solid 1px $white
+  color: $white
+  &:hover
+    color: $opd-blue-confidence
+    background-color: $white
 
 .env__text.env--pwp
   border-radius: 6px 0 0 6px
