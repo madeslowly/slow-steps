@@ -72,11 +72,9 @@ $landing-height: 100vh
     position: absolute
     top: 50vh
     transition: .6s ease-in-out
-
     &:hover > .landing__strap
       height: 30vh
       padding: 0 3rem
-      width: 40vw
 
   .landing__strap
     display: flex
@@ -86,6 +84,7 @@ $landing-height: 100vh
     overflow: hidden
     transition: .2s ease-in-out
     width: 40vw
+    max-width: 400px
 
   .landing__cta
     display: flex
@@ -140,6 +139,7 @@ $landing-height: 100vh
 
   .landing__title
     width: auto
+    padding: 3rem 2rem
 
   .hero__overlay
     width: 50%
@@ -148,12 +148,11 @@ $landing-height: 100vh
 
   .env--pwp
     .landing__title
-      padding: 3rem 2rem
       text-align: right
 
   .env--clinician
     .landing__title
-      padding: 3rem 3rem 3rem 1rem
+      text-align: left
 
 @keyframes slide-from-right
   0%
