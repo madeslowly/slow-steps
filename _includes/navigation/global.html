@@ -1,8 +1,6 @@
 
 <!-- No navigation on landing, we split the diplay with <a's pointing to pwp or clinician. This is done in the landing.html layout. -->
 
-{% if page.layout == "env/landing" or page.layout == "error-page" %}
-{% else %}
 <nav class="navbar">
 
   <div class="nav-brand">
@@ -11,6 +9,9 @@
     </a>
   </div>
 
+  {% if page.layout == "env/landing" or page.layout == "error-page" %}
+  </nav>
+  {% else %}
     <ul class="nav-list">
 
       {% for item in site.data.menu.navigation %}
