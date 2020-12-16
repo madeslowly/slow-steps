@@ -7,106 +7,77 @@
 // Fallback for browsers that do not support Custom Properties
 $landing-height: 100vh
 
-.landing__wraper
+.landing__page
   display: flex
-  flex-direction: column
-  top: 0
-  background-color: $white
   height: $landing-height
-  height: calc( var(--vh, 1vh) * 100 )
-  position: relative
+  height: calc(var(--vh, 1vh) * 100)
 
-.landing__half--pwp, .landing__half--clinician
-  height: 50%
+.landing__halfed
+  height: 100vh
+  width: 50vw
 
-.landing__clinician, .landing__pwp
-  background-repeat: no-repeat
-  background-size: cover
-  background-position: center
-  height: 100% /* of .landing__wrapper */
-  max-height: calc( var(--vh, 1vh) * 50 )
-  width: 100vw
+.env__text
+  color: $white
+  position: absolute
+  top: 50vh
+  transition: .6s ease-in-out
+
+  &:hover > .landing__strap
+    height: 30vh
+    padding: 0 3rem
+    width: 40vw
+
+.landing__strap
+  height: 0
+  overflow: hidden
+  transition: .2s ease-in-out
+  width: 40vw
+
+.env__text.env--pwp
+  border-radius: 6px 0 0 6px
+  box-shadow: -12px 10px 10px -10px $grey
+  right: 50%
+  &:hover
+    box-shadow: -20px 20px 20px -10px $grey
+
+.env__text.env--clinician
+  border-radius: 0 6px 6px 0
+  box-shadow: 12px 10px 10px -10px $grey
+  left: 50%
+  &:hover
+    box-shadow: 20px 20px 20px -10px $grey
+
+.landing__link
+  text-decoration: none
+  color: $white
+
+
+.landing__title
+  font-size: $font-size
+
+
+.hero__overlay
+  position: absolute
+  width: 50vw
+  height: 100%
+  top: 0
+  z-index: -1
+
+
+.hero__image
+  height: 100%
+  width: 100%
+  object-fit: cover
   opacity: .7
   filter: grayscale(1) contrast(.2) brightness(1.6)
 
-.landing__pwp
-  position: absolute
-  top: 0
-
-.landing__overlay
-  position: relative
-  height: 100%
-  width: 100%
-
-.landing--strap
-  position: absolute
-  width: 100vw
-  max-width: 100vw
-  color: $white
-  text-decoration: none
-  z-index: 2
-  &.env--pwp
-    bottom: 50%
-  &.env--clinician
-    bottom: 0
-
-  h2
-    padding: 1rem 2rem
-    margin: 0
-    font-size: 2rem
-
-
-.landing__clinician
-  background-image: url($baseurl + 'assets/img/landing__clinician-mobile.jpg')
+.env--pwp
+  background-color: $opd-orange-confidence
+  .landing__title
+    padding: 3rem 2rem
+    text-align: right
 
 .env--clinician
   background-color: $opd-blue-confidence
-
-.landing__pwp
-  background-image: url($baseurl + 'assets/img/landing__pwp-mobile.jpg')
-
-.env--pwp
-  background-color: $opd-orange-confidence
-
-@media screen and ( min-width: 768px )
-
-  .landing__wraper
-    flex-direction: row
-
-  .landing__half--pwp, .landing__half--clinician
-    overflow: hidden
-    height: 100vh
-    min-height: 100vh
-    min-width: 50vw
-
-  .landing__overlay
-    position: relative
-    height: 100%
-    transition: 2s cubic-bezier(0,0,0,.97)
-
-  .landing__clinician, .landing__pwp
-    align-items: center
-    height: 100vh /* of .landing-wrapper */
-    min-height: 100vh
-    width: 50vw
-
-  .landing--strap
-    //display: block
-    position: absolute
-    width: 50vw
-    min-width: 50vw
-    top: 50vh
-    height: auto
-    bottom: auto!important
-
-    h2
-      padding: 2rem 2rem
-
-  .landing--strap.env--clinician
-    right: 0
-
-  .landing--strap.env--pwp
-    text-align: right
-
-  .landing--strap:hover + .landing__overlay
-    transform: scale(1.2)
+  .landing__title
+    padding: 3rem 3rem 3rem 1rem

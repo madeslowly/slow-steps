@@ -1,4 +1,14 @@
 ##############################################
+# Landing page -                    gaitq.com
+##############################################
+landing:
+
+  pwp:          >-
+
+    GaitThaw: a smart, wearable medical device to help overcome gait freezing episodes and maintain levels of activity for longer.
+
+
+##############################################
 # pwp enviroment -              gaitq.com/pwp/
 ##############################################
 pwp:

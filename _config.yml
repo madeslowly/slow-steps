@@ -62,16 +62,17 @@ author:
 
       Made Slowly is the creation of Arran Curran, a freelance developer based in Oxford. I have been developing digital solutions in a variety of enviroments for over 20 years. With my wide range of experience I can deliver an all-in-one solution, so your new website will be smarter and faster all whilst looking awesome (the website, not me). Get in touch and find out how I can help you.
 
-
-
-#
-# ### SEO Variables ###
-#
-
+# Default path to all our imagary
 default_path:              /assets/images/
+
+#
+# ### SEO Stuff ###
+#
+
+# Path to images that we use for social media cards
 fallback_path:             /assets/images/defaults/
 
-# Default images for SEO, place images in fallback_path
+# Images for SEO, place images in fallback_path
 logo:                      logo.png
 brand:                     brand.png # Used on social media cards, so keep it sexy!
 favicon:                   favicon.png
@@ -91,8 +92,6 @@ email:                     info@gaitq.com
 phone:                     1234567890
 
 
-
-
 ############################################################
 #### DANGER ZONE - Changes here may break your website! ####
 ############################################################
@@ -100,7 +99,6 @@ phone:                     1234567890
 #
 # ### Blog Settings ###
 #
-
 blog_name:                 posts
 
 paginate:                  8
@@ -110,8 +108,7 @@ permalink:                 /posts/:title/
 #
 # ### Build Settings ###
 #
-
-exclude: # Anyhting in our project root that we dont want copied into /_site/
+exclude: # Anyhting in our project root that we don't want copied into /_site/
   - README.md
   - Gemfile
   - Rakefile
@@ -162,6 +159,6 @@ picture:
   source:                  "assets/images"
   output:                  "assets/images"
 
-
+# Default Animate on Scroll settings, if we want a more lively UX reduce the aos-duration or increase for a more gentle UX
 aos-duration:              1000
 aos-easing:                ease-out-sine
