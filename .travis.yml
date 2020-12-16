@@ -34,6 +34,6 @@ deploy:
   provider: script
   skip_cleanup: true
   script:
-  - rsync -r $TRAVIS_BUILD_DIR/_site/ $USERNAME@$HOST:$PATH
+  - rsync -r $TRAVIS_BUILD_DIR/_site/ $USERNAME@$HOST:$deploy_path
   on:
     all_branches: true
