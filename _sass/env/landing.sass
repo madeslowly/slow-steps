@@ -9,111 +9,161 @@ $landing-height: 100vh
 
 .landing__page
   display: flex
+  flex-direction: column
   height: $landing-height
   height: calc(var(--vh, 1vh) * 100)
 
-.landing__halfed
-  height: 100vh
-  width: 50vw
+.page__half
+  display: flex
+  align-items: flex-end
+  height: 50vh
+  width: 100vw
 
 .env__text
   display: flex
   flex-direction: column
   color: $white
-  position: absolute
-  top: 50vh
-  transition: .6s ease-in-out
-
-  &:hover > .landing__strap
-    height: 30vh
-    padding: 0 3rem
-    width: 40vw
 
 .landing__strap
-  display: flex
-  flex-direction: column
-  justify-content: space-around
-  height: 0
-  overflow: hidden
-  transition: .2s ease-in-out
-  width: 40vw
-
-.landing__cta
-  display: flex
-  flex-direction: row
-  justify-content: space-between
-
-  > a
-    transition: .3s ease-in-out
-    width: 40%
-    padding: 1rem 0
-    border-radius: 6px
-    text-decoration: none
-    text-align: center
-    align-self: center
-
-
-.primary__cta
-  background-color: $opd-blue-trust
-  border: solid 1px $opd-blue-trust
-  color: $opd-blue-confidence
-  &:hover
-    color: $opd-blue-trust
-    background-color: transparent
-
-.secondary__cta
-  background-color: none
-  border: solid 1px $white
-  color: $white
-  &:hover
-    color: $opd-blue-confidence
-    background-color: $white
-
-.env__text.env--pwp
-  border-radius: 6px 0 0 6px
-  box-shadow: -12px 10px 10px -10px $grey
-  right: 50%
-  &:hover
-    box-shadow: -20px 20px 20px -10px $grey
-
-.env__text.env--clinician
-  border-radius: 0 6px 6px 0
-  box-shadow: 12px 10px 10px -10px $grey
-  left: 50%
-  &:hover
-    box-shadow: 20px 20px 20px -10px $grey
+  display: none
 
 .landing__link
   text-decoration: none
   color: $white
 
-
 .landing__title
   font-size: $font-size
-
+  text-align: center
+  width: 100vw
+  padding: 2rem 0
 
 .hero__overlay
   position: absolute
-  width: 50vw
-  height: 100%
-  top: 0
+  width: 100%
+  height: 50%
   z-index: -1
-
 
 .hero__image
   height: 100%
   width: 100%
   object-fit: cover
   opacity: .7
-  filter: grayscale(1) contrast(.2) brightness(1.6)
+  filter: grayscale(.2) contrast(.2) brightness(1.6)
 
 .env--pwp
   background-color: $opd-orange-confidence
-  .landing__title
-    padding: 3rem 2rem
-    text-align: right
 
 .env--clinician
   background-color: $opd-blue-confidence
+
+
+@media screen and ( min-width: 768px )
+
+  .landing__page
+    flex-direction: row
+
+  .page__half
+    display: block
+    height: 100vh
+    width: 50vw
+
+  .env__text
+    flex-direction: column
+    position: absolute
+    top: 50vh
+    transition: .6s ease-in-out
+
+    &:hover > .landing__strap
+      height: 30vh
+      padding: 0 3rem
+      width: 40vw
+
+  .landing__strap
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    height: 0
+    overflow: hidden
+    transition: .2s ease-in-out
+    width: 40vw
+
+  .landing__cta
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+
+    > a
+      transition: .3s ease-in-out
+      width: 40%
+      padding: 1rem 0
+      border-radius: 6px
+      text-decoration: none
+      text-align: center
+      align-self: center
+
+  .primary__cta
+    background-color: $opd-blue-trust
+    border: solid 1px $opd-blue-trust
+    color: $opd-blue-confidence
+    &:hover
+      color: $opd-blue-trust
+      background-color: transparent
+
+  .secondary__cta
+    background-color: none
+    border: solid 1px $white
+    color: $white
+    &:hover
+      color: $opd-blue-confidence
+      background-color: $white
+
+  .env__text.env--pwp
+    border-radius: 6px 0 0 6px
+    box-shadow: -12px 10px 10px -10px $grey
+    right: 50%
+    transform: translateX(0)
+    animation: .8s cubic-bezier(.75,.86,1,.7) 0s 1 slide-from-left
+    &:hover
+      box-shadow: -20px 20px 20px -10px $grey
+
+  .env__text.env--clinician
+    border-radius: 0 6px 6px 0
+    box-shadow: 12px 10px 10px -10px $grey
+    left: 50%
+    transform: translateX(0)
+    animation: .8s cubic-bezier(.75,.86,1,.7) 0s 1 slide-from-right
+    &:hover
+      box-shadow: 20px 20px 20px -10px $grey
+
   .landing__title
-    padding: 3rem 3rem 3rem 1rem
+    width: auto
+
+  .hero__overlay
+    width: 50%
+    height: 100%
+    top: 0
+
+  .env--pwp
+    .landing__title
+      padding: 3rem 2rem
+      text-align: right
+
+  .env--clinician
+    .landing__title
+      padding: 3rem 3rem 3rem 1rem
+
+@keyframes slide-from-right
+  0%
+    transform: translateX(50vw)
+    opacity: 0
+  100%
+    transform: translateX(0)
+    opacity: 1
+
+@keyframes slide-from-left
+  0%
+    transform: translateX(-50vw)
+    opacity: 0
+  100%
+    transform: translateX(0)
+    opacity: 1
