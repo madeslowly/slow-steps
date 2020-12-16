@@ -39,4 +39,4 @@ deploy:
   script:
     - rsync -r $TRAVIS_BUILD_DIR/_site/ ydnwpmmy@ydn.wpm.mybluehost.me:public_html/madeslowly.xyz/gaitq/
   on:
-    branch: master
+    all_branches: true
