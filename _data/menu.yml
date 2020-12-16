@@ -12,15 +12,19 @@ navigation:
     alt:    Living well with Parkinson's
     submenu:
       - name:   GaitOne
+        id:     landing
         url:    /pwp/
 
       - name:   about
+        id:     about
         url:    /pwp/about/
 
       - name:   news
+        id:     posts
         url:    /pwp/posts/
 
       - name:   Trials
+        id:     cta
         url:    /pwp/register/
 
 
