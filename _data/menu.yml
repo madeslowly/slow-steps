@@ -33,15 +33,19 @@ navigation:
     env:    clinician
     submenu:
       - name:   GaitOne
+        id:     landing
         url:    /clinician/
 
       - name:   about
+        id:     about
         url:    /clinician/about/
 
       - name:   news
+        id:     posts
         url:    /clinician/posts/
 
       - name:   Get Involved
+        id:     cta
         url:    /clinician/register/
 
 
