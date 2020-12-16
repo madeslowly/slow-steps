@@ -31,7 +31,7 @@ before_deploy:
   - ssh-add deploy_rsa
 
 addons:
-  ssh_known_hosts: ydn.wpm.mybluehost.me
+  ssh_known_hosts: $HOST
 
 deploy:
   provider: script
