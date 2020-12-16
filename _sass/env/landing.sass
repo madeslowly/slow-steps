@@ -100,6 +100,7 @@ $landing-height: 100vh
       text-decoration: none
       text-align: center
       align-self: center
+      box-shadow: 0 20px 30px -15px rgba($pure-black, .6)
 
   .primary__cta
     background-color: $opd-blue-trust
@@ -108,6 +109,7 @@ $landing-height: 100vh
     &:hover
       color: $opd-blue-trust
       background-color: transparent
+      box-shadow: 0 10px 15px -5px rgba($pure-black, .5)
 
   .secondary__cta
     background-color: none
@@ -116,13 +118,14 @@ $landing-height: 100vh
     &:hover
       color: $opd-blue-confidence
       background-color: $white
+      box-shadow: 0 10px 15px -5px rgba($pure-black, .5)
 
   .env__text.env--pwp
     border-radius: 6px 0 0 6px
     box-shadow: -12px 10px 10px -10px $grey
     right: 50%
     transform: translateX(0)
-    animation: .8s cubic-bezier(.75,.86,1,.7) 0s 1 slide-from-left
+    animation: .8s cubic-bezier(.75,.86,.88,.62) 0s 1 slide-from-left
     &:hover
       box-shadow: -20px 20px 20px -10px $grey
 
@@ -131,7 +134,7 @@ $landing-height: 100vh
     box-shadow: 12px 10px 10px -10px $grey
     left: 50%
     transform: translateX(0)
-    animation: .8s cubic-bezier(.75,.86,1,.7) 0s 1 slide-from-right
+    animation: .8s cubic-bezier(.75,.86,.88,.62) 0s 1 slide-from-right
     &:hover
       box-shadow: 20px 20px 20px -10px $grey
 
