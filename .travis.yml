@@ -28,8 +28,10 @@ before_deploy:
 - eval "$(ssh-agent -s)"
 - chmod 600 deploy_rsa
 - ssh-add deploy_rsa
+
 addons:
-  ssh_known_hosts: "$HOST"
+  ssh_known_hosts: $HOST
+
 deploy:
   provider: script
   skip_cleanup: true
