@@ -31,7 +31,7 @@ before_deploy:
   - ssh-add deploy_rsa
 
 addons:
-  ssh_known_hosts: $deploy_host
+  ssh_known_hosts: "$deploy_host"
 
 deploy:
   provider: script
