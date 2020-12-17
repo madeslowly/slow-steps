@@ -1,5 +1,0 @@
----
-layout:   register
-env:      clinician
-
----

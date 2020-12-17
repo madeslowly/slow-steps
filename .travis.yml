@@ -4,7 +4,7 @@ gemfile: Gemfile
 branches:
   only:
   - master
-  - split
+
 rvm:
 - 2.6
 env:

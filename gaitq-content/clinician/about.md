@@ -1,4 +1,0 @@
----
-layout:   about
-env:      clinician
----
