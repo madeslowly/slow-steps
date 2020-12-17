@@ -23,6 +23,7 @@ notifications:
 script:
   - cd gaitq-content
   - bundle exec jekyll build --config _config.yml
+  - cd ..
 
 before_deploy:
   - openssl aes-256-cbc -K $encrypted_db2095f63ba3_key -iv $encrypted_db2095f63ba3_iv -in deploy_rsa.enc -out deploy_rsa -d
