@@ -3,7 +3,7 @@ cache: bundler
 gemfile: Gemfile
 branches:
   only:
-  - master
+  - hold
 
 rvm:
 - 2.6
