@@ -1,58 +1,10 @@
-# Jekyll theme, Slow Steps, for GaitQ
-# _config.yml
+################################################################################
 #
-# This config file contains settings that affect your entire site, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# `jekyll serve`. If you change this file, restart the server process.
-# Building for production use `JEKYLL_ENV=production jekyll b`
+# Configuration for Slow Steps theme with /gaitq-content/
+#
+#################################################################################
 
-
-# Website title
-title:                     GaitQ
-
-# Website subtitle
-subtitle:                  Living well with Parkinson’s
-
-# Website descritpion, mainly for SEO but also a fallback when no copy descirtion is given.
-description:               >-
-
-    Guarantee improved quality of life for people affected by Parkinson's disease through better management of gait freezing.
-
-# Website keywords
-keywords:                  >-
-
-    Parkinson’s disease, gate freezing, health,
-
-# Deploy url, if deploying to https://www.domain.com/foo just enter 'https://www.domain.com here'
-url:                       'https://gaitq.madeslowly.xyz'
-
-# Deploy baseurl, if deploying to https://www.domain.com/foo just enter '/foo' here, otherwise leave empty quotes
-baseurl:                   ''
-
-socials:
-
-  - name:                  LinkedIn
-    icon:                  linkedin
-    username:              gaitq
-    url:                   https://www.linkedin.com/company/gaitq/
-
-  - name:                  Twitter
-    icon:                  twitter
-    username:              gait_q
-    url:                   https://twitter.com/gait_q
-
-  - name:                  Facebook
-    icon:                  facebook
-    username:              GaitQLimited
-    url:                   https://www.facebook.com/GaitQLimited
-
-google:
-  verification:
-  analytics:
-  map_api_key:
-
-# Site author, additional content authors can be added in _data/authors.yml
+# Site author
 author:
   name:                    Made Slowly
   email:                   arran@madeslowly.co.uk
@@ -62,60 +14,9 @@ author:
 
       Made Slowly is the creation of Arran Curran, a freelance developer based in Oxford. I have been developing digital solutions in a variety of enviroments for over 20 years. With my wide range of experience I can deliver an all-in-one solution, so your new website will be smarter and faster all whilst looking awesome (the website, not me). Get in touch and find out how I can help you.
 
-# Default path to all our imagary
-default_path:              /assets/images/
-
-#
-# ### SEO Stuff ###
-#
-
-# Path to images that we use for social media cards
-fallback_path:             /assets/images/defaults/
-
-# Images for SEO, place images in fallback_path
-logo:                      logo.png
-brand:                     brand.png # Used on social media cards, so keep it sexy!
-favicon:                   favicon.png
-
-# Telling google where we are and when we are there.
-postal_add:
-  street:                  46 Woodstock Road
-  city:                    Oxford
-  region:                  Oxfordshire
-  country:                 United Kingdom
-  postcode:                OX2 6HT
-
-opening_hours:             Mo,Tu,We,Th,Fr 09:00-18:00
-
-email:                     info@gaitq.com
-
-phone:                     1234567890
-
-
-############################################################
-#### DANGER ZONE - Changes here may break your website! ####
-############################################################
-
-#
-# ### Blog Settings ###
-#
-blog_name:                 posts
-
-paginate:                  8
-paginate_path:             /posts/page-:num/
-permalink:                 /posts/:title/
-
 #
 # ### Build Settings ###
 #
-exclude: # Anyhting in our project root that we don't want copied into /_site/
-  - README.md
-  - Gemfile
-  - Rakefile
-  - assets/images/original/
-  - deploy_rsa
-  - deploy_rsa.enc
-  - deploy_rsa.pub
 
 markdown:                  kramdown
 highlighter:               rouge
@@ -133,12 +34,6 @@ plugins:
   - jekyll-image-size     # https://github.com/generalui/jekyll-image-size
   - jekyll_picture_tag
 
-defaults:
-  -
-    scope:
-      path:                'error-pages/*'
-    values:
-      sitemap:             false
 
 sass:
   style:                   compressed
@@ -158,7 +53,3 @@ autoprefixer:
 picture:
   source:                  'assets/images'
   output:                  'assets/images'
-
-# Default Animate on Scroll settings, if we want a more lively UX reduce the aos-duration [ms] or increase for a more gentle UX.
-aos-duration:              800
-aos-easing:                ease-out-sine

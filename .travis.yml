@@ -20,6 +20,7 @@ notifications:
 
 
 script:
+  - cd gaitq-content
   - bundle exec jekyll build --config _config.yml
 
 before_deploy:
@@ -35,6 +36,6 @@ deploy:
   provider: script
   skip_cleanup: true
   script:
-    - rsync -r $TRAVIS_BUILD_DIR/_site/ ydnwpmmy@ydn.wpm.mybluehost.me:public_html/madeslowly.xyz/gaitq/
+    - rsync -r $TRAVIS_BUILD_DIR/gaitq-content/_site/ ydnwpmmy@ydn.wpm.mybluehost.me:public_html/madeslowly.xyz/gaitq/
   on:
     all_branches: true

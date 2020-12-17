@@ -10,25 +10,30 @@ source 'https://rubygems.org'
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
 
+gem "slow-steps", path: "../"
+
 gem 'jekyll', '~> 4.1'
+
+gem 'rake-jekyll'
 
 group :jekyll_plugins do
 
-  gem 'jekyll-feed'
+  gem 'jekyll-paginate', '~> 1.1'
 
-  gem 'jekyll-paginate'
+  gem 'jekyll-sitemap', '~> 1.4.0'
 
-  gem 'jekyll-autoprefixer'
+  gem 'jekyll-feed', '~> 0.15.1'
 
-  gem 'jekyll-sitemap'
+  gem 'jekyll-autoprefixer', '~> 1.0.2'
 
-  gem 'jekyll-target-blank'
+  gem 'jekyll-target-blank', '~> 2.0.0'
+
   # {% imagesize image_path:opengraph %}
   gem 'jekyll-image-size', '~> 1.2'
 
   gem 'kramdown-parser-gfm', '~> 1.1'
 
-  gem 'jekyll_picture_tag'
+  gem 'jekyll_picture_tag', '~> 1.13.0'
 
   gem 'travis-custom-deploy'
 
