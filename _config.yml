@@ -1,4 +1,4 @@
-# Jekyll theme, Slow Gait, for GaitQ
+# Jekyll theme, Slow Steps, for GaitQ
 # _config.yml
 #
 # This config file contains settings that affect your entire site, values
@@ -14,7 +14,7 @@ title:                     GaitQ
 # Website subtitle
 subtitle:                  Living well with Parkinson’s
 
-# Website descritpion
+# Website descritpion, mainly for SEO but also a fallback when no copy descirtion is given.
 description:               >-
 
     Guarantee improved quality of life for people affected by Parkinson's disease through better management of gait freezing.
@@ -24,11 +24,11 @@ keywords:                  >-
 
     Parkinson’s disease, gate freezing, health,
 
-# Deploy url, if deploying to https://www.domain.com/foo just enter https://www.domain.com here
-url:                       "https://gaitq.madeslowly.xyz"
+# Deploy url, if deploying to https://www.domain.com/foo just enter 'https://www.domain.com here'
+url:                       'https://gaitq.madeslowly.xyz'
 
-# Deploy baseurl, if deploying to https://www.domain.com/foo just enter /foo here, otherwise leave empty quotes
-baseurl:                   ""
+# Deploy baseurl, if deploying to https://www.domain.com/foo just enter '/foo' here, otherwise leave empty quotes
+baseurl:                   ''
 
 socials:
 
@@ -136,7 +136,7 @@ plugins:
 defaults:
   -
     scope:
-      path:                "error-pages/*"
+      path:                'error-pages/*'
     values:
       sitemap:             false
 
@@ -156,9 +156,9 @@ autoprefixer:
     - cover 99.5%
 
 picture:
-  source:                  "assets/images"
-  output:                  "assets/images"
+  source:                  'assets/images'
+  output:                  'assets/images'
 
-# Default Animate on Scroll settings, if we want a more lively UX reduce the aos-duration or increase for a more gentle UX
-aos-duration:              1000
+# Default Animate on Scroll settings, if we want a more lively UX reduce the aos-duration [ms] or increase for a more gentle UX.
+aos-duration:              800
 aos-easing:                ease-out-sine
