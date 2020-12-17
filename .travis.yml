@@ -30,8 +30,8 @@ before_deploy:
   - chmod 600 deploy_rsa
   - ssh-add deploy_rsa
 
-addons:
-  ssh_known_hosts: "$deploy_host"
+install:
+  - echo 'AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBOdlOKtZUIGWMBGf2PnS344Qs7SL5BtnaAfKxSjv1PPiqCr4iwZ1QLAzoEtMQtxlyKfogWKxJ3OpxgT3yCZK27o=' >> $HOME/.ssh/known_hosts
 
 deploy:
   provider: script
