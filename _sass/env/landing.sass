@@ -2,6 +2,10 @@
 
 // Structurally we have one div, .landing-wrapper, wrapping 2 others, .landing__clinician and .landing__pwp
 
+@mixin reveal-landing-strap
+  height: 30vh
+  padding: 0 3rem
+
 // Using Custom Properties to scale properly inside mobile viewports
 
 // Fallback for browsers that do not support Custom Properties
@@ -72,9 +76,14 @@ $landing-height: 100vh
     position: absolute
     top: 50vh
     transition: .6s ease-in-out
+
+
+    &:focus-within > .landing__strap
+      @include reveal-landing-strap
+
     &:hover > .landing__strap
-      height: 30vh
-      padding: 0 3rem
+      @include reveal-landing-strap
+
 
   .landing__strap
     display: flex
