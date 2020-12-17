@@ -1,3 +1,5 @@
 [submodule "gaitq-content"]
 	path = gaitq-content
 	url = https://github.com/madeslowly/gaitq-content
+[submodule "Submod"]
+	branch = master
