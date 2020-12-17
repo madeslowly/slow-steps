@@ -10,8 +10,8 @@ layout: default
   </div>
 
   <div class="clinician__strap">
-    <h1>{{ site.data.copy.clinician.title }}</h1>
-    <p data-aos="fade-up">{{ site.data.copy.clinician.description }}</p>
+    <h1>{{ site.data.copy.about.clinician.title }}</h1>
+    <p data-aos="fade-up">{{ site.data.copy.about.clinician.description }}</p>
   </div>
 
   <div class="clinician__follow"></div>
@@ -37,7 +37,7 @@ layout: default
 
   <div class="clinician__grid__text">
 
-      {% assign keyword = site.data.copy.clinician.keywords | split: ", " %}
+      {% assign keyword = site.data.copy.about.clinician.keywords | split: ", " %}
       {% for word in (1..keyword.size) %}
       <p class="clinician__grid--keywords" data-aos="fade-in" data-aos-anchor-placement="top-bottom">{{ keyword[forloop.index0] }}</p>
       {% endfor %}

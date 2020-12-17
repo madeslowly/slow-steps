@@ -1,6 +1,11 @@
 ---
 layout: default
 ---
+{% if site.data.copy.landing.pwp.description %}
+{% assign description = site.data.copy.landing.pwp.description %}
+{% else %}
+{% assign description = site.description %}
+{% endif %}
 
 <div class="pwp__mast">
 
@@ -12,11 +17,13 @@ layout: default
   <div class="pwp--strap">
     <h1>
       <span class="pwp--strap-start">
-        {% assign strap = site.data.menu.navigation[0].alt | split: " " %}
-        {% for word in (1..strap.size) %}
+        {% assign header = site.data.copy.landing.pwp %}
+        {% assign title = header.title | split: " " %}
+        {% assign n = header.split %}
+        {% for word in (1..title.size) %}
 
-          {{ strap[forloop.index0] }}
-          {% if forloop.index == 2 %}
+          {{ title[forloop.index0] }}
+          {% if forloop.index == n %}
       </span>{% endif %}
 
         {% endfor %}
@@ -33,8 +40,8 @@ layout: default
 <div class="pulsating-circle"></div></div>
 
 <div class="pwp__straps pwp__device--strap">
-  <h2>{{ site.data.copy.pwp.title }}</h2>
-  <p data-aos="fade-in">{{ site.data.copy.pwp.description }}</p>
+  <h2>{{ site.data.copy.landing.pwp.subtitle }}</h2>
+  <p data-aos="fade-in">{{ site.data.copy.landing.pwp.strap }}</p>
 </div>
 
 <div class="pwp__grid-wrap">
@@ -44,13 +51,14 @@ layout: default
     <div data-aos="fade-right">
       {% include branding/site-logo.svg %}</div>
     <p data-aos="fade-in" class="pwp--guarantee">
-      {{ site.description }}</p></div>
+      {{ description }}</p></div>
 
   <div class="pwp__straps pwp__grid_keywords">
-    {% assign keyword = site.data.copy.pwp.keywords | split: ", " %}
+    {% assign keyword = site.data.copy.landing.pwp.keywords | split: ", " %}
     {% for word in (1..keyword.size) %}
     <h3 data-aos="fade-in">{{ keyword[forloop.index0] }}</h3>
     {% endfor %}</div>
+
   </div>
 
   <div class="pwp__grid-col-r">

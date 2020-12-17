@@ -1,0 +1,68 @@
+##############################################
+# Landing page -                            /
+##############################################
+landing:
+
+# For continututiy we use the titles given in /_data/menu.yml
+
+  pwp:          >-
+
+    A smart, wearable device to help you overcome gait freezing and take control of your mobility. Sign up today for a trial.
+
+
+  clinician:     >-
+
+    Cueing with stimuli to overcome gait freezing. GaitThaw is a wearable device that monitors and cues via a companion app.
+
+
+##############################################
+# Patients home page -                   /pwp/
+##############################################
+pwp:
+
+  # Top level title, shown over the hero image
+  title:      Living well with Parkinson's
+
+  # Number of words that are colored according to the env color.
+  split:      2
+
+  # Subtitle, shown after second hero, along with strap.
+  subtitle:   Fit & Forget
+
+  # Leave blank and remove '>-' if you want to use the site description in _config.yml
+  description:  >-
+
+    Guarantee improved quality of life for people affected by Parkinson's disease through better management of gait freezing.
+
+  # Strapline, sitting directly below the title.
+  strap:        >-
+
+    No more worries about gait freezing. Where you want to go, when you want to go.
+
+
+  # Keep to an even number of words and seprated by ', '.
+  keywords:     >-
+
+    Saftey, Freedom, Discretion, Control
+
+
+##############################################
+# Clinicians home page -           /clinician/
+##############################################
+clinician:
+
+  # Title at the top of clinician home page
+  title:        >-
+
+    More data, better treatment
+
+
+  # Strapline, sitting directly below the title.
+  description:  >-
+
+    Optimizing Parkinsons's treatment by keeping clinicians in the loop
+
+  # Seprate by ', '.
+  keywords:     >-
+
+    See activity levels, Track FoG events, Adjust cueing options

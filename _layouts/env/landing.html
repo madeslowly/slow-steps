@@ -2,7 +2,6 @@
 layout: default
 ---
 
-
 <div class="landing__page">
   {% assign env = site.data.menu.navigation | where: 'env', 'pwp' %}{% assign env = env[0] %}
 
@@ -14,15 +13,15 @@ layout: default
 
     <div class="env__text env--pwp">
 
-      <a class="landing__link" href="{{ env.url | relative_url }}">
+      <a class="landing__link" aria-label="Read more about how our products help people with Parkinson's" href="{{ env.url | relative_url }}">
 
         <h3 class="landing__title">{{ env.name | upcase }}</h3></a>
 
       <div class="landing__strap">
-        <p>{{ site.data.copy.landing.pwp }}</p>
+        <p>{{ site.data.copy.landing.landing.pwp }}</p>
         <div class="landing__cta">
-        <a class="primary__cta" href="{{ cta.url }}">Sign up</a>
-        <a class="secondary__cta" href="{{ cta_2.url }}">More Info</a>
+        <a class="primary__cta" aria-label="Register for clinical trails of our device" href="{{ cta.url }}">Sign up</a>
+        <a class="secondary__cta" aria-label="More information on who we are and how we help people with Parkinson's" href="{{ cta_2.url }}">More Info</a>
         </div>
       </div>
 
@@ -50,7 +49,7 @@ layout: default
         <h3 class="landing__title">{{ env.name | upcase }}</h3></a>
 
       <div class="landing__strap">
-        <p>{{ site.data.copy.landing.clinician }}</p>
+        <p>{{ site.data.copy.landing.landing.clinician }}</p>
         <div class="landing__cta">
         <a class="primary__cta" href="{{ cta.url }}">Register interest</a>
         <a class="secondary__cta" href="{{ cta_2.url }}">More Info</a>

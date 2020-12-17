@@ -1,0 +1,40 @@
+##############################################
+# About pages -                   /env/about/
+##############################################
+
+
+# For Patients - /pwp/about/
+##############################################
+
+pwp:
+
+  title:  Living well with Parkinson's
+
+  text:
+    # Add or remove para's. They are diplayed just below our hero image.
+    - para: >-
+
+          GaitQ is a spinout from the University of Oxford that has its roots in the Department of Physiology, Anatomy and Genetics (DPAG) and the Institute of Biomedical Engineering (IBME). The focus of GaitQ’s first product, GaitThaw, is on improving the lives of people living with Parkinson’s.
+
+    - para: >-
+
+          Our team has been working almost exclusively with Parkinson’s Disease for the last 4 years. We have contacted people related to the disease (PwP, families/carers, neuro-consultants, PD nurses and physiotherapists) across 3 continents, using their input to guide the development of our technology. In 2019 a prototype of our device was successfully used in a clinical investigation to reduce gait freezing. GaitQ is on track to launch its first product in 2021.
+
+
+
+# For Clinicians - /clinician/about/
+##############################################
+
+clinician:
+
+  title:
+
+  text:
+    # Add or remove para's. They are diplayed just below the hero image.
+    - para: >-
+
+          GaitQ is a spinout from the University of Oxford that has its roots in the Department of Physiology, Anatomy and Genetics (DPAG) and the Institute of Biomedical Engineering (IBME). The focus of GaitQ’s first product, GaitThaw, is on improving the lives of people living with Parkinson’s.
+
+    - para: >-
+
+          Our team has been working almost exclusively with Parkinson’s Disease for the last 4 years. We have contacted people related to the disease (PwP, families/carers, neuro-consultants, PD nurses and physiotherapists) across 3 continents, using their input to guide the development of our technology. In 2019 a prototype of our device was successfully used in a clinical investigation to reduce gait freezing. GaitQ is on track to launch its first product in 2021.

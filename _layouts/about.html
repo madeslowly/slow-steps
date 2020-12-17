@@ -2,28 +2,33 @@
 layout: default
 ---
 
-{% assign strap = site.data.menu.navigation | where: "env" , page.env  %}
-
 <div class="about__head__bg"></div>
-<div class="about__head">
 
-    <h1>
-      {% assign n = strap[0].alt.size | minus: 1 %}
+<div class="about__head">
+    <!-- exclude if no title is provided -->
+    {% if site.data.copy.about[page.env].title %}
+    {% assign strap = site.data.copy.about[page.env].title %}
+
+      <h1>
+      {% assign n = strap.size | minus: 1 %}
       {%- for char in (0..n ) -%}
 
-      <span style="animation-delay: {{ char | times: 60 | plus: 800 }}ms;">{{ strap[0].alt | slice: char }}</span>
-      {%- endfor -%}
+      <span style="animation-delay: {{ char | times: 60 | plus: 800 }}ms;">{{ strap | slice: char }}</span>
+      {%- endfor -%}</h1>
 
-    </h1>
+    {% endif %}
 
 </div>
-
+<!-- exclude if no text is provided -->
+{% if site.data.copy.about[page.env].text %}
 <div class="about__copy" data-aos="fade-in">
-  {% for items in site.data.copy.about %}
+
+  {% for item in site.data.copy.about[page.env].text %}
   <p class="about--copy" data-aos="fade-in">
-    {{ items.para }}</p>
+    {{ item.para }}</p>
   {% endfor %}
 </div>
+{% endif %}
 
 <div class="about__team">
 
