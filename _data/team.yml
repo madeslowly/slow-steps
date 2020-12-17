@@ -1,13 +1,8 @@
-# GaitQ team members, used to generate /about
+##############################################
+# GaitQ team members               /env/about/
+##############################################
 
-# - name:     duh?
-#   image:      local path to image, assets/...
-#   position: Position held
-#   alt:      Short (!) description of member's role
-#   social:
-#     - name: Branded name of social, ie LinkedIn
-#       icon: Awesome Font nomenclecture of icon, ie fab fa-linkedin, see https://fontawesome.com.
-#       url:  URL of users social account, ie https://www.linkedin.com/in/USERNAME
+# Menu to the different teams, this is also used to generate the approriate css classes and JS scripts. menu.script must match members.membership. If a new membership type is wanted, add it to the menu list below and use your new menu.script to add to members.membership (remember the comma).
 
 menu:
 
@@ -25,6 +20,16 @@ menu:
     icon:   fas fa-wallet
 
 
+# - name:       duh?
+#   image:      Image file name, place images in /assets/images/content/people/ and Jekyll will find them.
+#   position:   Position held
+#   membership: core, board, advisor and investor. If more than one, comma sperate.
+#   alt:        Description of member and their role
+#   social:
+#     - name:   Branded name of social, ie LinkedIn
+#       icon:   Awesome Font nomenclecture of icon, ie fab fa-linkedin, see https://fontawesome.com (v5).
+#       url:    URL of users social account, ie https://www.linkedin.com/in/USERNAME
+
 members:
 
   - name:       Simon Godwin
@@ -39,6 +44,7 @@ members:
       - name: Website
         icon: fas fa-link
         url:  https://www.fundsmith.co.uk/
+
 ###############################################################################
   - name:       Dr Tristan Collins
     image:      Tristan_Collins.jpg
@@ -55,6 +61,7 @@ members:
       - name: Email
         icon: fas fa-envelope
         url:  mailto:tristan@gaitq.com
+
 ###############################################################################
   - name:       Dr Dongli Li
     image:      Dongli_Li.jpg
@@ -71,6 +78,7 @@ members:
       - name: LinkedIn
         icon: fab fa-linkedin
         url:  https://www.linkedin.com/in/dongli-li-a7726063/
+
 ###############################################################################
   - name:       Dr André Hallack
     image:      André_Hallack.jpg
@@ -87,6 +95,7 @@ members:
       - name: LinkedIn
         icon: fab fa-linkedin
         url:  https://www.linkedin.com/in/andre-hallack-b489b442/
+
 ###############################################################################
   - name:       Dr James Cantley
     image:      James_Cantley.jpg
@@ -102,6 +111,7 @@ members:
       - name: LinkedIn
         icon: fab fa-linkedin
         url:  https://www.linkedin.com/in/james-cantley-b9a053a4/
+
 ###############################################################################
   - name:     University of Oxford
     image:    Oxford_University.png
@@ -121,6 +131,7 @@ members:
       - name: Twitter
         icon: fab fa-twitter
         url:  https://twitter.com/uniofoxford/
+
 ###############################################################################
   - name:     British Growth Fund
     image:    British_Growth_Fund.png
@@ -141,5 +152,17 @@ members:
       - name: Instagram
         icon: fab fa-instagram
         url:  https://www.instagram.com/bgfinvestments/
+
+###############################################################################
+
+# - name:
+#   image:
+#   position:   
+#   membership:
+#   alt:
+#   social:
+#     - name:
+#       icon:
+#       url:
 
 ###############################################################################

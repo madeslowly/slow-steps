@@ -23,7 +23,7 @@ https://github.com/madeslowly/GaitQ/
 |  |  |
 |  |  ├─ forms/                   # inputs for MailChimp forms, picked up by _includes/forms/
 |  |
-|  ├─ copy.yml                    # Website copy picked up with {{ site.data.copy.variable }}
+|  ├─ copy.yml                    # Website copy picked up with {{ site.data.copy.copy.variable }}
 |  |
 |  ├─ menu.yml                    # Menu structure for GaitQ.com
 |
