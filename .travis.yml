@@ -4,7 +4,6 @@ gemfile: Gemfile
 branches:
   only:
   - master
-  - landing-2.0
   - split
 rvm:
 - 2.6
