@@ -1,11 +1,5 @@
 // Landing page with 768 breakpoint
 
-// Structurally we have one div, .landing-wrapper, wrapping 2 others, .landing__clinician and .landing__pwp
-
-@mixin reveal-landing-strap
-  height: 30vh
-  padding: 0 3rem
-
 // Using Custom Properties to scale properly inside mobile viewports
 
 // Fallback for browsers that do not support Custom Properties
@@ -133,7 +127,7 @@ $landing-height: 100vh
     box-shadow: -12px 10px 10px -10px $grey
     right: 50%
     transform: translateX(0)
-    animation: .8s cubic-bezier(.75,.86,.88,.62) 0s 1 slide-from-left
+    @include build-in(slide-from-left)
     &:hover
       box-shadow: -20px 20px 20px -10px $grey
 
@@ -142,7 +136,7 @@ $landing-height: 100vh
     box-shadow: 12px 10px 10px -10px $grey
     left: 50%
     transform: translateX(0)
-    animation: .8s cubic-bezier(.75,.86,.88,.62) 0s 1 slide-from-right
+    @include build-in(slide-from-right)
     &:hover
       box-shadow: 20px 20px 20px -10px $grey
 
@@ -163,18 +157,7 @@ $landing-height: 100vh
     .landing__title
       text-align: left
 
-@keyframes slide-from-right
-  0%
-    transform: translateX(50vw)
-    opacity: 0
-  100%
-    transform: translateX(0)
-    opacity: 1
 
-@keyframes slide-from-left
-  0%
-    transform: translateX(-50vw)
-    opacity: 0
-  100%
-    transform: translateX(0)
-    opacity: 1
+@include slide-from-right
+
+@include slide-from-left

@@ -1,0 +1,31 @@
+
+
+// Landing page animations
+
+// hover and focus animation action
+
+@mixin reveal-landing-strap
+  height: 30vh
+  padding: 0 3rem
+
+// build in's
+@mixin build-in($name)
+  animation: .8s $bezier-snap 0s 1 $name
+
+@mixin slide-from-left
+  @keyframes slide-from-left
+    0%
+      transform: translateX(-50vw)
+      opacity: 0
+    100%
+      transform: translateX(0)
+      opacity: 1
+
+@mixin slide-from-right
+  @keyframes slide-from-right
+    0%
+      transform: translateX(50vw)
+      opacity: 0
+    100%
+      transform: translateX(0)
+      opacity: 1
