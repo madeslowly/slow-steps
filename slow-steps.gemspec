@@ -1,5 +1,7 @@
 # coding: utf-8
 
+require_relative "version.rb"
+
 Gem::Specification.new do |spec|
   spec.name                    = 'slow-steps'
   spec.version                 = Mygem::VERSION
