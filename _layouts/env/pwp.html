@@ -7,16 +7,16 @@ layout: default
 {% assign description = site.description %}
 {% endif %}
 
-<div class="pwp__mast">
+<div class="pwp__hero">
 
-  <div class="pwp__overlay">
-    <div class="pwp__bg">
-    </div>
-  </div>
+  <div class="pwp__hero__overlay">
+    {% picture {{ page.hero.image | prepend: 'content/' }}
+      --img class="pwp__hero__image"
+      --alt {{ page.hero.alt }} %}</div>
 
-  <div class="pwp--strap">
+  <div class="pwp__hero--strap">
     <h1>
-      <span class="pwp--strap-start">
+      <span class="pwp__hero--strap-start">
         {% assign header = site.data.copy.landing.pwp %}
         {% assign title = header.title | split: " " %}
         {% assign n = header.split %}
@@ -35,7 +35,11 @@ layout: default
 
 </div>
 
-<div data-aos="fade-in" data-aos-anchor-placement="top-bottom" class="pwp__device--img pwp__device--docked">
+<div class="pwp__device--img pwp__device--docked">
+
+  {% picture {{ page.subhero.image | prepend: 'content/' }}
+    --img class="pwp__hero__image"
+    --alt {{ page.subhero.alt }} %}
 
 <div class="pulsating-circle"></div></div>
 

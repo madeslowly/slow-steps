@@ -1,7 +1,5 @@
 source 'https://rubygems.org'
 
-
-
 gem 'rake-release'
 
 gem 'gem-release'
