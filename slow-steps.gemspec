@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |spec|
   spec.name                    = 'slow-steps'
-  spec.version                 = '0.1.0'
+  spec.version                 = Mygem::VERSION
   spec.authors                 = ['Made Slowly']
-
+  spec.email                   = ['arran@madeslowly.co.uk']
   spec.summary                 = %q{Bespoke Jekyll theme for GaitQ.}
-  spec.homepage                = 'https://github.com/madeslowly/GaitQ'
+  spec.homepage                = 'https://github.com/madeslowly/slow-steps'
   spec.license                 = 'MIT'
 
   spec.metadata['plugin_type'] = 'theme'
@@ -26,5 +26,5 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'rake', '>= 12.3.3'
-  
+
 end
