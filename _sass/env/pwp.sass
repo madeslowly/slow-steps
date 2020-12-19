@@ -1,25 +1,28 @@
 
 
-.pwp__hero
+.hero-image
   display: flex
   justify-content: center
   align-items: center
+
+.hero__pwp
   height: 90vh
   height: calc(var(--vh, 1vh) * 90)
 
-.pwp__hero__overlay
+.hero__overlay
   width: 100%
   height: 100%
   z-index: -1
+
+.hero__overlay--pwp
   background-color: $opd-orange-confidence
 
-.pwp__hero__image, .pwp__subhero__image
+.hero__image
   height: 100%
   width: 100%
   object-fit: cover
 
-.pwp__hero__image
-  object-position: top
+.hero__image--pwp
   opacity: .7
   filter: grayscale(.2) contrast(.2) brightness(1.6)
 
@@ -29,7 +32,7 @@
   text-align: center
   padding-top: $navbar-height
 
-.hero__strap-start
+.hero__strap--start
   color: $env-primary
 
 .pwp__follow
@@ -49,31 +52,55 @@
     font-size: 20px
     transform: scaleY(2)
 
-.pwp__subhero
+
+.augmented-image
+  position: relative
   display: flex
 
-.pwp__straps
+.svg__augment
+  position: absolute
+  top: 0
+  left: 0
+
+.svg__augment--led
+  fill: url(#augmentLED)
+
+#augmentLED
+  stop:first-child
+    stop-color: $pure-white
+    stop-opacity: 1
+
+  stop:last-child
+    stop-color: $led
+    stop-opacity: 1
+
+.svg__augment--pulse
+  fill: $led
+  animation: pulse-ring 2s cubic-bezier(.1,.74,.53,.91) infinite
+
+.strapline
   text-align: center
-  background-position: center
+
+.pwp--strap
   color: $env-secondary
-
-.pwp__device--strap
   background-color: $opd-blue-trust
-  padding: 5rem 2rem
+  padding: 5rem 1rem
   & > h2
-    padding: 2rem 0
+    padding: 1rem 0
 
-.pwp__grid-wrap
+.segment-wrap
   display: flex
   flex-direction: column-reverse
   width: 100vw
 
-.pwp__grid-col-r
-  svg
-    display: none
-    position: absolute
+.segment__right
 
-.pwp__grid__text
+
+.augment--gaurentee
+  width: 100%
+  height: 100%
+
+.segment__gaurentee
   display: flex
   align-items: center
   justify-content: center
@@ -94,11 +121,7 @@
   .site__logo--Q
     fill: $white
 
-.pwp__grid_img
-  background-image: url($baseurl + 'assets/img/pwp__grid_img.png')
-  background-size: cover
-  background-repeat: no-repeat
-  padding-top: 150%
+.image--guarantee
   filter: grayscale(1) contrast(.8) brightness(.9) sepia(.4) hue-rotate(180deg)
 
 .pwp--guarantee
@@ -106,58 +129,34 @@
   width: 80%
   margin: 3rem 0
 
-.pwp__grid_keywords
+.segment__keywords
   display: flex
   flex-direction: row
   flex-wrap: wrap
   background-color: $opd-blue-trust
+  color: $env-secondary
   & > *
     padding: 3rem 0
     width: 50%
 
+.device--labels
+  & > *
+    fill: $white
 
-.pulsating-circle
-  position: relative
-  left: 0%
-  top: 0%
-  //transform: translateX(-50%) translateY(-50%)
-  width: 8px
-  height: 8px
-  z-index: 9999s
-
-  &::before
-    content: ''
-    position: absolute
-    display: block
-    width: 300%
-    height: 300%
-    box-sizing: border-box
-    margin-left: -100%
-    margin-top: -100%
-    border-radius: 100px
-    background-color: rgb(252, 133, 133)
-    animation: pulse-ring 2s cubic-bezier(.01,.56,.2,.2) infinite
-
-  &::after
-    content: ''
-    position: absolute
-    left: 0
-    top: 0
-    display: block
-    width: 100%
-    height: 100%
-    background: radial-gradient(rgb(255, 176, 176), rgb(255, 107, 107))
-    border-radius: 100px
-
+  & > line
+    stroke: $white
+    stroke-width: .3
+  & > text
+    font-size: 18%
 
 @keyframes pulse-ring
   0%
     opacity: 1
-    transform: scale(.3)
+    r: .1
 
-  80%
-    opacity: 0
+  50%
+    opacity: .1
 
   100%
     opacity: 0
-    transform: scale(1)
+    r: 3
