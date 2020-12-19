@@ -149,7 +149,8 @@
 
 .info__conceal
   align-items: flex-end
-  background-image: linear-gradient(rgba(0,0,0,0), $white, $white)
+  // NOTE: when linear-gradient(rgba(0,0,0,0) ...) we get a shadow on safari
+  background-image: linear-gradient(rgba($pure-white,0), $white, $white)
   color: $black
   cursor: pointer
   display: flex
