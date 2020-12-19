@@ -8,28 +8,28 @@
   height: calc(var(--vh, 1vh) * 90)
 
 .pwp__hero__overlay
-  position: absolute
   width: 100%
   height: 100%
   z-index: -1
   background-color: $opd-orange-confidence
-  //overflow: hidden
 
-.pwp__hero__image
+.pwp__hero__image, .pwp__subhero__image
   height: 100%
   width: 100%
   object-fit: cover
+
+.pwp__hero__image
   object-position: top
   opacity: .7
   filter: grayscale(.2) contrast(.2) brightness(1.6)
 
-.pwp__hero--strap
+.hero__strap
   position: absolute
   color: $env-secondary
   text-align: center
   padding-top: $navbar-height
 
-.pwp__hero--strap-start
+.hero__strap-start
   color: $env-primary
 
 .pwp__follow
@@ -49,31 +49,11 @@
     font-size: 20px
     transform: scaleY(2)
 
-
-.pwp__device--img
-  background-size: cover
-  background-repeat: no-repeat
-  width: 100%
-  height: 0
-  padding-top: 62.5%
-  z-index: 99999
-
-.pwp__device--docked
-  background-image: url($baseurl + 'assets/img/pwp_device_group_docked.png')
-  svg
-    position: absolute
-    transform: translateY(-100%)
-
-.pwp__device--group
-  background-image: url($baseurl + 'assets/img/pwp_device_group.png')
-  svg
-    position: absolute
-    transform: translateY(-100%)
-    //-height: 100vh
+.pwp__subhero
+  display: flex
 
 .pwp__straps
   text-align: center
-  //padding: 5rem 2rem
   background-position: center
   color: $env-secondary
 
@@ -137,16 +117,17 @@
 
 
 .pulsating-circle
-  position: absolute
-  left: 75.5%
-  top: 52.5%
-  transform: translateX(-50%) translateY(-50%)
+  position: relative
+  left: 0%
+  top: 0%
+  //transform: translateX(-50%) translateY(-50%)
   width: 8px
   height: 8px
+  z-index: 9999s
 
   &::before
     content: ''
-    position: relative
+    position: absolute
     display: block
     width: 300%
     height: 300%
