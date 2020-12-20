@@ -140,14 +140,51 @@
     width: 50%
 
 .device--labels
+  & > .svg--markers
+    opacity: 0
+    transition: .4s ease-in-out
+
+  & > .svg--text
+    font-size: 18%
+    transform: translate(0)
+    opacity: 0
+    transition: .4s ease-in-out
+
   & > *
     fill: $white
 
   & > line
     stroke: $white
-    stroke-width: .3
-  & > text
-    font-size: 18%
+    stroke-width: .2
+
+  & > .ani-in-fade
+    opacity: 1
+
+  & > .ani-in-trans-left
+    animation: trans-in-left .8s ease-in-out
+    opacity: 1
+
+  & > .ani-in-trans-right
+    animation: trans-in-right .8s ease-in-out
+    opacity: 1
+
+@keyframes trans-in-left
+  0%
+    opacity: .3
+    transform: translate(-10px)
+
+  100%
+    opacity: 1
+    transform: translate(0)
+
+@keyframes trans-in-right
+  0%
+    opacity: .3
+    transform: translate(10px)
+
+  100%
+    opacity: 1
+    transform: translate(0)
 
 @keyframes pulse-ring
   0%
