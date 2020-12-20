@@ -1,0 +1,56 @@
+<!-- Take inputs from page front matter and calculate the coordinates of the svg elements -->
+
+{% if page.augment %}
+
+  <!-- get image dimensions -->
+  {%- assign imageX = page.augment.image | split: ', ' | first -%}
+  {%- assign imageY = page.augment.image | split: ', ' | last -%}
+
+  <!-- assing arrays for circle centers and line ends -->
+  {% assign cX = '' | split: ',' %}
+  {% assign cY = '' | split: ',' %}
+  {% assign X1 = '' | split: ',' %}
+  {% assign TEXT = '' | split: ',' %}
+
+  <!-- loop over all the requested labels -->
+  {% for item in page.augment.labels %}
+
+    <!-- x(i) and y(i) -->
+    {% assign ix = item.coord | split: ', ' | first %}
+    {% assign iy = item.coord | split: ', ' | last %}
+
+    <!-- calculate circle centers as percentage of image size -->
+    {% assign cx = ix | times: 100 | divided_by: imageX | append: ', ' %}
+    {% assign cy = iy | times: 100 | divided_by: imageY | append: ', ' %}
+    <!-- push into arrays -->
+    {% assign cX = cX | push: cx %}
+    {% assign cY = cY | push: cy %}
+
+    <!-- if our label in pointing to the right of image object -->
+    {% if item.reverse == yes %}
+      <!-- assign the line end 10% to the right -->
+      {% assign x1 = cx | minus: 10 | append: ', ' %}
+      {% assign text = x1 | minus: item.text.size | minus: 1 | append: ', ' %}
+    {% else %}
+      <!-- assign line end 10% to the left -->
+      {% assign x1 = cx | plus: 10 | append: ', ' %}
+      {% assign text = x1 | plus: 1 | append: ', ' %}
+
+    {% endif %}
+    <!-- push into array -->
+    {% assign X1 = X1 | push:  x1 %}
+    {% assign TEXT = TEXT | push:  text %}
+
+  {% endfor %}
+
+{% endif %}
+
+<!--
+in:   [imageX, imageY] pixels
+      [x, y] pixels
+
+out:  cX = [cx_1, cx_2, ... , cx_n]
+      cY = [cy_1, cy_2, ... , cy_n]
+
+      X1 = [x1_1, x1_2, ... , x1_n]
+-->
