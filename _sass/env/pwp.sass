@@ -145,9 +145,17 @@
     transition: .4s ease-in-out
 
   & > .svg--text
-    font-size: 18%
+    font-size: $font-size
     transform: translate(0)
     opacity: 0
+    transition: .4s ease-in-out
+
+  & > .svg--line
+    stroke-dashoffset: 0
+    transition: .4s ease-in-out
+
+  & > .ani-in-draw
+    stroke-dashoffset: 0!important
     transition: .4s ease-in-out
 
   & > *
@@ -155,7 +163,7 @@
 
   & > line
     stroke: $white
-    stroke-width: .2
+    stroke-width: 1
 
   & > .ani-in-fade
     opacity: 1
