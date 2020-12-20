@@ -102,27 +102,21 @@ layout: default
     --img class="hero__image"
     --alt {{ page.device.alt }} %}
 
-    <svg class="svg__augment device--labels" viewBox="-50 -50 100 100" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+    {% include functions/calc-svg-coord.html %}
 
-    <circle class="svg--markers" cx="-40%" cy="-16%" r=".6" />
+    <svg class="svg__augment device--labels" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      {% assign X = cX | split: '", "' %}
+      {% assign Y = cY | split: '", "' %}
+      {% assign x1 = X1 | split: '", "' %}
+      {% for item in page.augment.labels %}
 
-    <line class="svg--markers" x1="-40%" y1="-16%" x2="-50%" y2="-16%" />
+        <circle class="svg--markers" cx="{{ cX[forloop.index0] | remove: ", " }}%" cy="{{ cY[forloop.index0] | remove: ", " }}%" r="4" />
 
-    <text class="svg--text trans-left" x="-68%" y="-15%" >Controller</text>
+        <line class="svg--markers svg--line" x1="{{ X1[forloop.index0] | remove: ", " }}%" y1="{{ cY[forloop.index0] | remove: ", " }}%" x2="{{ cX[forloop.index0] | remove: ", " }}%" y2="{{ cY[forloop.index0] | remove: ", " }}%" />
 
+        <text class="svg--text trans-{% if item.reverse %}right{% else %}left{% endif %}" x="{{ TEXT[forloop.index0] | remove: ", " }}%" y="{{ cY[forloop.index0] | plus: 1 | remove: ", " }}%" >{{ item.text }}</text>
 
-    <circle class="svg--markers" cx="-21%" cy="10%" r=".6" />
-
-    <line class="svg--markers" x1="-21%" y1="10%" x2="-31%" y2="10%" id="deviceLine" />
-
-    <text class="svg--text trans-left" x="-43%" y="11%" >Device</text>
-
-
-    <circle class="svg--markers" cx="35%" cy="0%" r=".6" />
-
-    <line class="svg--markers" x1="35%" y1="0%" x2="45%" y2="0%" />
-
-    <text class="svg--text trans-right" x="46%" y="1%" >Device</text>
+      {% endfor %}
 
 
     </svg>
