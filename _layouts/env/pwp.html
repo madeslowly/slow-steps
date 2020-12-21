@@ -79,7 +79,7 @@ layout: default
 
   </div>
 
-  <div class="segment__right augmented-image">
+  <div class="segment__right augmented-image" >
 
     {% picture {{ page.guarantee.image | prepend: 'content/' }}
       --img class="hero__image image--guarantee "
@@ -96,7 +96,7 @@ layout: default
 
 
 
-<div class="augmented-image">
+<div class="augmented-image" >
 
   {% picture {{ page.device.image | prepend: 'content/' }}
     --img class="hero__image"
@@ -104,17 +104,24 @@ layout: default
 
     {% include functions/calc-svg-coord.html %}
 
-    <svg class="svg__augment device--labels" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+    <svg class="svg__augment" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+
+
       {% assign X = cX | split: '", "' %}
       {% assign Y = cY | split: '", "' %}
       {% assign x1 = X1 | split: '", "' %}
+
       {% for item in page.augment.labels %}
 
-        <circle class="svg--markers" cx="{{ cX[forloop.index0] | remove: ", " }}%" cy="{{ cY[forloop.index0] | remove: ", " }}%" r="4" />
+      <svg class="svg__labels hidden" x="{{ cX[forloop.index0] | remove: ", " }}%" y="{{ cY[forloop.index0] | remove: ", " }}%" style="overflow: visible">
 
-        <line class="svg--markers svg--line" x1="{{ X1[forloop.index0] | remove: ", " }}%" y1="{{ cY[forloop.index0] | remove: ", " }}%" x2="{{ cX[forloop.index0] | remove: ", " }}%" y2="{{ cY[forloop.index0] | remove: ", " }}%" />
+        <circle class="svg--elem svg--circle" cx="0%" cy="0%" r="6" />
 
-        <text class="svg--text trans-{% if item.reverse %}right{% else %}left{% endif %}" x="{{ TEXT[forloop.index0] | remove: ", " }}%" y="{{ cY[forloop.index0] | plus: 1 | remove: ", " }}%" >{{ item.text }}</text>
+        <line class="svg--elem svg--line" x1="0"  y1="0" y2="0" />
+
+        <text class="svg--elem svg--text trans-{% if item.reverse %}right{% else %}left{% endif %}" >{{ item.text }}</text>
+
+      </svg>
 
       {% endfor %}
 
