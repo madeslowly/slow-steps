@@ -1,14 +1,17 @@
 .feed__head
-  margin-top: ($navbar-height + $secondary-navbar-height)*1.5
+  margin-top: ($navbar-height + $secondary-navbar-height) * 1.5
   width: 100vw
 
 .feed__title
+  width: 80vw
+  max-width: 1200px
   margin: auto
-  text-align: center
+  
 
 .post__feed
   display: flex
-  justify-content: space-between
+  justify-content: space-around
+  flex-wrap: wrap
   width: 80vw
   max-width: 1200px
   margin: 10vh auto
@@ -16,43 +19,60 @@
 .feed__card
   display: flex
   flex-direction: column
-  width: 30vw
+  width: 200px
   max-width: 360px
-  height: 220px
-  margin-bottom: 10vh
+  //height: 220px
+  margin: 20px
   overflow: hidden
-  border-radius: 12px
-  box-shadow: 0 0 6px rgba($env-primary,.8)
-  transition: .8s ease-in-out
+  border-radius: 0
+  //box-shadow: 0 0 6px rgba($env-primary,.8)
+
 
   &:hover
-    box-shadow: 2px 2px 10px rgba($env-primary,1)
     .feed__card--image
-      transform: scale(1.1)
+      transform: scale(1.2)
+    .feed__card__image
+      box-shadow: 0 10px 6px -5px rgba($env-primary,.6)
+      transition: 1s ease-in-out
     .feed__card--title
-      font-weight: 400
-      color: $pure-white
+      color: $pure-black
+      transition: .4s ease-in-out
+
+.feed__card__image
+  width: 100%
+  height: 112.5px
+  overflow: hidden
+  box-shadow: 0 0 6px rgba($env-primary,.8)
+  transition: .6s ease-in-out
 
 .feed__card--image
-  display: block
   object-fit: cover
   object-position: top
   width: 100%
   height: 100%
-  overflow: hidden
-  transition: .8s ease-in-out
+  transition: .6s ease-in-out
 
 .feed__card--text
-  background-color: $env-primary
-  padding: 2rem 1rem
-  color: $white
-  z-index: 1
-  font-size: $font-size * .7
+  padding: 2rem 0
+  color: $opd-blue-confidence
+  font-size: $font-size
 
 .feed__card--link
   text-decoration: none
   color: inherit
-  text-transform: uppercase
+
+
+.feed__card--title
+  transition: .2s ease-in-out
+  font-weight: 600
 
 .feed__card--meta
-  font-size: $font-size * .7
+  font-size: $font-size * .5
+  padding: 1rem 0
+  & > span
+    font-weight: 600
+
+@media screen and ( min-width: 768px )
+
+  .feed__card--meta
+    font-size: $font-size * .7

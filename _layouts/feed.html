@@ -20,13 +20,17 @@ layout: default
 
   <div class="feed__card">
 
+    <div class="feed__card__image">
     {% picture {{ post.image | prepend: 'posts/' }} --alt {{ post.alt }} --img class="feed__card--image" %}
-
+    </div>
     <div class="feed__card--text">
 
       <a class="feed__card--link" href="{{ site.baseurl }}{{ post.url }}">
 
-      <p class="feed__card--title">{{ post.title }}</p></a>
+      <h4 class="feed__card--title">{{ post.title }}</h4>
+      <p class="post__subtitle">{{ post.subtitle }}</p>
+      </a>
+      <p class="feed__card--meta">Published <span>{{ post.date | date: "%b %d, %Y" }}</span></p>
 
 
     </div>
