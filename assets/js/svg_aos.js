@@ -9,7 +9,7 @@ var svg_aos = function(e) {
 
     var abs_path_top = svgs[i].getBoundingClientRect().top;
 
-    if (abs_path_top <= .8 * view_height) {
+    if (abs_path_top <= .6 * view_height) {
       svgs[i].classList.remove('hidden');
       svgs[i].classList.add('not-hidden');
     } else {

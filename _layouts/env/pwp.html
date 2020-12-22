@@ -1,5 +1,6 @@
 ---
 layout: default
+vimeoId: 493777125
 ---
 {% if site.data.copy.landing.pwp.description %}
 {% assign description = site.data.copy.landing.pwp.description %}
@@ -61,6 +62,7 @@ layout: default
   <p data-aos="fade-in">{{ site.data.copy.landing.pwp.strap }}</p>
 </div>
 
+{% include vimeoPlayer.html id = 493777125 %}
 
 <div class="segment-wrap">
 
@@ -85,16 +87,30 @@ layout: default
       --img class="hero__image image--guarantee "
       --alt {{ page.guarantee.alt }} %}
 
-    <svg  class="svg__augment augment--gaurentee" viewBox="-50 -50 100 100"  xmlns="http://www.w3.org/2000/svg">
-    <circle cx="-15%" cy="13%" r="1" fill="white"/>
-    </svg>
+      <svg class="svg__augment " width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+
+        {% include functions/calc-svg-coord.html image_handle="guarantee" %}
+
+        {% for item in page.guarantee.augment.labels %}
+
+        <svg class="svg__labels augment--guarantee hidden" x="{{ cX[forloop.index0] | remove: ", " }}%" y="{{ cY[forloop.index0] | remove: ", " }}%" style="overflow: visible">
+
+          <circle class="svg--elem svg--circle" cx="0%" cy="0%" r="6" />
+
+          <line class="svg--elem svg--line" x1="0"  y1="0" y2="0" />
+
+          <text class="svg--elem svg--text trans-{% if item.reverse %}right{% else %}left{% endif %}" >{{ item.text }}</text>
+
+        </svg>
+
+        {% endfor %}
+
+      </svg>
+
 
   </div>
 
 </div>
-
-
-
 
 <div class="augmented-image" >
 
@@ -102,16 +118,11 @@ layout: default
     --img class="hero__image"
     --alt {{ page.device.alt }} %}
 
-    {% include functions/calc-svg-coord.html %}
+      {% include functions/calc-svg-coord.html image_handle="device" %}
 
     <svg class="svg__augment" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
 
-
-      {% assign X = cX | split: '", "' %}
-      {% assign Y = cY | split: '", "' %}
-      {% assign x1 = X1 | split: '", "' %}
-
-      {% for item in page.augment.labels %}
+      {% for item in page.device.augment.labels %}
 
       <svg class="svg__labels hidden" x="{{ cX[forloop.index0] | remove: ", " }}%" y="{{ cY[forloop.index0] | remove: ", " }}%" style="overflow: visible">
 

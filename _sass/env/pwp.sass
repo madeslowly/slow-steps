@@ -21,6 +21,7 @@
   height: 100%
   width: 100%
   object-fit: cover
+  object-position: center
 
 .hero__image--pwp
   opacity: .7
@@ -93,9 +94,6 @@
   flex-direction: column-reverse
   width: 100vw
 
-.segment__right
-
-
 .augment--gaurentee
   width: 100%
   height: 100%
@@ -145,7 +143,7 @@
     fill: $white
 
   & > .svg--elem
-    transition: 1s ease-in-out
+    transition: .4s ease-in-out
 
   & > .svg--circle
     stroke: rgba($pure-black, .2)
@@ -180,21 +178,23 @@
 
 
   & > .trans-left
-    animation: trans-in-left .8s ease-in-out
+    animation: trans-in-left .6s  ease-in-out
 
   & > .trans-right
-    animation: trans-in-right .8s ease-in-out
+    animation: trans-in-right .6s ease-in-out
+
+$svg-text-offset: 60px
 
 @keyframes trans-in-left
   0%
-    transform: translateX(-10px)
+    transform: translateX(-$svg-text-offset)
 
   100%
     transform: translateX(0)
 
 @keyframes trans-in-right
   0%
-    transform: translateX(10px)
+    transform: translateX($svg-text-offset)
 
   100%
     transform: translateX(0)
