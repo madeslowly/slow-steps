@@ -5,8 +5,8 @@ const navSlide = ()=>{
   const navLinks = document.querySelectorAll('.nav-link');
   const navBar = document.querySelector('.navbar');
 
-  // watch for touch clicks on the whole navbar
-  navBar.addEventListener('touchstart', () => {
+  // watch for touch clicks on the burger
+  burger.addEventListener('touchstart', () => {
     // animate accordinaly
     navSlider.classList.toggle('nav-active');
     brand.classList.toggle('site__logo-active');
