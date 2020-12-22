@@ -1,12 +1,14 @@
 
-{% assign scrips = page.scripts | split: ', '%}
-{% if page.scripts contains 'svg-aos' %}
+{% assign scripts = page.scripts | split: ', '%}
+{% if scripts contains 'svg-aos' %}
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.6.1/lodash.min.js" ></script>
+
+  <script type="text/javascript" src="{{ "{{ site.baseurl }}/assets/js/svg_text_width.js" | relative_url }}" async></script>
 
   <script type="text/javascript" src="{{ "{{ site.baseurl }}/assets/js/svg_aos.js" | relative_url }}" async></script>
 
+  {% include functions/pull_page_args.html %}
 
-  <script type="text/javascript" src="{{ "{{ site.baseurl }}/assets/js/svg_text_width.js" | relative_url }}" async></script>
 {% endif %}
 
 
