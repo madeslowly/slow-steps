@@ -1,4 +1,4 @@
-.ft-wrapper
+.ft__wrapper
   background-color: $opd-blue-confidence
   background-image: url('/assets/img/content/footer-bg.svg')
   background-position: center
@@ -6,25 +6,57 @@
   color: $white
   display: flex
   flex-wrap: wrap
-  margin-top: 10vh
-  padding: 0
+  //margin-top: 10vh
+  padding: 5vh 5vw
 
 .ft__head
   display: flex
-  height: 10vh
-  min-height: 10vh
-  min-width: 100%
+  //height: 10vh
+  //min-height: 10vh
+  //min-width: 100%
   width: 100%
+  margin: 5vh 5vw
 
 .ft__body
   display: flex
   flex-wrap: wrap
-  margin: 0 2rem
-  width: 100%
+  margin: 5vh 0
+  width: 90vw
 
-.ft__sitemap, .ft__contact
-  min-width: 100%
-  width: 100%
+.ft__col-3
+  width: 30vw
+  padding: 0 5vw
+  border-left: solid 1px rgba($opd-blue-trust, .05)
+  box-sizing: border-box
+
+.ft__col-3.ft__sitemap
+  width: 60vw
+
+.ft__contact--list
+
+  display: block
+  list-style: none
+  padding: 0
+  text-decoration: none
+  font-size: $font-size * .7
+  li
+    line-height: 4rem
+  .address
+    line-height: 2rem
+
+.ft__contact
+
+  .site__logo
+    width: 10vw
+    @include logo-color($opd-blue-trust)
+
+.ft__sitemap
+  //min-width: 100%
+  .ft__sitemap--env-header
+    font-size: $font-size * .8
+    font-weight: 600
+  .ft__sitemap--submenu
+    font-size: $font-size * .6
 
 .ft__base
   min-width: 100%
@@ -32,38 +64,40 @@
   display: flex
   flex-wrap: nowrap
   justify-content: space-between
-  align-items: center
-  border-top: solid 1px $opd-grey-neutral
+  //align-items: center
+  border-top: solid 1px $opd-blue-trust
 
   a, p
-    padding-top: 0
+    padding: 1rem .1rem
     margin: 0
-    font-size: 1.2rem
+    font-size: $font-size *.6
     text-decoration: none
     color: inherit
 
-  div
-    a
+.legal-links
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  a
+    &::after
+      content: " |"
+
+    &:last-child
       &::after
-        content: " |"
+        content: ""
 
-      &:last-child
-        &::after
-          content: ""
-
-.ft__sitemap--menu
-  position: relative
-  float: left
-  background: transparent
-  margin: 0 1% 0 1%
 
 .ft__sitemap--header
-  border-bottom: 1px solid $opd-grey-neutral
+  font-size: 1.8rem
+  font-weight: 600
+  border-bottom: 1px solid $opd-blue-trust
+  margin-bottom: 3rem
   color: $pure-white
+  width: 100%
 
-  &:not(:first-child)
-    &::before
-      content: 'GaitQ '
+.ft__sitemap--menu
+  //display: flex
+  //flex-direction: row
 
 .ft__sitemap--menu, .ft__sitemap--submenu
   padding: 0
@@ -74,9 +108,19 @@
   li
     display: block
     list-style: none
-    padding: .8rem 1.2rem
+    line-height: 3rem
+    //padding: .8rem 1.2rem
     text-decoration: none
 
 .ft__sitemap--submenu li a
-  color: $white
+  color: $pure-white
   text-decoration: none
+
+.ft__sitemap--env-wrap
+  display: flex
+  flex-wrap: wrap
+  flex-direction: row
+
+.ft__sitemap--env
+
+  width: 50%
