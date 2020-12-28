@@ -2,47 +2,118 @@
 layout: default
 ---
 
-<div class="clinician__hero">
+<!--
 
-  <div class="clinician__overlay">
-    <div class="clinician__bg">
-    </div>
+Last full read through 27/12/2020
+
+##############################################
+# Clinician Layout/_layouts/env/clinician.html
+##############################################
+
+-->
+
+<!-- assign description with site decsription as fallback -->
+
+{% if site.data.copy.landing.clinician.description %}
+{% assign description = site.data.copy.landing.clinician.description %}
+{% else %}
+{% assign description = site.description %}
+{% endif %}
+
+<div class="hero">
+
+  <div class="hero__overlay">
+    {% picture {{ page.hero.image | prepend: 'content/' }}
+      --img class="hero__image hero__filter"
+      --alt {{ page.hero.alt }} %}</div>
+
+  <div class="hero__strap">
+    <h2>{{ site.data.copy.landing.clinician.title }}</h2>
+    <p data-aos="fade-up">{{ site.data.copy.landing.clinician.description }}</p>
   </div>
 
-  <div class="clinician__strap">
-    <h1>{{ site.data.copy.about.clinician.title }}</h1>
-    <p data-aos="fade-up">{{ site.data.copy.about.clinician.description }}</p>
-  </div>
-
-  <div class="clinician__follow"></div>
+  <div class="hero__follow"></div>
 
 </div>
 
 
-{% picture
-  {{ page.image | prepend: 'content/' }}
-  --img class="clinician__hero__2"
-  --alt {{ page.image_alt }} %}
+<div class="augmented-image">
+
+  {% picture {{ page.subhero.image | prepend: 'content/' }}
+    --img class="hero__image"
+    --alt {{ page.subhero.alt }} %}
+
+    <svg class="svg__augment" viewBox="-50 -50 100 100" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="augmentLED" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+        <stop offset="0%" />
+        <stop offset="100%" />
+        </radialGradient>
+      </defs>
+
+      <circle class="svg__augment--pulse" cx="32%" cy="2%" />
+      <circle class="svg__augment--led" cx="32%" cy="2%" r=".5" />
+
+    </svg>
+
+</div>
+
+<div class="segment__wrap">
+
+  <div class="segment__left">
 
 
+  <div class="center-text segment__keywords strap--opd-trust">
+    {% assign keyword = site.data.copy.landing.clinician.keywords | split: ", " %}
+    {% for word in (1..keyword.size) %}
+    <h3 data-aos="fade-in">{{ keyword[forloop.index0] }}</h3>
+    {% endfor %}</div>
 
-<div class="clinician__grid-wrap">
+    <!-- setup liquid variables -->
+    {%- assign env = site.data.menu.navigation | where: 'env', 'clinician' -%}
+    {%- assign env = env[0] -%}
 
-  <div class="clinician__grid-col-l">
-    <div class="clinician__straps clinician__grid_img"></div>
+    {%- assign cta = env.submenu | where: 'id', 'cta' -%}
+    {%- assign cta = cta[0] -%}
+
+    <a class="action__call" aria-label="{{ cta.aria }}" href="{{ cta.url }}">
+      <span>{{ cta.alt }}</span>
+      <!-- svg arrow -->
+      <svg width="13px" height="10px" viewBox="0 0 13 10">
+      <path d="M1,5 L11,5"></path>
+      <polyline points="8 1 12 5 8 9"></polyline></svg>
+    </a>
+
+
   </div>
-  <div class="clinician__grid-col-r">
-    <div class="clinician__straps "></div>
-  </div>
 
-  <div class="clinician__grid__text">
+  <div class="segment__right augmented-image" >
 
-      {% assign keyword = site.data.copy.about.clinician.keywords | split: ", " %}
-      {% for word in (1..keyword.size) %}
-      <p class="clinician__grid--keywords" data-aos="fade-in" data-aos-anchor-placement="top-bottom">{{ keyword[forloop.index0] }}</p>
-      {% endfor %}
+    {% picture {{ page.guarantee.image | prepend: 'content/' }}
+      --img class="hero__image image--guarantee "
+      --alt {{ page.guarantee.alt }} %}
 
-      <div class="action__call"></div>
+      <svg class="svg__augment " width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+
+        {% include functions/calc-svg-coord.html image_handle="guarantee" %}
+
+        {% for item in page.guarantee.augment.labels %}
+
+        <svg class="svg__labels hidden" x="{{ cX[forloop.index0] | remove: ", " }}%" y="{{ cY[forloop.index0] | remove: ", " }}%" style="overflow: visible">
+
+          <circle class="svg--elem svg--circle" cx="0%" cy="0%" r="6" />
+
+          <line class="svg--elem svg--line" x1="0"  y1="0" y2="0" />
+
+          <text class="svg--elem svg--text trans-{% if item.reverse %}right{% else %}left{% endif %}" >{{ item.text }}</text>
+
+        </svg>
+
+        {% endfor %}
+
+      </svg>
+
+
   </div>
 
 </div>

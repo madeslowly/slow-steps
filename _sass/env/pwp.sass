@@ -1,212 +1,68 @@
+/*  Last full read through 27/12/2020
+ *
+ *##############################################
+ *# pwp landing sass         /_sass/env/pwp.sass
+ *##############################################
+ *
+ */
 
-
-.hero-image
-  display: flex
-  justify-content: center
-  align-items: center
-
-.hero__pwp
+.hero
   height: 90vh
   height: calc(var(--vh, 1vh) * 90)
 
 .hero__overlay
-  width: 100%
-  height: 100%
-  z-index: -1
-
-.hero__overlay--pwp
-  background-color: $opd-orange-confidence
-
-.hero__image
-  height: 100%
-  width: 100%
-  object-fit: cover
-  object-position: center
-
-.hero__image--pwp
-  opacity: .7
-  filter: grayscale(.2) contrast(.2) brightness(1.6)
+  background-color: $env-primary
 
 .hero__strap
-  position: absolute
   color: $env-secondary
-  text-align: center
-  padding-top: $navbar-height
 
 .hero__strap--start
   color: $env-primary
 
-.pwp__follow
-  display: flex
-  position: absolute
-  bottom: 4.5vh
-  width: 30px
-  height: 11vh
+.hero__follow
   background-color: $env-primary
-  z-index: 2
-  border-radius: 30px
-  color: $white
-  align-items: center
-  justify-content: center
-  &::after
-    content: "\2193"
-    font-size: 20px
-    transform: scaleY(2)
+  bottom: 4.5vh
 
-
-.augmented-image
-  position: relative
-  display: flex
-
-.svg__augment
-  position: absolute
-  top: 0
-  left: 0
-
-.svg__augment--led
-  fill: url(#augmentLED)
-
-#augmentLED
-  stop:first-child
-    stop-color: $pure-white
-    stop-opacity: 1
-
-  stop:last-child
-    stop-color: $led
-    stop-opacity: 1
-
-.svg__augment--pulse
-  fill: $led
-  animation: pulse-ring 2s cubic-bezier(.1,.74,.53,.91) infinite
-
-.strapline
-  text-align: center
-
-.pwp--strap
-  color: $env-secondary
-  background-color: $opd-blue-trust
-  padding: 5rem 1rem
-  & > h2
-    padding: 1rem 0
-
-.segment-wrap
+.segment__wrap
   display: flex
   flex-direction: column-reverse
   width: 100vw
 
-.augment--gaurentee
-  width: 100%
-  height: 100%
-
 .segment__gaurentee
-  display: flex
+  @include logo-color($white)
   align-items: center
-  justify-content: center
-  flex-direction: column
-  width: 100%
   background-color: $env-primary
   color: $white
+  display: flex
+  flex-direction: column
+  justify-content: center
   padding: 4rem 0
+  width: 100%
+
   .site__logo
-    width: 60%
-  .site__logo--curve,
-  .site__logo--legvert,
-  .site__logo--leg45,
-  .site__logo--g,
-  .site__logo--a,
-  .site__logo__i,
-  .site__logo--t,
-  .site__logo--Q
-    fill: $white
+    margin: 0 5vw
+    text-align: center
+    width: 100px
+
+.segment__keywords
+  height: 50%
 
 .image--guarantee
   filter: grayscale(1) contrast(.8) brightness(.9) sepia(.4) hue-rotate(180deg)
 
-.pwp--guarantee
+.strap__guarantee
   border-top: solid 1px $soft-white
-  width: 80%
   margin: 3rem 0
+  width: 80%
+
+.strap--env-primary
+  background-color: $env-primary
+  color: $white
 
 .segment__keywords
   display: flex
   flex-direction: row
   flex-wrap: wrap
-  background-color: $opd-blue-trust
-  color: $env-secondary
   & > *
     padding: 3rem 0
     width: 50%
-
-.svg__labels
-
-  & > *
-    fill: $white
-
-  & > .svg--elem
-    transition: .4s ease-in-out
-
-  & > .svg--circle
-    stroke: rgba($pure-black, .2)
-    stroke-width: 1
-
-  & > .svg--line
-    stroke: $white
-    stroke-width: 1
-
-  & > .svg--text
-    font-size: $font-size * .8
-
-.svg__labels.hidden
-
-  & > .svg--circle
-    opacity: 0
-
-  & > .svg--text
-    opacity: 0
-
-.svg__labels.not-hidden
-
-  & > .svg--circle
-    opacity: 1
-
-  & > .svg--text
-    transform: translateX(0)
-    opacity: 1
-
-  & > .svg--line
-    stroke-dashoffset: 0!important
-
-
-  & > .trans-left
-    animation: trans-in-left .6s  ease-in-out
-
-  & > .trans-right
-    animation: trans-in-right .6s ease-in-out
-
-$svg-text-offset: 60px
-
-@keyframes trans-in-left
-  0%
-    transform: translateX(-$svg-text-offset)
-
-  100%
-    transform: translateX(0)
-
-@keyframes trans-in-right
-  0%
-    transform: translateX($svg-text-offset)
-
-  100%
-    transform: translateX(0)
-
-@keyframes pulse-ring
-  0%
-    opacity: 1
-    r: .1
-
-  50%
-    opacity: .1
-
-  100%
-    opacity: 0
-    r: 3

@@ -25,6 +25,172 @@
 .no-touch__wrap
   padding: 18vh 0 10vh 0
 
+// Hero div at the top of most pages
+.hero
+  align-items: center
+  display: flex
+  justify-content: center
+
+.hero__overlay
+  width: 100%
+  height: 100%
+  z-index: -1
+
+.hero__image
+  height: 100%
+  object-fit: cover
+  object-position: center
+  width: 100%
+
+.hero__filter
+  @include image-filter
+
+.hero__strap
+  padding-top: $navbar-height
+  position: absolute
+  text-align: center
+
+.hero__follow
+  align-items: center
+  border-radius: 30px
+  color: $white
+  display: flex
+  height: 11vh
+  justify-content: center
+  position: absolute
+  width: 30px
+  z-index: 2
+
+  &::after
+    content: '\2193'
+    font-size: 20px
+    transform: scaleY(2)
+
+
+// Block colors and sizes
+.strap--opd-trust
+  @include opd-blue-trust
+
+
+.strap__100
+  padding: 5rem 1rem
+  & > h2
+    padding: 1rem 0
+
+@media screen and ( min-width: 768px )
+
+  .strap__100
+    padding: 10rem 5rem
+    & > h2
+      padding-bottom: 5rem
+    & > p
+      max-width: 800px
+      margin: 0 auto
+
+
+// SVG augmenting text labels
+
+.svg__labels
+
+  & > *
+    fill: $white
+
+  & > .svg--elem
+    transition: .4s ease-in-out
+
+  & > .svg--line
+    stroke: $white
+    stroke-width: 1
+
+  & > .svg--text
+    font-size: $font-size * .8
+
+.svg__labels.hidden
+
+  & > .svg--circle
+    opacity: 0
+
+  & > .svg--text
+    opacity: 0
+
+.svg__labels.not-hidden
+
+  & > .svg--circle
+    opacity: 1
+
+  & > .svg--text
+    transform: translateX(0)
+    opacity: 1
+
+  & > .svg--line
+    stroke-dashoffset: 0!important
+
+  & > .trans-left
+    animation: trans-in-left .6s  ease-in-out
+
+  & > .trans-right
+    animation: trans-in-right .6s ease-in-out
+
+
+$svg-text-offset: 60px
+
+@keyframes trans-in-left
+  0%
+    transform: translateX(-$svg-text-offset)
+
+  100%
+    transform: translateX(0)
+
+@keyframes trans-in-right
+  0%
+    transform: translateX($svg-text-offset)
+
+  100%
+    transform: translateX(0)
+
+
+
+// SVG flashing LED used on env landing pages
+
+
+.augmented-image
+  position: relative
+  display: flex
+
+.svg__augment
+  position: absolute
+  top: 0
+  left: 0
+
+.svg__augment--led
+  fill: url(#augmentLED)
+
+#augmentLED
+  stop:first-child
+    stop-color: $pure-white
+    stop-opacity: 1
+
+  stop:last-child
+    stop-color: $led
+    stop-opacity: 1
+
+.svg__augment--pulse
+  animation: pulse-ring 2s $bezier-pulse infinite
+  fill: $led
+
+@keyframes pulse-ring
+  0%
+    opacity: .5
+    r: .1
+
+  50%
+    opacity: .2
+
+  100%
+    opacity: 0
+    r: 2
+    
+
 // Social icons wraped in <a's
 .social
   color: $grey

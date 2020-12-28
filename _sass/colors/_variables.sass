@@ -1,4 +1,10 @@
-// Colour variables, accessible within _sass/
+/*
+ *
+ *##############################################
+ *# Global colors  /_sass/colors/_varibales.sass
+ *##############################################
+ *
+ */
 
 // Oxford Product Design
 
@@ -10,6 +16,7 @@ $opd-blue-trust: rgba(179, 201, 226, 1)
 
 $opd-grey-neutral: rgba(178, 178, 178, 1)
 
+
 // Socials
 
 $twitter-primary: rgb(56, 161, 243)
@@ -19,6 +26,7 @@ $facebook-primary: rgb(66, 103, 178)
 $linkedin-primary: rgb(14, 118, 168)
 
 $instagram-primary: rgb(64, 93, 230)
+
 
 // General
 
@@ -40,6 +48,14 @@ $grey: rgb(130, 130, 130)
 
 $led: rgb(255, 70, 0)
 
-$box-shadow-shade: rgba(0, 0, 0, .2)
 
-$secondary_navbar_color: rgba(255, 255, 255, .3)
+// Object colors
+
+$secondary-navbar-color: rgba(255, 255, 255, .3)
+
+
+// Color set mixins
+
+@mixin opd-blue-trust
+  background-color: $opd-blue-trust
+  color: $opd-blue-confidence

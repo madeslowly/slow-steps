@@ -2,66 +2,83 @@
 layout: default
 ---
 
+<!--
+
+Last full read through 27/12/2020
+
+##############################################
+# Landing Layout /_layouts/env/landing.html
+##############################################
+
+-->
+
 <div class="landing__page">
-  {% assign env = site.data.menu.navigation | where: 'env', 'pwp' %}{% assign env = env[0] %}
+  <!-- setup liquid variables -->
+  {%- assign env = site.data.menu.navigation | where: 'env', 'pwp' -%}
+  {%- assign env = env[0] -%}
 
-  {% assign cta = env.submenu | where: 'id', 'cta' %}{% assign cta = cta[0] %}
+  {%- assign cta = env.submenu | where: 'id', 'cta' -%}
+  {%- assign cta = cta[0] -%}
 
-  {% assign cta_2 = env.submenu | where: 'id', 'landing' %}{% assign cta_2 = cta_2[0] %}
+  {%- assign cta_2 = env.submenu | where: 'id', 'landing' -%}
+  {%- assign cta_2 = cta_2[0] -%}
 
   <div class="page__half">
 
     <div class="env__text env--pwp">
 
-      <a class="landing__link" aria-label="Read more about how our products help people with Parkinson's" href="{{ env.url | relative_url }}">
+      <a class="landing__link" aria-label="{{ env.aria }}" href="{{ env.url | relative_url }}">
 
         <h3 class="landing__title">{{ env.name | upcase }}</h3></a>
 
       <div class="landing__strap">
         <p>{{ site.data.copy.landing.landing.pwp }}</p>
         <div class="landing__cta">
-        <a class="primary__cta" aria-label="Register for clinical trails of our device" href="{{ cta.url }}">Sign up</a>
-        <a class="secondary__cta" aria-label="More information on who we are and how we help people with Parkinson's" href="{{ cta_2.url }}">More Info</a>
+        <a class="primary__cta" aria-label="{{ cta.aria }}" href="{{ cta.url }}">Sign up</a>
+        <a class="secondary__cta" aria-label="{{ cta_2.aria }}" href="{{ cta_2.url }}">More Info</a>
         </div>
       </div>
 
     </div>
 
     <div class="hero__overlay env--pwp">
-      {% picture {{ page.pwp.image | prepend: 'content/' }}
-        --img class="hero__image pwp__hero"
-        --alt {{ page.pwp.alt }} %}</div>
+      {%- picture {{ page.pwp.image | prepend: 'content/' }}
+        --img class="hero__image hero__filter pwp__hero"
+        --alt {{ page.pwp.alt }} -%}</div>
 
   </div>
 
-  {% assign env = site.data.menu.navigation | where: 'env', 'clinician' %}{% assign env = env[0] %}
+  {%- assign env = site.data.menu.navigation | where: 'env', 'clinician' -%}
+  {%- assign env = env[0] -%}
 
-  {% assign cta = env.submenu | where: 'id', 'cta' %}{% assign cta = cta[0] %}
+  {%- assign cta = env.submenu | where: 'id', 'cta' -%}
+  {%- assign cta = cta[0] -%}
 
-  {% assign cta_2 = env.submenu | where: 'id', 'landing' %}{% assign cta_2 = cta_2[0] %}
+  {%- assign cta_2 = env.submenu | where: 'id', 'landing' -%}
+  {%- assign cta_2 = cta_2[0] -%}
 
   <div class="page__half">
 
     <div class="env__text env--clinician">
 
-      <a class="landing__link" href="{{ env.url | relative_url }}">
+      <a class="landing__link" aria-label="{{ env.aria }}" href="{{ env.url | relative_url }}">
 
         <h3 class="landing__title">{{ env.name | upcase }}</h3></a>
 
       <div class="landing__strap">
         <p>{{ site.data.copy.landing.landing.clinician }}</p>
         <div class="landing__cta">
-        <a class="primary__cta" href="{{ cta.url }}">Register interest</a>
-        <a class="secondary__cta" href="{{ cta_2.url }}">More Info</a>
+        <a class="primary__cta" aria-label="{{ cta.aria }}" href="{{ cta.url }}">Register interest</a>
+        <a class="secondary__cta" aria-label="{{ cta_2.aria }}" href="{{ cta_2.url }}">More Info</a>
         </div>
       </div>
 
     </div>
 
     <div class="hero__overlay env--clinician">
-      {% picture {{ page.clinician.image | prepend: 'content/' }}
-        --img class="hero__image clinician__hero"
-        --alt {{ page.clinician.alt }} %}</div>
+      {%- picture {{ page.clinician.image | prepend: 'content/' }}
+        --img class="hero__image hero__filter clinician__hero"
+        --alt {{ page.clinician.alt }} -%}</div>
 
   </div>
 

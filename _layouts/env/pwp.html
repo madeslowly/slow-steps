@@ -1,18 +1,32 @@
 ---
 layout: default
-
 ---
+
+
+<!--
+
+Last full read through 27/12/2020
+
+##############################################
+# PWP Layout            /_layouts/env/pwp.html
+##############################################
+
+-->
+
+
+<!-- assign description with site decsription as fallback -->
+
 {% if site.data.copy.landing.pwp.description %}
 {% assign description = site.data.copy.landing.pwp.description %}
 {% else %}
 {% assign description = site.description %}
 {% endif %}
 
-<div class="hero-image hero__pwp">
+<div class="hero">
 
-  <div class="hero__overlay hero__overlay--pwp">
+  <div class="hero__overlay">
     {% picture {{ page.hero.image | prepend: 'content/' }}
-      --img class="hero__image hero__image--pwp"
+      --img class="hero__image hero__filter"
       --alt {{ page.hero.alt }} %}</div>
 
   <div class="hero__strap">
@@ -32,7 +46,7 @@ layout: default
     </h1>
   </div>
 
-  <div class="pwp__follow"></div>
+  <div class="hero__follow"></div>
 
 </div>
 
@@ -51,29 +65,27 @@ layout: default
       </defs>
 
       <circle class="svg__augment--pulse" cx="32%" cy="2%" />
-      <circle class="svg__augment--led" cx="32%" cy="2%" r=".8" />
+      <circle class="svg__augment--led" cx="32%" cy="2%" r=".5" />
 
     </svg>
 
 </div>
 
-<div class="strapline pwp--strap">
+<div class="center-text strap__100 strap--opd-trust">
   <h2>{{ site.data.copy.landing.pwp.subtitle }}</h2>
   <p data-aos="fade-in">{{ site.data.copy.landing.pwp.strap }}</p>
 </div>
 
-
-
-<div class="segment-wrap">
+<div class="segment__wrap">
 
   <div class="segment__left">
-  <div class="segment__gaurentee strapline pwp--strap">
+  <div class="segment__gaurentee center-text">
     <div data-aos="fade-right">
       {% include branding/site-logo.svg %}</div>
-    <p data-aos="fade-in" class="pwp--guarantee">
+    <p data-aos="fade-in" class="strap__guarantee">
       {{ description }}</p></div>
 
-  <div class="strapline segment__keywords">
+  <div class="center-text segment__keywords strap--opd-trust">
     {% assign keyword = site.data.copy.landing.pwp.keywords | split: ", " %}
     {% for word in (1..keyword.size) %}
     <h3 data-aos="fade-in">{{ keyword[forloop.index0] }}</h3>
@@ -93,7 +105,7 @@ layout: default
 
         {% for item in page.guarantee.augment.labels %}
 
-        <svg class="svg__labels augment--guarantee hidden" x="{{ cX[forloop.index0] | remove: ", " }}%" y="{{ cY[forloop.index0] | remove: ", " }}%" style="overflow: visible">
+        <svg class="svg__labels hidden" x="{{ cX[forloop.index0] | remove: ", " }}%" y="{{ cY[forloop.index0] | remove: ", " }}%" style="overflow: visible">
 
           <circle class="svg--elem svg--circle" cx="0%" cy="0%" r="6" />
 

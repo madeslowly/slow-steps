@@ -1,6 +1,10 @@
-// Landing page with 768 breakpoint
-
-// Using Custom Properties to scale properly inside mobile viewports
+/*  Last full read through 27/12/2020
+ *
+ *##############################################
+ *# Landing sass        /_sass/env/landing.sass
+ *##############################################
+ *
+ */
 
 // Fallback for browsers that do not support Custom Properties
 $landing-height: 100vh
@@ -12,48 +16,42 @@ $landing-height: 100vh
   height: calc(var(--vh, 1vh) * 100)
 
 .page__half
-  display: flex
   align-items: flex-end
+  display: flex
   height: 50vh
   width: 100vw
 
 .env__text
+  color: $white
   display: flex
   flex-direction: column
-  color: $white
 
 .landing__strap
   display: none
 
 .landing__link
-  text-decoration: none
   color: $white
+  text-decoration: none
 
 .landing__title
   font-size: $font-size
+  padding: 2rem 0
   text-align: center
   width: 100vw
-  padding: 2rem 0
 
 .hero__overlay
-  position: absolute
-  width: 100%
+  // additional css from glocal
   height: 50%
-  z-index: -1
+  position: absolute
 
-.hero__image
-  height: 100%
-  width: 100%
-  object-fit: cover
-  opacity: .7
-  filter: grayscale(.2) contrast(.2) brightness(1.6)
+.hero__filter
+  @include image-filter
 
 .env--pwp
   background-color: $opd-orange-confidence
 
 .env--clinician
   background-color: $opd-blue-confidence
-
 
 @media screen and ( min-width: 768px )
 
@@ -71,23 +69,21 @@ $landing-height: 100vh
     top: 50vh
     transition: .6s ease-in-out
 
-
     &:focus-within > .landing__strap
       @include reveal-landing-strap
 
     &:hover > .landing__strap
       @include reveal-landing-strap
 
-
   .landing__strap
     display: flex
     flex-direction: column
-    justify-content: space-around
     height: 0
+    justify-content: space-around
+    max-width: 400px
     overflow: hidden
     transition: .2s ease-in-out
     width: 40vw
-    max-width: 400px
 
   .landing__cta
     display: flex
@@ -95,48 +91,50 @@ $landing-height: 100vh
     justify-content: space-between
 
     > a
+      align-self: center
+      border-radius: 6px
+      box-shadow: 0 20px 30px -15px rgba($pure-black, .6)
+      padding: 1rem 0
+      text-align: center
+      text-decoration: none
       transition: .3s ease-in-out
       width: 40%
-      padding: 1rem 0
-      border-radius: 6px
-      text-decoration: none
-      text-align: center
-      align-self: center
-      box-shadow: 0 20px 30px -15px rgba($pure-black, .6)
 
   .primary__cta
     background-color: $opd-blue-trust
     border: solid 1px $opd-blue-trust
     color: $opd-blue-confidence
     &:hover
-      color: $opd-blue-trust
       background-color: transparent
-      box-shadow: 0 10px 15px -5px rgba($pure-black, .5)
+      color: $opd-blue-trust
 
   .secondary__cta
-    background-color: none
+    background-color: transparent
     border: solid 1px $white
     color: $white
     &:hover
-      color: $opd-blue-confidence
       background-color: $white
+      color: $opd-blue-confidence
+
+  .primary__cta, .secondary__cta
+    &:hover
       box-shadow: 0 10px 15px -5px rgba($pure-black, .5)
 
   .env__text.env--pwp
+    @include build-in(slide-from-left)
     border-radius: 6px 0 0 6px
     box-shadow: -12px 10px 10px -10px $grey
     right: 50%
     transform: translateX(0)
-    @include build-in(slide-from-left)
     &:hover
       box-shadow: -20px 20px 20px -10px $grey
 
   .env__text.env--clinician
+    @include build-in(slide-from-right)
     border-radius: 0 6px 6px 0
     box-shadow: 12px 10px 10px -10px $grey
     left: 50%
     transform: translateX(0)
-    @include build-in(slide-from-right)
     &:hover
       box-shadow: 20px 20px 20px -10px $grey
 
@@ -156,6 +154,7 @@ $landing-height: 100vh
   .env--clinician
     .landing__title
       text-align: left
+
 
 
 @include slide-from-right

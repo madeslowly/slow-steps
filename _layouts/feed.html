@@ -21,7 +21,7 @@ layout: default
   <div class="feed__card">
 
     <div class="feed__card__image">
-    {% picture {{ post.image | prepend: 'posts/' }} --alt {{ post.alt }} --img class="feed__card--image" %}
+    {% picture thumb {{ post.image | prepend: 'posts/' }} --alt {{ post.alt }} --img class="feed__card--image" %}
     </div>
     <div class="feed__card--text">
 

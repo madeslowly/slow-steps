@@ -1,150 +1,87 @@
+/*  Last full read through 28/12/2020
+ *
+ *##############################################
+ *# clinician landing  /_sass/env/clinician.sass
+ *##############################################
+ *
+ */
 
-
-.clinician__hero
-  align-items: center
-  display: flex
-  flex-direction: column
+.hero
   height: 65vh
   height: calc(var(--vh, 1vh) * 65)
-  justify-content: center
 
-.clinician__bg
-  background-image: url($baseurl + 'assets/img/landing__clinician-mobile.jpg')
-  background-size: cover
-  filter: grayscale(1) contrast(.2) brightness(1.6)
-  height: 100%
-  opacity: .7
-  position: relative
-  width: 100%
-
-.clinician__overlay
+.hero__overlay
   background-color: $env-primary
-  height: 70%
-  position: relative
-  width: 100%
 
-.clinician__strap
+.hero__strap
+  align-self: flex-end
   background-color: $env-primary
   color: $white
-  display: flex
-  flex-direction: column
-  height: 30%
-  justify-content: space-around
-  padding-bottom: 3vh
-  text-align: center
-  width: 100%
+  padding-bottom: 5.5vh
+  width: 100vw
 
-  h1
-    // Hide on mobile
-    display: none
-
-.clinician__strap-start
-  color: $env-primary
-
-.clinician__follow
-  display: flex
-  position: absolute
+.hero__follow
+  background-color: $env-primary
   top: 59.5vh
-  width: 30px
-  height: 11vh
-  background-color: $env-primary
-  z-index: 2
-  border-radius: 30px
-  color: $white
+
+.segment__keywords
   align-items: center
-  justify-content: center
-  &::after
-    content: "\2193"
-    font-size: 20px
-    transform: scaleY(2)
-
-
-.clinician__hero__2
-  display: block
-  object-fit: cover
-  height: 50vh
-  width: 100vw
-
-.clinician__device--group
-  background-image: url($baseurl + 'assets/img/pwp_device_group.png')
-  svg
-    position: absolute
-    transform: translateY(-100%)
-    //-height: 100vh
-
-.clinician__straps
-  text-align: center
-  //padding: 5rem 2rem
-  background-position: center
-  color: $env-secondary
-  & > h2
-    //padding: 2rem 0
-
-.clinician__device--strap
-  background-color: $opd-blue-trust
-  padding: 5rem 2rem
-  & > h2
-    padding: 2rem 0
-
-.clinician__grid-wrap
   display: flex
-  flex-direction: row
-  flex-wrap: wrap
-
-  width: 100vw
-
-.clinician__grid-col-l, .clinician__grid-col-r
-  height: 100%
-  width: 50%
-
-.clinician__grid__text
-  display: flex
-  align-items: center
-  justify-content: space-between
   flex-direction: column
-  width: 100%
-  background-color: $env-primary
-  color: $white
-  //height: 10rem
-  padding: 5rem 0
-
-.clinician__grid--keywords
-  padding: 1rem 0
-
-.action__call
-  width: 140px
-  height: 40px
-  background-color: $opd-blue-trust
-  margin: 4rem 0 0
-  border-radius: 20px
-  font-size: 12px
-  font-weight: 500
-  display: flex
-  align-items: center
+  height: 100%
   justify-content: center
-  color: $black
-  &::after
-    content: "Get Involved"
 
-
-
-.clinician__grid_img
-  background-image: url($baseurl + 'assets/img/pwp__grid_img.png')
-  background-size: cover
-  background-repeat: no-repeat
-  padding-top: 150%
-  filter: grayscale(1) contrast(.8) brightness(.9) sepia(.4) hue-rotate(180deg)
-
-.clinician--guarantee
-  border-top: solid 1px $soft-white
-  width: 80%
-  margin: 3rem 0
-
-.clinician__grid_keywords
-  display: flex
-  flex-direction: row
-  flex-wrap: wrap
-  background-color: $opd-blue-trust
   & > *
-    padding: 3rem 0
+    padding: 5rem 0
     width: 50%
+
+// This is basically a button and should to be centralised
+.action__call
+  bottom: 0
+  font-size: $font-size * .8
+  margin: -100px auto
+  padding: 2rem
+  position: relative
+  text-decoration: none
+  transition: .2s ease
+
+  &:before
+    background-color: rgba($env-secondary, .2)
+    border-radius: 3rem
+    content: ''
+    display: block
+    height: 6rem
+    left: 0
+    position: absolute
+    top: 0
+    transition: .2s ease
+    width: 6rem
+
+  span
+    color: $env-primary
+    font-weight: 900
+    position: relative
+
+  svg
+    fill: none
+    margin-left: 10px
+    position: relative
+    stroke: $env-primary
+    stroke-linecap: round
+    stroke-linejoin: round
+    stroke-width: 2
+    top: 0
+    transform: translateX(-10px)
+    transition: .2s ease
+
+  &:hover
+    &::before
+      background-color: rgba($env-secondary, 1)
+      width: 100%
+
+    svg
+      stroke: $white
+      transform: translateX(0)
+
+    span
+      color: $white

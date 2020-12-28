@@ -1,31 +1,79 @@
+/*  Last full read through 27/12/2020
+ *
+ *##############################################
+ *# Global mixins            /_sass/_mixins.sass
+ *##############################################
+ *
+ */
 
-
-// Landing page animations
-
-// hover and focus animation action
+// Landing page animations, hover and focus
 
 @mixin reveal-landing-strap
   height: 30vh
   padding: 0 3rem
 
-// build in's
+// Snappy build function, see /_sass/_variables.sass for $bezier-snap
 @mixin build-in($name)
   animation: .8s $bezier-snap 0s 1 $name
 
+// Keyframes
 @mixin slide-from-left
   @keyframes slide-from-left
     0%
-      transform: translateX(-50vw)
       opacity: 0
+      transform: translateX(-50vw)
+
     100%
-      transform: translateX(0)
       opacity: 1
+      transform: translateX(0)
+
 
 @mixin slide-from-right
   @keyframes slide-from-right
     0%
-      transform: translateX(50vw)
       opacity: 0
+      transform: translateX(50vw)
+
     100%
-      transform: translateX(0)
       opacity: 1
+      transform: translateX(0)
+
+
+
+// Global image filter for most hero images
+@mixin image-filter
+  filter: grayscale(.2) contrast(.2) brightness(1.6)
+  opacity: .7
+
+
+// Logo using the OPD primary colors
+@mixin logo-primary-colors
+  .site__logo--group
+    .site__logo--curve
+      fill: $opd-orange-confidence
+    .site__logo--legvert
+      fill: $opd-blue-confidence
+    .site__logo--leg45
+      fill: $opd-blue-trust
+    .site__logo--g,
+    .site__logo--a,
+    .site__logo__i,
+    .site__logo--t
+      fill: $opd-blue-confidence
+    .site__logo--Q
+      fill: $opd-orange-confidence
+
+
+
+// Logo single color function
+@mixin logo-color($color)
+  .site__logo--group,
+    .site__logo--curve,
+    .site__logo--legvert,
+    .site__logo--leg45,
+    .site__logo--g,
+    .site__logo--a,
+    .site__logo__i,
+    .site__logo--t,
+    .site__logo--Q
+      fill: $color
