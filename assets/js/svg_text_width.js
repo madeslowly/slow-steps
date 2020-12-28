@@ -1,4 +1,12 @@
-// Get the svg text elemnets inside svg__labels, calulate their length and position wiith clientWidth conditions.
+/*  Last full read through 27/12/2020
+ *
+ *##############################################
+ *# svg label calc  /assets/js/svg_text_width.js
+ *##############################################
+ *
+ */
+
+ // Get the svg text elemnets inside .svg__labels, calulate their length and position with 768 clientWidth condition.
 
 function svg_text_width() {
   // scren width
