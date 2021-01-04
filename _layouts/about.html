@@ -2,26 +2,46 @@
 layout: default
 ---
 
-<div class="about__head__bg"></div>
+<!--
 
-<div class="about__head">
-    <!-- exclude if no title is provided -->
-    {% if site.data.copy.about[page.env].title %}
-    {% assign strap = site.data.copy.about[page.env].title %}
+Last full read through 29/12/2020
 
-      <h1>
+##############################################
+# About Layout            /_layouts/about.html
+##############################################
+
+-->
+
+{% if site.data.copy.about[page.env].title %}
+{% assign strap = site.data.copy.about[page.env].title %}
+{% else %}
+{% assign strap = site.description %}
+{% endif %}
+
+<div class="hero hero-65">
+
+  <div class="hero__overlay h-100">
+    {% picture {{ page.hero.image | prepend: 'content/' }}
+      --img class="hero__image hero__image--fixed hero-65"
+      --alt {{ page.hero.alt }} %}</div>
+
+  <header class="hero__strap hero__strap--center image__filter--blur hero-65" aria-label="{{ strap }}">
+
+      <h1 aria-hidden="true" >
       {% assign n = strap.size | minus: 1 %}
       {%- for char in (0..n ) -%}
 
-      <span style="animation-delay: {{ char | times: 60 | plus: 800 }}ms;">{{ strap | slice: char }}</span>
+      <span style="animation-delay: {{ char | times: 40 | plus: 200 }}ms;">{{ strap | slice: char }}</span>
       {%- endfor -%}</h1>
 
-    {% endif %}
+  </header>
 
 </div>
+
+
 <!-- exclude if no text is provided -->
 {% if site.data.copy.about[page.env].text %}
-<div class="about__copy" data-aos="fade-in">
+<div class="about__copy bg--env-100" >
 
   {% for item in site.data.copy.about[page.env].text %}
   <p class="about--copy" data-aos="fade-in">
@@ -32,19 +52,22 @@ layout: default
 
 <div class="about__team">
 
-  <div class="team__head">
+  <div class="team__head bg--env-50">
     {% for menu in site.data.team.menu %}
-    <h3 class="team__title team--js-script-{{ menu.script }}" id="team{{ menu.script }}" onclick="team{{ menu.script }}()">
+    <h3 class="team__title team--js-script-{{ menu.script }}"
+        id="team{{ menu.script }}"
+        onclick="team{{ menu.script }}()">
+
       <i class="{{ menu.icon }}"></i>
       <span class="title__title--text">{{ menu.name }}</span></h3>
     {% endfor %}
   </div>
 
-  <div class="team__members" onload="display_core()">
+  <div class="team__members">
 
     {% for member in site.data.team.members %}
 
-    <div class=" single__member
+    <div class=" single__member single__member--active
       {% assign ships = member.membership | split: ', ' %}
       {% for item in ships %}
         team--{{ item }}
@@ -86,20 +109,29 @@ layout: default
   </div>
 </div>
 
-<!-- By default, .single__member is display:none, so in the event of JS disabled we see everyone -->
+<!--
+
+-->
 <script>
-  /* get core .team__title and style */
+  /*
+  On load we hide some members.
+  '.single__member.single__member--active' is applied to all members, such that all members are 'display: flex' so in the event of no JS we see everyone. Removing '.single__member--active' defaults display to 'display: none'.
+  */
+
+  /* get core .team__title and apply style */
   const title = document.querySelectorAll(".team__title.team--js-script-core");
   for(var i = 0; i < title.length; i++)
     title[i].classList.add('team__title--active');
 
-  /* get core .single__member and style */
-  const members = document.querySelectorAll(".single__member.team--core");
+  /* get members that do not belong to '.team--core' and remove '.single__member--active' */
+  const members = document.querySelectorAll(".single__member:not(.team--core)");
   for(var i = 0; i < members.length; i++)
-    members[i].classList.add('single__member--active');
-
+    members[i].classList.remove('single__member--active');
 </script>
 
+<!--
+  For each team we need a script to handle click events on the team menu.
+-->
 {% for menu in site.data.team.menu %}
 
 <script>
@@ -131,7 +163,7 @@ layout: default
 
 
 <script>
-
+/* Watch for clicks on more info and reveal text */
 document.querySelectorAll('.info__conceal').forEach(function(el){
   el.addEventListener('click', function() {
     this.classList.toggle('info__reveal');
