@@ -2,7 +2,6 @@
 layout: default
 ---
 
-
 <!--
 
 Last full read through 27/12/2020
@@ -22,14 +21,14 @@ Last full read through 27/12/2020
 {% assign description = site.description %}
 {% endif %}
 
-<div class="hero">
+<div class="hero hero-90">
 
   <div class="hero__overlay">
     {% picture {{ page.hero.image | prepend: 'content/' }}
-      --img class="hero__image hero__filter"
+      --img class="hero__image image__filter--mix h-100"
       --alt {{ page.hero.alt }} %}</div>
 
-  <div class="hero__strap">
+  <div class="hero__strap hero__strap--center hero__strap--env">
     <h1>
       <span class="hero__strap--start">
         {% assign header = site.data.copy.landing.pwp %}
@@ -96,7 +95,7 @@ Last full read through 27/12/2020
   <div class="segment__right augmented-image" >
 
     {% picture {{ page.guarantee.image | prepend: 'content/' }}
-      --img class="hero__image image--guarantee "
+      --img class="hero__image image--guarantee h-100"
       --alt {{ page.guarantee.alt }} %}
 
       <svg class="svg__augment " width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">

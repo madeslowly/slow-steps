@@ -20,14 +20,14 @@ Last full read through 27/12/2020
 {% assign description = site.description %}
 {% endif %}
 
-<div class="hero">
+<div class="hero hero-65">
 
   <div class="hero__overlay">
     {% picture {{ page.hero.image | prepend: 'content/' }}
-      --img class="hero__image hero__filter"
+      --img class="hero__image image__filter--mix"
       --alt {{ page.hero.alt }} %}</div>
 
-  <div class="hero__strap">
+  <div class="hero__strap hero__strap--baseline bg--env-100">
     <h2>{{ site.data.copy.landing.clinician.title }}</h2>
     <p data-aos="fade-up">{{ site.data.copy.landing.clinician.description }}</p>
   </div>
@@ -90,7 +90,7 @@ Last full read through 27/12/2020
   <div class="segment__right augmented-image" >
 
     {% picture {{ page.guarantee.image | prepend: 'content/' }}
-      --img class="hero__image image--guarantee "
+      --img class="hero__image image--guarantee h-100"
       --alt {{ page.guarantee.alt }} %}
 
       <svg class="svg__augment " width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">

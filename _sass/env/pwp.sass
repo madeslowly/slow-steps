@@ -6,14 +6,19 @@
  *
  */
 
-.hero
-  height: 90vh
-  height: calc(var(--vh, 1vh) * 90)
+.image__filter--blur
+  @include image-filter--blur
 
 .hero__overlay
   background-color: $env-primary
 
-.hero__strap
+.bg--env-100
+  background-color: $env-primary
+
+.bg--env-50
+  background-color: rgba($env-primary, .5)
+
+.hero__strap--env
   color: $env-secondary
 
 .hero__strap--start

@@ -6,7 +6,25 @@
  *
  */
 
-// Landing page animations, hover and focus
+
+// ##############################################
+
+// Image filters
+
+// Applied to the actual image with background-color: $env-primary
+@mixin image-filter--mix
+  filter: grayscale(1) contrast(.2) brightness(1.8)
+  opacity: .6
+
+// Applied to an overlaying div
+@mixin image-filter--blur
+  backdrop-filter: blur(8px)
+  background-color: rgba($env-primary, .5)
+
+
+// ##############################################
+
+// Landing page animations - hover and focus
 
 @mixin reveal-landing-strap
   height: 30vh
@@ -37,13 +55,6 @@
     100%
       opacity: 1
       transform: translateX(0)
-
-
-
-// Global image filter for most hero images
-@mixin image-filter
-  filter: grayscale(.2) contrast(.2) brightness(1.6)
-  opacity: .7
 
 
 // Logo using the OPD primary colors

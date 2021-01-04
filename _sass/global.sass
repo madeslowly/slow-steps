@@ -1,3 +1,11 @@
+/*  Last full read through 30/12/2020
+ *
+ *##############################################
+ *# Global                    /_sass/global.sass
+ *##############################################
+ *
+ */
+
 // Global CSS that doesnt fall into any of the categories set out by the _sass dir structure
 
 // Stop any CSS animations on load. We remove this class from the body tag after load, using assets/js/animate_after_load.js
@@ -10,14 +18,14 @@
 .fullwidth__wrap
   width: 100vw
 
+.h-100
+  height: 100%
+
 .d-none
   display: none
 
 .d-block
   display: block
-
-.bg--dark
-  background-color: $opd-grey-neutral
 
 .bg--light
   background-color: $white
@@ -31,24 +39,51 @@
   display: flex
   justify-content: center
 
+.hero-65
+  height: 65vh
+  height: calc(var(--vh, 1vh) * 65)
+
+.hero-90
+  height: 90vh
+  height: calc(var(--vh, 1vh) * 90)
+
 .hero__overlay
   width: 100%
   height: 100%
   z-index: -1
 
 .hero__image
-  height: 100%
   object-fit: cover
   object-position: center
   width: 100%
 
-.hero__filter
-  @include image-filter
+.image__filter--mix
+  @include image-filter--mix
 
 .hero__strap
-  padding-top: $navbar-height
+  align-items: center
+  color: $white
+  display: flex
+  justify-content: center
+  margin: 0
   position: absolute
-  text-align: center
+  width: 100vw
+
+.hero__strap--center
+  padding-top: $navbar-height
+
+  span
+    animation-duration: .1s
+    animation-fill-mode: forwards
+    animation-iteration-count: 1
+    animation-name: fadeInOpacity
+    opacity: 0
+
+.hero__strap--baseline
+  align-self: flex-end
+  flex-direction: column
+  padding-bottom: 5.5vh
+  padding-top: 2rem
 
 .hero__follow
   align-items: center
@@ -189,7 +224,7 @@ $svg-text-offset: 60px
   100%
     opacity: 0
     r: 2
-    
+
 
 // Social icons wraped in <a's
 .social
