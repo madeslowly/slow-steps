@@ -3,6 +3,6 @@
 .sass-cache
 _site
 Gemfile.lock
-.DS_Store
+*.DS_Store
 Rakefile
 deploy_rsa
