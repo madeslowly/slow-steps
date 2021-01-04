@@ -67,7 +67,12 @@
   justify-content: center
   margin: 0
   position: absolute
+  text-align: center
   width: 100vw
+
+  & > *
+    padding-top: 12px
+
 
 .hero__strap--center
   padding-top: $navbar-height
@@ -254,3 +259,51 @@ $svg-text-offset: 60px
   .social--Email
     &:hover
       color: $opd-blue-trust
+
+
+// This is basically a button and should to be centralised
+.action__call
+  bottom: 0
+  font-size: $font-size * .8
+  margin: -100px auto
+  padding: 2rem
+  position: relative
+  text-decoration: none
+  transition: .2s ease
+
+  &:before
+    border-radius: 3rem
+    content: ''
+    display: block
+    height: 6rem
+    left: 0
+    position: absolute
+    top: 0
+    transition: .2s ease
+    width: 6rem
+
+  span
+    font-weight: 900
+    position: relative
+
+  svg
+    fill: none
+    margin-left: 10px
+    position: relative
+    stroke-linecap: round
+    stroke-linejoin: round
+    stroke-width: 2
+    top: 0
+    transform: translateX(-10px)
+    transition: .2s ease
+
+  &:hover
+    &::before
+      width: 100%
+
+    svg
+      stroke: $white
+      transform: translateX(0)
+
+    span
+      color: $white
