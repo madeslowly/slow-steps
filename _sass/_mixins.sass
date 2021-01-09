@@ -6,6 +6,7 @@
  *
  */
 
+@import '_functions'
 
 // ##############################################
 
@@ -88,3 +89,9 @@
     .site__logo--t,
     .site__logo--Q
       fill: $color
+
+
+@mixin footer-bg($footer-bg-color)
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='1278' height='600' %3E%3Cpath d='M1019,600 C1019,600 1019,600 1019,600 C1019,600 1279,600 1279,600 C1279,600 1279,0 1279,0 C1279,0 413,0 413,0 C413,0 413,0 413,0' fill= '#{url-friendly-colour($footer-bg-color)}' fill-opacity='0.99'/%3E%3Cpath d='M1220,600 C1220,600 0,600 0,600 C0,600 0,0 0,0 C0,0 414,0 414,0 C414,0 1020,600 1020,600' fill= '#{url-friendly-colour($footer-bg-color)}' /%3E%3C/svg%3E")
+  background-position: center
+  background-size: cover
