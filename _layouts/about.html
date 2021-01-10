@@ -74,7 +74,7 @@ Last full read through 29/12/2020
       {% endfor %} ">
 
         <div class="single__member__image">
-          <img class="member--image"src="{{ member.image | prepend: '/assets/images/content/people/' }}" alt="{{ member.name }} is the {{ member.position }}" />
+          <img class="member--image" src="{% if member.image %}{{ member.image | prepend: '/assets/images/content/people/' }}{% else %}{{ 'team-placeholder.jpg' | prepend: '/assets/images/defaults/' }}{% endif %}" alt="{{ member.name }} is the {{ member.position }}" />
         </div>
 
         <div class="single__member__text">
