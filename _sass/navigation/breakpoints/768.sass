@@ -5,6 +5,8 @@
 
 // Everything here will be included in EVERY .html
 
+$brand-height: 55%
+
 @media screen and ( min-width: 768px )
 
   .navbar
@@ -18,11 +20,12 @@
     height: 10vh
     z-index: 999
     top: 7.5vh
+    //align-items: center
 
     .site__logo
       position: absolute
-      top: 30%
-      height: 40%
+      top: (100% - $brand-height) / 2
+      height: $brand-height
 
   .nav-list
     display: flex
