@@ -8,9 +8,7 @@ layout: compress
 
 {{ content }}
 
-{% if page.layout == "error-page" %}
-
-{% else %}
+{% if page.layout != "error-page" %}
 
   {% include footer/footer_full.html %}
 
