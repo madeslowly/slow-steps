@@ -17,6 +17,9 @@
   filter: grayscale(1) contrast(.2) brightness(1.8)
   opacity: .6
 
+@mixin image-filter-rotate
+  filter: grayscale(1) contrast(.8) brightness(.9) sepia(.4) hue-rotate(180deg)
+
 // Applied to an overlaying div
 @mixin image-filter--blur
   backdrop-filter: blur(8px)
