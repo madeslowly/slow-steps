@@ -16,7 +16,29 @@
   -o-transition: none !important
 
 .fullwidth__wrap
-  width: 100vw
+  width: 90vw
+  max-width: 800px
+  margin: auto
+  margin-top: $navbar-height + $secondary-navbar-height + 5vh
+  & > p
+    padding: 3rem 0
+  & > ol li, ul li
+    padding: 1rem 0
+
+  .two__col
+    display: flex
+    flex-wrap: wrap
+    width: 100%
+
+  .two__col--elem
+    padding: 1rem 0
+
+  .two__col--left,
+  .two__col--right
+    width: 100%
+
+  .no--mobile
+    display: none
 
 .h-100
   height: 100%
@@ -244,6 +266,16 @@ $svg-text-offset: 60px
 
 
 @media screen and ( min-width: 768px )
+
+  .fullwidth__wrap
+    .two__col--left
+      width: 30%
+
+    .two__col--right
+      width: 70%
+
+    .no--mobile
+      display: block
 
   .narrow__wrap
     width: 80vw
