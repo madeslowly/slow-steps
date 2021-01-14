@@ -11,9 +11,6 @@ branches:
 
 rvm:
 - 2.6
-env:
-  global:
-  - JEKYLL_ENV=production
 
 notifications:
   email:
@@ -22,25 +19,11 @@ notifications:
     on_success: always
     on_failure: always
 
-
-script:
-  - cd gaitq-content
-  - bundle exec jekyll build --config _config.yml
-  - cd ..
-
-before_deploy:
-  - openssl aes-256-cbc -K $encrypted_db2095f63ba3_key -iv $encrypted_db2095f63ba3_iv -in deploy_rsa.enc -out deploy_rsa -d
-  - eval "$(ssh-agent -s)"
-  - chmod 600 deploy_rsa
-  - ssh-add deploy_rsa
-
-addons:
-  ssh_known_hosts: ydn.wpm.mybluehost.me
-
 deploy:
   provider: script
   skip_cleanup: true
   script:
-    - rsync -r $TRAVIS_BUILD_DIR/gaitq-content/_site/ ydnwpmmy@ydn.wpm.mybluehost.me:public_html/madeslowly.xyz/gaitq/
+    - gem bump --file version.rb
+    - rake release
   on:
     all_branches: true
