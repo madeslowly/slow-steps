@@ -1,0 +1,25 @@
+<div class="contact-details">
+
+  <h4 class="form-instruction">Contact us directly</h4>
+
+  <p><i class="fas fa-envelope"></i>
+  <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+
+  {% if site.phone %}
+  <p><i class="fas fa-phone-square"></i>
+  <a href="tel:{{ site.phone }}‬" ‬>{{ site.phone }}‬</a></p>
+  {% endif %}
+
+  <h4 class="form-instruction">Connect with us socially</h4>
+
+  <ul class="social-media">
+
+  {% for social in site.socials %}
+  <li class="social-media-item">
+  <a href="{{ social.url }}">
+  <i class="fab fa-{{ social.icon }} social--{{ social.name }} social-media-link"></i></a>
+  </li>
+  {% endfor %}
+
+  </ul>
+</div>
