@@ -1,0 +1,37 @@
+.faq__wrapper
+  display: flex
+  flex-direction: column
+  background-color: $pure-white
+  padding: 10vh 0
+
+.faq__panel
+  border: solid 1px rgba($env-primary, .4)
+  margin: 2rem auto
+  border-radius: 4px
+  width: 60%
+
+.faq__question
+  width: 100%
+  padding: 1rem 0
+  background-color: rgba($opd-blue-trust, .2)
+  border-radius: 4px
+  cursor: pointer
+  transition: .2s ease-in-out
+
+  &:hover
+    background-color: rgba($opd-blue-trust, 1)
+
+  & > *
+    padding-left: 1rem
+
+.faq__answer
+  max-height: 0
+  overflow: hidden
+  transition: .4s ease-in-out
+
+  & > *
+    padding: 1rem
+
+.faq__answer--reveal
+  max-height: 1000px
+  transition: .6s ease-in-out

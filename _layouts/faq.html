@@ -1,0 +1,63 @@
+---
+layout: default
+---
+
+{% assign strap = page.title %}
+
+
+<div class="hero hero-65">
+
+  <div class="hero__overlay h-100">
+    {% picture {{ page.hero.image | prepend: 'content/' }}
+      --img class="hero__image hero__image--fixed hero-65"
+      --alt {{ page.hero.alt }} %}</div>
+
+  <header class="hero__strap hero__strap--center image__filter--blur hero-65" aria-label="{{ strap }}">
+
+      <h1 aria-hidden="true" >
+      {% assign n = strap.size | minus: 1 %}
+      {%- for char in (0..n ) -%}
+
+      <span style="animation-delay: {{ char | times: 40 | plus: 200 }}ms;">{{ strap | slice: char }}</span>
+      {%- endfor -%}</h1>
+
+  </header>
+
+</div>
+
+<div class="faq__wrapper">
+{% for faq in site.data.faq %}
+<div class="faq__panel">
+  <div class="faq__question">
+    <h4>{{ faq.question }}</h4>
+  </div>
+
+  <div class="faq__answer faq__answer--reveal">
+    <p>{{ faq.answer }}</p>
+  </div>
+</div>
+{% endfor %}
+</div>
+
+
+<script>
+  /*
+  On load we hide all the answers.
+  */
+
+  const title = document.querySelectorAll(".faq__answer--reveal");
+  for(var i = 0; i < title.length; i++)
+    title[i].classList.remove('faq__answer--reveal');
+
+</script>
+
+<script>
+/* Watch for clicks on more info and reveal text */
+document.querySelectorAll('.faq__question').forEach(function(el){
+  el.addEventListener('click', function() {
+    const n = this.nextElementSibling;
+    n.classList.toggle('faq__answer--reveal');
+  });
+});
+
+</script>
