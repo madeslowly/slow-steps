@@ -15,6 +15,9 @@
   -ms-transition: none !important
   -o-transition: none !important
 
+body
+  background-color: $white
+
 .fullwidth__wrap
   width: 90vw
   max-width: 800px
@@ -97,7 +100,7 @@
 
 
 .hero__strap--center
-  padding-top: $navbar-height
+  //padding-top: $navbar-height
 
   span
     animation-duration: .1s
@@ -281,6 +284,10 @@ $svg-text-offset: 60px
     width: 80vw
     max-width: 600px
     margin: 0 auto
+
+  .social--Facebook
+    &:hover
+      color: $facebook-primary
 
   .social--Twitter
     &:hover
