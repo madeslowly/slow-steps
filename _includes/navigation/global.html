@@ -9,6 +9,17 @@
     </a>
   </div>
 
+  <ul class="social-media">
+
+  {% for social in site.socials %}
+  <li class="social-media-item">
+  <a href="{{ social.url }}">
+  <i class="fab fa-{{ social.icon }} social--{{ social.name }} social-media-link"></i></a>
+  </li>
+  {% endfor %}
+
+  </ul>
+
   {% if page.layout == "env/landing" or page.layout == "error-page" %}
   </nav>
   {% else %}
