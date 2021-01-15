@@ -70,7 +70,9 @@
 
   <link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}{{ site.fallback_path }}{{ site.favicon }}">
 
-
+  {% if jekyll.environment == "production" %}
+  {% include google-analytics.html %}
+  {% endif %}
 
 </head>
 
