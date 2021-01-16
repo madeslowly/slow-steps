@@ -61,6 +61,7 @@ $brand-height: 55%
     opacity: 1
     margin: 0
     overflow: hidden
+    position: relative
 
   // Surround current link with lines
 
@@ -98,3 +99,44 @@ $brand-height: 55%
 
   .burger
     display: none
+
+  .nav-subsub-content
+    background-color: $pure-white
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .1)
+    visibility: hidden
+    opacity: 0
+    border-radius: 6px
+    z-index: 1
+    position: absolute
+    padding: 1rem 0
+    margin-left: 3rem
+    transform: translateY(10px)
+    .subsub-link
+      &:hover
+        background: $white
+
+    &:before
+      background: inherit
+      content: ""
+      display: block
+      height: 16px
+      width: 16px
+      left: 5px
+      position: absolute
+      bottom: 100%
+      border-radius: 2px
+      transform: rotate(-45deg) translateY(14px)
+      z-index: -1
+
+  .nav-group-container:hover > .nav-subsub-content
+    visibility: visible
+    opacity: 1
+    transform: translateY(0px)
+    transition: opacity .1s ease-in, transform .2s ease-in
+
+  .nav-subsub-content .sub-link
+    transition: background-color .1s ease-in
+
+  .nav-subsub-content .sub-link:hover
+    background-color: $white
+    transition: background-color .1s ease-in

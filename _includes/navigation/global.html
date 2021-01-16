@@ -33,6 +33,7 @@
 
         <div class="nav-group-content {{ item.env }}-group">
           {% for sub in item.submenu %}
+          <div class="nav-group-container">
           <a
             class="
               nav-link
@@ -42,9 +43,20 @@
               {% endif %}" href="{{ sub.url | relative_url }}">
             <span>{{ sub.name }}</span></a>
 
-          {% endfor %}
-        </div>
+            {% if sub.subsubmenu %}
+            <div class="nav-subsub-content ">
+              {% for subsub in sub.subsubmenu %}
+              <a class="nav-link subsub-link" href="{{ subsub.url | relative_url }}">
+                <span>{{ subsub.name }}</span></a>
 
+              {% endfor %}
+            </div>
+            {% endif %}
+
+</div>
+          {% endfor %}
+
+        </div>
       </li>
       {% endfor %}
 
