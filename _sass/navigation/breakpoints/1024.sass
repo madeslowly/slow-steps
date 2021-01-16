@@ -10,17 +10,29 @@ $brand-height: 55%
 @media screen and ( min-width: 1024px )
 
   .navbar
+    @include default-trans
     height: $navbar-height
     align-items: center
 
+  .nav-scrolled
+    @include default-trans
+    top: -$navbar-height
+    .nav-group-content
+      @include default-trans
+      height: 10vh
+    .nav-brand
+      @include default-trans
+      height: 8vh
+      top: 6vh
+
   .nav-brand
+    @include default-trans
     display: flex
     position: absolute
     max-width: 160px
     height: 10vh
     z-index: 999
     top: 7.5vh
-    //align-items: center
 
     .site__logo
       position: absolute
@@ -70,6 +82,7 @@ $brand-height: 55%
       margin-right: -10%
 
   .nav-group-content
+    @include default-trans
     align-items: center
     justify-content: flex-end
     position: absolute

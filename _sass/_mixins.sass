@@ -38,6 +38,9 @@
 @mixin build-in($name)
   animation: .8s $bezier-snap 0s 1 $name
 
+@mixin default-trans
+  transition: all .4s ease-in-out
+
 // Keyframes
 @mixin slide-from-left
   @keyframes slide-from-left
