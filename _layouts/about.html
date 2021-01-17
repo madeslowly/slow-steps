@@ -50,9 +50,18 @@ Last full read through 29/12/2020
 </div>
 {% endif %}
 
-<div class="about__team">
+<div class="embedded__video about--video">
+  <!--
+  <h2>Watch our company video</h2>
+  -->
+  {% include vimeoPlayer.html id="493777125" %}
 
+</div>
+
+<div class="about__team">
+  <h2 class="bg--env-50 about__team--title">Meet the team</h2>
   <div class="team__head bg--env-50">
+
     {% for menu in site.data.team.menu %}
     <h3 class="team__title team--js-script-{{ menu.script }}"
         id="team{{ menu.script }}"
