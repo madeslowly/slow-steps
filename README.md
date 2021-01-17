@@ -8,56 +8,46 @@
 
 [![Jekyll](https://img.shields.io/badge/jekyll-%3E%3D%203.7-blue.svg)](https://jekyllrb.com/)
 
-
-
-A jekyll theme built for GaitQ
+A bold jekyll theme built for gaitQ. Designed to have two distinct styling, depending on current URL.
 
 ## Jekyll Theme Scaffolding
 
-How this repo is organised and what the various files are. All posts, layouts, includes, stylesheets, assets, and whatever else is grouped nicely under the root folder. The compiled Jekyll site outputs to `_site/`, which is never pushed to this repo, see https://www.gaitq.madeslowly.xyz/. General flow starts with a `.md` file in our root. With Front Matter, we declare our layout which points to a structural `.html` file in `_layouts`. From here, the layout file can call in data from our `_config.yml` with `{{ site.variable }}` and from any of our `YAML` files in `_data/file.yml` with `{{ site.data.file.variable }}`. The layout can also pull in other structural html snippets from `_includes` with `{% raw %}{% include relative/path/file.html %}{% endraw %}`.
+How this repo is organised and what the various files are. All posts, layouts, includes, stylesheets, assets, and whatever else is grouped  under the root folder. The compiled Jekyll site outputs to `_site/`, which is never pushed to this repo, see https://www.gaitq.madeslowly.xyz/. General flow starts with a `.md` file in our root. With Front Matter, we declare our layout which points to a structural `.html` file in `_layouts`. From here, the layout file can call in data from our `_config.yml` with `{{ site.variable }}` and from any of our `YAML` files in `_data/file.yml` with `{{ site.data.file.variable }}`. The layout can also pull in other structural html snippets from `_includes` with `{% raw %}{% include relative/path/file.html %}{% endraw %}`.
 
 It is worth noting that _include files can also perform the tasks just described. So, for example, when the `deafult.html` layout is executed (the penultimate step for *all* `.md` files), the `head.html` snippet is called, which in turn calls `og-meta.html`. Based on our sites settings and any relevant Front Matter belonging to the calling file, `og-meta.html` compiles all our `og:meta` tags and passes them to `head.html` which after adding further code, passes on to our default layout where it is placed at the top of our webpages `html`.
 
 ```
 https://github.com/madeslowly/slow-steps/
 |
-├─ _config.yml/                   # Jekyll build settings and data, site.variable
+├─ _config.yml/                   # Website settings
 |
-├─ _data/                         # Site wide data, site.data.variable
+├─ _data/                         # Site data
 |  |  |
-|  |  ├─ forms/                   # inputs for MailChimp forms, picked up by _includes/forms/
+|  |  ├─ forms/                   # Inputs for MailChimp forms
 |  |
-|  ├─ copy.yml                    # Website copy picked up with {{ site.data.copy.copy.variable }}
+|  ├─ copy.yml                    # Website copy
 |  |
-|  ├─ menu.yml                    # Menu structure for GaitQ.com
+|  ├─ menu.yml                    # Menu structure
 |
 ├─ _includes/                     # HTML and Liquid templating
 |  |
 |  ├─ branding/                   # Site branding SVGs
 |  |  |
-|  |  ├─ site__logo.svg           # Site wide logo with CSS classes, see front matter comments for class details.
-|  |
-|  ├─ errors/                     # Error page SVGs
-|  |  |
-|  |  ├─ robot-403.svg            # 403 - Forbidden
-|  |  |
-|  |  ├─ robot-404.svg            # 404 - Not Found
-|  |  |
-|  |  ├─ robot-405.svg            # 405 - Method Not Allowed
+|  |  ├─ site__logo.svg           # Site wide logo
 |  |
 |  ├─ footer/                     # Site wide footers
 |  |  |
-|  |  ├─ footer_full.html         # Multi div footer with sitemaps and contact etc
+|  |  ├─ footer_full.html         # Multi col footer
 |  |  |
-|  |  ├─ footer.html              # Simple single div footer with legal links and copyright
+|  |  ├─ footer.html              # Simple footer
 |  |
-|  ├─ forms/                      # MailChimp scaffolding, pulls data from _data/forms/
+|  ├─ forms/                      # Form scaffolding
 |  |  |
-|  |  ├─ mc-register.html         # Registration form, data from _data/forms/register
+|  |  ├─ mc-register.html         # MailChimp registration form
 |  |
-|  ├─ head/                       # Header partials, everything inside our <html> tags comes from here.
+|  ├─ head/                       # Header partials
 |  |  |
-|  |  ├─ descriptor/              # Site wide descriptors, basically this is where much of our SEO occurs.
+|  |  ├─ descriptor/              # Site wide descriptors
 |  |  |  |
 |  |  |  ├─ og-meta.html
 |  |  |  ├─ structured-data.html
@@ -67,7 +57,7 @@ https://github.com/madeslowly/slow-steps/
 |  |  |  |
 |  |  |  ├─ conditional.html      # Page env: condition --> gaitq_env.css
 |  |  |
-|  |  ├─ head.html                # Routine to collect header partials, page.env and page.layout dependencies. We also open <body> here.
+|  |  ├─ head.html                # Routine to collate header partials
 |  |
 |  ├─ navigation/                 # HTML and Liquid templating
 |  |  |
@@ -77,7 +67,7 @@ https://github.com/madeslowly/slow-steps/
 |
 ├─ _layouts/                      # HTML and Liquid templating
 |  |
-|  ├─ env/                        # Environmental specific layouts, passed onto default.html after processing
+|  ├─ env/                        # Environmental specific layouts
 |  |  |
 |  |  ├─ clinician.html           # Professionals and press
 |  |  ├─ pwp.html                 # Patients and carers
@@ -85,9 +75,9 @@ https://github.com/madeslowly/slow-steps/
 |  |
 |  ├─ compress.html               # Final step for all pages. Strips html comments, carriage returns and white space.
 |  |
-|  ├─ default.html                # Wraps page content with header, nav and scripts. For all pages, also this is where Jekyll looks if no front matter defined. Passed onto compress.html after processing.
+|  ├─ default.html                # Wraps page content with header, nav, scripts and footer.
 |  |
-|  ├─ error-page.html             # Landing page. Passed onto default.html after processing.
+|  ├─ error-page.html             # HTTP error pages
 |
 ├─ _plugins/                      # Custom Ruby plugins
 |  |
@@ -143,17 +133,17 @@ https://github.com/madeslowly/slow-steps/
 
 `_config.yml` is where most variables are set.
 
-#### title:
+#### `title:`
 
 The global title of the website.
 
-#### subtitle:
+#### `subtitle:`
 
 The global subtitle of the website.
 
 #### Page Titling
 
-Pages are given titles according to,
+Each pages is given a title according to,
 
 ```Liquid
 {% if page.title %}
@@ -163,11 +153,11 @@ Pages are given titles according to,
 {% endif %}
 ```
 
-#### description:
+#### `description:`
 
 Site wide description, used in head description, og:description, twitter:description and structured data. Overwritten by page front matter, `description:`
 
-#### url:
+#### `url:`
 
 Used to generate absolute URLs for sitemaps, feeds and for generating canonical URLs in a page's `<head>`. When developing locally either comment this out or use something like `http://localhost:4000` so all assets load properly. *Don't include a trailing `/`*.
 
@@ -180,23 +170,23 @@ url: "http://www.gaitq.com"
 url: ""
 ```
 
-#### baseurl:
+#### `baseurl:`
 
 Used when we are developing a partial.
 
-#### author:
+#### `author:`
 
 Author of this Jekyll project. Content authors can be added to _data/authors.yml and assigned in a pages front matter.
 
-#### postal_add:
+#### `postal_add:`
 
 Postal address of GaitQ Ltd. Used in structured data.
 
-#### opening_hours:
+#### `opening_hours:`
 
 Used in structured data. This lets google know when we are open.
 
-#### logo
+#### `logo:`
 
 Site wide logo, used as a default image for Twitter and Facebook. Can be over written by a pages front matter: `image:`.
 
