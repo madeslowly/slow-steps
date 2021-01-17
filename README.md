@@ -1,6 +1,14 @@
 ---
 ---
-# Slow Steps, a Jekyll theme
+# [Slow Steps, a Jekyll theme](https://www.gaitq.madeslowly.xyz/clinician/about/)
+
+[![Gem Version](https://badge.fury.io/rb/slow-steps.svg)](https://badge.fury.io/rb/slow-steps)
+
+[![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/mmistakes/minimal-mistakes/master/LICENSE)
+[![Jekyll](https://img.shields.io/badge/jekyll-%3E%3D%203.7-blue.svg)](https://jekyllrb.com/)
+
+[![Ruby gem](https://img.shields.io/gem/v/minimal-mistakes-jekyll.svg)](https://rubygems.org/gems/minimal-mistakes-jekyll)
+[![Tip Me via PayPal](https://img.shields.io/badge/PayPal-tip%20me-green.svg?logo=paypal)](https://www.paypal.me/mmistakes)
 
 A jekyll theme built for GaitQ
 
