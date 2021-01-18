@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+
+
+<div class="spacefiller"></div>
+<div class="hero hero-65 collage">
+
+{% for collage in page.collage  %}
+  <div class="collage__image__wrap collage__image__wrap-{{ forloop.index }}" style="animation-delay: {{ forloop.index0 | times: 110 }}ms">
+    <h3 class="image__header">{{ collage.reasons }}</h3>
+      {% picture {{ collage.image | prepend: 'content/' }}
+        --img class="collage__image collage__image-{{ forloop.index }}"
+        --alt {{ collage.reasons }} %}
+  </div>
+{% endfor %}
+</div>
+
+<div class="fullwidth__wrap">
+{{ content }}
+</div>
