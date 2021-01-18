@@ -11,6 +11,8 @@
   width: 60%
 
 .faq__question
+  display: flex
+  justify-content: space-between
   width: 100%
   padding: 1rem 0
   background-color: rgba($opd-blue-trust, .2)
@@ -21,8 +23,12 @@
   &:hover
     background-color: rgba($opd-blue-trust, 1)
 
-  & > *
+  & > .faq__question--title
     padding-left: 1rem
+
+  & > .fas
+    padding-right: 1rem
+    transition: .4s ease-in-out
 
 .faq__answer
   max-height: 0
@@ -35,3 +41,22 @@
 .faq__answer--reveal
   max-height: 1000px
   transition: .6s ease-in-out
+
+.faq__question--reveal
+  & > .fas
+    transform: rotateX(180deg) translateY(.5rem)
+
+.faq__contact
+  width: 100vw
+  background-color: lighten($env-primary, 0%)
+  padding: 4rem 0
+
+  .contact-form
+    width: 95%
+    margin: auto
+    max-width: 600px
+
+.faq__contact--strap
+  text-align: center
+  padding: 4rem 0
+  color: $white

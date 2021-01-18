@@ -29,7 +29,7 @@ layout: default
 {% for faq in site.data.faq %}
 <div class="faq__panel">
   <div class="faq__question">
-    <h4>{{ faq.question }}</h4>
+    <h4 class="faq__question--title">{{ faq.question }}</h4><i class="fas fa-chevron-down"></i>
   </div>
 
   <div class="faq__answer faq__answer--reveal">
@@ -52,12 +52,21 @@ layout: default
 </script>
 
 <script>
-/* Watch for clicks on more info and reveal text */
+/* Watch for clicks and reveal text */
 document.querySelectorAll('.faq__question').forEach(function(el){
   el.addEventListener('click', function() {
+    this.classList.toggle('faq__question--reveal');
     const n = this.nextElementSibling;
     n.classList.toggle('faq__answer--reveal');
   });
 });
 
 </script>
+
+
+
+<div class="faq__contact">
+    <h2 class="faq__contact--strap">Not found the answer?</h2>
+    {% include contact-form.html %}
+
+</div>
