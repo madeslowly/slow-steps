@@ -1,0 +1,5 @@
+#!/bin/bash
+
+gem bump --file version.rb
+
+rake release
