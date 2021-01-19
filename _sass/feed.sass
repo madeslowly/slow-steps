@@ -6,7 +6,7 @@
   width: 80vw
   max-width: 1200px
   margin: auto
-  
+
 
 .post__feed
   display: flex
@@ -19,10 +19,10 @@
 .feed__card
   display: flex
   flex-direction: column
-  width: 200px
+  //width: 200px
   max-width: 360px
   //height: 220px
-  margin: 20px
+  //margin: 20px
   overflow: hidden
   border-radius: 0
   //box-shadow: 0 0 6px rgba($env-primary,.8)
@@ -68,7 +68,7 @@
 
 .feed__card--meta
   font-size: $font-size * .5
-  padding: 1rem 0
+  padding: 0
   & > span
     font-weight: 600
 
@@ -76,3 +76,14 @@
 
   .feed__card--meta
     font-size: $font-size * .7
+
+  .feed__card
+    display: flex
+    flex-direction: column
+    width: 200px
+    max-width: 360px
+    //height: 220px
+    margin: 20px
+    overflow: hidden
+    border-radius: 0
+    //box-shadow: 0 0 6px rgba($env-primary,.8)
