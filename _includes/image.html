@@ -1,10 +1,9 @@
-<!-- include for post images to simplify the ux -->
+<!-- include to insert images
+{% comment %}
 
-<div class="post__image">
+{% include image.html link="my_image.jpg" alt="Description for accessibility technologies" caption="Optional caption, displayed under the image." %}
 
-{% picture {{ include.link | prepend: 'posts/' }} --alt include.alt --img class="post__content--image" %}
+{% endcomment %}
+ -->
 
-{% if include.caption %}
-<p class="post__image--caption">{{ include.caption }}</p>
-{% endif %}
-</div>
+{% picture {{ include.link }} --alt {{include.alt}} --img class="{{ include.class }}" %}
