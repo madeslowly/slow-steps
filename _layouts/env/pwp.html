@@ -63,7 +63,15 @@ Last full read through 27/12/2020
         </radialGradient>
       </defs>
 
-      <circle class="svg__augment--pulse" cx="32%" cy="2%" />
+      <circle class="svg__augment--pulse" cx="32%" cy="2%" >
+
+        <!-- Can't animate with CSS, see https://stackoverflow.com/questions/32409101/resizing-svg-circle-radius-using-css-animation
+        -->
+        <animate attributeName="r" begin="0s" dur="2s" repeatCount="indefinite" from=".1" to="2"/>
+
+        <animate attributeName="fill-opacity" attributeType="CSS" begin="0s" dur="2s" repeatCount="indefinite" from="1" to="0" fill="freeze" />
+
+      </circle>
       <circle class="svg__augment--led" cx="32%" cy="2%" r=".5" />
 
     </svg>

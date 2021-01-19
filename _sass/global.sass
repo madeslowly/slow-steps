@@ -22,11 +22,14 @@ body
   background-color: $white
 
 .fullwidth__wrap
-  width: 90vw
-  max-width: 800px
-  margin: auto
-  margin-top: $navbar-height + $secondary-navbar-height + 5vh
+  background-color: $white
+  width: 100vw
+  padding-top: $navbar-height + $secondary-navbar-height + 5vh
+  & > *
+    margin: auto
+    max-width: 800px
   & > p
+
     padding: 3rem 0
   & > ol li, ul li
     padding: 1rem 0
@@ -243,20 +246,7 @@ $svg-text-offset: 60px
     stop-opacity: 1
 
 .svg__augment--pulse
-  animation: pulse-ring 2s $bezier-pulse infinite
   fill: $led
-
-@keyframes pulse-ring
-  0%
-    opacity: .5
-    r: .1
-
-  50%
-    opacity: .2
-
-  100%
-    opacity: 0
-    r: 2
 
 
 // Social icons wraped in <a's
