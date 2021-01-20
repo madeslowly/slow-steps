@@ -1,9 +1,55 @@
-<!-- include to insert images
-{% comment %}
+<!--
+  insert an augmented image located in assets/images/content/
 
-{% include image.html link="my_image.jpg" alt="Description for accessibility technologies" caption="Optional caption, displayed under the image." %}
+  Usage:
 
-{% endcomment %}
- -->
+  <div class="wrapping-class" >
+  {% comment %}
+  {%  include image.html
+      image="handle"
+      alt="Description"
+      class="image-class"
+      caption="Optional caption"
+      %}
+  {% endcomment %}
 
-{% picture {{ include.link }} --alt {{include.alt}} --img class="{{ include.class }}" %}
+  We close the wrapping div before the caption.
+
+-->
+
+
+{% capture path %}
+{{ page.images[include.image].file | prepend: 'content/'  }}
+{% endcapture %}
+
+{% picture {{ path }}
+  --img class="{{ include.class }}"
+  --alt {{ include.alt }} %}
+
+{% if page.images[include.image].labels %}
+
+{% include functions/calc-svg-coord.html image_handle=include.image %}
+
+<svg class="svg__augment" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+
+  {% for item in page.images[include.image].labels %}
+  <svg class="svg__labels hidden" x="{{ cX[forloop.index0] | remove: ", " }}%" y="{{ cY[forloop.index0] | remove: ", " }}%" style="overflow: visible">
+
+    <circle class="svg--elem svg--circle" cx="0%" cy="0%" r="6" />
+
+    <line class="svg--elem svg--line" x1="0"  y1="0" y2="0" />
+
+    <text class="svg--elem svg--text trans-{% if item.reverse %}right{% else %}left{% endif %}" >{{ item.text }}</text>
+
+  </svg>
+  {% endfor %}
+
+</svg>
+{% endif %}
+
+<!-- closing warpping div -->
+</div>
+
+{% if include.caption %}
+<p class="image--caption">{{ include.caption }}</p>
+{% endif %}

@@ -1,33 +1,30 @@
 <!-- Take inputs from page front matter and calculate the coordinates of the svg elements -->
 {% assign image_handle = include.image_handle %}
 
-{% if page[image_handle].augment %}
+<!-- get image dimensions -->
+{%- assign imageX = page.images[image_handle].size | split: ', ' | first -%}
+{%- assign imageY = page.images[image_handle].size | split: ', ' | last -%}
 
-  <!-- get image dimensions -->
-  {%- assign imageX = page[image_handle].augment.image | split: ', ' | first -%}
-  {%- assign imageY = page[image_handle].augment.image | split: ', ' | last -%}
+<!-- pre-assign arrays for circle centers and line ends -->
+{% assign cX = '' | split: ',' %}
+{% assign cY = '' | split: ',' %}
 
-  <!-- pre-assign arrays for circle centers and line ends -->
-  {% assign cX = '' | split: ',' %}
-  {% assign cY = '' | split: ',' %}
+<!-- loop over all the requested labels -->
+{% for item in page.images[image_handle].labels %}
 
-  <!-- loop over all the requested labels -->
-  {% for item in page[image_handle].augment.labels %}
+  <!-- x(i) and y(i) -->
+  {% assign ix = item.coord | split: ', ' | first %}
+  {% assign iy = item.coord | split: ', ' | last %}
 
-    <!-- x(i) and y(i) -->
-    {% assign ix = item.coord | split: ', ' | first %}
-    {% assign iy = item.coord | split: ', ' | last %}
+  <!-- calculate circle centers as percentage of image size -->
+  {% assign cx = ix | times: 100 | divided_by: imageX | append: ', ' %}
+  {% assign cy = iy | times: 100 | divided_by: imageY | append: ', ' %}
+  <!-- push into arrays -->
+  {% assign cX = cX | push: cx %}
+  {% assign cY = cY | push: cy %}
 
-    <!-- calculate circle centers as percentage of image size -->
-    {% assign cx = ix | times: 100 | divided_by: imageX | append: ', ' %}
-    {% assign cy = iy | times: 100 | divided_by: imageY | append: ', ' %}
-    <!-- push into arrays -->
-    {% assign cX = cX | push: cx %}
-    {% assign cY = cY | push: cy %}
+{% endfor %}
 
-  {% endfor %}
-
-{% endif %}
 
 <!--
 in:   [imageX, imageY] pixels
@@ -35,6 +32,4 @@ in:   [imageX, imageY] pixels
 
 out:  cX = [cx_1, cx_2, ... , cx_n]
       cY = [cy_1, cy_2, ... , cy_n]
-
-      X1 = [x1_1, x1_2, ... , x1_n]
 -->

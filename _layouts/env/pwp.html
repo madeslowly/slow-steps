@@ -24,7 +24,7 @@ Last full read through 27/12/2020
 <div class="hero hero-90">
 
   <div class="hero__overlay">
-    {% picture {{ page.hero.image | prepend: 'content/' }}
+    {% picture {{ page.hero.file | prepend: 'content/' }}
       --img class="hero__image image__filter--mix h-100"
       --alt {{ page.hero.alt }} %}</div>
 
@@ -51,7 +51,7 @@ Last full read through 27/12/2020
 
 <div class="augmented-image">
 
-  {% picture {{ page.subhero.image | prepend: 'content/' }}
+  {% picture {{ page.subhero.file | prepend: 'content/' }}
     --img class="hero__image"
     --alt {{ page.subhero.alt }} %}
 
@@ -102,60 +102,11 @@ Last full read through 27/12/2020
 
   <div class="segment__right augmented-image" >
 
-    {% picture {{ page.guarantee.image | prepend: 'content/' }}
-      --img class="hero__image image--guarantee h-100"
-      --alt {{ page.guarantee.alt }} %}
+    {% include image.html image="guarantee" alt="Describe the image" class="hero__image image--guarantee h-100"%}
 
-      <svg class="svg__augment " width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-
-        {% include functions/calc-svg-coord.html image_handle="guarantee" %}
-
-        {% for item in page.guarantee.augment.labels %}
-
-        <svg class="svg__labels hidden" x="{{ cX[forloop.index0] | remove: ", " }}%" y="{{ cY[forloop.index0] | remove: ", " }}%" style="overflow: visible">
-
-          <circle class="svg--elem svg--circle" cx="0%" cy="0%" r="6" />
-
-          <line class="svg--elem svg--line" x1="0"  y1="0" y2="0" />
-
-          <text class="svg--elem svg--text trans-{% if item.reverse %}right{% else %}left{% endif %}" >{{ item.text }}</text>
-
-        </svg>
-
-        {% endfor %}
-
-      </svg>
-
-
-  </div>
 
 </div>
 
 <div class="augmented-image" >
 
-  {% picture {{ page.device.image | prepend: 'content/' }}
-    --img class="hero__image"
-    --alt {{ page.device.alt }} %}
-
-      {% include functions/calc-svg-coord.html image_handle="device" %}
-
-    <svg class="svg__augment" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-
-      {% for item in page.device.augment.labels %}
-
-      <svg class="svg__labels hidden" x="{{ cX[forloop.index0] | remove: ", " }}%" y="{{ cY[forloop.index0] | remove: ", " }}%" style="overflow: visible">
-
-        <circle class="svg--elem svg--circle" cx="0%" cy="0%" r="6" />
-
-        <line class="svg--elem svg--line" x1="0"  y1="0" y2="0" />
-
-        <text class="svg--elem svg--text trans-{% if item.reverse %}right{% else %}left{% endif %}" >{{ item.text }}</text>
-
-      </svg>
-
-      {% endfor %}
-
-
-    </svg>
-
-</div>
+{% include image.html image="device" alt="Describe the image" class="hero__image" %}
