@@ -8,7 +8,7 @@ layout: default
 <div class="hero hero-65">
 
   <div class="hero__overlay h-100">
-    {% picture {{ page.hero.image | prepend: 'content/' }}
+    {% picture {{ page.hero.file | prepend: 'content/' }}
       --img class="hero__image hero__image--fixed hero-65"
       --alt {{ page.hero.alt }} %}</div>
 
