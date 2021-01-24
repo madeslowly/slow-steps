@@ -92,7 +92,7 @@
   color: $env-primary
   padding-bottom: 2.3rem
   i
-    text-shadow: 0px 12px 10px rgba($pure-black, .3)
+    @include text-shadow
     font-size: $font-size * 1.5
 
 .team__title.team__title--active
@@ -149,6 +149,7 @@
   display: flex
   align-items: center
   color: $grey
+  font-size: $font-size
 
 .member__socials
   align-items: center
