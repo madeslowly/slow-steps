@@ -7,27 +7,33 @@ $baseurl: '{{ site.baseurl }}/'
 
 @import '_mixins'
 
-@import 'colors/_variables'
 
-@import 'navigation/_variables'
-
-@import 'colors/env/_clinician'
-
-@import 'colors/global'
 
 @import 'typography/_variables'
 
-@import 'colors/navigation'
+@import 'typography/resets'
 
-@import 'navigation/env/clinician'
+@import 'typography/branding'
 
-@import 'colors/burger'
+
+
+
+@import '_colors/_clinician'
+
+
+
+
+
+@import 'navigation/clinician'
+
+
+
+
 
 @import 'env/clinician'
 
 @import 'env/breakpoints/768'
 
-@import 'colors/breakpoints/1024'
 
 @import 'about'
 
@@ -40,3 +46,11 @@ $baseurl: '{{ site.baseurl }}/'
 @import 'faq'
 
 @import 'collage'
+
+@import 'footer_full'
+
+@import 'aos-overrides'
+
+@import 'global'
+
+@import 'feed'

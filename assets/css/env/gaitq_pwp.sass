@@ -7,27 +7,35 @@ $baseurl: '{{ site.baseurl }}/'
 
 @import '_mixins'
 
-@import 'colors/_variables'
 
-@import 'navigation/_variables'
-
-@import 'colors/env/_pwp'
-
-@import 'colors/global'
 
 @import 'typography/_variables'
 
-@import 'colors/navigation'
+@import 'typography/resets'
 
-@import 'navigation/env/pwp'
+@import 'typography/branding'
 
-@import 'colors/burger'
+
+
+
+@import '_colors/_pwp'
+
+
+
+
+
+@import 'navigation/pwp'
+
+
+
+
+
 
 @import 'env/pwp'
 
 @import 'env/breakpoints/768'
 
-@import 'colors/breakpoints/1024'
+
 
 @import 'about'
 
@@ -38,3 +46,13 @@ $baseurl: '{{ site.baseurl }}/'
 @import 'contact'
 
 @import 'faq'
+
+// Footer
+
+@import 'footer_full'
+
+@import 'aos-overrides'
+
+@import 'global'
+
+@import 'feed'
