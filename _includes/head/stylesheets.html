@@ -1,0 +1,20 @@
+<!-- Animate on scroll, js is in footer -->
+<link rel="stylesheet" type="text/css" href="{{ '/assets/vendor/aos/aos.css' | relative_url }}" media="none" onload="if(media!='all')media='all'" />
+
+<!-- Font Awesome v5 -->
+<link rel="stylesheet" href="{{ '/assets/fonts/fontawesome-free-5.11.2-web/css/all.min.css' | relative_url }}" media="none" onload="if(media!='all')media='all'" / >
+
+<!-- Slow Steps error pages -->
+{% if page.layout == 'error-page' %}
+<link rel="stylesheet" type="text/css" title="made slowly has all the style" href="{{ '/assets/css/gaitq_errors.css' | relative_url }}" media="screen" />
+{% endif %}
+
+<!-- Slow Steps post pages -->
+<link rel="stylesheet" type="text/css" title="made slowly has all the style" href="{{ '/assets/css/gaitq_post.css' | relative_url }}" media="screen" />
+
+{% if page.env %}
+<link rel="stylesheet" type="text/css" title="made slowly has all the style" href="{{ '/assets/css/env/gaitq_' | append: page.env | append: '.css' | relative_url }}" media="screen" />
+{% endif %}
+
+<!-- Slow Steps custom css -->
+<link rel="stylesheet" type="text/css" title="made slowly has all the style" href="{{ '/assets/css/gaitq_custom.css' | relative_url }}" media="screen" />

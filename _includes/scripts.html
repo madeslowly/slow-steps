@@ -4,26 +4,27 @@
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.6.1/lodash.min.js" ></script>
 
-  <script type="text/javascript" src="{{ "{{ site.baseurl }}/assets/js/svg_text_width.js" | relative_url }}" async></script>
+  <script type="text/javascript" src="{{ '/assets/js/svg_text_width.js' | relative_url }}" async></script>
 
-  <script type="text/javascript" src="{{ "{{ site.baseurl }}/assets/js/svg_aos.js" | relative_url }}" async></script>
+  <script type="text/javascript" src="{{ '/assets/js/svg_aos.js' | relative_url }}" async></script>
 
   {% include functions/pull_page_args.html %}
 
 {% endif %}
 
+<script type="text/javascript" src="{{ '/assets/js/animate_after_load.js' | relative_url }}" async></script>
 
-<script type="text/javascript" src="{{ "{{ site.baseurl }}/assets/js/animate_after_load.js" | relative_url }}" async></script>
-
-<script type="text/javascript" src="{{ "{{ site.baseurl }}/assets/js/mobile-nav-slider.js" | relative_url }}" async></script>
-
-<script type="text/javascript" src="{{ "{{ site.baseurl }}/assets/js/calc-mobile-viewport.js" | relative_url }}" async></script>
+<script type="text/javascript" src="{{ '/assets/js/calc-mobile-viewport.js' | relative_url}}" async></script>
 
 {% if page.url != '/' %}
-<script type="text/javascript" src="{{ "{{ site.baseurl }}/assets/js/nav-scroll.js" | relative_url }}" async></script>
+
+<script type="text/javascript" src="{{ '/assets/js/nav-scroll.js' | relative_url }}" async></script>
+
+<script type="text/javascript" src="{{ '/assets/js/mobile-nav-slider.js' | relative_url }}" async></script>
+
 {% endif %}
 
-<script type="text/javascript" src="{{ site.baseurl }}/assets/vendor/aos/aos.js" ></script>
+<script type="text/javascript" src="{{ '/assets/vendor/aos/aos.js' | relative_url }}" ></script>
 
 <script>
   AOS.init({
