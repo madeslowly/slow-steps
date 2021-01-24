@@ -1,3 +1,5 @@
+
+
 .ft__wrapper
   @include footer-bg($opd-blue)
   border-top: solid 1px $white
@@ -5,6 +7,12 @@
   display: flex
   flex-wrap: wrap
   padding: 5vh 5vw
+
+  .social-media-link
+    font-size: $font-size
+    padding-right: $sm-font-size
+    //color: $white
+
 
 .ft__head
   display: flex
@@ -37,7 +45,7 @@
 
 .ft__contact
   .site__logo
-    @include logo-color($opd-light-blue)
+    @include logo-color($white)
     width: 40vw
 
 .ft__sitemap
@@ -51,8 +59,9 @@
   align-items: center
   border-top: solid 1px $opd-light-blue
   display: flex
-  flex-wrap: nowrap
-  justify-content: space-between
+  flex-wrap: wrap
+
+  justify-content: space-around
   min-width: 100%
   width: 100%
   a,
@@ -131,6 +140,7 @@
       font-size: $font-size * .8
 
   .ft__base
+    justify-content: space-between
     a,
     p
       font-size: $font-size * .7
@@ -147,7 +157,7 @@
 
   .copyright
     &::after
-      content: ' Limited'
+      content: ' Ltd.'
 
   .ft__sitemap--header
     font-size: 1.8rem

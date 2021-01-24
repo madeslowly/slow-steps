@@ -17,7 +17,9 @@
   padding: 0 1rem
 
 .form-instruction
-  padding-bottom: 2rem
+  padding-bottom: $font-size
+  padding-top: $lg-font-size
+  color: $env-primary
 
 .contact-form
   width: 100%
@@ -30,7 +32,7 @@
     padding: 2rem
   label
     font-size: $font-size * .8
-    color: $black
+    color: $env-secondary
 
 .google-map
   width: 100%
@@ -52,13 +54,15 @@
   .fas
     color: $env-primary
   a
-    color: $black
+    color: $env-secondary
     transition: all .2s ease-in-out
     //text-decoration: none
     &:hover
       color: $env-primary
   .social-media-link
-    font-size: $font-size * 1.4
+    font-size: $lg-font-size
+    color: $env-secondary
+    padding-right: $lg-font-size
 
 .form-element
   width: 100%
@@ -87,22 +91,6 @@
   width: auto
   position: relative
 
-.social-media
-  display: flex
-  justify-content: center
-  padding: 0
-  margin: 0
-  z-index: 9999
-
-.social-media-item
-  list-style: none
-  padding-right: 2rem
-
-.social-media-link
-  color: $grey
-  transition: all .3s ease-in-out
-
-
 
 @media screen and ( min-width: 1024px )
 
@@ -119,9 +107,6 @@
   .contact--right
     width: 60%
     padding: 0 5rem
-
-  .form-instruction
-    padding-bottom: 2rem
 
   .contact-form
     width: 100%
@@ -155,7 +140,6 @@
     .fas
       color: $env-primary
     a
-      color: $black
       transition: all .2s ease-in-out
       text-decoration: none
       &:hover
@@ -210,18 +194,3 @@
       &::after
         opacity: 1
         transition: all 0.3s
-
-  .social-media
-    display: flex
-    justify-content: flex-start
-    padding: 0
-    margin: 0
-    z-index: 9999
-
-  .social-media-item
-    list-style: none
-    padding-right: 2rem
-
-  .social-media-link
-    color: $grey
-    transition: all .3s ease-in-out
