@@ -256,9 +256,18 @@ $svg-text-offset: 60px
 
 
 // Social icons wraped in <a's
-.social
-  color: $grey
-  text-decoration: none
+
+.social-media
+  display: flex
+  padding: 0
+  margin: 0
+
+.social-media-item
+  list-style: none
+
+.social-media-link
+  @include default-trans
+  color: $white
 
 .yaml--link
   color: inherit
@@ -284,26 +293,23 @@ $svg-text-offset: 60px
     max-width: 600px
     margin: 0 auto
 
-  .social--Facebook
+  .social-media-item
     &:hover
-      color: $facebook-primary
+      .social--Facebook
+        color: $facebook-primary
 
-  .social--Twitter
-    &:hover
-      color: $twitter-primary
+      .social--Twitter
+        color: $twitter-primary
 
-  .social--LinkedIn
-    &:hover
-      color: $linkedin-primary
+      .social--LinkedIn
+        color: $linkedin-primary
 
-  .social--Instagram
-    &:hover
-      color: $instagram-primary
+      .social--Instagram
+        color: $instagram-primary
 
-  .social--Website,
-  .social--Email
-    &:hover
-      color: $opd-light-blue
+      .social--Website,
+      .social--Email
+        color: $opd-light-blue
 
 
 // This is basically a button and should to be centralised
