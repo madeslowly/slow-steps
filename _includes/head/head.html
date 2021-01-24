@@ -15,9 +15,7 @@
     {% endif %}
   </title>
 
-  {% include head/descriptors/structured-data.html %}
-
-  <!-- use local page descriptions if it exist -->
+  <!-- use page descriptions if it exist -->
   <meta name="description"
     content="
       {% if page.description %}
@@ -30,47 +28,26 @@
 
   <meta name="author" content="{{ site.author.name }}" />
 
-  <meta name="copyright"
-    content="
-      Copyright {{ site.title }} {{ 'now' | date: "%Y" }}" />
+  {% assign date = 'now' | date: "%Y" %}
+  <meta name="copyright" content="Copyright {{ site.title | append: ' Ltd. ' | append: date }}" />
 
   <meta name="robots" content="follow" />
 
-  {% include /head/descriptors/twitter-meta.html %}
-
-  {% include /head/descriptors/og-meta.html %}
-
-  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}" />
+  <link rel="canonical" href="{{ page.url | absolute_url }}" />
 
   <link rel="preconnect" href="https://fonts.gstatic.com">
 
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" type="text/css" title="made slowly has all the style" href="{{ site.baseurl }}/assets/css/gaitq_global.css" media="screen" />
+  <link rel="shortcut icon" type="image/x-icon" href="{{ site.fallback_path | append: site.favicon | relative_url }}">
 
-  {% if page.layout == 'error-page' %}
-  <link rel="stylesheet" type="text/css" title="made slowly has all the style" href="{{ site.baseurl }}/assets/css/gaitq_errors.css" media="screen" />
-  {% endif %}
+  {% include head/descriptors/structured-data.html %}
 
-  {% if page.layout == 'feed' %}
-  <link rel="stylesheet" type="text/css" title="made slowly has all the style" href="{{ site.baseurl }}/assets/css/gaitq_feed.css" media="screen" />
-  {% endif %}
+  {% include /head/descriptors/twitter-meta.html %}
 
-  <link rel="stylesheet" type="text/css" title="made slowly has all the style" href="{{ site.baseurl }}/assets/css/gaitq_post.css" media="screen" />
+  {% include /head/descriptors/og-meta.html %}
 
-
-  {% if page.env %}
-    {% include /head/env/conditional.html %}
-  {% endif %}
-
-  <link rel="stylesheet" type="text/css" title="made slowly has all the style" href="{{ site.baseurl }}/assets/css/gaitq_custom.css" media="screen" />
-
-  <!-- Animate on scroll lib, js is in footer -->
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/vendor/aos/aos.css" media="none" onload="if(media!='all')media='all'" />
-
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/fonts/fontawesome-free-5.11.2-web/css/all.min.css" media="none" onload="if(media!='all')media='all'" / >
-
-  <link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}{{ site.fallback_path }}{{ site.favicon }}">
+  {% include /head/stylesheets.html %}
 
   {% if jekyll.environment == "production" %}
   {% include google-analytics.html %}
