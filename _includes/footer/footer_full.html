@@ -47,7 +47,7 @@
           <h4 class="ft__sitemap--env-header">{{ item.name }}</h4>
           <ul class="ft__sitemap--submenu">
           {% for sub in item.submenu %}
-          <li><a class="ft--link" href="{{ sub.url }}">{{ sub.alt }}</a></li>
+          <li><a class="ft--link" href="{{ sub.url | relative_url }}">{{ sub.alt }}</a></li>
           {% endfor %}
           </ul>
         </div>
