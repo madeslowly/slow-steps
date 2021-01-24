@@ -5,12 +5,12 @@ function svg_aug_contained_image(){
 
   var x_i = document.getElementsByClassName("image--guarantee")[0].offsetWidth ;
   var y_i = document.getElementsByClassName("image--guarantee")[0].offsetHeight ;
-  /* ge scg labels */
+  /* get svg labels */
   var svg = document.querySelectorAll('.svg__augment > .augment--guarantee');
 
   /* origanal image width in pixels */
-  var x_0 = {{ page.guarantee.augment.image | split: ', ' | first }} ;
-  var y_0 = {{ page.guarantee.augment.image | split: ', ' | last }} ;
+  var x_0 = {{ page.images.guarantee.size | split: ', ' | first }} ;
+  var y_0 = {{ page.images.guarantee.size | split: ', ' | last }} ;
 
   for (let i = 0; i < svg.length; i++) {
   /* origanal x position in pixels */
