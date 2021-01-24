@@ -1,18 +1,16 @@
-// Navigation styling for breakpoint 768
-
-// Avoid declaring any styling like color etc.
-// These will be decalred in _sass/naviagtion/env/
-
-// Everything here will be included in EVERY .html
-
-$brand-height: 55%
+// Navigation styling for breakpoint 1024
 
 @media screen and ( min-width: 1024px )
 
+  .pwp-group-link, .clinician-group-link
+    display: flex
+
   .navbar
     @include default-trans
-    height: $navbar-height
     align-items: center
+    background-color: $env-primary
+    height: $navbar-height
+
 
   .nav-scrolled
     @include default-trans
@@ -23,7 +21,11 @@ $brand-height: 55%
     .nav-brand
       @include default-trans
       height: 8vh
-      top: 6vh
+      max-height: 100px
+
+  .nav-scrolled
+    background-color: $env-primary
+    // overwrite mobile
 
   .nav-brand
     @include default-trans
@@ -31,12 +33,10 @@ $brand-height: 55%
     position: absolute
     max-width: 160px
     height: 10vh
-    z-index: 999
     top: 7.5vh
 
     .site__logo
       position: absolute
-      top: (100% - $brand-height) / 2
       height: $brand-height
 
   .nav-list
@@ -63,8 +63,12 @@ $brand-height: 55%
     overflow: hidden
     position: relative
 
-  // Surround current link with lines
+  .sub-link,
+  .subsub-link
+    color: $env-primary
 
+
+  // Surround current link with ticks
   .current--url
     &:before, &:after
       content: ""
@@ -84,6 +88,7 @@ $brand-height: 55%
 
   .nav-group-content
     @include default-trans
+    @include navbar-color
     align-items: center
     justify-content: flex-end
     position: absolute
@@ -93,7 +98,10 @@ $brand-height: 55%
     padding: 0
     height: $secondary-navbar-height
     //max-height: 100px
-    backdrop-filter: blur(20px)
+
+    .current--url
+      &:before, &:after
+        background-color: $env-primary
 
   .nav-group-content .nav-link
     margin: 0
@@ -103,7 +111,7 @@ $brand-height: 55%
 
   .nav-subsub-content
     background-color: $pure-white
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, .1)
+    box-shadow: 1px 1px 1px rgba($pure-black, .1)
     visibility: hidden
     opacity: 0
     border-radius: 6px
@@ -128,6 +136,15 @@ $brand-height: 55%
       border-radius: 2px
       transform: rotate(-45deg) translateY(14px)
       z-index: -1
+
+  .nav-group-container
+    .nav-link
+      font-weight: 400
+      text-transform: uppercase
+      padding: 1rem 3rem
+      &:not(.current--url)
+        &:hover
+          text-decoration: underline
 
   .nav-group-container:hover > .nav-subsub-content
     visibility: visible

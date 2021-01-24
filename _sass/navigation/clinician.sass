@@ -1,0 +1,31 @@
+// Theme specific for clinician env
+
+// Navbar site logo
+.nav-brand
+  @include logo-color($env-primary)
+
+// Color the navbar once we start scrolling
+.navbar.nav-scrolled
+
+  .social-media-link
+    color: $env-primary
+
+  .burger > div
+    background-color: $env-primary
+
+// on mobile and within an env we hide the other submenus
+.pwp-group
+  display: none
+
+@media screen and ( min-width: 1024px )
+
+  .clinician-group
+    display: flex
+    align-items: center
+    width: 100vw
+    height: 15vh
+    left: 0
+    flex-direction: row
+
+
+@import 'collection'

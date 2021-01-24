@@ -1,13 +1,8 @@
 
-
-// Global navigation Sass
-
-// Avoid declaring any styling like color etc.
-// These are defined in _sass/colors/env/_env.sass and called by various functions in _sass/colors/...
-
-// Everything here will be included in EVERY .html
+// Navigation styling for base
 
 .navbar
+  @include default-trans
   align-items: center
   display: flex
   height: $mobile-navbar-height
@@ -16,27 +11,26 @@
   top: 0
   white-space: nowrap
   width: 100%
-  z-index: 99
+  z-index: 9998
 
   .social-media
-    padding-left: 4rem
-  .social-media-link
-    color: $white
-    font-size: $font-size * .8
-    transform: translateY(0)
-    &:hover
-      text-shadow: 3px 3px 6px rgba($black, .2)
-      //font-size: $font-size * 1
-      transform: translateY(-2px)
+    margin-left: 3vw
+    z-index: inherit
 
+  .social-media-link
+    font-size: $sm-font-size
+    padding-right: $sm-font-size
+
+.nav-scrolled
+  @include navbar-color
 
 .nav-brand
   width: 30vw
   padding-left: 3vw
-  z-index: 100
+  z-index: 1
 
   .site__logo *
-    transition: 2s ease-in
+    @include default-trans
 
 .nav-list
   border-bottom-left-radius: 80px
@@ -55,6 +49,7 @@
   transition: $nav-slider-transition
   width: 100vw
   box-sizing: content-box
+  background-color: $env-primary
 
 .nav-link
   margin: 6vh 15vw
@@ -62,13 +57,18 @@
   text-decoration: none
   display: flex
 
-.nav-group-content .nav-link
+.nav-group-link
+  color: $nav-link-color
+
+.nav-link
   font-size: 1.7rem
   z-index: 100
+  color: $nav-link-color
 
 .nav-active
   // we toggle this class in mobile-nav-slider.js on burger click
   transform: translateX(0%)
+
 
 .site__logo-active
   .site__logo--group
@@ -80,4 +80,4 @@
     .site__logo__i *,
     .site__logo--t,
     .site__logo--Q
-      transition: 1.2s ease-in
+      fill: $env-secondary

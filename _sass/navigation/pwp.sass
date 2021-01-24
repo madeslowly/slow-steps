@@ -1,17 +1,23 @@
+// Theme specific for clinician env
 
 // Navbar site logo
 // make sure we don't style any other instance so nest with .nav-brand
 .nav-brand
   @include logo-primary-colors
 
+.navbar.nav-scrolled
+
+  .social-media-link
+    color: $env-primary
+
+  .burger > div
+    background-color: $env-primary
+
 // on mobile and within the clinician env we hide the other submenus and show the gaitq env .nav-group-link
-.clinician-group, .gaitq-group
+.clinician-group
   display: none
 
-
-@media screen and ( min-width: 768px )
-  .clinician-group-link, .pwp-group-link
-    display: flex
+@media screen and ( min-width: 1024px )
 
   .pwp-group
     display: flex
@@ -21,14 +27,4 @@
     left: 0
     flex-direction: row
 
-  .nav-group-container
-
-
-    .nav-link
-      font-weight: 400
-      color: $env-primary
-      text-transform: uppercase
-      padding: 1rem 3rem
-      &:not(.current--url)
-        &:hover
-          text-decoration: underline
+@import 'collection'

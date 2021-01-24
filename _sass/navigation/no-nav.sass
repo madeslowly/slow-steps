@@ -1,0 +1,32 @@
+// Here we only deal with navigation for landing
+
+// We dont include the naviagtion menu(s) on the landing page. See _includes/naviagtion/global.html
+
+
+@import '_variables'
+
+@import 'colors'
+
+.navbar
+  position: absolute
+  /* fix the brand on the landing page */
+
+// Navbar site logo
+// make sure we don't style any other instance so nest with .nav-brand
+.nav-brand
+  @include logo-color($white)
+  padding-left: 2rem
+  transform: translateY(5vh)
+  height: 10vh
+
+  .site__logo
+    height: $brand-height
+    position: absolute
+
+
+@media screen and ( min-width: 1024px )
+  .nav-brand
+    padding-left: 3vw
+
+    .site__logo
+      height: $brand-height + 10%
