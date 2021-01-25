@@ -50,7 +50,13 @@
   width: 100vw
   box-sizing: content-box
   background-color: $env-primary
+  overflow: scroll
 
+.nav-group-content
+  //text-indent: 2rem
+  .nav-link
+    margin: 3vh 20vw
+    
 .nav-link
   margin: 6vh 15vw
   opacity: 0
@@ -68,6 +74,7 @@
 .nav-active
   // we toggle this class in mobile-nav-slider.js on burger click
   transform: translateX(0%)
+  box-shadow: -.2px .2px 0 rgba($pure-black, .3)
 
 
 .site__logo-active
