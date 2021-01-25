@@ -13,7 +13,7 @@ $landing-height: 100vh
   display: flex
   flex-direction: column
   height: $landing-height
-  height: calc(var(--vh, 1vh) * 100)
+  height: calc(var(--vh, 1vh) * #{strip-unit($landing-height)})
 
 .page__half
   align-items: flex-end

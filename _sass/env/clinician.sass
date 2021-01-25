@@ -5,6 +5,7 @@
  *##############################################
  *
  */
+$hero-follow-bottom: 59.5vh
 
 .image__filter--blur
   @include image-filter--blur
@@ -20,8 +21,8 @@
 
 .hero__follow
   background-color: $env-primary
-  top: 59.5vh
-  top: calc(var(--vh, 1vh) * 59.5)
+  top: $hero-follow-bottom
+  top: calc(var(--vh, 1vh) * #{strip-unit($hero-follow-bottom)})
 
 .segment__keywords
   align-items: center

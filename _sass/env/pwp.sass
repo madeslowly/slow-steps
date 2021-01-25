@@ -6,6 +6,8 @@
  *
  */
 
+$hero-follow-top: 4.5vh
+
 .image__filter--blur
   @include image-filter--blur
 
@@ -26,8 +28,8 @@
 
 .hero__follow
   background-color: $env-primary
-  bottom: 4.5vh
-  bottom: calc(var(--vh, 1vh) * 4.5)
+  bottom: $hero-follow-top
+  bottom: calc(var(--vh, 1vh) * #{strip-unit($hero-follow-top)})
 
 .segment__wrap
   display: flex

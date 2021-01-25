@@ -35,13 +35,13 @@
 .nav-list
   border-bottom-left-radius: 80px
   font-size: 1.3rem
-  height: $nav-list-height
-  height: calc( var(--vh, 1vh) * 85 )
+  height: $mobile-nav-list-height
+  height: calc( var(--vh, 1vh) * #{ strip-unit($mobile-nav-list-height)} )
   list-style: none
   margin: 0
-  margin-block-start: 0
+  margin-block-start: calc( var(--vh, 1vh) * #{ strip-unit($mobile-navbar-height)} )
   padding: 0
-  padding-top: 15vh
+  padding-top: 0
   position: absolute
   right: 0
   top: 0
