@@ -9,57 +9,62 @@
     </a>
   </div>
 
-  {% if page.env != "landing" OR page.env != "error-page" %}
+    {% if page.url != "/" %}
 
-  <ul class="social-media">
-    {% for social in site.socials %}
-    <li class="social-media-item">
-    <a href="{{ social.url }}">
-    <i class="fab fa-{{ social.icon }} social--{{ social.name }} social-media-link"></i></a>
-    </li>
-    {% endfor %}
-  </ul>
+      {% if page.url != "/error-pages/404" %}
 
-  <ul class="nav-list">
-    {% for item in site.data.menu.navigation %}
-    <li class="nav-group">
-      <a href="{{ item.url | relative_url }}" class="nav-group-link nav-link {{ item.env }}-group-link">
-        <span>{{ item.name }}</span></a>
-      <div class="nav-group-content {{ item.env }}-group">
-        {% for sub in item.submenu %}
-        <div class="nav-group-container">
-        <a
-          class="
-            nav-link
-            sub-link
-            {% if page.url == sub.url %}
-            current--url
-            {% endif %}" href="{{ sub.url | relative_url }}">
-          <span>{{ sub.name }}</span></a>
+      <ul class="social-media">
+        {% for social in site.socials %}
+        <li class="social-media-item">
+        <a href="{{ social.url }}">
+        <i class="fab fa-{{ social.icon }} social--{{ social.name }} social-media-link"></i></a>
+        </li>
+        {% endfor %}
+      </ul>
 
-          {% if sub.subsubmenu %}
-          <div class="nav-subsub-content ">
-            {% for subsub in sub.subsubmenu %}
-            <a class="nav-link subsub-link" href="{{ subsub.url | relative_url }}">
-              <span>{{ subsub.name }}</span></a>
+      <ul class="nav-list">
+        {% for item in site.data.menu.navigation %}
+        <li class="nav-group">
+          <a href="{{ item.url | relative_url }}" class="nav-group-link nav-link {{ item.env }}-group-link">
+            <span>{{ item.name }}</span></a>
+          <div class="nav-group-content {{ item.env }}-group">
+            {% for sub in item.submenu %}
+            <div class="nav-group-container">
+            <a
+              class="
+                nav-link
+                sub-link
+                {% if page.url == sub.url %}
+                current--url
+                {% endif %}" href="{{ sub.url | relative_url }}">
+              <span>{{ sub.name }}</span></a>
 
+              {% if sub.subsubmenu %}
+              <div class="nav-subsub-content ">
+                {% for subsub in sub.subsubmenu %}
+                <a class="nav-link subsub-link" href="{{ subsub.url | relative_url }}">
+                  <span>{{ subsub.name }}</span></a>
+
+                {% endfor %}
+              </div>
+              {% endif %}
+
+            </div>
             {% endfor %}
           </div>
-          {% endif %}
-
-        </div>
+        </li>
         {% endfor %}
-      </div>
-    </li>
-    {% endfor %}
-  </ul>
+      </ul>
 
-  <div class="burger">
-    <div class="burger-line-1"></div>
-    <div class="burger-line-2"></div>
-    <div class="burger-line-3"></div>
-  </div>
-</nav>
+      <div class="burger">
+        <div class="burger-line-1"></div>
+        <div class="burger-line-2"></div>
+        <div class="burger-line-3"></div>
+      </div>
+    </nav>
+  {% else %}
+    </nav>
+  {% endif %}
 {% else %}
-</nav>
+  </nav>
 {% endif %}
