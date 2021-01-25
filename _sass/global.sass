@@ -101,9 +101,35 @@ body
   text-align: center
   width: 100vw
 
-  & > *
-    padding-top: 12px
 
+  & > p
+    opacity: 0
+    padding-top: 12px
+    animation: fadeInAnimation ease 1s
+    animation-delay: .8s
+    animation-iteration-count: 1
+    animation-fill-mode: forwards
+
+  & > h1, h2, h3, h4, h5
+    animation: zoomInAnimation ease .6s
+    animation-iteration-count: 1
+    animation-fill-mode: forwards
+
+@keyframes zoomInAnimation
+  0%
+    transform: scale(0)
+    opacity: 0
+
+  100%
+    transform: scale(1)
+    opacity: 1
+
+@keyframes fadeInAnimation
+  0%
+    opacity: 0
+
+  100%
+    opacity: 1
 
 .hero__strap--center
   //padding-top: $navbar-height

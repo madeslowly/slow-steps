@@ -18,7 +18,7 @@ layout: default
 
   {% for post in site.posts %}
 
-  <div class="feed__card">
+  <div class="feed__card" data-aos="fade-up">
 
     <div class="feed__card__image">
     {% picture thumb {{ post.image | prepend: 'posts/' }} --alt {{ post.alt }} --img class="feed__card--image" %}

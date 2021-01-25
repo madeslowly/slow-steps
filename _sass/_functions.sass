@@ -2,8 +2,8 @@
   @return '%23' + str-slice('#{$colour}', 2, -1)
 
 
-// Remove the unit of a length 
-
+// Remove the unit of a length
+// https://css-tricks.com/snippets/sass/strip-unit-function/
 @function strip-unit($number)
   @if type-of($number) == 'number' and not unitless($number)
     @return $number / ($number * 0 + 1)
