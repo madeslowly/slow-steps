@@ -1,5 +1,5 @@
 
-@media screen and ( min-width: 768px )
+@media screen and ( min-width: 1024px )
 
   .about--copy
     max-width: 800px
@@ -20,8 +20,17 @@
       text-align: left
 
   .video__container
+    display: block
+    position: relative
+    width: 100%
     padding-top: 56.25%
-    //margin-right: 5rem
+    background-color: $env-primary
+    iframe
+      position: absolute
+      margin: auto
+      width: 75%
+      height: 100%
+
 
   .team__head
     border-bottom: none
