@@ -8,3 +8,4 @@ Rakefile
 deploy_rsa
 gaitq-content
 .gitmodules
+_config_dev.yml
