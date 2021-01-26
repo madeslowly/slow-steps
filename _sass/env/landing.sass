@@ -88,19 +88,22 @@ body
       @include reveal-landing-strap
 
   .landing__strap
+    @include default-trans
     display: flex
     flex-direction: column
-    height: 0
+    max-height: 0
     justify-content: space-around
     max-width: 400px
     overflow: hidden
-    transition: .2s ease-in-out
     width: 40vw
+    padding: 0 3rem
 
   .landing__cta
+    font-size: $sm-font-size
     display: flex
     flex-direction: row
     justify-content: space-between
+    padding: $font-size 0
 
     > a
       align-self: center
