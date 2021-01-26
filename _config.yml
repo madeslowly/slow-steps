@@ -42,7 +42,7 @@ sass:
 
 compress_html:
   ignore:
-    envs: all
+    envs: local
   comments:                all
 
 autoprefixer:
