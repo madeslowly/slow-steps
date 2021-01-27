@@ -1,0 +1,107 @@
+<!-- footer -->
+<footer class="ft__wrapper">
+
+  <div class="ft__body">
+
+    <div class="ft__company">
+
+
+      <div class="ft__company__add">
+        <ul>
+          <li class="ft__company__logo">
+            {% include /branding/site-logo.svg %}
+          </li>
+          <li class="ft__company__no">Registered in England and Wales, company number 12281171.</li>
+          <li class="address"><h4>Registered office</h4></li>
+          {% for item in site.postal_add %}
+          <li class="address">{{ item[1] }}</li>
+          {% endfor %}
+
+<!--
+          <ul class="social-media">
+
+          {% for social in site.socials %}
+          <li class="social-media-item">
+          <a href="{{ social.url }}">
+          <i class="fab fa-{{ social.icon }} social--{{ social.name }} social-media-link"></i></a>
+          </li>
+          {% endfor %}
+
+          </ul>
+-->
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="ft__sitemap">
+      <div class="ft__sitemap--menu">
+        <h2 class="ft__sitemap--header">INFORMATION FOR</h2>
+
+        <div class="ft__sitemap--env-wrap">
+        {% for item in site.data.menu.navigation %}
+
+          <div class="ft__sitemap--env">
+
+            <h3 class="ft__sitemap--env-header">{{ item.name }}</h3>
+            <ul class="ft__sitemap--submenu">
+            {% for sub in item.submenu %}
+              {% if sub.id != 'contact' %}
+              <li><a class="ft__sitemap--link" href="{{ sub.url | relative_url }}">{{ sub.alt }}</a></li>
+              {% endif %}
+            {% endfor %}
+            </ul>
+          </div>
+
+        {% endfor %}
+
+      </div>
+      </div>
+    </div>
+    <div class="ft__contact">
+
+      <h2 class="ft__contact--header">Connect with us</h2>
+
+      <ul>
+        <li class="ft__contact--link"><a href="mailto:{{ site.email }}"><i class="fas fa-envelope"></i>{{ site.email }}</a></li>
+
+        <li class="ft__contact--link"><a href="tel:{{ site.phone }}"><i class="fas fa-phone-square"></i>{{ site.phone }}</a></li>
+
+      </ul>
+
+      <ul class="social-media">
+
+        {% for social in site.socials %}
+          <li class="social-media-item">
+          <a href="{{ social.url }}">
+          <i class="fab fa-{{ social.icon }} social--{{ social.name }} social-media-link"></i></a>
+          </li>
+        {% endfor %}
+
+      </ul>
+
+
+
+    </div>
+  </div>
+
+
+
+  <!-- footer base and copyright -->
+
+  <div class="ft__base">
+
+    <p class="copyright">&copy; <script>
+        document.write(new Date().getFullYear())
+      </script> {{ site.title }}</p>
+
+
+    <div class="legal-links">
+      {% for item in site.data.menu.legals %}
+      <a href="{{ item.url }}">{{ item.name }}</a>
+      {% endfor %}
+    </div>
+    <a href="{{ site.author.url }}" class="slogan">Jekyll theme Slow Steps</a>
+  </div>
+
+</footer>

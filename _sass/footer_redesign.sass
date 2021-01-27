@@ -1,0 +1,353 @@
+.ft__wrapper
+  @include footer-bg($opd-blue)
+  color: $white
+  padding: 5vh 5vw
+  font-size: $sm-font-size
+
+.ft__body
+  display: flex
+  flex-direction: column-reverse
+  width: 100%
+  padding: 6rem 0
+  justify-content: space-between
+
+.ft__company
+  display: flex
+
+.ft__company__logo
+  @include logo-color($white)
+  padding-bottom: 3rem
+
+  & > .site__logo
+    height: 5rem
+  &::after
+    content: 'Limited'
+    position: absolute
+    font-size: $sm-font-size
+    transform: translate(-5rem, 4rem)
+
+.ft__company__no
+  padding-bottom: 2rem
+
+.ft__company__add > ul
+  list-style: none
+  padding: 0
+  margin: 0
+  text-decoration: none
+
+.address
+  line-height: $font-size
+  & > *
+    padding-bottom: 1rem
+
+.ft__sitemap
+
+  //width: 40vw
+
+.ft__sitemap
+  margin-top: 6rem
+
+
+  .ft__sitemap--submenu
+    font-size: inherit
+
+
+.ft__sitemap--header
+  border-bottom: 1px solid $opd-light-blue
+  margin-bottom: 3rem
+  width: 100%
+
+.ft__sitemap--env-wrap
+  display: flex
+  flex-direction: column
+
+.ft__sitemap--env
+  //margin-right: 8rem
+
+.ft__sitemap--env-header
+  margin-bottom: 2rem
+
+.ft__sitemap--submenu
+  padding: 0
+
+  li
+    //line-height: 2rem
+    list-style: none
+    &:last-child
+      @include default-trans
+      margin: auto
+      margin-top: 2rem
+      margin-bottom: 4rem
+      background-color: $opd-coral
+      text-align: center
+      padding: 1rem
+      width: 70vw
+      border-radius: 6px
+      cursor: pointer
+      text-transform: uppercase
+      a
+        text-decoration: none
+
+  .ft__sitemap--link
+    //text-decoration: none
+    color: inherit
+    line-height: 3rem
+
+.ft__contact
+  //width: 20vw
+  text-align: center
+
+  .ft__contact--header
+    padding-bottom: 3rem
+
+  ul
+    list-style: none
+    padding: 0
+    margin: 0
+
+  .ft__contact--link
+    padding: 1rem 0
+
+    i
+      padding-right: 1rem
+
+    & > a
+      color: inherit
+
+
+  .social-media
+    padding-top: 4rem
+    display: flex
+    justify-content: space-around
+    i
+      font-size: 3rem
+
+
+.ft__base
+
+  border-top: solid 1px $opd-light-blue
+  text-align: center
+
+  a,
+  p
+    color: inherit
+    font-size: $sm-font-size
+    margin: 0
+    padding: 1rem .1rem
+    text-decoration: none
+
+.legal-links
+  display: flex
+  justify-content: center
+
+  flex-direction: row
+  a
+    &::after
+      content: " |"
+
+    &:last-child
+      &::after
+        content: ""
+
+.copyright
+  &::after
+    content: ' Limited'
+
+.ft__sitemap--submenu
+  li
+    transition: .2s ease-in-out
+
+  &:hover > li
+    opacity: .5
+
+  li
+    &:hover
+      opacity: 1
+
+
+@media screen and ( min-width: 768px )
+
+  .ft__wrapper
+    @include footer-bg($opd-blue)
+    color: $white
+    padding: 5vh 5vw
+    font-size: $sm-font-size
+
+  .ft__body
+    display: flex
+    flex-direction: row
+    width: 90vw
+    padding: 10rem 0
+    justify-content: space-between
+
+  .ft__company
+    width: 20vw
+    display: flex
+
+  .ft__company__logo
+    @include logo-color($white)
+    padding-bottom: 3rem
+    & > .site__logo
+      height: 7rem
+    &::after
+      content: 'Limited'
+      position: absolute
+      font-size: $font-size
+      transform: translate(-7rem, 6rem)
+
+  .ft__company__no
+    padding-bottom: 2rem
+
+  .ft__company__add > ul
+    list-style: none
+    padding: 0
+    margin: 0
+    text-decoration: none
+
+  .address
+    line-height: $font-size + 1rem
+    & > *
+      padding-bottom: 1rem
+
+  .ft__company--link
+    padding: 2rem 0
+
+    & > a
+      text-decoration: none
+      color: inherit
+
+  .ft__sitemap
+    width: 40vw
+
+  .ft__sitemap, .ft__contact
+    margin-top: 9.5rem
+
+
+    .ft__sitemap--submenu
+      font-size: inherit
+
+
+  .ft__sitemap--header
+    border-bottom: 1px solid $opd-light-blue
+    margin-bottom: 3rem
+    width: 80%
+
+  .ft__sitemap--env-wrap
+    display: flex
+    flex-direction: row
+
+  .ft__sitemap--env
+    margin-right: 8rem
+
+  .ft__sitemap--env-header
+    margin-bottom: 2rem
+
+  .ft__sitemap--submenu
+    padding: 0
+
+    li
+      line-height: 3rem
+      list-style: none
+      &:last-child
+        margin-top: 5rem
+        .ft__sitemap--link
+          @include default-trans
+          background-color: $opd-coral
+          border: solid 1px $opd-coral
+
+          text-align: center
+          padding: 2rem 3rem
+          width: auto
+          border-radius: 6px
+          cursor: pointer
+          text-transform: uppercase
+          &:hover
+            background-color: rgba($opd-coral,.3)
+            border: solid 1px $pure-white
+
+    .ft__sitemap--link
+      text-decoration: none
+      color: inherit
+      line-height: 4rem
+
+  .ft__contact
+    width: 20vw
+
+    .ft__contact--header
+      padding-bottom: 3rem
+
+    ul
+      list-style: none
+      padding: 0
+      margin: 0
+
+    .ft__contact--link
+      padding: 2rem 0
+
+      i
+        padding-right: 2rem
+
+      & > a
+        @include default-trans
+        color: inherit
+        text-decoration: none
+
+      &:hover > a
+        color: $opd-coral
+
+    .social-media
+      padding-top: 6rem
+      i
+        font-size: 4rem
+        padding-right: 5rem
+
+  .ft__base
+    align-items: center
+    border-top: solid 1px $opd-light-blue
+    display: flex
+    flex-wrap: wrap
+
+    justify-content: space-between
+    min-width: 100%
+    width: 100%
+    a,
+    p
+      color: inherit
+      font-size: $sm-font-size
+      margin: 0
+      padding: .5rem .1rem
+      text-decoration: none
+
+  .legal-links
+    display: flex
+    justify-content: space-between
+
+    flex-direction: row
+    a
+      &::after
+        content: " |"
+
+      &:last-child
+        &::after
+          content: ""
+
+  .copyright
+    &::after
+      content: ' Limited'
+
+  .ft__sitemap--submenu
+    li
+      transition: .2s ease-in-out
+
+    &:hover > li
+      opacity: .5
+
+    li
+      &:hover
+        opacity: 1
+
+
+@media screen and ( min-width: 1280px )
+
+  .ft__contact
+    width: 20vw
