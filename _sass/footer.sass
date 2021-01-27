@@ -1,23 +1,183 @@
-.ft__wrap
-  max-width: 100vw
-  background-color: $opd-grey
-  padding: 3rem 2rem
+
+
+.ft__wrapper
+  @include footer-bg($opd-blue)
+  border-top: solid 1px $white
+  color: $white
+  display: flex
+  flex-wrap: wrap
+  padding: 5vh 5vw
+
+  .social-media-link
+    font-size: $font-size
+    padding-right: $sm-font-size
+    //color: $white
+
+
+.ft__head
+  display: flex
+  margin: 5vh 5vw
+  width: 100%
+
+.ft__body
+  display: flex
+  flex-direction: column-reverse
+  flex-wrap: wrap
+  margin: 5vh 0
+  width: 90vw
+
+.ft__col
+  //border-left: solid 1px rgba($opd-light-blue, .05)
+  box-sizing: border-box
+  padding: 0 5vw
+  width: 90vw
+
+.ft__contact--list
+  display: block
+  font-size: $font-size * .8
+  list-style: none
+  padding: 0
+  text-decoration: none
+  li
+    line-height: 5rem
+  .address
+    line-height: 2.5rem
+
+.ft__contact
+  .site__logo
+    @include logo-color($white)
+    width: 40vw
+
+.ft__sitemap
+  .ft__sitemap--env-header
+    font-size: $font-size * 1
+    font-weight: $heavy-font
+  .ft__sitemap--submenu
+    font-size: $font-size * .8
 
 .ft__base
-  font-size: 1rem
+  align-items: center
+  border-top: solid 1px $opd-light-blue
   display: flex
-  flex-direction: row
-  justify-content: space-between
+  flex-wrap: wrap
 
-.legal-links, .owner-links
+  justify-content: space-around
+  min-width: 100%
+  width: 100%
+  a,
+  p
+    color: inherit
+    font-size: $font-size * .7
+    margin: 0
+    padding: .5rem .1rem
+    text-decoration: none
+
+.legal-links
   display: flex
   flex-direction: column
   justify-content: space-between
-  a
-    text-decoration: none
-    color: $black
-  a, p
-    padding: .4rem 0
 
-.legal-links
-  text-align: right
+.ft__sitemap--header
+  border-bottom: 1px solid $opd-light-blue
+  color: $pure-white
+  font-size: 2rem
+  font-weight: $heavy-font
+  margin-bottom: 3rem
+  width: 100%
+
+.ft__sitemap--menu,
+.ft__sitemap--submenu
+  padding: 0
+  width: 100%
+
+.ft__sitemap--submenu
+  padding-bottom: 2rem
+  li
+    display: block
+    line-height: 3rem
+    list-style: none
+
+.ft--link
+  color: $pure-white
+
+.ft__sitemap--env-wrap
+  display: flex
+  flex-direction: column
+  flex-wrap: wrap
+
+.ft__sitemap--env
+  width: 100%
+
+@media screen and ( min-width: 768px )
+
+  .ft__wrapper
+    border: none
+
+  .ft__body
+    flex-direction: row
+
+  .ft__col
+    width: 20vw
+
+  .ft__col.ft__sitemap
+    width: 60vw
+
+  .ft__contact--list
+    font-size: $font-size * .8
+    li
+      line-height: 4rem
+    .address
+      line-height: 2rem
+
+  .ft__contact
+    .site__logo
+      width: 10vw
+
+  .ft__sitemap
+    .ft__sitemap--env-header
+      font-size: $font-size * .9
+    .ft__sitemap--submenu
+      font-size: $font-size * .8
+
+  .ft__base
+    justify-content: space-between
+    a,
+    p
+      font-size: $font-size * .7
+
+  .legal-links
+    flex-direction: row
+    a
+      &::after
+        content: " |"
+
+      &:last-child
+        &::after
+          content: ""
+
+  .copyright
+    &::after
+      content: ' Ltd.'
+
+  .ft__sitemap--header
+    font-size: 1.8rem
+
+  .ft__sitemap--submenu li a
+    text-decoration: none
+
+  .ft__sitemap--submenu
+    li
+      transition: .2s ease-in-out
+
+    &:hover > li
+      opacity: .5
+
+    li
+      &:hover
+        opacity: 1
+
+  .ft__sitemap--env-wrap
+    flex-direction: row
+
+  .ft__sitemap--env
+    width: 50%

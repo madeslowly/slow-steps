@@ -37,7 +37,7 @@ https://github.com/madeslowly/slow-steps/
 |  |
 |  ├─ footer/                     # Site wide footers
 |  |  |
-|  |  ├─ footer_full.html         # Multi col footer
+|  |  ├─ footer.html         # Multi col footer
 |  |  |
 |  |  ├─ footer.html              # Simple footer
 |  |

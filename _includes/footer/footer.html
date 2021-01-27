@@ -1,22 +1,79 @@
-<footer class="ft__wrap">
+<!-- footer -->
+<footer class="ft__wrapper">
+
+  <div class="ft__head">
+
+  </div>
+  <div class="ft__body">
+
+    <div class="ft__contact ft__col">
+
+      <a href="{{ site.baseurl }}/">
+        {% include /branding/site-logo.svg %}
+      </a>
+      <div class="ft__contact__add">
+        <ul class="ft__contact--list">
+          {% for item in site.postal_add %}
+          <li class="address">{{ item[1] }}</li>
+          {% endfor %}
+          <li><a class="ft--link" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          <li>{{ site.phone }}</li>
+
+          <ul class="social-media">
+
+          {% for social in site.socials %}
+          <li class="social-media-item">
+          <a href="{{ social.url }}">
+          <i class="fab fa-{{ social.icon }} social--{{ social.name }} social-media-link"></i></a>
+          </li>
+          {% endfor %}
+
+          </ul>
+
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="ft__sitemap ft__col">
+      <div class="ft__sitemap--menu">
+        <h3 class="ft__sitemap--header">INFORMATION FOR</h3>
+
+        <div class="ft__sitemap--env-wrap">
+        {% for item in site.data.menu.navigation %}
+
+        <div class="ft__sitemap--env">
+
+          <h4 class="ft__sitemap--env-header">{{ item.name }}</h4>
+          <ul class="ft__sitemap--submenu">
+          {% for sub in item.submenu %}
+          <li><a class="ft--link" href="{{ sub.url | relative_url }}">{{ sub.alt }}</a></li>
+          {% endfor %}
+          </ul>
+        </div>
+
+        {% endfor %}
+
+      </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- footer base and copyright -->
 
   <div class="ft__base">
 
-    <div class="owner-links">
-      <p><a href="https://jekyllrb.com/" class="slogan">Jekyll</a> theme <a href="https://rubygems.org/gems/slow-steps/">slow steps</a> by <a href="{{ site.author.url }}" class="slogan">made slowly</a></p>
     <p class="copyright">&copy; <script>
         document.write(new Date().getFullYear())
-      </script> {{ site.title }} Limited</p>
+      </script> {{ site.title }}</p>
 
 
-</div>
     <div class="legal-links">
       {% for item in site.data.menu.legals %}
       <a href="{{ item.url }}">{{ item.name }}</a>
       {% endfor %}
     </div>
-
-
+    <a href="{{ site.author.url }}" class="slogan">Jekyll theme Slow Steps</a>
   </div>
 
 </footer>
