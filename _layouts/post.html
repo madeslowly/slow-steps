@@ -8,7 +8,7 @@ layout: default
 
 <div class="post__title">
 <h1 >{{ page.title }}</h1>
-<p class="post__meta">{{ site.data.authors[page.author].name }} | {{ site.data.authors[page.author].email }} | {{ page.date | date: "%d-%m-%y" }}</p>
+<p class="post__meta">{%- if page.author -%}{{ site.data.authors[page.author].name }} | {{ site.data.authors[page.author].email }}{%- else -%}{{ site.data.authors.default.name }} | {{ site.data.authors.default.email }}{% endif %} |{{ page.date | date: "%d-%m-%y" }}</p>
 </div>
 </section>
 

@@ -3,7 +3,7 @@
 -->
 <div class="post__image">
 
-  {% picture {{ include.link | prepend: 'posts/' }} --alt {{include.alt}} --img class="post__content--image" %}
+  {% picture post {{ include.link | prepend: 'posts/' }} --alt {{include.alt}} --img class="post__content--image" %}
 
   {% if include.caption %}
   <p class="image--caption">{{ include.caption }}</p>
