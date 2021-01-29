@@ -27,6 +27,8 @@ layout: default
 
 <div class="faq__wrapper">
 {% for faq in site.data.faq %}
+
+{% if faq.display == 'all' or faq.display == page.env %}
 <div class="faq__panel">
   <div class="faq__question">
     <h4 class="faq__question--title">{{ faq.question }}</h4><i class="fas fa-chevron-down"></i>
@@ -36,6 +38,7 @@ layout: default
     <p>{{ faq.answer }}</p>
   </div>
 </div>
+{% endif %}
 {% endfor %}
 </div>
 
