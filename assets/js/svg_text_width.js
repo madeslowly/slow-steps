@@ -22,21 +22,21 @@ function svg_text_width() {
     if(view_width > 768 ){
       var lineLength = 100 ; // length in pixels of the drawn line
       var x_offset = 10 + width ; // offset the text label s.t. last character sits 10 px from end of line
-      var y_offset = .5 ;
+      var y_offset = 5 ;
     } else {
       var lineLength = 70 ;
       var x_offset = 0 ; // offset the text label s.t. first character sits inline with end of line
-      var y_offset = -1.5 ;}
+      var y_offset = -8 ;}
       lines[i].setAttribute("stroke-dashoffset", lineLength + 'px')
       lines[i].setAttribute("stroke-dasharray", lineLength + 'px')
     if( text[i].classList.contains('trans-left')){
       lines[i].setAttribute("x2", -lineLength + 'px')
       text[i].setAttribute("x", - lineLength - x_offset + 'px');
-      text[i].setAttribute("y", y_offset + 'rem');
+      text[i].setAttribute("y", y_offset + 'px');
     } else {
       lines[i].setAttribute("x2", lineLength + 'px')
       text[i].setAttribute("x", lineLength + x_offset - width + 'px');
-      text[i].setAttribute("y", y_offset + 'rem');
+      text[i].setAttribute("y", y_offset + 'px');
     };
   };
 }
