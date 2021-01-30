@@ -21,7 +21,8 @@
     .nav-brand
       @include default-trans
       height: 8vh
-      max-height: 100px
+      //max-height: 100px
+      // max-height breaks vertical centering
 
   .nav-scrolled
     background-color: $env-primary
@@ -31,9 +32,11 @@
     @include default-trans
     display: flex
     position: absolute
-    max-width: 160px
+    //max-height: 100px
+    // max-height breaks vertical centering
     height: 10vh
     top: 7.5vh
+    margin-top: 0
 
     .site__logo
       position: absolute
