@@ -20,18 +20,18 @@
     width: 40vw
 
   .segment__gaurentee
-    flex-direction: row
+    //flex-direction: row
     height: 50%
-    justify-content: space-between
-    padding: 0
-    text-align: left
+    justify-content: space-around
+    //padding: 0
+    //text-align: left
 
     .site__logo
-      width: 140px
+      height: 10vh
 
   .strap__guarantee
     border: none
-    border-left: solid 2px $pure-white
+    //border-left: solid 2px $pure-white
     width: 35vw
     margin: 0
     padding: 0 3rem
@@ -40,7 +40,10 @@
     width: 100%
     flex-direction: column
     align-items: center
-    justify-content: center
+    flex-wrap: nowrap
+    //justify-content: center
+    & > *
+      padding: 0
 
   .clinician__strap
     h1
