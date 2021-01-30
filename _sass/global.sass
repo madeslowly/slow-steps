@@ -235,6 +235,12 @@ body
   & > .trans-right
     animation: trans-in-right .6s ease-in-out
 
+// This is digusting! We need to tweak the actual html so we can readilly access these elements.
+.svg__labels--red
+  & > svg > * > *
+    fill: $opd-coral
+    stroke: $opd-coral!important
+
 
 $svg-text-offset: 60px
 
