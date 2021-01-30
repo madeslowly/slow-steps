@@ -25,15 +25,13 @@ $hero-follow-bottom: 59.5vh
   top: calc(var(--vh, 1vh) * #{strip-unit($hero-follow-bottom)})
 
 .segment__keywords
-  align-items: center
   display: flex
   flex-direction: column
-  height: 100%
-  justify-content: center
-
+  align-items: center
+  justify-content: space-around
+  padding: 3rem 2rem
   & > *
-    padding: 5rem 0
-    width: 50%
+    padding: 2rem 0
 
 .image--guarantee
   @include image-filter-rotate
@@ -41,15 +39,17 @@ $hero-follow-bottom: 59.5vh
 
 .action__call
 
+
   &:before
     background-color: rgba($env-secondary, .2)
 
   span
     color: $env-primary
 
+
   svg
     stroke: $env-primary
-
+    
   &:hover
     &::before
       background-color: rgba($env-secondary, 1)
