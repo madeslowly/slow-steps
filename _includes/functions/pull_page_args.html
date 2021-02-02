@@ -1,52 +1,43 @@
 
 <script type="text/javascript">
 
-function svg_aug_contained_image(){
+  function svg_aug_contained_image(){
 
-  /* get svg labels */
-  var svg = document.querySelectorAll('.augment-not-fullwidth .svg__labels');
+    /* get svg labels */
+    var svg = document.querySelectorAll('.augment-not-fullwidth .svg__labels');
 
-  /* new 'cropped' image width in pixels */
-  var x_i_px = document.getElementsByClassName("image--guarantee")[0].offsetWidth ;
-  var y_i_px = document.getElementsByClassName("image--guarantee")[0].offsetHeight ;
-  var r_i = x_i_px / y_i_px ;
+    /* rendered image in pixels */
+    var x_i_px = document.getElementsByClassName("image--guarantee")[0].offsetWidth ;
+    var y_i_px = document.getElementsByClassName("image--guarantee")[0].offsetHeight ;
+    var r_i = x_i_px / y_i_px ;
 
+    /* original image in pixels */
+    var x_0_px = {{ page.images.guarantee.size | split: ', ' | first }} ;
+    var y_0_px = {{ page.images.guarantee.size | split: ', ' | last }} ;
+    var r_0 = x_0_px / y_0_px ;
 
-  /* original image width and height in pixels */
-  var x_0_px = {{ page.images.guarantee.size | split: ', ' | first }} ;
-  var y_0_px = {{ page.images.guarantee.size | split: ', ' | last }} ;
-  var r_0 = x_0_px / y_0_px ;
+    for (let i = 0; i < svg.length; i++) {
 
+      /* Reversing the calculation we did in Liquid on build */
+      var dx_0_px = parseInt( svg[i].getAttribute('x'), 10 ) / 100 * x_0_px ;
+      var dy_0_px = parseInt( svg[i].getAttribute('y'), 10 ) / 100 * y_0_px ;
 
-  for (let i = 0; i < svg.length; i++) {
+      if (r_i > r_0 ) { /* x_i / y_i > r_0 so x_i is 100% */
+        /* rendered image magnification */
+        var scale = x_i_px / x_0_px ;
+        var dy_i_px = dy_0_px * scale - ( (y_0_px * scale - y_i_px ) / 2 ) ;
+        svg[i].setAttribute("y", ( dy_i_px * 100 / y_i_px + '%') ) ;
 
-    /* origanal position in pixels */
-    /* Reversing the calculation we did in Liquid on build */
-    var dx_0_px = parseInt( svg[i].getAttribute('x'), 10 ) / 100 * x_0_px ;
-    var dy_0_px = parseInt( svg[i].getAttribute('y'), 10 ) / 100 * y_0_px ;
-
-    if (r_i > r_0 ) { /* x_i/y_i > r_0 so x_i is 100% */
-
-      var s = x_i_px / x_0_px ;
-      var dy_i_px = dy_0_px*s - ( (y_0_px * s - y_i_px ) / 2 ) ;
-      svg[i].setAttribute("y", ( dy_i_px * 100 / y_i_px + '%') ) ;
-
-    }
-    if (r_i < r_0 ) { /* x_i/y_i < r_0 so y_i is 100% */
-
-      var s = y_i_px / y_0_px ;
-      var dx_i_px = dx_0_px*s - ( (x_0_px * s - x_i_px ) / 2 ) ;
-      svg[i].setAttribute("x", ( dx_i_px * 100 / x_i_px + '%') ) ;
-    }
-
-
-
-  };
-
-  console.log('original: ' + r_0, 'rendered: ' + r_i );
-}
-
-svg_aug_contained_image()
-//window.setInterval(svg_aug_contained_image, 200 )
+      }
+      if (r_i < r_0 ) { /* x_i/y_i < r_0 so y_i is 100% */
+        /* rendered image magnification */
+        var scale = y_i_px / y_0_px ;
+        var dx_i_px = dx_0_px * scale - ( (x_0_px * scale - x_i_px ) / 2 ) ;
+        svg[i].setAttribute("x", ( dx_i_px * 100 / x_i_px + '%') ) ;
+      }
+    };
+  }
+  svg_aug_contained_image()
+  /*window.setInterval(svg_aug_contained_image, 200 )*/
 
 </script>
