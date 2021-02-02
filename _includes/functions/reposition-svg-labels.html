@@ -1,7 +1,9 @@
+<!-- JS function to reposition SVG labels on images !fullwidth -->
+<!-- We use Front Matter to determine if this script should be included, hence here and not in assets -->
 
 <script type="text/javascript">
 
-  function svg_aug_contained_image(){
+  function reposition_svg_labels(){
 
     /* get svg labels */
     var svg = document.querySelectorAll('.augment-not-fullwidth .svg__labels');
@@ -37,7 +39,6 @@
       }
     };
   }
-  svg_aug_contained_image()
-  /*window.setInterval(svg_aug_contained_image, 200 )*/
+  reposition_svg_labels()
 
 </script>
