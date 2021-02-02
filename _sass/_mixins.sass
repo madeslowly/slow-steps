@@ -18,7 +18,9 @@
   opacity: .6
 
 @mixin image-filter-rotate
-  filter: grayscale(1) contrast(.5) brightness(1.3) sepia(.6) hue-rotate(180deg) opacity(.5)
+  mix-blend-mode: screen
+  filter: grayscale(1)
+  //contrast(.5) brightness(1.3) sepia(.6) hue-rotate(180deg) opacity(.5)
 
 // Applied to an overlaying div
 @mixin image-filter--blur
