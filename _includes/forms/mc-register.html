@@ -11,7 +11,7 @@
       <div class="form__elem {{ item.type }}__elem mc--{{ item.width }} mc-field-group
         {% if item.type == 'select' OR item.type == 'radio' %}input-group{% endif %}">
 
-        <label class="form--label {{ item.type }}-label" for="{{ item.mce-id }}">
+        <label class="form--label {{ item.type }}-label" for="{{ item.id }}">
           {{ item.label }}
           {% if item.required %}
             <span class="mc-asterisk">*</span>
@@ -22,8 +22,8 @@
           {% for option in item.opts %}
             <li>
               <input type="{{ item.type }}" value="{{ option.value }}" name="{{ item.name }}"
-                id="{{ item.mce-id }}-{{ option.mce-id }}" {{ item.autofocus }}>
-              <label for="{{ item.mce-id }}-{{ option.mce-id }}">
+                id="{{ item.id }}-{{ option.id }}" {{ item.autofocus }}>
+              <label for="{{ item.id }}-{{ option.id }}">
                 {{ option.name }}
               </label>
             </li>
@@ -32,10 +32,9 @@
         {% endif %}
 
         {% if item.type == 'select' %}
-        <select name="{{ item.name }}" class="form--select form--elem {% if item.required %}required {% endif %}" id="{{ item.mce-id }}" {{ item.autofocus }}>
+        <select name="{{ item.name }}" class="form--select form--elem {% if item.required %}required {% endif %}" id="{{ item.id }}" {{ item.autofocus }}>
           {% for option in item.opts %}
-          <option type="{{ item.type }}" value="{{ option.value }}" name="{{ item.name }}"
-            id="{{ item.mce-id }}-{{ option.mce-id }}">
+          <option type="{{ item.type }}" value="{{ option.value }}" name="{{ item.name }}">
             {{ option.name }}
           </option>
           {% endfor %}
@@ -43,15 +42,17 @@
         {% endif %}
 
         {% if item.type == 'textarea' %}
-        <textarea rows="4" name="{{ item.name }}" id="item.mce-id"
+        <textarea rows="4" name="{{ item.name }}" id="{{ item.id }}"
           class="form--textarea form--elem" {{ item.autofocus }}></textarea>
         {% endif %}
 
         {% if item.type == 'checkbox' %}
-        <label class="form--label {{ item.type }}-label--mod" for="{{ item.mce-id }}">
+        <label class="form--label {{ item.type }}-label--mod" for="{{ item.id }}">
           <p>{{ item.label }}</p>
           <span class="styled-checkbox__block">
-    	      <input type="checkbox" class="styled-checkbox switch" id="{{ item.mce-id }}" {{ item.autofocus }}>
+
+    	      <input type="checkbox" class="styled-checkbox switch" id="{{ item.id }}" name="{{ item.name }}" {{ item.autofocus }} value="{{ item.value }}">
+
           	<span class="icon"><span class="icon--elem"></span></span>
             <span class="no">NO</span>
           	<span class="yes">YES</span>
@@ -63,13 +64,14 @@
         <input type="{{ item.type }}" value=""
           {% if item.type == 'tel' %}
           placeholder="Landline or mobile"
-          pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"
+          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
           {% endif %}
           name="{{ item.name }}"
           class="{% if item.required %}required{% endif %} form--input form--elem"
-          id="{{ item.mce-id }}"
+          id="{{ item.id }}"
           {{ item.autofocus }}>
         {% endif %}
+
       </div>
 
       {% endfor %}
@@ -81,10 +83,10 @@
 
           <fieldset class="mc_fieldset gdprRequired mc-field-group" name="interestgroup_field">
             {% for item in site.data.forms[page.env].gdpr %}
-            <label class="mc--{{ item.width }} form--label {{ item.type }}-label--mod checkbox subfield" for="gdpr_{{ item.mce-id }}">
+            <label class="mc--{{ item.width }} form--label {{ item.type }}-label--mod checkbox subfield" for="{{ item.id }}">
               <p>{{ item.label }}</p>
               <span class="styled-checkbox__block">
-                <input type="checkbox" class="styled-checkbox switch av-checkbox gdpr" id="gdpr_{{ item.mce-id }}" value="Y" name="{{ item.name }}">
+                <input type="checkbox" class="styled-checkbox switch av-checkbox gdpr" id="{{ item.id }}" value="Y" name="{{ item.name }}">
                 <span class="icon"><span class="icon--elem"></span></span>
                 <span class="no">NO</span>
                 <span class="yes">YES</span>
@@ -118,20 +120,14 @@
         <input type="text" name="{{ site.data.forms.pwp.botspot-name }}" tabindex="-1" value="">
       </div>
 
-      <div class="mc-field-group" style="position: absolute; left: -5000px;" aria-hidden="true">
-				<select name="USERTYPE" class="required" id="mce-USERTYPE">
-					<option value="PWP" {% if page.env == 'pwp' %}selected="selected"{% endif %}>PWP</option>
-					<option value="CLINICIAN" {% if page.env == 'clinician' %}selected="selected"{% endif %}>CLINICIAN</option>
-
-				</select>
-			</div>
-
       <div class="mc-field-group input-group" style="position: absolute; left: -5000px;" aria-hidden="true">
-        {% if page.env == 'pwp' %}
-        <input type="checkbox" value="4" name="group[30861][4]" id="mce-group[30861]-30861-0" checked>
-        {% else %}
-        <input type="checkbox" value="8" name="group[30861][8]" id="mce-group[30861]-30861-1" checked>
-        {% endif %}
+        <select name="USERTYPE" class="required" id="mce-USERTYPE" >
+          {% if page.env == 'pwp' %}
+          <option value="PWP" selected></option>
+          {% else %}
+          <option value="CLINICIAN" selected></option>
+          {% endif %}
+        </select>
       </div>
 
     </div>
