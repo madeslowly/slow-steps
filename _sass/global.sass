@@ -392,3 +392,41 @@ $svg-text-offset: 60px
 
     span
       color: $white
+
+
+.cc-window
+  background-color: $opd-blue
+  display: flex
+  align-items: center
+  position: fixed
+  z-index: 1001
+
+.cc-message
+  width: 80vw
+  padding: 3rem 2rem
+  color: $pure-white
+
+.cc-compliance
+  width: 20vw
+  border-style: none
+  height: 100%
+
+
+
+.cc-dismiss
+  display: flex
+  flex-wrap: nowrap
+  background-color: $opd-coral
+  border-style: none
+  color: $pure-white
+  border-radius: 6px
+
+  &:hover
+    background-color: lighten($opd-coral, 10)
+
+.cc-link
+  text-decoration: none
+  color: lighten($opd-coral, 10)
+
+  &:hover
+    color: $opd-coral

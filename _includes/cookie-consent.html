@@ -1,0 +1,21 @@
+<!--
+This is where we put scripts for managing cookie consent
+This is placed before /body along with _include/scripts.html
+-->
+
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+
+<script>
+window.cookieconsent.initialise({
+
+  "theme": "block",
+  "position": "top",
+  "content": {
+    "message": "{{ site.cookieconsent.message }}",
+    "dismiss": "{{ site.cookieconsent.button }}",
+    "link": "Tell me more.",
+    "href": "/privacy-policy/#cookies",
+    "target": "_self"
+  }
+});
+</script>
