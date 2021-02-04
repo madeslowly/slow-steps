@@ -73,6 +73,7 @@
   li
     //line-height: 2rem
     list-style: none
+
     &:last-child
       @include default-trans
       margin: auto
@@ -87,6 +88,7 @@
       text-transform: uppercase
       a
         text-decoration: none
+
 
   .ft__sitemap--link
     //text-decoration: none
@@ -220,7 +222,7 @@
     width: 40vw
 
   .ft__sitemap, .ft__contact
-    margin-top: 9.5rem
+    margin-top: 0
 
 
     .ft__sitemap--submenu
@@ -250,9 +252,11 @@
       list-style: none
 
       &:last-child
-        margin-top: 5rem
+        //margin-top: 5rem
+        margin-bottom: 8rem
         width: auto
         border: solid 1px $opd-coral
+
         .ft__sitemap--link
           @include default-trans
           text-align: center
