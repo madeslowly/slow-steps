@@ -10,9 +10,9 @@
   </div>
 
     {% if page.url != "/" %}
-
+    <!-- exclude on home -->
       {% if page.url != "/error-pages/404" %}
-
+      <!-- exclude on error pages -->
       <ul class="social-media">
         {% for social in site.socials %}
         <li class="social-media-item">
@@ -26,9 +26,13 @@
         {% for item in site.data.menu.navigation %}
         <li class="nav-group">
           <a href="{{ item.url | relative_url }}" class="nav-group-link nav-link {{ item.env }}-group-link">
-            <span>{{ item.name }}</span></a>
+
+            <span>{{ item.name }}</span>
+          </a>
+
           <div class="nav-group-content {{ item.env }}-group">
             {% for sub in item.submenu %}
+            {% if sub.id == 'nav' %}
             <div class="nav-group-container">
             <a
               class="
@@ -36,6 +40,9 @@
                 sub-link
                 {% if page.url == sub.url %}
                 current--url
+                {% endif %}
+                {% if sub.cta == true %}
+                nav-cta
                 {% endif %}" href="{{ sub.url | relative_url }}">
               <span>{{ sub.name }}</span></a>
 
@@ -50,6 +57,7 @@
               {% endif %}
 
             </div>
+            {% endif %}
             {% endfor %}
           </div>
         </li>

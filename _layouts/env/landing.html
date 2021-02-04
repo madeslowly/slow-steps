@@ -17,10 +17,10 @@ Last full read through 27/12/2020
   {%- assign env = site.data.menu.navigation | where: 'env', 'pwp' -%}
   {%- assign env = env[0] -%}
 
-  {%- assign cta = env.submenu | where: 'id', 'cta' -%}
+  {%- assign cta = env.submenu | where: 'cta', 'true' -%}
   {%- assign cta = cta[0] -%}
 
-  {%- assign cta_2 = env.submenu | where: 'id', 'landing' -%}
+  {%- assign cta_2 = env.submenu | where: 'cta', 'landing' -%}
   {%- assign cta_2 = cta_2[0] -%}
 
   <div class="page__half">
@@ -51,10 +51,10 @@ Last full read through 27/12/2020
   {%- assign env = site.data.menu.navigation | where: 'env', 'clinician' -%}
   {%- assign env = env[0] -%}
 
-  {%- assign cta = env.submenu | where: 'id', 'cta' -%}
+  {%- assign cta = env.submenu | where: 'cta', 'true' -%}
   {%- assign cta = cta[0] -%}
 
-  {%- assign cta_2 = env.submenu | where: 'id', 'landing' -%}
+  {%- assign cta_2 = env.submenu | where: 'cta', 'landing' -%}
   {%- assign cta_2 = cta_2[0] -%}
 
   <div class="page__half">

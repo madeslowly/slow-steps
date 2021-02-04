@@ -63,6 +63,8 @@
 
   .nav-group-content
     //text-indent: 2rem
+    &:last-child
+      margin-right: 10rem
     .nav-link
       margin: 0
 
@@ -79,6 +81,19 @@
   .subsub-link
     color: $env-primary
 
+  .nav-cta
+    @include default-trans
+    color: $pure-white
+    background-color: $env-primary
+    padding: 2rem 2rem!important
+    margin-right: 8rem!important
+    border-radius: 6px
+
+    &:before, &:after
+      display: none!important
+
+    &:hover
+      background-color: darken($env-primary,10)
 
   // Surround current link with ticks
   .current--url
