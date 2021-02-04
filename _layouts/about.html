@@ -41,7 +41,7 @@ Last full read through 29/12/2020
 
 <!-- exclude if no text is provided -->
 {% if site.data.copy.about[page.env].text %}
-<div class="about__copy bg--env-100" >
+<div class="about__copy bg--env-100" id="content">
 
   {% for item in site.data.copy.about[page.env].text %}
   <p class="about--copy" data-aos="fade-in">
