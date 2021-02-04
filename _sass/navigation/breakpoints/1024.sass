@@ -77,9 +77,13 @@
     overflow: hidden
     position: relative
 
+
   .sub-link,
   .subsub-link
     color: $env-primary
+    border-bottom: solid 1px $pure-white
+    span
+      padding: 1rem 0
 
   .nav-cta
     @include default-trans
@@ -89,11 +93,15 @@
     margin-right: 8rem!important
     border-radius: 6px
 
+    span
+      padding: 0
+
     &:before, &:after
       display: none!important
 
     &:hover
       background-color: darken($env-primary,10)
+      border-bottom: none
 
   // Surround current link with ticks
   .current--url
@@ -174,7 +182,8 @@
       padding: 1rem 3rem
       &:not(.current--url)
         &:hover
-          text-decoration: underline
+          span
+            border-bottom: solid 1px $env-primary
 
   .nav-group-container:hover > .nav-subsub-content
     visibility: visible
