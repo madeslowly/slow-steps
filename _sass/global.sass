@@ -239,8 +239,9 @@ body
 // This is digusting! We need to tweak the actual html so we can readilly access these elements.
 .svg__labels--red
   & > svg > * > *
-    fill: $opd-coral
-    stroke: $opd-coral!important
+    fill: darken($opd-coral, 10)
+  & > svg > * > line
+    stroke: darken($opd-coral,10)!important
 
 
 $svg-text-offset: 60px
