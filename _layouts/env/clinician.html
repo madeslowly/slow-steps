@@ -81,7 +81,7 @@ Last full read through 27/12/2020
     {%- assign env = site.data.menu.navigation | where: 'env', 'clinician' -%}
     {%- assign env = env[0] -%}
 
-    {%- assign cta = env.submenu | where: 'id', 'cta' -%}
+    {%- assign cta = env.submenu | where: 'cta', 'true' -%}
     {%- assign cta = cta[0] -%}
 
     <a class="action__call" aria-label="{{ cta.aria }}" href="{{ cta.url }}">
