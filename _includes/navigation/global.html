@@ -24,8 +24,16 @@
 
       <ul class="nav-list">
         {% for item in site.data.menu.navigation %}
+        
         <li class="nav-group">
-          <a href="{{ item.url | relative_url }}" class="nav-group-link nav-link {{ item.env }}-group-link">
+          <a href="{{ item.url | relative_url }}" class="nav-group-link nav-link
+          {% assign url = page.env | append: '/' | prepend: '/' %}
+
+          {% if item.url == url %}
+          current--env
+          {% endif %}
+
+          {{ item.env }}-group-link">
 
             <span>{{ item.name }}</span>
           </a>
