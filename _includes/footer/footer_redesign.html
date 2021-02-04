@@ -24,8 +24,12 @@
       </div>
     </div>
 
+
+
     <div class="ft__sitemap">
       <div class="ft__sitemap--menu">
+
+        {% if page.url != "/" %}
 
         <h2 class="ft__sitemap--header">COMAPNY INFORMATION</h2>
 
@@ -54,6 +58,8 @@
           {% endfor %}
 
         </div>
+
+        {% endif %}
 
 
 
