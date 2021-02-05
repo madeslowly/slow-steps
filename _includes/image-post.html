@@ -1,9 +1,11 @@
+
+
 <!--
   insert an image located in assets/images/posts/ and wrap with .post__image div.
 -->
 <div class="post__image">
 
-  {% picture post {{ include.link | prepend: 'posts/' }} --alt {{include.alt}} --img class="post__content--image" %}
+  {% picture post {{ include.link | prepend: 'posts/' }} --alt {{include.alt}} --img class="post__content--image image--{{ include.focus }}" %}
 
   {% if include.caption %}
   <p class="image--caption">{{ include.caption }}</p>

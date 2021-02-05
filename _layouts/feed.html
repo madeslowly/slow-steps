@@ -21,7 +21,7 @@ layout: default
   <div class="feed__card" data-aos="fade-up">
 
     <div class="feed__card__image">
-    {% picture thumb {{ post.image | prepend: 'posts/' }} --alt {{ post.alt }} --img class="feed__card--image" %}
+    {% picture thumb {{ post.hero | prepend: 'posts/' }} --alt {{ post.hero_alt }} --img class="feed__card--image image--{{ page.hero_focus }}" %}
     </div>
     <div class="feed__card--text">
       <p class="feed__card--meta">Published <span>{{ post.date | date: "%b %d, %Y" }}</span></p>

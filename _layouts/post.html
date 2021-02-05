@@ -4,7 +4,7 @@ layout: default
 
 <section class="post_head">
 
-{% picture {{ page.image | prepend: 'posts/' }} --alt {{ page.image_alt }} --img class="post__hero" %}
+{% picture {{ page.hero | prepend: 'posts/' }} --alt {{ page.hero_alt }} --img class="post__hero image--{{ page.hero_focus }}" %}
 
 <div class="post__title">
 <h1 >{{ page.title }}</h1>
