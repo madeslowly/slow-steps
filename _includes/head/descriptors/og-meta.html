@@ -37,7 +37,7 @@
 <!-- use local image if it exist but only for posts -->
 
 {% if page.id %}
-{% assign image = '/posts/' | append: page.image %}
+{% assign image = '/posts/' | append: page.hero %}
 {% else %}
 {% assign image = site.fallback_path | append: site.brand %}
 {% endif %}
