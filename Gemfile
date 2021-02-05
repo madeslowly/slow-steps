@@ -40,4 +40,6 @@ group :jekyll_plugins do
 
   gem 'travis-custom-deploy'
 
+  gem 'jekyll-info'
+
 end

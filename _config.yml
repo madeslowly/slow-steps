@@ -33,6 +33,7 @@ plugins:
   - jekyll-target-blank
   - jekyll-image-size     # https://github.com/generalui/jekyll-image-size
   - jekyll_picture_tag
+  - jekyll-info
 
 
 sass:
