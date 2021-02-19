@@ -11,14 +11,15 @@
 
   <meta name="twitter:image" content="
   {%- if page.id -%}
-    {{ page.hero | prepend: 'posts/' }}
+    {{ site.url }}{{ site.baseurl }}{{ site.default_path }}{{ page.hero | prepend: 'posts/' }}
   {%- else -%}
-    {%- if page.hero -%}
-      {{ site.url }}{{ site.baseurl }}{{ site.default_path }}
-    {%- else -%}
-      {{ site.url }}{{ site.baseurl }}{{ site.fallback_path }}{{ site.brand }}
-    {%- endif -%}
-  {% endif %} "/>
+    {{ site.url }}{{ site.baseurl }}{{ site.fallback_path }}{{ site.brand }}
+  {%- endif -%} "/>
   <!-- to implement this we need some kind of db recording the descriptors of our thumbs -->
-  <meta name="twitter:image:alt" content="" />
+  <meta name="twitter:image:alt" content="
+  {%- if page.id -%}
+    {{ page.hero_alt }}
+  {%- else -%}
+    {{ site.subtitle }}
+  {%- endif -%} " />
 <!-- *** END TWITTER:CARD *** -->
