@@ -31,7 +31,13 @@
   {% assign date = 'now' | date: "%Y" %}
   <meta name="copyright" content="Copyright {{ site.title | append: ' Limited ' | append: date }}" />
 
+  <!-- if production, get bots to follow us -->
+  {% if jekyll.environment == "production" %}
   <meta name="robots" content="follow" />
+  <!-- else, stop the site from beinf indexed -->
+  {% else %}
+  <meta name="robots" content="noindex">
+  {% endif %}
 
   <link rel="canonical" href="{{ page.url | absolute_url }}" />
 
@@ -52,8 +58,6 @@
   {% if jekyll.environment == "production" %}
   {% include head/google-analytics.html %}
   {% endif %}
-
-
 
 </head>
 
