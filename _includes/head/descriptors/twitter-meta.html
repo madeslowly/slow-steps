@@ -10,8 +10,8 @@
   {% else %} {{ page.description }} {% endif %}" />
 
   <meta name="twitter:image" content="
-  {%- if page.image -%}{{ site.url }}{{ site.baseurl }}{{ site.default_path }}
-  {%- if page.id -%}{{ page.image | prepend: 'posts/' }}{%- else -%}{{ page.image }}{%- endif -%}{%- else -%}{{ site.url }}{{ site.baseurl }}{{ site.fallback_path }}{{ site.brand }}{%- endif -%}" />
+  {%- if page.hero -%}{{ site.url }}{{ site.baseurl }}{{ site.default_path }}
+  {%- if page.id -%}{{ page.hero | prepend: 'posts/' }}{%- else -%}{{ page.hero }}{%- endif -%}{%- else -%}{{ site.url }}{{ site.baseurl }}{{ site.fallback_path }}{{ site.brand }}{%- endif -%}" />
   <!-- to implement this we need some kind of db recording the descriptors of our thumbs -->
   <meta name="twitter:image:alt" content="" />
 <!-- *** END TWITTER:CARD *** -->
