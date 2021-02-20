@@ -3,15 +3,20 @@
 @media screen and ( min-width: 768px )
 
   .product__hero
-    animation: slide-hero 1.4s
+    animation: slide-hero 1.2s
     animation-delay: .6s
     animation-fill-mode: forwards
+    //object-fit: cover
+    //overflow: hidden
 
 
     img
-      height: 100vh
-      height: calc(var(--vh, 1vh) * 100)
-      z-index: 2
+      display: block
+      //height: 100vh
+      //height: calc(var(--vh, 1vh) * 100)
+      //z-index: 2
+      object-fit: cover
+
 
   @keyframes slide-hero
 
@@ -19,7 +24,7 @@
       transform: translateX(0)
 
     100%
-      transform: translateY(45vh)
+      transform: translateY(35vh)
 
   .product__strap
     text-align: center
@@ -27,23 +32,24 @@
     animation-delay: 1s
     animation-fill-mode: forwards
     color: $env-primary
-    h1
-      z-index: 1
+    overflow: hidden
+    font-size: $lg-font-size
+    //overflow-y: visible
 
   @keyframes slide-strap
 
     0%
-      transform: scale(0) translateY(15vh)
+      transform: scale(0) translateY(25vh)
 
     100%
-      transform: scale(2) translateY(15vh)
+      transform: scale(1) translateY(25vh)
 
 
   .product__info
     //height: 100vh
     background-color: $pure-white
     text-align: center
-    margin-top: 45vh
+    margin-top: 35vh
 
     p
       width: 80vw
@@ -61,6 +67,7 @@
     padding: 20vh 0 0
     margin: auto
     justify-content: center
+    overflow: hidden
 
   .product__image,
   .product__description
@@ -70,11 +77,16 @@
     justify-content: center
     width: 40vw
     max-width: 600px
+    overflow: hidden
+
+  .product__start
+    color: $env-primary
+    font-weight: $heavy-font
 
   .product--image
     display: block
     width: 100%
-    max-width: 400px
+    max-width: 300px
     object-fit: cover
 
   .txt-right

@@ -3,13 +3,10 @@ layout: default
 ---
 
 {% if page.hero %}
-
 <header class="product__strap "  aria-label="{{ strap }}">
-
   <h1>
     {{ page.title }}
   </h1>
-
 </header>
 
 <div class="product__hero">
@@ -17,43 +14,49 @@ layout: default
     --img class=""
     --alt {{ page.hero.alt }} %}
 </div>
-
-
-
 {% endif %}
 
 <div class="product__info">
 
-<h1 class="product__title" data-aos="fade-up">{{ site.data.copy.product[page.env].title }}</h1>
+  <h1 class="product__title" data-aos="fade-down">
+    {{ site.data.copy.product[page.env].title }}
+  </h1>
 
-{% for para in site.data.copy.product[page.env].overview %}
-<p data-aos="fade-up">{{ para.para }}</p>
-{% endfor %}
-
+  {% for para in site.data.copy.product[page.env].overview %}
+  <p data-aos="fade-up">
+    {{ para.para }}
+  </p>
+  {% endfor %}
 </div>
+
 
 <div class="product__wrap">
   <div class="product__image" data-aos="zoom-in-right" data-aos-anchor-placement="top-center">
 
     {% include image.html image="device_1" alt="Describe the image" class="product--image" %}
 
-  <div class="product__description">{% for para in site.data.copy.product[page.env].device %}
-  <h3 data-aos="fade-left">{{ para.para }}</h3>
-  {% endfor %}
-</div>
+  <div class="product__description">
+    <p data-aos="fade-left">
+      <span class="product__start">
+        {{ site.data.copy.product[page.env].device[0].para | split: '\' | first }}
+      </span> {{ site.data.copy.product[page.env].device[0].para | split: '\' | last }}
+    </p>
+  </div>
 </div>
 
 
 <div class="product__wrap">
   <div class="product__description txt-right">
-    {% for para in site.data.copy.product[page.env].device %}
-    <h3 data-aos="fade-right ">{{ para.para }}</h3>
-    {% endfor %}
+
+    <p data-aos="fade-right">
+      <span class="product__start">
+        {{ site.data.copy.product[page.env].device[1].para | split: '\' | first }}
+      </span> {{ site.data.copy.product[page.env].device[1].para | split: '\' | last }}
+      </p>
+
   </div>
 
   <div class="product__image" data-aos="zoom-in-left" data-aos-anchor-placement="top-center">
-
     {% include image.html image="device_2" alt="Describe the image" class="product--image" %}
-
 
 </div>
