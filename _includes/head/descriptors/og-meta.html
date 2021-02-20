@@ -1,6 +1,11 @@
 
 <!-- *** OG *** https://ogp.me/ -->
-<meta property="og:title" content="{% if page.url == '/' %} {{ site.title }} {% else %} {{ page.title }} | {{ site.title }} {% endif %}" />
+<meta property="og:title" content="
+{% if page.url == '/' %}
+{{ site.title }} | {{ site.subtitle }}
+{% else %}
+{{ page.title }} | {{ site.title }}
+{% endif %}" />
 
 <!-- Adds article properties for posts -->
 
@@ -52,7 +57,12 @@
 
 <!-- to implement this properly we need some kind of db recording the descriptors of our thumbs -->
 
-<meta property="og:image:alt" content="{{ site.subtitle }}" />
+<meta property="og:image:alt" content="
+{%- if page.id -%}
+  {{ page.hero_alt }}
+{%- else -%}
+  {{ site.subtitle }}
+{%- endif -%} "" />
 
 <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}" />
 
