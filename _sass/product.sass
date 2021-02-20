@@ -1,0 +1,81 @@
+
+
+@media screen and ( min-width: 768px )
+
+  .product__hero
+    animation: slide-hero 1.4s
+    animation-delay: .6s
+    animation-fill-mode: forwards
+
+
+    img
+      height: 100vh
+      height: calc(var(--vh, 1vh) * 100)
+      z-index: 2
+
+  @keyframes slide-hero
+
+    0%
+      transform: translateX(0)
+
+    100%
+      transform: translateY(45vh)
+
+  .product__strap
+    text-align: center
+    animation: slide-strap 1s
+    animation-delay: 1s
+    animation-fill-mode: forwards
+    color: $env-primary
+    h1
+      z-index: 1
+
+  @keyframes slide-strap
+
+    0%
+      transform: scale(0) translateY(15vh)
+
+    100%
+      transform: scale(2) translateY(15vh)
+
+
+  .product__info
+    //height: 100vh
+    background-color: $pure-white
+    text-align: center
+    margin-top: 45vh
+
+    p
+      width: 80vw
+      max-width: 800px
+      margin: auto
+
+  .product__title
+    padding: 10rem 0 5rem 0
+
+  .product__wrap
+    display: flex
+    flex-direction: row
+    width: 100%
+    background-color: $pure-white
+    padding: 20vh 0 0
+    margin: auto
+    justify-content: center
+
+  .product__image,
+  .product__description
+    display: flex
+    align-content: center
+    align-self: center
+    justify-content: center
+    width: 40vw
+    max-width: 600px
+
+  .product--image
+    display: block
+    width: 100%
+    max-width: 400px
+    object-fit: cover
+
+  .txt-right
+    text-align: right
