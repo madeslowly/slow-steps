@@ -53,3 +53,4 @@ autoprefixer:
 picture:
   source:                  'assets/images'
   output:                  'assets/images'
+  strip_metadata:          true
