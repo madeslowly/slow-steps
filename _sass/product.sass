@@ -1,6 +1,22 @@
 
+.product__hero
+
+  img
+    display: block
+    object-fit: cover
+    transform: translateY(35vh)
+
+.product__strap
+  text-align: center
+  color: $env-primary
+  overflow: hidden
+  font-size: $lg-font-size
+  //overflow-y: visible
+  transform: scale(1) translateY(25vh)
+
 
 @media screen and ( min-width: 768px )
+
 
   .product__hero
     animation: slide-hero 1.2s
@@ -16,6 +32,7 @@
       //height: calc(var(--vh, 1vh) * 100)
       //z-index: 2
       object-fit: cover
+      transform: translateY(0)
 
 
   @keyframes slide-hero
@@ -31,10 +48,7 @@
     animation: slide-strap 1s
     animation-delay: 1s
     animation-fill-mode: forwards
-    color: $env-primary
-    overflow: hidden
-    font-size: $lg-font-size
-    //overflow-y: visible
+    transform: scale(1) translateY(25vh)
 
   @keyframes slide-strap
 
@@ -45,49 +59,49 @@
       transform: scale(1) translateY(25vh)
 
 
-  .product__info
-    //height: 100vh
-    background-color: $pure-white
-    text-align: center
-    margin-top: 35vh
+.product__info
+  //height: 100vh
+  background-color: $pure-white
+  text-align: center
+  margin-top: 35vh
 
-    p
-      width: 80vw
-      max-width: 800px
-      margin: auto
-
-  .product__title
-    padding: 10rem 0 5rem 0
-
-  .product__wrap
-    display: flex
-    flex-direction: row
-    width: 100%
-    background-color: $pure-white
-    padding: 20vh 0 0
+  p
+    width: 80vw
+    max-width: 800px
     margin: auto
-    justify-content: center
-    overflow: hidden
 
-  .product__image,
-  .product__description
-    display: flex
-    align-content: center
-    align-self: center
-    justify-content: center
-    width: 40vw
-    max-width: 600px
-    overflow: hidden
+.product__title
+  padding: 10rem 0 5rem 0
 
-  .product__start
-    color: $env-primary
-    font-weight: $heavy-font
+.product__wrap
+  display: flex
+  flex-direction: row
+  width: 100%
+  background-color: $pure-white
+  padding: 20vh 0 0
+  margin: auto
+  justify-content: center
+  overflow: hidden
 
-  .product--image
-    display: block
-    width: 100%
-    max-width: 300px
-    object-fit: cover
+.product__image,
+.product__description
+  display: flex
+  align-content: center
+  align-self: center
+  justify-content: center
+  width: 40vw
+  max-width: 600px
+  overflow: hidden
 
-  .txt-right
-    text-align: right
+.product__start
+  color: $env-primary
+  font-weight: $heavy-font
+
+.product--image
+  display: block
+  width: 100%
+  max-width: 300px
+  object-fit: cover
+
+.txt-right
+  text-align: right
