@@ -59,6 +59,16 @@
       transform: scale(1) translateY(25vh)
 
 
+  .product__wrap
+    flex-direction: row
+    padding: 20vh 0 0
+
+  .product__image,
+  .product__description
+    width: 40vw
+    max-width: 600px
+    padding: 0
+
 .product__info
   //height: 100vh
   background-color: $pure-white
@@ -75,10 +85,10 @@
 
 .product__wrap
   display: flex
-  flex-direction: row
+  flex-direction: column
   width: 100%
   background-color: $pure-white
-  padding: 20vh 0 0
+  padding: 0
   margin: auto
   justify-content: center
   overflow: hidden
@@ -89,9 +99,9 @@
   align-content: center
   align-self: center
   justify-content: center
-  width: 40vw
-  max-width: 600px
+  width: 90vw
   overflow: hidden
+  padding: 6rem 0
 
 .product__start
   color: $env-primary
