@@ -2,8 +2,11 @@
 layout: default
 ---
 
-{% assign strap = page.title %}
-
+{% if site.data.copy.contact[page.env].title %}
+{% assign strap = site.data.copy.contact[page.env].title %}
+{% else %}
+{% assign strap = site.description %}
+{% endif %}
 
 <div class="hero hero-65">
 
