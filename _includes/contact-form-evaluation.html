@@ -1,0 +1,34 @@
+<script src="https://kwes.io/v2/kwes-script.js" defer></script>
+<div class="contact-form">
+  <form class="kwes-form" action="https://kwes.io/api/foreign/forms/{{ site.kwes2 }}">
+
+    <label for="name">Enter your full name</label>
+    <input type="text" class="form-element" name="name" id="name" placeholder="Your Name" required>
+
+    <label for="email">Enter your email</label>
+    <input type="text" class="form-element" name="email" id="email" placeholder="Your email" required>
+
+    <label for="contact">How would you like us to contact you?
+<fieldset data-kw-group data-kw-rules="required">
+    <input type="checkbox" name="contact" value="Phone"> Phone<br>
+    <input type="checkbox" name="contact" value="Email"> Email<br>
+    <input type="checkbox" name="contact" value="Video call"> Video call<br>
+    <input type="checkbox" name="contact" value="Any"> Any
+</fieldset></label>
+
+    <label for="time">When would you like us to contact you?
+<fieldset data-kw-group data-kw-rules="required">
+  <input type="checkbox" name="time" value="Morning"> Morning<br>
+    <input type="checkbox" name="time" value="Afternoon"> Afternoon<br>
+    <input type="checkbox" name="time" value="Evening"> Evening<br>
+    <input type="checkbox" name="time" value="Any"> Any
+</fieldset></label>
+
+<label><input type="checkbox" name="terms" data-kw-rules="required">
+  I agree to the <a href="/terms-of-use/">terms and conditions</a>.</label><br>
+<br>
+
+    <button class="btn btn-pop btn-outline btn-contact" type="submit">SEND</button>
+
+  </form>
+</div>

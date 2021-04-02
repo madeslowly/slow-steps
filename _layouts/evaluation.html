@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+{% if page.hero %}
+
+<div class="hero hero-65">
+
+  <div class="hero__overlay h-100">
+    {% picture {{ page.hero.file | prepend: 'content/' }}
+      --img class="hero__image hero__image--fixed hero-65"
+      --alt {{ page.hero.alt }} %}</div>
+
+  {% if page.title %}
+  <header class="hero__strap hero__strap--center image__filter--blur hero-65" aria-label="{{ strap }}">
+
+      <h1 aria-hidden="true" >
+      {% assign n = page.title.size | minus: 1 %}
+      {%- for char in (0..n ) -%}
+
+      <span style="animation-delay: {{ char | times: 40 | plus: 200 }}ms;">{{ page.title | slice: char }}</span>
+      {%- endfor -%}</h1>
+
+  </header>
+  {% endif %}
+</div>
+
+{% endif %}
+
+<section class="fullwidth__wrap" id="content">
+
+  {{ content }}
+
+</section>
+
+<div class="faq__contact">
+    <h2 class="faq__contact--strap">Are you interested in taking part?</h2>
+    {% include contact-form-evaluation.html %}
+
+</div>
