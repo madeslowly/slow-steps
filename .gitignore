@@ -1,11 +1,13 @@
-*.gem
+pkg
 .jekyll-cache
 .sass-cache
 _site
 Gemfile.lock
 *.DS_Store
 Rakefile
-deploy*
+deploy
+deploy_rsa.enc
+deploy_rsa.pub
 _config_dev.yml
 _scripts
 .sass-lint.yml
