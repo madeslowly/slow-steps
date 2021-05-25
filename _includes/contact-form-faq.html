@@ -1,7 +1,13 @@
+<!--
+changed from formspree to kwes 25 May 2021 Arran
+-->
+
+<!-- script has been moved to slow-steps/_includes/scripts.html -->
+<!--<script src="https://kwes.io/v2/kwes-script.js" defer></script>-->
 <div class="contact-form">
   <h4 class="form-instruction-FAQ">Get in touch using the form below</h4>
 
-  <form  action="https://formspree.io/f/{{ site.formspree }}" method="post" >
+  <form class="kwes-form" action="https://kwes.io/api/foreign/forms/{{ site.kwes }}">
 
     <label for="name">Enter your full name</label>
     <input type="text" class="form-element" name="name" id="name" placeholder="Your Name" required>
