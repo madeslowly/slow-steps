@@ -5,7 +5,7 @@ _site
 Gemfile.lock
 *.DS_Store
 Rakefile
-deploy_rsa
-gaitq-content
-.gitmodules
+deploy*
 _config_dev.yml
+_scripts
+.sass-lint.yml
