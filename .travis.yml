@@ -23,6 +23,7 @@ deploy:
   provider: script
   skip_cleanup: true
   script:
+    - gem install rake
     - gem bump --file version.rb
     - rake release
   on:
