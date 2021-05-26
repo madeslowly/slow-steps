@@ -3,7 +3,7 @@ require "jekyll"
 require "listen"
 
 # Uncomment for gem building
-require_relative 'rake/release'
+# require_relative 'rake/release'
 
 def listen_ignore_paths(base, options)
   [
