@@ -15,13 +15,12 @@ gem 'gem-release'
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
 
+# When we rake preview from theme dir this overrides the content Gemfile --> gem "slow-steps"
 gem "slow-steps", path: "../"
 
 gem 'jekyll', '~> 4.1'
 
 gem 'rake-jekyll'
-
-gem 'bump'
 
 group :jekyll_plugins do
 
