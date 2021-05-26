@@ -1,0 +1,16 @@
+<!-- formspree contact form only, header and styling in laytout -->
+
+<form  action="https://formspree.io/f/{{ site.formspree }}" method="post" >
+
+  <label for="name">Enter your full name</label>
+  <input type="text" class="form-element" name="name" id="name" placeholder="Your Name" required>
+
+  <label for="email">Enter your email</label>
+  <input type="text" class="form-element" name="email" id="email" placeholder="Your email" required>
+
+  <label for="message">Enter your message</label>
+  <textarea class="form-element" rows="5" name="message" id="message" placeholder="Your Message" required></textarea>
+
+  <button class="btn btn-pop btn-outline btn-contact" type="submit">SEND</button>
+
+</form>
