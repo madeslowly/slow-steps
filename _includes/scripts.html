@@ -12,6 +12,18 @@
 
 {% endif %}
 
+{% if scripts contains 'kwes' %}
+
+  <script src="https://kwes.io/v2/kwes-script.js" async></script>
+
+{% endif %}
+
+{% if scripts contains 'checkAll' %}
+
+  <script type="text/javascript" src="{{ '/assets/js/checkAll.js' | relative_url }}" async></script>
+
+{% endif %}
+
 <script type="text/javascript" src="{{ '/assets/js/animate_after_load.js' | relative_url }}" async></script>
 
 <script type="text/javascript" src="{{ '/assets/js/calc-mobile-viewport.js' | relative_url}}" async></script>
@@ -25,12 +37,6 @@
 {% endif %}
 
 <script type="text/javascript" src="{{ '/assets/vendor/aos/aos.js' | relative_url }}" ></script>
-
-{% if scripts contains 'kwes' %}
-
-<script src="https://kwes.io/v2/kwes-script.js" async></script>
-
-{% endif %}
 
 {% include cookie-consent.html %}
 
