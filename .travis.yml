@@ -19,12 +19,6 @@ notifications:
     on_success: always
     on_failure: always
 
-deploy:
-  provider: script
-  skip_cleanup: true
-  script:
-    - gem install rake
-    - gem bump --file version.rb
-    - rake release
-  on:
-    all_branches: true
+script:
+  - gem bump --file version.rb
+  - rake release
