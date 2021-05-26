@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'gem_tasks'
+
 gem 'rake-release'
 
 gem 'gem-release'
