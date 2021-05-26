@@ -21,4 +21,4 @@ notifications:
 
 script:
   - bundle install
-  - bundle exec rake release
+  - gem build slow-steps.gemspec
