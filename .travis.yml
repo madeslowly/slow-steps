@@ -16,6 +16,10 @@ notifications:
     on_success: always
     on_failure: always
 
+script:
+
+- gem build slow-steps.gemspec
+
 deploy:
   provider: rubygems
   api_key:
