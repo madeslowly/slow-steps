@@ -20,6 +20,7 @@ notifications:
     on_failure: always
 
 script:
+  - gem install bump
   - bundle install
   - gem bump --file version.rb
   - rake release
