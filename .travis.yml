@@ -20,5 +20,7 @@ notifications:
     on_failure: always
 
 script:
+  - gem install bump
   - bundle install
+  - gem bump --file version.rb --no-commit
   - gem build slow-steps.gemspec
