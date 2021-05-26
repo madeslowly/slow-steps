@@ -1,17 +1,14 @@
 os: linux
 arch: arm64-graviton2
 group: edge
-
 language: ruby
 cache: bundler
 gemfile: Gemfile
 branches:
   only:
   - master
-
 rvm:
 - 2.6
-
 notifications:
   email:
     recipients:
@@ -19,8 +16,11 @@ notifications:
     on_success: always
     on_failure: always
 
-script:
-  - gem install bump
-  - bundle install
-  - gem bump --file version.rb --no-commit
-  - gem build slow-steps.gemspec
+deploy:
+  provider: rubygems
+  api_key:
+    secure: nRk/U/U2D8X+ZimymBmPt59BVKSX69wJvIXsvME+DXqcAs8yxnDtdf9R+Me9u/aKkLH4miE1nrCnKLj3CW9QWd8Ph80/lgkjFy1u/A/WgHCjbF+3R7lnIKE67vPAc0zHcCGJb94qy8zu/Xd9Q7/5VqcyJGWzmeE1XfDh7RYqYpZHyW5gnmwFPQccG8g6fFdRbUI/uhBj/nSOeeuQAlTBzfQ7iln9YIpHKQQyDbrVgViWT+HFNOfjXawMohRmvKtlFo26qEc91pQe1ipKetbAqNpQVReWhNH3vKAQ/TD6Uy6qwBanEq1HOtYf/jSCXE8q20fK26ulIFETKAPmdQ6kI+hjKfJNY7HaaIomImad9/eRHY+Vu+U/X98BRRKCw/y87P0PmI0DEmcjElfPw0S3LNLxNwBaw1u/D0X0MVFutHsyvt0yhkZUZEslXVrUP7Q5Uz2rSj7UTr7TQtaKoopovzc9ngmVHbfrmjs4LRyMXzmT82HxiZAvmX9Di1AS88R+Ni4oR8UxzLTrTk7SNjhir3JtgsGDN1NaMCAMsdefqOS0MmFF5yd1S7O4QkLrrpWWKouxZrXvpTVLtuVEAzGr076wmi7xk05nyN7lIMP9kSC6/TJNKwLh55JaSe9wLokdOLEPtt+ypCLUNl2rvG4wsxIsmwfaaa1juJMKmdYlp7I=
+  gem: slow-steps
+  on:
+    repo: madeslowly/slow-steps
+  skip_cleanup: 'true'
