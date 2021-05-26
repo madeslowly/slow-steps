@@ -9,6 +9,5 @@ deploy_rsa.enc
 deploy_rsa.pub
 Gemfile.lock
 .sass-cache
-Rakefile
 
 *.DS_Store
