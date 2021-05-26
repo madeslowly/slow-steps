@@ -21,5 +21,4 @@ notifications:
 
 script:
   - bundle install
-  - gem bump --file version.rb
-  - rake release
+  - bundler exec rake release
