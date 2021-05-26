@@ -21,4 +21,4 @@ notifications:
 
 script:
   - bundle install
-  - bundler exec rake release
+  - bundle exec rake release
