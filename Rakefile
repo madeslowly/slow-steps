@@ -40,7 +40,7 @@ task :preview do
     "destination"   => base.join('../gaitq-content/_site').to_s,
     "force_polling" => false,
     "serving"       => true,
-    "theme"         => "slow-steps"
+    "theme"         => "slow-steps", path: "../"
   }
 
   options = Jekyll.configuration(options)
