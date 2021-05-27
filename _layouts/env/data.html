@@ -1,0 +1,102 @@
+---
+layout: default
+---
+
+<!--
+
+Last full read through 27/12/2020
+
+##############################################
+# Clinician Layout/_layouts/env/data.html
+##############################################
+
+-->
+
+<!-- assign description with site.decsription fallback -->
+
+{% if site.data.copy.landing.data.description %}
+{% assign description = site.data.copy.landing.data.description %}
+{% else %}
+{% assign description = site.description %}
+{% endif %}
+
+<div class="hero hero-65">
+
+  <div class="hero__overlay">
+    {% picture {{ page.hero.file | prepend: 'content/' }}
+      --img class="hero__image image__filter--mix"
+      --alt {{ page.hero.alt }} %}</div>
+
+  <div class="hero__strap hero__strap--baseline bg--env-100">
+    <h2>{{ site.data.copy.landing.data.title }}</h2>
+    <p>{{ site.data.copy.landing.data.description }}</p>
+  </div>
+
+  <div class="hero__follow"></div>
+
+</div>
+
+
+<div class="augmented-image">
+
+  {% picture {{ page.subhero.file | prepend: 'content/' }}
+    --img class="hero__image"
+    --alt {{ page.subhero.alt }} %}
+
+    <svg class="svg__augment" viewBox="-50 -50 100 100" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="augmentLED" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+        <stop offset="0%" />
+        <stop offset="100%" />
+        </radialGradient>
+      </defs>
+
+      <circle class="svg__augment--pulse" cx="33%" cy="2%" >
+
+        <!-- Can't animate with CSS, see https://stackoverflow.com/questions/32409101/resizing-svg-circle-radius-using-css-animation
+        -->
+        <animate attributeName="r" begin="0s" dur="2s" repeatCount="indefinite" from=".1" to="2"/>
+
+        <animate attributeName="fill-opacity" attributeType="CSS" begin="0s" dur="2s" repeatCount="indefinite" from="1" to="0" fill="freeze" />
+
+      </circle>
+      <circle class="svg__augment--led" cx="33%" cy="2%" r=".5" />
+
+    </svg>
+
+</div>
+
+<div class="segment__wrap" id="content">
+
+  <div class="segment__left strap--opd-trust">
+
+
+  <div class="center-text segment__keywords ">
+    {% assign keyword = site.data.copy.landing.data.keywords | split: ", " %}
+    {% for word in (1..keyword.size) %}
+    <h3 data-aos="fade-in">{{ keyword[forloop.index0] }}</h3>
+    {% endfor %}</div>
+
+    <!-- setup liquid variables -->
+    {%- assign env = site.data.menu.navigation | where: 'env', 'data' -%}
+    {%- assign env = env[0] -%}
+
+    {%- assign cta = env.submenu | where: 'cta', 'true' -%}
+    {%- assign cta = cta[0] -%}
+
+    <a class="action__call" aria-label="{{ cta.aria }}" href="{{ cta.url }}">
+      <span>{{ cta.alt }}</span>
+      <!-- svg arrow -->
+      <svg width="13px" height="10px" viewBox="0 0 13 10">
+      <path d="M1,5 L11,5"></path>
+      <polyline points="8 1 12 5 8 9"></polyline></svg>
+    </a>
+
+
+  </div>
+
+  <div class="segment__right augmented-image svg__labels--red" >
+
+    {% include image.html image="guarantee" alt="Describe the image" class="hero__image image--guarantee"%}
+
+</div>

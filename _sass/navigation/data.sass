@@ -1,10 +1,10 @@
-// Theme specific for clinician env
+// Theme specific for data env
 
 // Navbar site logo
-// make sure we don't style any other instance so nest with .nav-brand
 .nav-brand
-  @include logo-primary-colors
+  @include logo-color($env-primary)
 
+// Color the navbar once we start scrolling
 .navbar.nav-scrolled
 
   .social-media-link
@@ -13,18 +13,19 @@
   .burger > div
     background-color: $env-primary
 
-// on mobile and within the clinician env we hide the other submenus and show the gaitq env .nav-group-link
-.clinician-group
+// on mobile and within an env we hide the other submenus
+.walk-group
   display: none
 
 @media screen and ( min-width: 1024px )
 
-  .pwp-group
+  .data-group
     display: flex
     align-items: center
     width: 100vw
     height: 15vh
     left: 0
     flex-direction: row
+
 
 @import 'collection'

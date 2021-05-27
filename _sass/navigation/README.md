@@ -26,10 +26,10 @@ Burger specific sass.
 
 Unique settings for the landing page
 
-## clinician.sass
+## data.sass
 
-Unique settings for the clinician pages
+Unique settings for the data pages
 
-## pwp.sass
+## walk.sass
 
-Unique settings for the pwp pages
+Unique settings for the walk pages

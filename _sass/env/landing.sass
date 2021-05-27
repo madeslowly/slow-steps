@@ -59,10 +59,10 @@ body
 .hero__filter
   @include image-filter--mix
 
-.env--pwp
+.env--walk
   background-color: $opd-coral
 
-.env--clinician
+.env--data
   background-color: $opd-blue
 
 @media screen and ( min-width: 768px )
@@ -135,7 +135,7 @@ body
     &:hover
       box-shadow: 0 10px 15px -5px rgba($pure-black, .5)
 
-  .env__text.env--pwp
+  .env__text.env--walk
     @include build-in(slide-from-left)
     border-radius: 6px 0 0 6px
     box-shadow: -12px 10px 10px -10px $grey
@@ -144,7 +144,7 @@ body
     &:hover
       box-shadow: -20px 20px 20px -10px $grey
 
-  .env__text.env--clinician
+  .env__text.env--data
     @include build-in(slide-from-right)
     border-radius: 0 6px 6px 0
     box-shadow: 12px 10px 10px -10px $grey
@@ -162,11 +162,11 @@ body
     height: 100%
     top: 0
 
-  .env--pwp
+  .env--walk
     .landing__title
       text-align: right
 
-  .env--clinician
+  .env--data
     .landing__title
       text-align: left
 

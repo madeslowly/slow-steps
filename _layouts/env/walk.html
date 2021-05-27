@@ -7,35 +7,47 @@ layout: default
 Last full read through 27/12/2020
 
 ##############################################
-# Clinician Layout/_layouts/env/clinician.html
+# PWP Layout            /_layouts/env/walk.html
 ##############################################
 
 -->
 
-<!-- assign description with site.decsription fallback -->
 
-{% if site.data.copy.landing.clinician.description %}
-{% assign description = site.data.copy.landing.clinician.description %}
+<!-- assign description with site decsription as fallback -->
+
+{% if site.data.copy.landing.walk.description %}
+{% assign description = site.data.copy.landing.walk.description %}
 {% else %}
 {% assign description = site.description %}
 {% endif %}
 
-<div class="hero hero-65">
+<div class="hero hero-90">
 
   <div class="hero__overlay">
     {% picture {{ page.hero.file | prepend: 'content/' }}
-      --img class="hero__image image__filter--mix"
+      --img class="hero__image image__filter--mix h-100"
       --alt {{ page.hero.alt }} %}</div>
 
-  <div class="hero__strap hero__strap--baseline bg--env-100">
-    <h2>{{ site.data.copy.landing.clinician.title }}</h2>
-    <p>{{ site.data.copy.landing.clinician.description }}</p>
+  <div class="hero__strap hero__strap--center hero__strap--env">
+    <h1>
+      <span class="hero__strap--start">
+        {% assign header = site.data.copy.landing.walk %}
+        {% assign title = header.title | split: " " %}
+        {% assign n = header.split %}
+        {% for word in (1..title.size) %}
+
+          {{ title[forloop.index0] }}
+          {% if forloop.index == n %}
+      </span>{% endif %}
+
+        {% endfor %}
+
+    </h1>
   </div>
 
   <div class="hero__follow"></div>
 
 </div>
-
 
 <div class="augmented-image">
 
@@ -66,37 +78,35 @@ Last full read through 27/12/2020
 
 </div>
 
-<div class="segment__wrap" id="content">
+<div class="center-text strap__100 strap--opd-trust" id="content">
+  <h2>{{ site.data.copy.landing.walk.subtitle }}</h2>
+  <p data-aos="fade-in">{{ site.data.copy.landing.walk.strap }}</p>
+</div>
 
-  <div class="segment__left strap--opd-trust">
+<div class="segment__wrap">
 
+  <div class="segment__left">
+  <div class="segment__gaurentee center-text">
+    <div data-aos="zoom-in">
+      {% include branding/site-logo.svg %}</div>
+    <p data-aos="fade-in" class="strap__guarantee">
+      {{ description }}</p></div>
 
-  <div class="center-text segment__keywords ">
-    {% assign keyword = site.data.copy.landing.clinician.keywords | split: ", " %}
+  <div class="center-text segment__keywords strap--opd-trust">
+    {% assign keyword = site.data.copy.landing.walk.keywords | split: ", " %}
     {% for word in (1..keyword.size) %}
     <h3 data-aos="fade-in">{{ keyword[forloop.index0] }}</h3>
     {% endfor %}</div>
 
-    <!-- setup liquid variables -->
-    {%- assign env = site.data.menu.navigation | where: 'env', 'clinician' -%}
-    {%- assign env = env[0] -%}
-
-    {%- assign cta = env.submenu | where: 'cta', 'true' -%}
-    {%- assign cta = cta[0] -%}
-
-    <a class="action__call" aria-label="{{ cta.aria }}" href="{{ cta.url }}">
-      <span>{{ cta.alt }}</span>
-      <!-- svg arrow -->
-      <svg width="13px" height="10px" viewBox="0 0 13 10">
-      <path d="M1,5 L11,5"></path>
-      <polyline points="8 1 12 5 8 9"></polyline></svg>
-    </a>
-
-
   </div>
 
-  <div class="segment__right augmented-image svg__labels--red" >
+  <div class="segment__right augmented-image svg__labels--red augment-not-fullwidth" >
 
     {% include image.html image="guarantee" alt="Describe the image" class="hero__image image--guarantee"%}
 
+
 </div>
+
+<div class="augmented-image" >
+
+{% include image.html image="device" alt="Describe the image" class="hero__image" %}

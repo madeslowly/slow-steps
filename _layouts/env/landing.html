@@ -14,7 +14,7 @@ Last full read through 27/12/2020
 
 <div class="landing__page">
   <!-- setup liquid variables -->
-  {%- assign env = site.data.menu.navigation | where: 'env', 'pwp' -%}
+  {%- assign env = site.data.menu.navigation | where: 'env', 'walk' -%}
   {%- assign env = env[0] -%}
 
   {%- assign cta = env.submenu | where: 'cta', 'true' -%}
@@ -25,14 +25,14 @@ Last full read through 27/12/2020
 
   <div class="page__half">
 
-    <div class="env__text env--pwp">
+    <div class="env__text env--walk">
 
       <a class="landing__link" aria-label="{{ env.aria }}" href="{{ env.url | relative_url }}">
 
         <h3 class="landing__title">{{ env.name | upcase }}</h3></a>
 
       <div class="landing__strap">
-        <p>{{ site.data.copy.landing.landing.pwp }}</p>
+        <p>{{ site.data.copy.landing.landing.walk }}</p>
         <div class="landing__cta">
         <a class="primary__cta" aria-label="{{ cta.aria }}" href="{{ cta.url | relative_url }}">{{ cta.name }}</a>
         <a class="secondary__cta" aria-label="{{ cta_2.aria }}" href="{{ cta_2.url | relative_url }}">More Info</a>
@@ -41,14 +41,14 @@ Last full read through 27/12/2020
 
     </div>
 
-    <div class="hero__overlay env--pwp">
-      {%- picture {{ page.pwp.image | prepend: 'content/' }}
+    <div class="hero__overlay env--walk">
+      {%- picture {{ page.walk.image | prepend: 'content/' }}
         --img class="hero__image hero__filter pwp__hero h-100"
-        --alt {{ page.pwp.alt }} -%}</div>
+        --alt {{ page.walk.alt }} -%}</div>
 
   </div>
 
-  {%- assign env = site.data.menu.navigation | where: 'env', 'clinician' -%}
+  {%- assign env = site.data.menu.navigation | where: 'env', 'data' -%}
   {%- assign env = env[0] -%}
 
   {%- assign cta = env.submenu | where: 'cta', 'true' -%}
@@ -59,14 +59,14 @@ Last full read through 27/12/2020
 
   <div class="page__half">
 
-    <div class="env__text env--clinician">
+    <div class="env__text env--data">
 
       <a class="landing__link" aria-label="{{ env.aria }}" href="{{ env.url | relative_url }}">
 
         <h3 class="landing__title">{{ env.name | upcase }}</h3></a>
 
       <div class="landing__strap">
-        <p>{{ site.data.copy.landing.landing.clinician }}</p>
+        <p>{{ site.data.copy.landing.landing.data }}</p>
         <div class="landing__cta">
         <a class="primary__cta" aria-label="{{ cta.aria }}" href="{{ cta.url | relative_url }}">{{ cta.name }}</a>
         <a class="secondary__cta" aria-label="{{ cta_2.aria }}" href="{{ cta_2.url | relative_url }}">More Info</a>
@@ -75,10 +75,10 @@ Last full read through 27/12/2020
 
     </div>
 
-    <div class="hero__overlay env--clinician">
-      {%- picture {{ page.clinician.image | prepend: 'content/' }}
+    <div class="hero__overlay env--data">
+      {%- picture {{ page.data.image | prepend: 'content/' }}
         --img class="hero__image hero__filter clinician__hero h-100"
-        --alt {{ page.clinician.alt }} -%}</div>
+        --alt {{ page.data.alt }} -%}</div>
 
   </div>
 
