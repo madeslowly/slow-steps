@@ -18,9 +18,9 @@ Color combination mixins.
 
 Collection of the above definitions.
 
-## _clinician.sass
+## data.sass
 
-Theme colouring for clinician environments. We import collection.sass and define `$env-primary` and `$env-secondary`.
+Theme colouring for data environments. We import collection.sass and define `$env-primary` and `$env-secondary`.
 
 ## walk.sass
 

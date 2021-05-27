@@ -1,6 +1,6 @@
 ---
 ---
-# [Slow Steps, a Jekyll theme](https://www.gaitq.madeslowly.xyz/clinician/about/)
+# [Slow Steps, a Jekyll theme](https://www.gaitq.madeslowly.xyz/data/about/)
 
 [![Ruby gem](https://badge.fury.io/rb/slow-steps.svg)](https://badge.fury.io/rb/slow-steps)
 
@@ -69,7 +69,7 @@ https://github.com/madeslowly/slow-steps/
 |  |
 |  ├─ env/                        # Environmental specific layouts
 |  |  |
-|  |  ├─ clinician.html           # Professionals and press
+|  |  ├─ data.html           # Professionals and press
 |  |  ├─ walk.html                 # Patients and carers
 |  |  ├─ landing.html             # Landing page only
 |  |
@@ -100,7 +100,7 @@ https://github.com/madeslowly/slow-steps/
 |  |  ├─ burger.sass              # Mobile burger
 |  |  ├─ mobile.sass              # Default nav CSS
 |  |  ├─ desktop.sass             # Breakpoint 768 CSS
-|  |  ├─ clinician.sass           # clinician nav CSS & Breakpoint 768
+|  |  ├─ data.sass           # data nav CSS & Breakpoint 768
 |  |  ├─ patients.sass            # Patients nav CSS & Breakpoint 768
 |  |  ├─ gaitq.sass               # GaitQ nav CSS & Breakpoint 768
 |  |
@@ -208,6 +208,6 @@ group_name:
         url:  /pageURL.html
 ```
 
-We for loop  `group_name` = `navigation`. The `env:` controls where and how we see the navigation link and it's submenu contents. Currently we have three allowable `envs:`, `gaitq`, `clinician` and `patients`.
+We for loop  `group_name` = `navigation`. The `env:` controls where and how we see the navigation link and it's submenu contents. Currently we have three allowable `envs:`, `gaitq`, `data` and `patients`.
 
 ---

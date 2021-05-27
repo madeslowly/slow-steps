@@ -7,15 +7,15 @@ layout: default
 Last full read through 27/12/2020
 
 ##############################################
-# Clinician Layout/_layouts/env/clinician.html
+# Clinician Layout/_layouts/env/data.html
 ##############################################
 
 -->
 
 <!-- assign description with site.decsription fallback -->
 
-{% if site.data.copy.landing.clinician.description %}
-{% assign description = site.data.copy.landing.clinician.description %}
+{% if site.data.copy.landing.data.description %}
+{% assign description = site.data.copy.landing.data.description %}
 {% else %}
 {% assign description = site.description %}
 {% endif %}
@@ -28,8 +28,8 @@ Last full read through 27/12/2020
       --alt {{ page.hero.alt }} %}</div>
 
   <div class="hero__strap hero__strap--baseline bg--env-100">
-    <h2>{{ site.data.copy.landing.clinician.title }}</h2>
-    <p>{{ site.data.copy.landing.clinician.description }}</p>
+    <h2>{{ site.data.copy.landing.data.title }}</h2>
+    <p>{{ site.data.copy.landing.data.description }}</p>
   </div>
 
   <div class="hero__follow"></div>
@@ -72,13 +72,13 @@ Last full read through 27/12/2020
 
 
   <div class="center-text segment__keywords ">
-    {% assign keyword = site.data.copy.landing.clinician.keywords | split: ", " %}
+    {% assign keyword = site.data.copy.landing.data.keywords | split: ", " %}
     {% for word in (1..keyword.size) %}
     <h3 data-aos="fade-in">{{ keyword[forloop.index0] }}</h3>
     {% endfor %}</div>
 
     <!-- setup liquid variables -->
-    {%- assign env = site.data.menu.navigation | where: 'env', 'clinician' -%}
+    {%- assign env = site.data.menu.navigation | where: 'env', 'data' -%}
     {%- assign env = env[0] -%}
 
     {%- assign cta = env.submenu | where: 'cta', 'true' -%}

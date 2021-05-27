@@ -28,4 +28,4 @@ This is how we control the indexing of our pages with search engines, in particu
 
 ### conditional.html
 
-Conditional `<link rel="stylesheet"` to style each environment. We do this so that we only load the css needed for a given page. All pages get gaitq_global.css. With front matter we include environmental stylesheet with `env: walk | clinician`. The existence of `page.env` triggers conditional.html. 
+Conditional `<link rel="stylesheet"` to style each environment. We do this so that we only load the css needed for a given page. All pages get gaitq_global.css. With front matter we include environmental stylesheet with `env: walk | data`. The existence of `page.env` triggers conditional.html. 
