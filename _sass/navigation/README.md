@@ -30,6 +30,6 @@ Unique settings for the landing page
 
 Unique settings for the clinician pages
 
-## pwp.sass
+## walk.sass
 
-Unique settings for the pwp pages
+Unique settings for the walk pages

@@ -22,6 +22,6 @@ Collection of the above definitions.
 
 Theme colouring for clinician environments. We import collection.sass and define `$env-primary` and `$env-secondary`.
 
-## _pwp.sass
+## walk.sass
 
-Theme colouring for pwp environments. We import collection.sass and define `$env-primary` and `$env-secondary`.
+Theme colouring for walk environments. We import collection.sass and define `$env-primary` and `$env-secondary`.

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+gem bump --file version.rb
+
+gem build slow-steps.gemspec --output=beta.gem

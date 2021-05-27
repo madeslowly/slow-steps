@@ -7,7 +7,7 @@ layout: default
 Last full read through 27/12/2020
 
 ##############################################
-# PWP Layout            /_layouts/env/pwp.html
+# PWP Layout            /_layouts/env/walk.html
 ##############################################
 
 -->
@@ -15,8 +15,8 @@ Last full read through 27/12/2020
 
 <!-- assign description with site decsription as fallback -->
 
-{% if site.data.copy.landing.pwp.description %}
-{% assign description = site.data.copy.landing.pwp.description %}
+{% if site.data.copy.landing.walk.description %}
+{% assign description = site.data.copy.landing.walk.description %}
 {% else %}
 {% assign description = site.description %}
 {% endif %}
@@ -31,7 +31,7 @@ Last full read through 27/12/2020
   <div class="hero__strap hero__strap--center hero__strap--env">
     <h1>
       <span class="hero__strap--start">
-        {% assign header = site.data.copy.landing.pwp %}
+        {% assign header = site.data.copy.landing.walk %}
         {% assign title = header.title | split: " " %}
         {% assign n = header.split %}
         {% for word in (1..title.size) %}
@@ -79,8 +79,8 @@ Last full read through 27/12/2020
 </div>
 
 <div class="center-text strap__100 strap--opd-trust" id="content">
-  <h2>{{ site.data.copy.landing.pwp.subtitle }}</h2>
-  <p data-aos="fade-in">{{ site.data.copy.landing.pwp.strap }}</p>
+  <h2>{{ site.data.copy.landing.walk.subtitle }}</h2>
+  <p data-aos="fade-in">{{ site.data.copy.landing.walk.strap }}</p>
 </div>
 
 <div class="segment__wrap">
@@ -93,7 +93,7 @@ Last full read through 27/12/2020
       {{ description }}</p></div>
 
   <div class="center-text segment__keywords strap--opd-trust">
-    {% assign keyword = site.data.copy.landing.pwp.keywords | split: ", " %}
+    {% assign keyword = site.data.copy.landing.walk.keywords | split: ", " %}
     {% for word in (1..keyword.size) %}
     <h3 data-aos="fade-in">{{ keyword[forloop.index0] }}</h3>
     {% endfor %}</div>

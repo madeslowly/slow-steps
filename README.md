@@ -70,7 +70,7 @@ https://github.com/madeslowly/slow-steps/
 |  ├─ env/                        # Environmental specific layouts
 |  |  |
 |  |  ├─ clinician.html           # Professionals and press
-|  |  ├─ pwp.html                 # Patients and carers
+|  |  ├─ walk.html                 # Patients and carers
 |  |  ├─ landing.html             # Landing page only
 |  |
 |  ├─ compress.html               # Final step for all pages. Strips html comments, carriage returns and white space.
@@ -89,7 +89,7 @@ https://github.com/madeslowly/slow-steps/
 |  |  |
 |  |  ├─ env/                     # Environmental specific colors
 |  |  |  |
-|  |  |  ├─ pwp.sass              # pwp environmental colors
+|  |  |  ├─ walk.sass              # walk environmental colors
 |  |  |
 |  |  ├─ _variable.sass           # <nav> settings
 |  |  ├─ burger.sass              # Mobile burger
