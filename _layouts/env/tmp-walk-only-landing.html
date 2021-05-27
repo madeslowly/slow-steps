@@ -1,0 +1,64 @@
+---
+layout: default
+---
+
+<!--
+
+Last full read through 27/05/2021
+
+##############################################
+# Temp Landing Layout /_layouts/env/tmp-wal-only-landing.html
+##############################################
+
+Temp layout during the walk only period
+
+-->
+
+<div class="landing__page" style="justify-content: center">
+  <!-- setup liquid variables -->
+  {%- assign env = site.data.menu.navigation | where: 'env', 'walk' -%}
+  {%- assign env = env[0] -%}
+
+  {%- assign cta = env.submenu | where: 'cta', 'true' -%}
+  {%- assign cta = cta[0] -%}
+
+  {%- assign cta_2 = env.submenu | where: 'cta', 'landing' -%}
+  {%- assign cta_2 = cta_2[0] -%}
+
+  <div class="" style="justify-content: center;">
+
+    <div class="env__text env--walk" style="border-radius: 6px; position: inherit; margin-top: 45vh;">
+
+      <a class="landing__link" aria-label="{{ env.aria }}" href="{{ env.url | relative_url }}">
+
+        <h3 class="landing__title" style="text-align: center; ">{{ env.name | upcase }}</h3></a>
+
+      <div class="landing__strap" style="animation: cubic-bezier(0.42, 0, 0.32, 1) openUp 1s forwards; animation-delay: .8s;" >
+        <p>{{ site.data.copy.landing.landing.walk }}</p>
+        <div class="landing__cta">
+        <a class="primary__cta" aria-label="{{ cta.aria }}" href="{{ cta.url | relative_url }}">{{ cta.name }}</a>
+        <a class="secondary__cta" aria-label="{{ cta_2.aria }}" href="{{ cta_2.url | relative_url }}">More Info</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="hero__overlay env--walk" style="width: 100%; left: 0">
+      {%- picture {{ page.walk.image | prepend: 'content/' }}
+        --img class="hero__image hero__filter walk__hero h-100"
+        --alt {{ page.walk.alt }} -%}</div>
+
+  </div>
+
+</div>
+
+<style>
+  @keyframes openUp {
+    from {
+      max-height: 0;
+    }
+    to {
+      max-height: 400px;
+    }
+  }
+</style>
