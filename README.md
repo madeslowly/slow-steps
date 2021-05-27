@@ -117,8 +117,8 @@ https://github.com/madeslowly/slow-steps/
 |  |  |
 |  |  ├─ gaitq_global.sass        # Global CSS, included on ALL pages
 |  |  ├─ gaitq_gaitq.sass         # GaitQ env CSS
-|  |  ├─ gaitq_patients.sass      # Patient env CSS
-|  |  ├─ gaitq_clinician.sass     # Clinician env CSS
+|  |  ├─ gaitq_walk.sass          # walk env CSS
+|  |  ├─ gaitq_data.sass          # data env CSS
 |  |  ├─ gaitq_landing.sass       # Landing page CSS
 |  |
 |  ├─ img/                        # All our imagery
