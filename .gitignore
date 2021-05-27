@@ -4,7 +4,7 @@ pkg
 _config_dev.yml
 .sass-lint.yml
 .travis-rsync-deploy.yml
-deploy
+
 deploy_rsa.enc
 deploy_rsa.pub
 Gemfile.lock
