@@ -30,7 +30,7 @@ notifications:
 
 script:
 - gem install gem-release
-- gem bump patch --file version.rb
+- gem bump patch --file version.rb --no-commit
 - git push https://$travis_public_repo_token@github.com/madeslowly/slow-steps.git HEAD:master
 - gem build slow-steps.gemspec
 deploy:
