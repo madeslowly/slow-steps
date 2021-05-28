@@ -11,3 +11,7 @@ Gemfile.lock
 .sass-cache
 
 *.DS_Store
+
+slow-steps_travis_key
+
+slow-steps_travis_key.pub
