@@ -17,11 +17,3 @@ notifications:
     on_failure: always
 script:
 - gem build slow-steps.gemspec
-deploy:
-  provider: rubygems
-  api_key:
-    secure: pM/JAXCLj1BkRg+nyh/s+bNUowcO6iezlSnITzZkHbEwjvmRr43IlBa4X1x5UC5Kf9KzisQT5rgPxgw46WGdcGHsm0kBgV9TswBiy5CbXXyVMPmADPTRpKuEM4hOElGRmpWJ6HRVKofyCZS81DSEXDEnzFtJjTyAIpvKa00em2He6xQ9/JP8guqURWIk9zjIPmbQnwJiTNei8jkThKXDsTP3fXIkFLrJghiH3lby3WClEUUELoHXtS2YuovPyOBY6xVxF2l70uHZD4bBd2LLNxDEcpONz1I7XilQU5er6lWdxlvhd+5j5p+yHx94iwV70wBFhxb9o4wI80zOtkAB/mDb+xHEpIbC4iOCWBjv7ahI+RIZeMeHaRRWqgABKzdaMYRtSWf1rHHlv2BSkgMT0HwvUx79CVGUfHDXXbkigtbysq+OiSmBJuLq7qbug1d4kLY04nPfzM9TFV4SvUKra347FjBImFyUqkRjlgizvyfmZF94asKUwKFHvfpnffEsjwB7tZ9Q40rHClMQlr1Cq3RIvxXYNUIoZyFSjiRtvctrPkekrbwJkk1ma++/ztaolIc9n5xcuZqnT2VVLIzSjdcABEUatVH0M+qMpruHKmRij8XJxMChtFWtwzgenyOydzrusc+EIoaGGfti+X0Wy8lbR2MwuAR/CM+dWJJDxnU=
-  gem: slow-steps
-  on:
-    repo: madeslowly/slow-steps
-  skip_cleanup: 'true'
