@@ -1,17 +1,13 @@
 _scripts
-.jekyll-cache
-pkg
-_config_dev.yml
-.sass-lint.yml
-.travis-rsync-deploy.yml
 
-deploy_rsa.enc
-deploy_rsa.pub
-Gemfile.lock
+.jekyll-cache
+
 .sass-cache
 
+.sass-lint.yml
+
+Gemfile.lock
+
+pkg
+
 *.DS_Store
-
-slow-steps_travis_key
-
-slow-steps_travis_key.pub
