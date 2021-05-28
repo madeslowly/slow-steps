@@ -19,7 +19,7 @@ notifications:
 script:
   - gem install gem-release
   - gem bump patch --file version.rb
-  - git push 
+  - git push https://github.com/madeslowly/slow-steps
   - gem build slow-steps.gemspec
 #
 # deploy:
