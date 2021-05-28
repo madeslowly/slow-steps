@@ -18,7 +18,8 @@ notifications:
 
 script:
   - gem install gem-release
-  - gem bump --file version.rb
+  - gem bump patch --file version.rb
+  - git push 
   - gem build slow-steps.gemspec
 #
 # deploy:
