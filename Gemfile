@@ -15,12 +15,12 @@ gem "slow-steps", path: "../"
 #gem 'gem_tasks'
 
 gem 'rake-release'
-
+#
 # gem 'gem-release'
 #
 # gem 'jekyll', '~> 4.1'
 #
-# gem 'rake-jekyll'
+gem 'rake-jekyll'
 #
 # group :jekyll_plugins do
 #

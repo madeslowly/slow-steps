@@ -2,9 +2,6 @@ require "bundler/gem_tasks"
 require "jekyll"
 require "listen"
 
-# Uncomment for gem building
-# require_relative 'rake/release'
-
 def listen_ignore_paths(base, options)
   [
     /_config\.ya?ml/,

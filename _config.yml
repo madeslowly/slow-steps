@@ -1,6 +1,6 @@
 ################################################################################
 #
-# Configuration for Slow Steps theme with /gaitq-content/
+# Configuration for Slow Steps theme
 #
 #################################################################################
 
@@ -34,7 +34,6 @@ plugins:
   - jekyll-image-size     # https://github.com/generalui/jekyll-image-size
   - jekyll_picture_tag
 
-
 sass:
   style:                   compressed
   load_paths:
@@ -54,3 +53,5 @@ picture:
   source:                  'assets/images'
   output:                  'assets/images'
   strip_metadata:          true
+  suppress_warnings:       true
+  #disabled: true

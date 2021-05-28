@@ -9,11 +9,11 @@ branches:
   - master
 rvm:
 - 2.6
+
 notifications:
   email:
     recipients:
     - arran@madeslowly.co.uk
-    on_success: always
     on_failure: always
 
 script:
@@ -22,6 +22,7 @@ script:
   - git push https://$travis_public_repo_token@github.com/madeslowly/slow-steps.git HEAD:master
   - gem build slow-steps.gemspec
 
+# Push ruby key - push_api
 deploy:
   provider: rubygems
   api_key:
