@@ -16,13 +16,23 @@ notifications:
     on_success: always
     on_failure: always
 
+# before_script:
+#   - openssl aes-256-cbc -k "$password" -d -a -in slow-steps_travis_key.enc -out slow-steps_travis_key
+#   - echo -e "Host github.com\n  IdentityFile /path/to/my_deploy_key" > ~/.ssh/config
+#   - echo "github.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ==" > ~/.ssh/known_hosts
+
+
 script:
-  - gem install gem-release
-  - gem bump patch --file version.rb
-  - git push https://github.com/madeslowly/slow-steps
-  - gem build slow-steps.gemspec
+- gem install gem-release
+- gem bump patch --file version.rb
+- git push origin HEAD:slow-steps
+- gem build slow-steps.gemspec
+
+deploy:
+  provider: rubygems
+  api_key:
+    secure: FWS2RI9GLpT8deoNj9t6NfEptLmxnRLelw5mF8STczOVIym8L5i2E180pfnnlfOMJRZk63rAWgcTkgHkIHX1ur+dZ25sxdInDHcrWi6IGCXDlFxTInJ+2MTP5Fy3gChEHV4V/9Sv9Zh3rtdQQ5upsqrlVV3sVoJV+WJ0RpUzWXDmON4Xe/iFZ7n/5tY79hx6Jgn8jVrlTVu6eLaVp9USp/ZQzvRSGEZssMC1KK8cY9T9TKR+5YUGabzMwEr33DJ2B3exdh90Zyb8aWO2fjwf+4fExrDw/LnbegQfDzO6FXRYgAZsruesPkKrxszH6hoeCCcvoEajy30/v5CFTNOvWN31ELM9RhECDi36FT90Nw/WFdyvZgcz4y1tqQTIz9H1pEIE3TDgqty6BXLJh+gdtv416qYgtOzlTiWSjkIOQ6ACnHLBDxg+++AaoSB119FapxMfQaHXX4T8wAXkOQ3y8qXgTQ0ABVkThFoAMpSxaUgC7vAb08wxRc9REBMf7EciFRtVMU37QZLDdjhqwkEOtpUIuQVfPF9xiLUHd84m+9BSG9HlRY6e++m0uztVRb0+jn5R3y+oPhkxGyEuu/m2LtL+QMoMoZJtJCFmHMQ85nW8+dehFN0LPKmsP0VSRUg13oT2GiKccVlxuMiZZ73KugB2S+TAf9TV43htE3wJgXU=
 #
-# deploy:
-#   provider: rubygems
-#   api_key:
-#     secure: FWS2RI9GLpT8deoNj9t6NfEptLmxnRLelw5mF8STczOVIym8L5i2E180pfnnlfOMJRZk63rAWgcTkgHkIHX1ur+dZ25sxdInDHcrWi6IGCXDlFxTInJ+2MTP5Fy3gChEHV4V/9Sv9Zh3rtdQQ5upsqrlVV3sVoJV+WJ0RpUzWXDmON4Xe/iFZ7n/5tY79hx6Jgn8jVrlTVu6eLaVp9USp/ZQzvRSGEZssMC1KK8cY9T9TKR+5YUGabzMwEr33DJ2B3exdh90Zyb8aWO2fjwf+4fExrDw/LnbegQfDzO6FXRYgAZsruesPkKrxszH6hoeCCcvoEajy30/v5CFTNOvWN31ELM9RhECDi36FT90Nw/WFdyvZgcz4y1tqQTIz9H1pEIE3TDgqty6BXLJh+gdtv416qYgtOzlTiWSjkIOQ6ACnHLBDxg+++AaoSB119FapxMfQaHXX4T8wAXkOQ3y8qXgTQ0ABVkThFoAMpSxaUgC7vAb08wxRc9REBMf7EciFRtVMU37QZLDdjhqwkEOtpUIuQVfPF9xiLUHd84m+9BSG9HlRY6e++m0uztVRb0+jn5R3y+oPhkxGyEuu/m2LtL+QMoMoZJtJCFmHMQ85nW8+dehFN0LPKmsP0VSRUg13oT2GiKccVlxuMiZZ73KugB2S+TAf9TV43htE3wJgXU=
+# env:
+#   matrix:
+#     secure: m6l3/+PwoKYx6T6tQU1UFLnCkgBM50A47c49Qz6uyVJBDYZfglgeweO1ZMHgrphv5MPq37Rr997vM6j2Ze1j3fiWtvUwybifU4e2w0a4+dFkIhkdAfLhamfE/sCrzWn02711BuoWc9SxWSxyiTW7gMWspjgDm8/rlgVOwC2pspohiVMxn9Hm9ayiTWnPh0MoK/o0TGnZ+Pa+r4EmmK5XXaThSh2b4K/Dy96RYboxqIouGQyi9kyTeGFWKP+1QQ707FTAN/m+R661fmmG7FjEPycyzZVdtlUOAEviBYTrwbb80X4bmHUxnFeIOKqkzHS+FtyW3aGdohxNyqJTAzxfib9g+FxJYWZfpyJdkRBZaXkaOxhddoGSRKp9IF1eKMxPLznbraPJxaOgChozSSvaj7EPwg9MaPBdn0Rk44Vnu0W5qSDvB/AwJ6Qh1m+C8kIiyZZUdAkndAjD3VHa0zzqmOiDkysF1hQmkCW59bYJv9BXwse8FXW1SJDY79voGEXNJ+Aboy7NPgS/+Vj9EOPUIedyaSj940xUG9iIWH6xg4mhneT4qMG5FT8DYFD6kPO9TT7wQwK8YLObp+VUzGWgI/Kqax7TzlfUPJ1ObBEoGlsTIs/HZXefMGIdOZTnaEeguHLlbRQxvS40IgPfmpYV3rANLK1jG5rFdQ9CjMAXycY=
