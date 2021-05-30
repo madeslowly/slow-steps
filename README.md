@@ -2,7 +2,7 @@
 ---
 # [Slow Steps, a Jekyll theme](https://www.gaitq.madeslowly.xyz/data/about/)
 
-[![Ruby gem](https://badge.fury.io/rb/slow-steps.svg)](https://badge.fury.io/rb/slow-steps)
+[![Theme Version](https://badge.fury.io/rb/slow-steps.svg)](https://badge.fury.io/rb/slow-steps)
 
 [![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/madeslowly/slow-steps/blob/master/LICENSE)
 
