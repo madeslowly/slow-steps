@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors                 = ['Made Slowly']
   spec.email                   = ['arran@madeslowly.co.uk']
   spec.summary                 = %q{A bold jekyll theme}
-  spec.description             = %q{Designed to have two distinct styling, depending on current URL.}
+  spec.description             = %q{A Jekyll theme designed to have two distinct styles, depending on current URL.}
   spec.homepage                = 'https://github.com/madeslowly/slow-steps'
   spec.license                 = 'MIT'
 
