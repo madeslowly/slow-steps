@@ -34,7 +34,7 @@ task :preview do
   base = Pathname.new('.').expand_path
   options = {
     "source"        => base.join('../gaitq-content').to_s,
-    "destination"   => base.join('../gaitq-content/_site').to_s,
+    "destination"   => base.join('../_site').to_s,
     "force_polling" => false,
     "serving"       => true,
     "theme"         => "slow-steps", path: "../"
